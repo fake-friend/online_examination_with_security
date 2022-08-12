@@ -1,0 +1,99 @@
+body 
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    overflow-y: hidden;
+}
+
+.card
+{
+    border: none;
+}
+
+.box 
+{
+    border-radius:20px;
+    width: 800px;
+    padding: 30px;
+    position: absolute;
+    text-align: center;
+    transition: 0.25s;
+    margin-top: 60px;
+    margin-left: -50px;
+    left:25%;
+    background-image: linear-gradient(to right bottom, #faffa1, #f6f8a4, #f2f1a7, #edeaaa, #e8e3ad, #ecdaa6, #f0d2a2, #f2c99f, #ffba9d, #ffaba7, #ff9fbb, #f999d6);
+    box-shadow :0 8px 32px 0 rgba(68, 67, 67, 0.37);
+}
+
+.box input[type="text"],
+.box input[type="password"]
+ {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: rgb(0, 0, 0);
+    border-radius: 24px;
+    transition: 0.25s
+}
+
+.box h1 {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-weight: 500
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    width: 270px;
+    border-color: #2e0151
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #590235;
+    padding: 14px 40px;
+    outline: none;
+    color: rgb(0, 0, 0);
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+.box input[type="submit"]:hover {
+    background: #590235;
+    color: rgb(255, 255, 255);
+}
+
+.forgot 
+{
+    text-decoration: none;
+}
+
+i 
+{
+    position: absolute;
+    min-width: 40px;
+    margin-top: -50px;
+    margin-left: 75px;
+}
+
+span
+    {
+    position: absolute;
+    color:#ff0000;
+    font-size:20px;
+    font-weight: bold;
+    margin-top: -60px;
+    margin-left: 110px;
+    }
