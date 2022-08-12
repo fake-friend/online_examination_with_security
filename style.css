@@ -67,7 +67,7 @@ body
     margin: 20px auto;
     text-align: center;
     border: 2px solid #590235;
-    padding: 14px 40px;
+    padding: 10px 20px;
     outline: none;
     color: rgb(0, 0, 0);
     border-radius: 24px;
@@ -91,6 +91,7 @@ i
     min-width: 40px;
     margin-top: -50px;
     margin-left: 75px;
+    cursor: pointer;
 }
 
 span
