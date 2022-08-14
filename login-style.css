@@ -4,11 +4,10 @@ body
     padding: 0;
     font-family: sans-serif;
     overflow-y: hidden;
-}
-
-.container
-{
-    margin-top: 4%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .card
@@ -95,11 +94,11 @@ i
 }
 
 span
-    {
+{
     position: absolute;
     color:#ff0000;
     font-size:20px;
     font-weight: bold;
     margin-top: -60px;
     margin-left: 110px;
-    }
+}
