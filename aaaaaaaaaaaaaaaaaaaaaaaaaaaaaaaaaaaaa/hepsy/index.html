@@ -5,9 +5,13 @@
 	<title>register-form</title>
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
 	<!-- Font-->
 	<!-- Main Style Css -->
     <link rel="stylesheet" href="css/style.css"/>
+
 </head>
 <body>
 	<div class="page-content">
@@ -62,11 +66,22 @@
 								<div class="form-holder form-holder-2">
 										<fieldset>
 											<legend>Upload your profile photo:</legend>
-											<input type="file" class="form-control" id="" name="">
+											<div class="form-group">
+												<label for="pwd">Upload photo:</label>
+												<div class="input-group">
+													<div class="input-group-prepend">
+													  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+													</div>
+													<div class="custom-file">
+													  <input type="file" class="custom-file-input" accept="image/*" name="file" id="inputGroupFile01"
+														aria-describedby="inputGroupFileAddon01">
+													  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+													</div>
+												  </div>
+											  </div>
 										</fieldset>
 									</div>
 								</div>
-
 								
 								<div class="form-row">
 									<div class="form-holder form-holder-2">
@@ -199,7 +214,7 @@
 									</div>
 								</div>
 
-								<input type="submit" value="Create account">
+								<button type="submit" class="btn btn-success">Submit</button>
 							</div>
 			            </section>
 		        	</div>
