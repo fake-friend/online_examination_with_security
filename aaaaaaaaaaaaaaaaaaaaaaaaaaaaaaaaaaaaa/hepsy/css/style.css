@@ -180,7 +180,7 @@ blue-box-separation-line
 .inner .form-row .form-holder fieldset {
 	border:  2px solid #e5e5e5;
 	border-radius: 4px;
-    padding: 0 100px 0px 25px;
+    padding: 0px 50px 10px 30px;
 }
 .inner .form-row .form-holder legend {
 	font-size: 11px;
