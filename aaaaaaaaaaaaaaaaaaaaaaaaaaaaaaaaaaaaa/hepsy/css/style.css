@@ -145,7 +145,7 @@ body {
 .inner .form-row .form-holder {
     width: 50%;
     padding: 0 10px;
-    margin-bottom: 17px;
+    margin-bottom: 18px;
     position: relative;
 }
 .inner .form-row .form-holder.form-holder-1 {
@@ -180,7 +180,7 @@ body {
 .inner .form-row .form-holder fieldset {
 	border:  2px solid #e5e5e5;
 	border-radius: 4px;
-    padding: 0 20px;
+    padding: 0 100px 0px 25px;
 }
 .inner .form-row .form-holder legend {
 	font-size: 11px;
@@ -212,7 +212,7 @@ body {
 }
 .inner .form-row .form-holder .input-border {
 	border:  2px solid #e5e5e5;
-	padding: 11px 20px;
+	padding: 11px 10px;
     margin-top: 8px;
 }
 .inner .form-row.form-row-date .form-holder select {
@@ -260,4 +260,9 @@ body {
 	color: #fff;
 	text-decoration: none;
     padding: 13px 19px;
+}
+.step-text
+{
+    position: relative;
+    margin-top: -9px;
 }
