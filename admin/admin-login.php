@@ -51,8 +51,10 @@
                             <span id="text2"></span> 
                         </div>
 
-                        <div class="create-account">
-                        Don`t Have an Account?<a class="" href="" >&nbsp; sign up</a>
+                        <div class="form-group">
+                            <input type="text" name="" id="captcha" placeholder="captcha" onkeyup="login()">
+                            <span id="text3"></span>
+                            <img src="captcha.php" alt=""> 
                         </div>
                         <input type="submit" name="" value="LOGIN" > 
                      </form>

@@ -40,10 +40,22 @@ function login()
         text.innerHTML="";
     }
 
-    if(username!="" && password!="")
+    var cap=document.getElementById("captcha").value;
+    var text=document.getElementById("text3");
+    if(cap=="")
+    {
+        document.getElementById("captcha").style.borderColor = "red";
+        text.innerHTML="!";
+    }
+    else
+    {
+        document.getElementById("captcha").style.borderColor = "";
+        text.innerHTML="";
+    }
+
+    if(username!="" && password!="" && captcha!="")
     {
         var form=document.getElementById("form");
         form.onsubmit="return true";
     }
 }
-
