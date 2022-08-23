@@ -21,7 +21,7 @@ $db="online_examination_with_security";
 if($conn==false){
     die('could not connect:'.mysqli_error());
 }
-$v1='insert into registerfa(id,instructor_id,dob,phone_number,file,favques,department,post,batch,gender,class,username,gmail,password) values ('$instid','$instname','$dob','$phone','$inputGroupFile01','$favques','$dept','$postdes','$batch','$gend','$cla','$un','$youremail','$confirm-psw')';
+$v1='insert into instructor(id,instructor_id,dob,phone_number,file,favques,department,post,batch,gender,class,username,gmail,password) values ('$instid','$instname','$dob','$phone','$inputGroupFile01','$favques','$dept','$postdes','$batch','$gend','$cla','$un','$youremail','$confirm-psw')';
 mysqli_query($conn,$v1);
 mysqli_rollback($conn);
 echo"inserted";
