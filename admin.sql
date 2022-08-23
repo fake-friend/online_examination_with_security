@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2022 at 07:36 PM
+-- Generation Time: Aug 18, 2022 at 07:43 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -33,8 +33,16 @@ CREATE TABLE `admin` (
   `email` varchar(100) NOT NULL,
   `password` varchar(150) NOT NULL,
   `phone-number` int(10) NOT NULL,
-  `photo` varchar(150) NOT NULL
+  `photo` varchar(150) NOT NULL,
+  `devices` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `email`, `password`, `phone-number`, `photo`, `devices`) VALUES
+(1, 'admin', 'admin@gmail.com', 'adminadmin', 985462413, '', 1);
 
 --
 -- Indexes for dumped tables
@@ -54,7 +62,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

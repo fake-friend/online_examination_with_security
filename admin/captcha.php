@@ -1,7 +1,8 @@
 <?php
-    
+    session_start();
     $letter="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789!@$%&()?";
     $captcha=substr(str_shuffle($letter),0,6);
+    $_SESSION['captcha']=$captcha;
     header ('Content-Type: image/png');
     $im = @imagecreatetruecolor(200,50);
     $text_color = imagecolorallocate($im, 247, 174, 71);
