@@ -29,10 +29,6 @@
 </head>
 <body>
 
-    <div class="image">
-        <img src="../head.png" width="1365" alt="">
-    </div>
-
     <div class="container"> 
         <div class="row"> 
             <div class="col-md-12"> 
@@ -51,11 +47,14 @@
                             <span id="text2"></span> 
                         </div>
 
+                        <div class="captcha">
                         <div class="form-group">
+                            <img src="captcha.php" alt=""> 
                             <input type="text" name="" id="captcha" placeholder="captcha" onkeyup="login()">
                             <span id="text3"></span>
-                            <img src="captcha.php" alt=""> 
                         </div>
+                        </div>
+                        
                         <input type="submit" name="" value="LOGIN" > 
                      </form>
                 </div> 

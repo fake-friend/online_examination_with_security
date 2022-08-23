@@ -15,7 +15,7 @@
     {
         imagesetpixel($im,rand()%200,rand()%100,$pixel_color);
     }
-    imagestring($im,150,70, 15,$captcha, $text_color);
+    imagestring($im,200,70,15,$captcha,$text_color);
     imagepng($im);
     
 ?>
