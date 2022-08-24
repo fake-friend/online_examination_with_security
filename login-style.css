@@ -102,3 +102,11 @@ span
     margin-top: -60px;
     margin-left: 110px;
 }
+
+.captcha
+{
+    border: 2px solid tomato;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 120px;
+}

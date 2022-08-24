@@ -29,31 +29,36 @@
 </head>
 <body>
 
-    <div class="image">
-        <img src="../head.png" width="1365" alt="">
-    </div>
-
     <div class="container"> 
         <div class="row"> 
             <div class="col-md-12"> 
                 <div class="card">
-                     <form id="form" onsubmit="login(); return false;"  class="box needs-validation" method="post" action=""> 
+                     <form id="form" method="POST" action="admin-confirm.php" onsubmit="login(); return false;"  class="box needs-validation" method="post" action=""> 
                         <h1>Login</h1> 
 
                         <div class="form-group">
-                            <input type="text" id="unm" name="" placeholder="Email" onkeyup="login()">
+                            <input type="text" id="unm" value="" name="email" placeholder="Email" onkeyup="login()">
                             <span id="text1"></span> 
                         </div>
 
                         <div class="form-group">
-                            <input type="password" name="" id="pw" placeholder="Password" onkeyup="login()" autocomplete="current-password">
+                            <input type="password" name="password" id="pw" placeholder="Password" onkeyup="login()" autocomplete="current-password">
                             <i class="far fa-eye" id="togglePassword" onclick="eye()"></i>
                             <span id="text2"></span> 
                         </div>
 
-                        <div class="create-account">
-                        Don`t Have an Account?<a class="" href="" >&nbsp; sign up</a>
+                        <div class="captcha">
+                        <div class="form-group">
+                            <img src="captcha.php" alt=""> 
+
+                            <input type="text" name="" id="captcha" placeholder="captcha" onkeyup="login()">
+
+                            <input type="text" name="captcha" id="captcha" placeholder="captcha" onkeyup="login()">
+
+                            <span id="text3"></span>
                         </div>
+                        </div>
+                        
                         <input type="submit" name="" value="LOGIN" > 
                      </form>
                 </div> 
