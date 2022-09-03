@@ -21,7 +21,7 @@ $batch=$_POST['batch'];
 $gend=$_POST['gend'];
 $cla=$_POST['cla'];
 $un=$_POST['un'];
-$youremail=$_POST['youremail'];
+$youremail=$_POST['your_email'];
 $confirm_psw=$_POST['confirm-psw'];
 $v1="INSERT INTO instructor(instructor_id,instructor_name,dob,phone_number,files,favques,department,post,batch,gender,class,username,gmail,passwords) VALUES ('$instid','$instname','$dob','$phone','$file1','$favques','$dept','$postdes','$batch','$gend','$cla','$un','$youremail','$confirm_psw')";
 mysqli_query($conn,$v1);
