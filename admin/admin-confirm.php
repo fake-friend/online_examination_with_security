@@ -6,7 +6,7 @@ if($connection)
     if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         $email=$_POST['email'];
-        $password=$_POST['password'];
+        $password=$_POST['pwd'];
         $captcha=$_POST['captcha'];
         if(strcmp($captcha,$_SESSION['captcha'])==0)
         {
