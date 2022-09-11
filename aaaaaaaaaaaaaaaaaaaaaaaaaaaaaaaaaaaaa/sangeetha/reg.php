@@ -6,10 +6,9 @@ $db="online_examination_with_security";
 $conn=mysqli_connect($h1,$u,$p,$db);
 echo "Connected";
 if($conn==false){
-    die('could not connect:'.mysqli_error());
+    die('could not connect:'.mysqli_connect_error());
 } 
 $instid=$_POST['instid'];
-
 $instname=$_POST['instname'];
 $dob=$_POST['dob'];
 $phone=$_POST['phone'];
@@ -23,9 +22,8 @@ $cla=$_POST['cla'];
 $un=$_POST['un'];
 $youremail=$_POST['your_email'];
 $confirm_psw=$_POST['confirm-psw'];
-$v1="INSERT INTO instructor(instructor_id,instructor_name,dob,phone_number,files,favques,department,post,batch,gender,class,username,gmail,passwords) VALUES ('$instid','$instname','$dob','$phone','$file1','$favques','$dept','$postdes','$batch','$gend','$cla','$un','$youremail','$confirm_psw')";
+$v1="INSERT INTO instructor(instructor_id,instructor_name,dob,phone_number,favques,department,post,batch,gender,class,username,gmail,password) VALUES ('$instid','$instname','$dob','$phone','$favques','$dept','$postdes','$batch','$gend','$cla','$un','$youremail','$confirm_psw')";
 mysqli_query($conn,$v1);
-mysqli_rollback($conn);
 echo"inserted";
 mysqli_close($conn);
 ?>

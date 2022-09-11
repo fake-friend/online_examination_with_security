@@ -43,7 +43,7 @@ if($connection)
         }
         else
         {
-            header("location:admin-login.php?messge=please enter correct captcha!!!");
+            header("location:admin-login.php?message=please enter correct captcha!!!");
         }
     }
 }

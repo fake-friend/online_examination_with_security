@@ -46,6 +46,14 @@
 
 </head>
 <body>
+      
+        <div class="error">
+          <label for="error"><?php 
+          if(isset($_GET['message']))
+          {
+            echo($_GET['message']);
+          } ?></label>
+        </div>
     <div class="container border">
         <form method="post" action="admin-confirm.php" class="needs-validation" novalidate>
             <div class="form-group">
