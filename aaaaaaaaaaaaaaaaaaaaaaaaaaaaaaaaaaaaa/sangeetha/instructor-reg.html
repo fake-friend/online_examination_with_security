@@ -15,7 +15,7 @@
 	<div class="page-content">
 		<div class="form-v1-content">
 			<div class="wizard-form">
-		        <form action="reg.php" class="form-register"  method="post">
+		        <form action="http://localhost/online_examination_with_security/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sangeetha/reg.php" method="post"class="form-register"  >
 		        	<div id="form-total">
 		        		<!-- SECTION 1 -->
 			            <h2>
@@ -32,13 +32,13 @@
 									<div class="form-holder">
 										<fieldset>
 											<legend>Instructor ID</legend>
-											<input type="text" id="instid" name="first-name" placeholder="Instructor ID" >
+											<input type="text" id="first-name" name="instid" placeholder="Instructor ID" >
 										</fieldset>
 									</div>
 									<div class="form-holder">
 										<fieldset>
 											<legend>Instructor Name</legend>
-											<input type="text" id="instname" name="fathers-name" placeholder="Instructor Name" >
+											<input type="text" id="fathers-name" name="instname" placeholder="Instructor Name" >
 										</fieldset>
 									</div>
 								</div>
@@ -70,7 +70,8 @@
 													  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
 													</div>
 													<div class="custom-file">
-													  <input type="file" class="custom-file-input" accept="image/*" name="file" id="inputGroupFile01"
+					
+													  <input type="file" class="custom-file-input" accept="image/*" name="file1" id="file"
 														aria-describedby="inputGroupFileAddon01">
 													  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 													</div>
@@ -120,7 +121,7 @@
 			                		<div class="form-holder">
 			                			<fieldset>
 											<legend>Description / Post</legend>
-											<input type="text"  id="postdes" name="rno" placeholder="Description / Post" >
+											<input type="text"  id="rno" name="postdes" placeholder="Description / Post" >
 										</fieldset>
 			                		</div>
 
@@ -140,7 +141,7 @@
 			                		<div class="form-holder">
 			                			<fieldset>
 											<legend>Gender</legend>
-											<select name="batch" id="gend">
+											<select name="gend" id="batch">
 												<option value="Duration" selected>select Gender</option>
 												<option value="Female">Female</option>
 												<option value="Male">Male</option>
@@ -151,7 +152,14 @@
 									<div class="form-holder">
 			                			<fieldset>
 											<legend>Class</legend>
-											<select name="class" id="cla">
+											<!--<input type="checkbox" checked id="1st" name="1styear" value="1styear">
+                                            <label for="I Year"> I Year</label>
+                                            <input type="checkbox" id="2nd" name="2ndyear" value="2ndyear">
+                                            <label for="II Year"> II Year</label>
+                                            <input type="checkbox" id="3rd" name="3rdyear" value="3rdyear">
+                                            <label for="III Year"> III Year</label>-->
+
+											<select name="cla" id="class">
 												<option value="class sel" selected>select Class</option>
 												<option value="1st year">1st year</option>
 												<option value="2nd year">2nd year</option>
@@ -177,7 +185,7 @@
 								<div class="form-holder form-holder-2">
 									<fieldset>
 										<legend>Create Username</legend>
-										<input type="text" id="un" name="first-name" placeholder="Create Username" >
+										<input type="text" id="first-name" name="un" placeholder="Create Username" >
 									</fieldset>
 								</div>
 								</div>
@@ -186,7 +194,7 @@
 								<div class="form-holder form-holder-2">
 									<fieldset>
 										<legend>Your Email</legend>
-										<input type="text" name="youremail" id="your_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="example@email.com" >
+										<input type="text" name="your_email" id="youremail"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="example@email.com" >
 									</fieldset>
 								</div>
 								</div>
