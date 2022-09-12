@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
@@ -16,15 +15,16 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../no-tab-no-cp.js"></script>
     <style>
-        body
+         body
         {
             background-color: #38476f;
+            background-color: #070a3c;
         }
         .container
         { 
             background-color: aliceblue;
             width: 400px;
-            max-height: 550px;
+            max-height: 300px;
             margin-top: 4%;
             padding: 50px 40px;
             border-radius: 40px;
@@ -34,68 +34,20 @@
             padding: 3px;
             font-weight: bold;
         }
-        input[type="checkbox"]
-        {
-            cursor: pointer;
-        }
-        .capt
-        {
-          padding: 10px;
-        }
-        img
-        {
-          border-radius: 20px;
-        }
+
     </style>
-    <script>
-        $(document).ready(function(){
-            $("#error").fadeOut(4000);
-        });
-    </script>
 </head>
 <body>
-
-        <?php 
-            if(isset($_GET['message']))
-            {
-              echo ' <div class="alert alert-warning" id="error" role="alert"><center>';
-              echo($_GET["message"]);
-              echo '</center></div>';
-            } 
-        ?>
-        
     <div class="container border">
-        <form method="post" action="admin-confirm.php" class="needs-validation" novalidate>
+        <form method="post" action="<?php $_SERVER["PHP_SELF"]; ?>" class="needs-validation" novalidate>
             <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+              <label for="email">OTP:</label>
+              <input type="number" class="form-control" id="otp" placeholder="Enter otp" name="otp" required>
               <div class="valid-feedback">Valid.</div>
-              <div class="invalid-feedback">Please fill out this Email field.</div>
-            </div>
-            <div class="form-group">
-              <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required>
-              <div class="valid-feedback">Valid.</div>
-              <div class="invalid-feedback">Please fill out this Password field.</div>
-            </div>
-            <div class="form-group">
-              <div class="capt">
-               <center><img src="captcha.php" alt=""></center> 
-              </div>
-            </div>
-            <div class="form-group">
-                <label for="captcha">captcha:</label>
-                <input type="text" class="form-control" name="captcha" id="cap" placeholder="Enter Captcha" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this Captcha field.</div>
-            </div>
-            <div class="form-group">
-                <div class="showpassword">
-                    <input type="checkbox" name="show" onclick="showss()" id="show">&nbsp;&nbsp;show password
-                </div>
+              <div class="invalid-feedback">Please fill out this OTP field.</div>
             </div>
             <br>
-            <center><button type="submit" class="btn btn-primary">Submit</button></center>
+            <center><button type="submit" class="btn btn-success">Submit</button></center>
           </form>
     </div>
     <script>
@@ -117,19 +69,30 @@
             });
           }, false);
         })();
-        
-        function showss()
-        {
-          var s=document.getElementById("pwd");
-          if(s.type === "password")
-          {
-            s.type="text";
-          }
-          else
-          {
-            s.type="password";
-          }
-        }
-        </script>
+    </script>
 </body>
 </html>
+
+<?php
+include_once("../dbconfig.php");
+session_start();
+if($connection)
+{
+  if($_SERVER["REQUEST_METHOD"]=="POST")
+  {
+    $otp=$_POST['otp'];
+    if(strcmp($otp,$_SESSION['otp'])==0)
+    {
+      $email=$_SESSION['email'];
+      $device_query="update admin set devices='1' where email='$email'";
+      mysqli_query($connection,$device_query);
+      mysqli_close($connection);
+      header("location:admin.php");
+    }
+    else
+    {
+      header("location:admin-login.php");
+    }
+}
+}
+?>

@@ -21,28 +21,30 @@ if($connection)
                     {
                         $_SESSION['name']=$row[0];
                         $_SESSION['email']=$email;
-                        $device_query="update admin set devices='1' where email='$email'";
-                        mysqli_query($connection,$device_query);
-                        mysqli_close($connection);
-                        header("location:admin.php");
+                        include_once("mail.php");
+                        header("location:otp.php");
                     }
                     else
                     {
+                        mysqli_close($connection);
                         header("location:admin-login.php?message=you cannot login into multiple devices at a time!!!");
                     }
                 }
                 else
                 {
+                    mysqli_close($connection);
                     header("location:admin-login.php?message=please check your email id or password");
                 }
             }
             else
             {
+                mysqli_close($connection);
                 header("location:admin-login.php?message=please check your email id or password");
             }  
         }
         else
         {
+            mysqli_close($connection);
             header("location:admin-login.php?message=please enter correct captcha!!!");
         }
     }
@@ -51,5 +53,4 @@ else
 {
     die("could not connect to database".mysqli_connect_error());
 }
-mysqli_close($connection);
 ?>

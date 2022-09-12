@@ -1,9 +1,10 @@
 <?php
+session_start();
 $to_email = "sriharishkumar17@gmail.com,hepsya@students.tcarts.in,sangeeth_001@students.tcarts.in";
-$subject = "Simple Email Test via PHP";
-$body = "Hi, This is test email send by PHP Script";
+$subject = "OTP verification";
+$body = rand(1,10000);
+$_SESSION['otp']=$body;
 $headers = "From: sriharishm@students.tcarts.in";
-
 $mail=mail($to_email, $subject, $body, $headers);
 if($mail)
 {
