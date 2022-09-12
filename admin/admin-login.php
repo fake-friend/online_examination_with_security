@@ -12,6 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
+    <!--cdn link for no copy paste for the website-->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../no-tab-no-cp.js"></script>
     <style>
         body
         {
@@ -21,7 +24,8 @@
         { 
             background-color: aliceblue;
             width: 400px;
-            margin-top: 5%;
+            max-height: 500px;
+            margin-top: 4%;
             padding: 50px 40px;
             border-radius: 40px;
         }
@@ -45,24 +49,21 @@
     </style>
     <script>
         $(document).ready(function(){
-            $("#error").fadeOut(3000);
+            $("#error").fadeOut(4000);
         });
     </script>
 </head>
 <body>
-      
-      <div class="alert alert-warning" id="error" role="alert">
+
         <?php 
             if(isset($_GET['message']))
             {
-              echo($_GET['message']);
+              echo ' <div class="alert alert-warning" id="error" role="alert"><center>';
+              echo($_GET["message"]);
+              echo '</center></div>';
             } 
         ?>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
+        
     <div class="container border">
         <form method="post" action="admin-confirm.php" class="needs-validation" novalidate>
             <div class="form-group">
