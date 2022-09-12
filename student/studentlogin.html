@@ -208,14 +208,6 @@
 </head>
 
 <body>
-    <?php 
-    if(isset($_GET['message']))
-    {
-      echo ' <div class="alert alert-warning" id="error" role="alert"><center>';
-      echo($_GET["message"]);
-      echo '</center></div>';
-    } 
-    ?>
     <div class="login-wrap">
         <div class="login-html">
             <h1 style="margin-left:200px;">LOGIN</h1>
@@ -242,7 +234,7 @@
                         </div>
                     </div>
                 </form>
-                <form action="" method="post">
+                <form action="http://localhost/online_examination_with_security/student/Student_sidebar/index.html" method="post">
                     <div class="sign-up-htm">
                         <div class="group">
                             <label for="user" class="label">Username</label>
@@ -257,7 +249,7 @@
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
-                            <a href="#">Don't you have an account?</a>
+                            <a href="student-register.html">Don't you have an account?</a>
                         </div>
                     </div>
                 </form>
