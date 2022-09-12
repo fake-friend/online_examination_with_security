@@ -19,14 +19,14 @@ if($connection)
                     {
                         $_SESSION['instructor_name']=$row[0];
                         $_SESSION['gmail']=$email;
-                        $device_query="update admin set devices='1' where gmail='$email'";
+                        $device_query="update instructor set devices='1' where gmail='$email'";
                         mysqli_query($connection,$device_query);
                         mysqli_close($connection);
                         header("location:instlogin.php");
                     }
                     else
                     {
-                        header("location:slogin.html?message=you cannot login into multiple devices at a time!!!");
+                        //header("location:slogin.html?message=you cannot login into multiple devices at a time!!!");
                     }
                 }
                 else
