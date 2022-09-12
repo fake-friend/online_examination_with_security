@@ -43,11 +43,15 @@
           border-radius: 20px;
         }
     </style>
-
+    <script>
+        $(document).ready(function(){
+            $("#error").fadeOut(3000);
+        });
+    </script>
 </head>
 <body>
       
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <div class="alert alert-warning" id="error" role="alert">
         <?php 
             if(isset($_GET['message']))
             {
