@@ -47,13 +47,18 @@
 </head>
 <body>
       
-        <div class="error">
-          <label for="error"><?php 
-          if(isset($_GET['message']))
-          {
-            echo($_GET['message']);
-          } ?></label>
-        </div>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <?php 
+            if(isset($_GET['message']))
+            {
+              echo($_GET['message']);
+            } 
+        ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
     <div class="container border">
         <form method="post" action="admin-confirm.php" class="needs-validation" novalidate>
             <div class="form-group">
