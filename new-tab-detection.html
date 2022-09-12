@@ -19,18 +19,14 @@
 		 });
 	 </script>
 </head>
-<body>
+<body id="body">
     <p id = "GFG_UP" style = "font-size: 20px; font-weight: italic;">
     </p>
-
-    
-
     <p id = "GFG_DOWN" style =
         "color:blue; font-size: 50px; font-weight: italic;">
     </p>
-
     <script>
-        var el_up = document.getElementById("GFG_UP");
+        var el_up = document.getElementById("body");
         var el_down = document.getElementById("GFG_DOWN");
         el_up.innerHTML = " ";
 
@@ -38,8 +34,6 @@
                     event => event.preventDefault());
             el_down.innerHTML = " ";
         
-    </script>
-    <script>
     document.addEventListener("visibilitychange", () => {
         let form = document.getElementById("form__submit");
             form.submit();

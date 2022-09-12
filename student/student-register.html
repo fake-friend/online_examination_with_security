@@ -8,8 +8,9 @@
 
 	<!-- Font-->
 	<!-- Main Style Css -->
-    <link rel="stylesheet" href="student-register.css"/>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="student-register.css"/>
+	
 </head>
 <body>
 	<div class="page-content">
@@ -29,18 +30,13 @@
 									<p>Please enter your infomation and proceed to the next step so we can build your accounts.  </p>
 								</div>
 								<div class="form-row">
-									<div class="form-holder">
-										<fieldset>
-											<legend>Student ID</legend>
-											<input type="text" id="first-name" name="first-name" placeholder="Student ID" required>
-										</fieldset>
-									</div>
-									<div class="form-holder">
+									<div class="form-holder form-holder-2 ">
 										<fieldset>
 											<legend>Student Name</legend>
 											<input type="text" id="fathers-name" name="fathers-name" placeholder="Student Name" required>
 										</fieldset>
 									</div>
+
 								</div>
 
 								<div class="form-row">
@@ -59,7 +55,62 @@
 									</div>
 								</div>
 
-							    <div class="form-row">
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>One thing do you think of the most each day?</legend>
+                    						<input type="text" id="favques" name="favques" placeholder="your dream!" required>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-row">
+								<div class="form-holder">
+									<fieldset>
+										<legend>Gender</legend>
+										<select name="batch" id="batch">
+											<option value="Duration" selected>select Gender</option>
+											<option value="Female">woman</option>
+											<option value="Male">Man</option>
+										</select>
+									</fieldset>
+								</div>
+							</div>
+							</div>
+			            </section>
+						<!-- SECTION 2 -->
+			            
+			            <h2>
+			            	<p class="step-icon"><span>02</span></p>
+			            	<span class="step-text">Academic-details</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<div class="wizard-header">
+									<h3 class="heading">Academia</h3>
+									<p>Please enter your infomation and proceed to the next step so we can build your accounts.</p>
+								</div>
+								<div class="form-row">
+								<div class="form-holder">
+									<fieldset>
+										<legend>Roll Number</legend>
+										<input type="text" id="first-name" name="first-name" placeholder="Student ID" required>
+									</fieldset>
+								</div>
+			                		
+									<div class="form-holder">
+			                			<fieldset>
+											<legend>Shift</legend>
+											<select name="batch" id="batch">
+												<option value="Duration" selected>choose shift</option>
+												<option value="Self Financed">Self Financed</option>
+												<option value="Aided">Aided</option>
+										
+											</select></fieldset>
+			                		</div>
+			                	
+							   </div>
+
+							   <div class="form-row">
 									
 								<div class="form-holder form-holder-2">
 										<fieldset>
@@ -80,28 +131,6 @@
 									</div>
 								</div>
 								
-								<div class="form-row">
-									<div class="form-holder form-holder-2">
-										<fieldset>
-											<legend>One thing do you think of the most each day?</legend>
-                    						<input type="text" id="favques" name="favques" placeholder="your dream!" required>
-										</fieldset>
-									</div>
-								</div>
-							</div>
-			            </section>
-						<!-- SECTION 2 -->
-			            
-			            <h2>
-			            	<p class="step-icon"><span>02</span></p>
-			            	<span class="step-text">Academia</span>
-			            </h2>
-			            <section>
-			                <div class="inner">
-			                	<div class="wizard-header">
-									<h3 class="heading">Academia</h3>
-									<p>Please enter your infomation and proceed to the next step so we can build your accounts.</p>
-								</div>
 								<div class="form-row " >
 			                		<div class="form-holder form-holder-2">
 										<fieldset>
@@ -116,46 +145,17 @@
 									</fieldset>
 			                		</div>
 			                	</div>
-								<div class="form-row">
-			                		<div class="form-holder">
-			                			<fieldset>
-											<legend>Description / Post</legend>
-											<input type="text"  id="rno" name="rno" placeholder="Description / Post" required>
-										</fieldset>
-			                		</div>
-
-									<div class="form-holder">
-			                			<fieldset>
-											<legend>SF/Aided:</legend>
-											<select name="batch" id="batch">
-												<option value="Duration" selected>Batch:Duration</option>
-												<option value="Self Financed">Self Financed</option>
-												<option value="Aided">Aided</option>
-										
-											</select></fieldset>
-			                		</div>
-			                	</div>
+							
 
 								<div class="form-row">
-			                		<div class="form-holder">
-			                			<fieldset>
-											<legend>Gender</legend>
-											<select name="batch" id="batch">
-												<option value="Duration" selected>select Gender</option>
-												<option value="Female">Female</option>
-												<option value="Male">Male</option>
-											</select>
-										</fieldset>
-			                		</div>
-
 									<div class="form-holder">
 			                			<fieldset>
-											<legend>Time Stamp</legend>
+											<legend>Batch</legend>
 											<select name="batch" id="batch">
 												<option value="Duration" selected>1</option>
-												<option value=""></option>
-												<option value=""></option>
-												<option value=""></option>
+												<option value="">2020-2023</option>
+												<option value="">2021-2024</option>
+												<option value="">2022-2025</option>
 												<option value=""></option>
 											</select></fieldset>
 			                		</div>
@@ -171,7 +171,6 @@
 			                <div class="inner">
 			                	<div class="wizard-header">
 									<h3 class="heading">Create-Profile</h3>
-									<p>Please enter your infomation and proceed to the next step so we can build your accounts.</p>
 								</div>
 								<div class="form-row">
 								<div class="form-holder form-holder-2">
@@ -210,7 +209,7 @@
 									</div>
 								</div>
 
-								<button type="submit" class="btn btn-success">Submit</button>
+								<center><button type="submit" class="btn btn-success">Submit</button></center>
 							</div>
 			            </section>
 		        	</div>
