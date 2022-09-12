@@ -5,7 +5,6 @@
 	<title>register-form</title>
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
 	<!-- Font-->
 	<!-- Main Style Css -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -16,7 +15,7 @@
 	<div class="page-content">
 		<div class="form-v1-content">
 			<div class="wizard-form">
-		        <form class="form-register" action="#" method="post">
+		        <form class="form-register" method="post" action="http://localhost/online_examination_with_security/student/register.php/" >
 		        	<div id="form-total">
 		        		<!-- SECTION 1 -->
 			            <h2>
@@ -33,7 +32,7 @@
 									<div class="form-holder form-holder-2 ">
 										<fieldset>
 											<legend>Student Name</legend>
-											<input type="text" id="fathers-name" name="fathers-name" placeholder="Student Name" required>
+											<input type="text" id="sname" name="sname" placeholder="Student Name" required>
 										</fieldset>
 									</div>
 
@@ -67,8 +66,8 @@
 								<div class="form-holder">
 									<fieldset>
 										<legend>Gender</legend>
-										<select name="batch" id="batch">
-											<option value="Duration" selected>select Gender</option>
+										<select name="gender" id="gender">
+											<option value="not selected" selected>select Gender</option>
 											<option value="Female">woman</option>
 											<option value="Male">Man</option>
 										</select>
@@ -86,32 +85,30 @@
 			            <section>
 			                <div class="inner">
 			                	<div class="wizard-header">
-									<h3 class="heading">Academia</h3>
-									<p>Please enter your infomation and proceed to the next step so we can build your accounts.</p>
+									<h3 class="heading">Academic-details</h3>
 								</div>
 								<div class="form-row">
 								<div class="form-holder">
 									<fieldset>
 										<legend>Roll Number</legend>
-										<input type="text" id="first-name" name="first-name" placeholder="Student ID" required>
+										<input type="text" id="rno" name="rno" placeholder="Student ID" required>
 									</fieldset>
 								</div>
 			                		
 									<div class="form-holder">
 			                			<fieldset>
 											<legend>Shift</legend>
-											<select name="batch" id="batch">
-												<option value="Duration" selected>choose shift</option>
+											<select name="shift" id="shift">
+												<option value="not selected" selected>choose shift</option>
 												<option value="Self Financed">Self Financed</option>
 												<option value="Aided">Aided</option>
-										
-											</select></fieldset>
+											</select>
+										</fieldset>
 			                		</div>
 			                	
 							   </div>
 
-							   <div class="form-row">
-									
+							   <div class="form-row">			
 								<div class="form-holder form-holder-2">
 										<fieldset>
 											<legend>Upload your profile photo:</legend>
@@ -121,9 +118,9 @@
 													  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
 													</div>
 													<div class="custom-file">
-													  <input type="file" class="custom-file-input" accept="image/*" name="file" id="inputGroupFile01"
-														aria-describedby="inputGroupFileAddon01">
-													  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+													  <input type="file" class="custom-file-input" accept="image/*" name="file1" id="inputGroupFile01"
+														aria-describedby="inputGroupFileAddon01"></input>
+													    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 													</div>
 												  </div>
 											  </div>
@@ -152,7 +149,7 @@
 			                			<fieldset>
 											<legend>Batch</legend>
 											<select name="batch" id="batch">
-												<option value="Duration" selected>1</option>
+												<option value="not selected" selected>1</option>
 												<option value="">2020-2023</option>
 												<option value="">2021-2024</option>
 												<option value="">2022-2025</option>
@@ -176,7 +173,7 @@
 								<div class="form-holder form-holder-2">
 									<fieldset>
 										<legend>Create Username</legend>
-										<input type="text" id="first-name" name="first-name" placeholder="Create Username" required>
+										<input type="text" id="uname" name="uname" placeholder="Create Username" required>
 									</fieldset>
 								</div>
 								</div>
@@ -185,7 +182,7 @@
 								<div class="form-holder form-holder-2">
 									<fieldset>
 										<legend>Your Email</legend>
-										<input type="text" name="your_email" id="your_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="example@email.com" required>
+										<input type="email" name="your_email" id="your_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="example@email.com" required>
 									</fieldset>
 								</div>
 								</div>
@@ -195,7 +192,7 @@
 									<div class="form-holder form-holder-2">
 										<fieldset>
 											<legend>create strong password</legend>
-											<input type="text" name="password" id="password"  placeholder="" required>
+											<input type="text" name="password" id="password"  placeholder="create strong password" required>
 										</fieldset>
 								</div>
 								</div>
@@ -204,12 +201,12 @@
 									<div class="form-holder form-holder-2">
 										<fieldset>
 											<legend>confirm password</legend>
-											<input type="text" name="confirm-psw" id="confirm-psw" placeholder="" required>
+											<input type="text" name="confirm-psw" id="confirm-psw" placeholder="re-enter your password" required>
 										</field>
 									</div>
 								</div>
 
-								<center><button type="submit" class="btn btn-success">Submit</button></center>
+								<button type="submit" class="btn btn-success">Submit</button>
 							</div>
 			            </section>
 		        	</div>

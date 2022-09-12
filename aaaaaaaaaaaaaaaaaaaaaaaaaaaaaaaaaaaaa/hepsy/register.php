@@ -6,7 +6,7 @@ $db="online_examination_with_security";
 $conn=mysqli_connect($h1,$u,$p,$db);
 echo "Connected";
 if($conn==false){
-    die('could not connect:'.mysqli_error());
+    die('could not connect:'.mysqli_connect_error());
 } 
 $firstname=$_POST['firstname'];
 $fname=$_POST['fname'];
