@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset='utf-8'>
@@ -221,15 +221,15 @@
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">&nbsp &nbsp  &nbsp  INSTRUCTOR &nbsp &nbsp  &nbsp</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">&nbsp &nbsp &nbsp  &nbspSTUDENT  &nbsp &nbsp &nbsp  &nbsp </label>
             <div class="login-form">
-                <form action="" method="post" action="">
+                <form method="post" action="http://localhost/online_examination_with_security/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sangeetha/instructorlog.php">
                     <div class="sign-in-htm">
                         <div class="group">
                             <label for="user" class="label">Email</label>
-                            <input id="user" name="email" type="text" class="input">
+                            <input id="user" name="email" type="text" class="input" required>
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Password</label>
-                            <input id="pass" name="pwd" type="password" class="input" data-type="password">
+                            <input id="pass" name="pwd" type="password" class="input" data-type="password" required>
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="Sign In">
