@@ -196,11 +196,13 @@ blue-box-separation-line
 	margin-bottom: 0;
 }
 
-.inner .form-row .form-row-inner {
+.inner .form-row .form-row-inner 
+{
 	position: relative;
 }
 
-.inner .form-row #checkbox {
+.inner .form-row #checkbox 
+{
 	margin: 10px 0 28px 11px;
     font-size: 15px;
     color: #666;
