@@ -1,3 +1,4 @@
+<?php
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
     <style>
         body {
             margin: 0;
-            color:#888dad; /*#FFEECA;  #353333*/
+            color: #6a6f8c;
             background: #c8c8c8;
             font: 600 16px/18px 'Open Sans', sans-serif;
         }
@@ -44,13 +45,12 @@
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
         }
 
-        .login-html
-         {
+        .login-html {
             width: 100%;
             height: 100%;
             position: absolute;
             padding: 90px 70px 50px 70px;
-            background:/*#353333; rgba(40, 57, 101, .9);*/#070a3c;
+            background: rgba(40, 57, 101, .9);
         }
 
         .login-html .sign-in-htm,
@@ -90,7 +90,7 @@
 
         .login-html .sign-in:checked+.tab,
         .login-html .sign-up:checked+.tab {
-            color: rgb(243, 246, 244);
+            color: #fff;
             border-color: #1161ee;
         }
 
@@ -222,15 +222,15 @@
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">&nbsp &nbsp  &nbsp  INSTRUCTOR &nbsp &nbsp  &nbsp</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">&nbsp &nbsp &nbsp  &nbspSTUDENT  &nbsp &nbsp &nbsp  &nbsp </label>
             <div class="login-form">
-                <form action="" method="post" action="">
+                <form method="post" action="http://localhost/online_examination_with_security/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sangeetha/instructorlog.php">
                     <div class="sign-in-htm">
                         <div class="group">
                             <label for="user" class="label">Email</label>
-                            <input id="user" name="email" type="text" class="input">
+                            <input id="user" name="email" type="text" class="input" required>
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Password</label>
-                            <input id="pass" name="pwd" type="password" class="input" data-type="password">
+                            <input id="pass" name="pwd" type="password" class="input" data-type="password" required>
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="Sign In">
@@ -267,3 +267,4 @@
     </div>
 </body>
 </html>
+?>

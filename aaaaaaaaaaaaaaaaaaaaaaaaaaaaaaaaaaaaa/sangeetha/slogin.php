@@ -1,14 +1,19 @@
-<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
     <style>
         body {
             margin: 0;
-            color:#888dad; /*#FFEECA;  #353333*/
+            color: #6a6f8c;
             background: #c8c8c8;
             font: 600 16px/18px 'Open Sans', sans-serif;
         }
@@ -44,13 +49,12 @@
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
         }
 
-        .login-html
-         {
+        .login-html {
             width: 100%;
             height: 100%;
             position: absolute;
             padding: 90px 70px 50px 70px;
-            background:/*#353333; rgba(40, 57, 101, .9);*/#070a3c;
+            background: rgba(40, 57, 101, .9);
         }
 
         .login-html .sign-in-htm,
@@ -90,7 +94,7 @@
 
         .login-html .sign-in:checked+.tab,
         .login-html .sign-up:checked+.tab {
-            color: rgb(243, 246, 244);
+            color: #fff;
             border-color: #1161ee;
         }
 
@@ -222,15 +226,15 @@
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">&nbsp &nbsp  &nbsp  INSTRUCTOR &nbsp &nbsp  &nbsp</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">&nbsp &nbsp &nbsp  &nbspSTUDENT  &nbsp &nbsp &nbsp  &nbsp </label>
             <div class="login-form">
-                <form action="" method="post" action="">
+                <form method="post" action="http://localhost/online_examination_with_security/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sangeetha/instructorlog.php">
                     <div class="sign-in-htm">
                         <div class="group">
                             <label for="user" class="label">Email</label>
-                            <input id="user" name="email" type="text" class="input">
+                            <input id="user" name="email" type="text" class="input" required>
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Password</label>
-                            <input id="pass" name="pwd" type="password" class="input" data-type="password">
+                            <input id="pass" name="pwd" type="password" class="input" data-type="password" required>
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="Sign In">
