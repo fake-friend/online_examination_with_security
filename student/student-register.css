@@ -1,6 +1,6 @@
 body {
 	margin:  0;
-	background-color: #FDF7FF;
+    background-color:#FFEECA;
 }
 .page-content {
 	width: 100%;
@@ -10,7 +10,7 @@ body {
 	align-items: center;
 	}
 .form-v1-content   {
-	background: #fff;
+	background: white;
 	width: 820px;
 	box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
 	border-radius: 10px;
@@ -23,13 +23,14 @@ body {
     display: block;
     width: 100%;
 	overflow: hidden;
-    background: #3e4061;
+    background: rgb(53, 51, 51);
     border-radius: 10px;
 }
 .form-register .steps {
     float: left;
     width: 280px;
     background: #3e4061;
+    background: rgb(53, 51, 51);
 }
 .form-register .steps ul {
     list-style: none;
@@ -65,7 +66,7 @@ blue-box-separation-line
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #ccc;
+    background:#ffffff;
     position: relative;
     outline: none;
     color: #333;
@@ -84,11 +85,11 @@ blue-box-separation-line
 .form-register .steps li.done a:active .step-icon 
 {
     background: #4fab40;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
 }
 .form-register .steps li a .step-text {
-    color: #ccc;
+    color: #fdfdfd;
     font-weight: 600;
     font-size: 15px;
     padding: 25px 0 8px;
@@ -103,7 +104,7 @@ blue-box-separation-line
     box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
     float: right;
     width: 540px;
-    background: #fff;
+    background: #ffffff;
 }
 .form-register .content h2 {
 	display: none;
@@ -178,7 +179,7 @@ blue-box-separation-line
     font-weight: 400;
 }
 .inner .form-row .form-holder fieldset {
-	border:  2px solid #e5e5e5;
+	border:  2px solid #727070;
 	border-radius: 4px;
     padding: 0px 50px 10px 30px;
 }
@@ -211,7 +212,7 @@ blue-box-separation-line
     cursor: pointer;
 }
 .inner .form-row .form-holder .input-border {
-	border:  2px solid #e5e5e5;
+	border:  2px solid #ffffff;
 	padding: 11px 10px;
     margin-top: 8px;
 }
@@ -226,7 +227,7 @@ blue-box-separation-line
 .actions {
 	float: right;
     width: 540px;
-    background: #fff;
+    background: #fdfdfd;
 }
 .actions ul {
     list-style: none;
@@ -257,7 +258,7 @@ blue-box-separation-line
 	background: #36782c;
 }
 .actions ul li a {
-	color: #fff;
+	color: #FFEECA;
 	text-decoration: none;
     padding: 13px 19px;
 }
