@@ -22,9 +22,17 @@ $batch=$_POST['batch'];
 $uname=$_POST['uname'];
 $your_email=$_POST['your_email'];
 $confirm_psw=$_POST['confirm-psw'];
-$v1="INSERT INTO student(student_name,dob,phonenumber,favqus,department,roll_number,batch,shift,username,gmail,pass_word) 
-VALUES('$sname','$dob','$phone','$favques','$gender','$rno','$shift',$dept','$batch','$uname','$your_email','$confirm_psw')";
-mysqli_query($conn,$v1);
+$v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,department,roll_number,batch,shift,username,gmail,pass_word) 
+VALUES('$sname','$dob','$phone','$favques','$gender','$dept','$rno','$batch','$shift','$uname','$your_email','$confirm_psw')";
+if(mysqli_query($conn,$v))
+{
+     echo 'All Your Details Are Saved!.<br>';
+}
+else
+{
+     echo "error".$v."sql error". mysqli_error($conn);
+}
 echo "inserted"; 
 mysqli_close($conn);
 ?>
+
