@@ -12,9 +12,12 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+   
     <!--cdn link for no copy paste for the website-->
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../no-tab-no-cp.js"></script>
+    
     <style>
         body
         {
@@ -45,6 +48,14 @@
         {
           border-radius: 20px;
         }
+        i 
+        {
+          position: absolute;
+          min-width: 40px;
+          margin-top: -28px;
+          margin-left: 285px;
+          cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -69,13 +80,10 @@
             <div class="form-group">
               <label for="pwd">Password:</label>
               <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required>
+              <i class="far fa-eye" id="togglePassword" onclick="eye()"></i>
+              <span id="text2"></span>
               <div class="valid-feedback">Valid.</div>
               <div class="invalid-feedback">Please fill out this Password field.</div>
-            </div>
-            <div class="form-group">
-                <div class="showpassword">
-                    <input type="checkbox" name="show" onclick="showss()" id="show">&nbsp;&nbsp;show password
-                </div>
             </div>
             <div class="form-group">
               <div class="capt">
@@ -111,18 +119,19 @@
           }, false);
         })();
         
-        function showss()
+        function eye()
         {
-          var s=document.getElementById("pwd");
-          if(s.type === "password")
-          {
-            s.type="text";
-          }
-          else
-          {
-            s.type="password";
-          }
+          const togglePassword = document.querySelector('#togglePassword');
+          const password = document.querySelector('#pwd');
+      
+          togglePassword.addEventListener('click', function (e) {
+          // toggle the type attribute
+          const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+          password.setAttribute('type', type);
+          // toggle the eye slash icon
+          this.classList.toggle('fa-eye-slash');
+          });
         }
-        </script>
+    </script>
 </body>
 </html>
