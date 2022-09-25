@@ -9,18 +9,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
         body {
             margin: 0;
-            color: #6a6f8c;
+            color:#888dad; /*#FFEECA;  #353333*/
             background: #c8c8c8;
             font: 600 16px/18px 'Open Sans', sans-serif;
         }
@@ -61,7 +57,7 @@
             height: 100%;
             position: absolute;
             padding: 90px 70px 50px 70px;
-            background: rgba(40, 57, 101, .9);
+            background:/*#353333; rgba(40, 57, 101, .9);*/#070a3c;
         }
 
         .login-html .sign-in-htm,
@@ -101,7 +97,7 @@
 
         .login-html .sign-in:checked+.tab,
         .login-html .sign-up:checked+.tab {
-            color: #fff;
+            color: rgb(243, 246, 244);
             border-color: #1161ee;
         }
 
@@ -215,6 +211,14 @@
         input[type="submit"] {
             cursor: pointer;
         }
+        i 
+        {
+          position: absolute;
+          min-width: 40px;
+          margin-top: -28px;
+          margin-left: 285px;
+          cursor: pointer;
+        }
     </style>
      <script>
         $(document).ready(function(){
@@ -244,10 +248,14 @@
                             <label for="user" class="label">Email</label>
                             <input id="user" name="email" type="text" class="input" required>
                         </div>
+
                         <div class="group">
                             <label for="pass" class="label">Password</label>
-                            <input id="pass" name="pwd" type="password" class="input" data-type="password" required>
+                            <input id="pass" name="pwd" type="password" class="input" autocomplete="current-password" required>
+                            <i class="far fa-eye" id="togglePassword" onclick="eye()"></i>
+                            <span id="text2"></span>
                         </div>
+
                         <div class="group">
                             <input type="submit" class="button" value="Sign In">
                         </div>
@@ -258,6 +266,21 @@
                         </div>
                     </div>
                 </form>
+                <script>
+                function eye()
+                {
+                   const togglePassword = document.querySelector('#togglePassword');
+                   const password = document.querySelector('#pass');
+      
+                   togglePassword.addEventListener('click', function (e) {
+                   // toggle the type attribute
+                   const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                   password.setAttribute('type', type);
+                  // toggle the eye slash icon
+                  this.classList.toggle('fa-eye-slash');
+                  });
+                }
+                </script>
                 <form action="" method="post">
                     <div class="sign-up-htm">
                         <div class="group">
