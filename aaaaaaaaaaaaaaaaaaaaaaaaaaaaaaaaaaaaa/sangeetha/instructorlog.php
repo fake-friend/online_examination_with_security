@@ -26,7 +26,7 @@ if($connection)
                     }
                     else
                     {
-                        //header("location:slogin.html?message=you cannot login into multiple devices at a time!!!");
+                        header("location:slogin.php?message=you cannot login into multiple devices at a time!!!");
                     }
                 }
                 else
