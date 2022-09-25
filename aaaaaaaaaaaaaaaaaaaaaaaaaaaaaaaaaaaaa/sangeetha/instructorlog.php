@@ -31,12 +31,12 @@ if($connection)
                 }
                 else
                 {
-                    header("location:slogin.html?message=please check your email id or password");
+                    header("location:slogin.php?message=please check your email id or password");
                 }
             }
             else
             {
-                header("location:slogin.html?message=please check your email id or password");
+                header("location:slogin.php?message=please check your email id or password");
             }  
         }
         
