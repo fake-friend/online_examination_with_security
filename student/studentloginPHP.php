@@ -1,11 +1,11 @@
 <?php 
-include('dbconnection.php');
+include('../dbconfig.php');
 if(isset($_POST['uname']))
 {
 $username=$_POST['uname'];
 $pw=$_POST['pw'];
 $sql="SELECT * FROM student WHERE username='".$username."' AND pass_word='".$pw."' limit 1";
-$result=mysqli_query($conn,$sql);
+$result=mysqli_query($connection,$sql);
 $row=mysqli_fetch_array($result);
 if(mysqli_num_rows($result)==1 && is_array($row))
 {  
