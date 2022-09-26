@@ -5,15 +5,20 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
         body {
             margin: 0;
-            color: #6a6f8c;
+            color:#888dad; /*#FFEECA;  #353333*/
             background: #c8c8c8;
             font: 600 16px/18px 'Open Sans', sans-serif;
         }
@@ -47,6 +52,7 @@
             position: relative;
             /*background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;*/
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+            margin-top: 30px;
         }
 
         .login-html {
@@ -54,7 +60,7 @@
             height: 100%;
             position: absolute;
             padding: 90px 70px 50px 70px;
-            background: rgba(40, 57, 101, .9);
+            background:/*#353333; rgba(40, 57, 101, .9);*/#070a3c;
         }
 
         .login-html .sign-in-htm,
@@ -94,7 +100,7 @@
 
         .login-html .sign-in:checked+.tab,
         .login-html .sign-up:checked+.tab {
-            color: #fff;
+            color: rgb(243, 246, 244);
             border-color: #1161ee;
         }
 
@@ -208,34 +214,49 @@
         input[type="submit"] {
             cursor: pointer;
         }
+        i 
+        {
+          position: absolute;
+          min-width: 40px;
+          margin-top: -28px;
+          margin-left: 415px;
+          cursor: pointer;
+        }
     </style>
+    
 </head>
 
 <body>
-    <?php 
-    if(isset($_GET['message']))
-    {
-      echo ' <div class="alert alert-warning" id="error" role="alert"><center>';
-      echo($_GET["message"]);
-      echo '</center></div>';
-    } 
-    ?>
+
+        <?php 
+            if(isset($_GET['message']))
+            {
+              echo '<div class="alert alert-warning alert-dismissible fade show" role="alert"><center>';
+              echo($_GET["message"]);
+              echo '</center><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+            } 
+        ?>
+
     <div class="login-wrap">
         <div class="login-html">
-            <h1 style="margin-left:200px;">LOGIN</h1>
+            <center><h1>LOGIN</h1></center>
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">&nbsp &nbsp  &nbsp  INSTRUCTOR &nbsp &nbsp  &nbsp</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">&nbsp &nbsp &nbsp  &nbspSTUDENT  &nbsp &nbsp &nbsp  &nbsp </label>
             <div class="login-form">
-                <form method="post" action="http://localhost/online_examination_with_security/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/sangeetha/instructorlog.php">
+                <form method="post" action="instructorlog.php">
                     <div class="sign-in-htm">
                         <div class="group">
                             <label for="user" class="label">Email</label>
                             <input id="user" name="email" type="text" class="input" required>
                         </div>
+
                         <div class="group">
                             <label for="pass" class="label">Password</label>
-                            <input id="pass" name="pwd" type="password" class="input" data-type="password" required>
+                            <input id="pass" name="pwd" type="password" class="input" autocomplete="current-password" required>
+                            <i class="far fa-eye" id="togglePassword" onclick="eye()"></i>
+                            <span id="text2"></span>
                         </div>
+
                         <div class="group">
                             <input type="submit" class="button" value="Sign In">
                         </div>
@@ -246,6 +267,21 @@
                         </div>
                     </div>
                 </form>
+                <script>
+                function eye()
+                {
+                   const togglePassword = document.querySelector('#togglePassword');
+                   const password = document.querySelector('#pass');
+      
+                   togglePassword.addEventListener('click', function (e) {
+                   // toggle the type attribute
+                   const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                   password.setAttribute('type', type);
+                  // toggle the eye slash icon
+                  this.classList.toggle('fa-eye-slash');
+                  });
+                }
+                </script>
                 <form action="" method="post">
                     <div class="sign-up-htm">
                         <div class="group">
