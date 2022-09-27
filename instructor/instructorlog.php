@@ -22,21 +22,21 @@ if($connection)
                         $device_query="update instructor set devices='1' where gmail='$email'";
                         mysqli_query($connection,$device_query);
                         mysqli_close($connection);
-                        header("location:instlogin.php");
+                        header("location:index.html");
                     }
                     else
                     {
-                        header("location:slogin.php?message=you cannot login into multiple devices at a time!!!");
+                        header("location:instructorlogin.php?message=you cannot login into multiple devices at a time!!!");
                     }
                 }
                 else
                 {
-                    header("location:slogin.php?message=please check your email id or password");
+                    header("location:instructorlogin.php?message=please check your email id or password");
                 }
             }
             else
             {
-                header("location:slogin.php?message=please check your email id or password");
+                header("location:instructorlogin.php?message=please check your email id or password");
             }  
         }
         
