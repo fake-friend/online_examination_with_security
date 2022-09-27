@@ -22,7 +22,7 @@ if($connection)
                         $device_query="update instructor set devices='1' where gmail='$email'";
                         mysqli_query($connection,$device_query);
                         mysqli_close($connection);
-                        header("location:index.html");
+                        header("location:instructor/index.html");
                     }
                     else
                     {
