@@ -19,7 +19,7 @@ VALUES('$sname','$dob','$phone','$favques','$gender','$dept','$rno','$batch','$s
 if(mysqli_query($connection,$v))
 {
      echo 'All Your Details Are Saved!.<br>';
-    //echo "<script> location.href='http://localhost/online_examination_with_security/student/studentlogin.html'</script>";
+   // echo "<script> location.href='http://localhost/online_examination_with_security/student/studentlogin.html'</script>";
 }
 else
 {
