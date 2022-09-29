@@ -63,7 +63,7 @@ if($_SESSION['name'] && $_SESSION['email'])
                     <a href="" target="frame"><span class="fa fa-user mr-3"></span>Instructor</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-briefcase mr-3"></span>Instructor<br>&nbsp;&nbsp;
+                    <a href="instructor_management.php" target="frame"><span class="fa fa-briefcase mr-3"></span>Instructor<br>&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Management</a>
                 </li>
                 <li>
