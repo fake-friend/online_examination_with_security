@@ -10,6 +10,7 @@
 	<!-- Main Style Css -->
     <link rel="stylesheet" href="instructor_register.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
 </head>
 <body>
 	<div class="page-content">
@@ -84,8 +85,9 @@
 									<div class="form-holder form-holder-2">
 										<fieldset>
 											<legend>One thing do you think of the most each day?</legend>
-                    						<input type="text" id="favques" name="favques" placeholder="your dream!" >
+                    						<input type="text" id="favques" name="favques" placeholder="your dream!" required >
 										</fieldset>
+										
 									</div>
 								</div>
 							</div>
@@ -120,10 +122,15 @@
 			                		<div class="form-holder">
 			                			<fieldset>
 											<legend>Description / Post</legend>
-											<input type="text"  id="rno" name="postdes" placeholder="Description / Post" >
+											<select   id="rno" name="postdes" placeholder="Description / Post" >
+												<option value="description" selected>Description / Post</option>
+												<option value="Head of Department">Head of Department</option>
+												<option value="Assistant Professor">Assistant Professor</option>
+												</select>
 										</fieldset>
 			                		</div>
-
+									
+                                    
 									<div class="form-holder">
 			                			<fieldset>
 											<legend>SF/Aided:</legend>
@@ -132,7 +139,8 @@
 												<option value="Self Financed">Self Financed</option>
 												<option value="Aided">Aided</option>
 										
-											</select></fieldset>
+											</select>
+										</fieldset>
 			                		</div>
 			                	</div>
 
@@ -142,8 +150,8 @@
 											<legend>Gender</legend>
 											<select name="gend" id="batch">
 												<option value="Duration" selected>select Gender</option>
-												<option value="Female">Female</option>
-												<option value="Male">Male</option>
+												<option value="Female">Woman</option>
+												<option value="Male">Man</option>
 											</select>
 										</fieldset>
 			                		</div>
@@ -152,11 +160,11 @@
 			                			<fieldset>
 											<legend>Class</legend>
 											<!--<input type="checkbox" checked id="1st" name="1styear" value="1styear">
-                                            <label for="I Year"> I Year</label>
+                                             I Year
                                             <input type="checkbox" id="2nd" name="2ndyear" value="2ndyear">
-                                            <label for="II Year"> II Year</label>
+                                             II Year
                                             <input type="checkbox" id="3rd" name="3rdyear" value="3rdyear">
-                                            <label for="III Year"> III Year</label>-->
+                                             III Year-->
 
 											<select name="cla" id="class">
 												<option value="class sel" selected>select Class</option>

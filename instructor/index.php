@@ -168,17 +168,17 @@ a:hover, a:focus {
 			<a href="#"><span class="fa fa-home mr-3"></span> Home</a>
 		  </li>
 		  <li>
-			  <a href="#"><span class="fa fa-user mr-3"></span> About</a>
+			  <a href="#"><span class="fa fa-user mr-3"></span> Profile</a>
 		  </li>
 		  <li>
-		  <a href="#"><span class="fa fa-briefcase mr-3"></span> Works</a>
+		  <a href="#"><span class="fa fa-briefcase mr-3"></span> Subjects</a>
 		  </li>
 		  
 		  <li>
-		  <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+		  <a href="#"><span class="fa fa-cogs mr-3"></span> Exam Management</a>
 		  </li>
 		  <li>
-		  <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+		  <a href="#"><span class="fa fa-paper-plane mr-3"></span> Question Paper</a>
 		  </li>
 		</ul>
 
