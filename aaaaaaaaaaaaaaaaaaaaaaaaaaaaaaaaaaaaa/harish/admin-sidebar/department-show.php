@@ -9,7 +9,6 @@
 		
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-		
 <style>
 body{
 	    margin-top:0px;
@@ -33,7 +32,6 @@ body{
     position: relative;
     z-index: 1;
 }
-
 .card[data-background="image"] .title, .card[data-background="image"] .stats, .card[data-background="image"] .category, .card[data-background="image"] .description, .card[data-background="image"] .content, .card[data-background="image"] .card-footer, .card[data-background="image"] small, .card[data-background="image"] .content a, .card[data-background="color"] .title, .card[data-background="color"] .stats, .card[data-background="color"] .category, .card[data-background="color"] .description, .card[data-background="color"] .content, .card[data-background="color"] .card-footer, .card[data-background="color"] small, .card[data-background="color"] .content a {
     color: #FFFFFF;
 }
@@ -86,7 +84,6 @@ h6, .h6 {
 a:hover, a:focus {
     text-decoration: none;
 }
-
 /*======== COLORS ===========*/
 .card[data-color="blue"] {
     background: #b8d8d8;
@@ -94,7 +91,6 @@ a:hover, a:focus {
 .card[data-color="blue"] .description {
     color: #506568;
 }
-
 .card[data-color="green"] {
     background: #d5e5a3;
 }
@@ -104,7 +100,6 @@ a:hover, a:focus {
 .card[data-color="green"] .category {
     color: #92ac56;
 }
-
 .card[data-color="yellow"] {
     background: #ffe28c;
 }
@@ -114,7 +109,6 @@ a:hover, a:focus {
 .card[data-color="yellow"] .category {
     color: #d88715;
 }
-
 .card[data-color="brown"] {
     background: #d6c1ab;
 }
@@ -124,7 +118,6 @@ a:hover, a:focus {
 .card[data-color="brown"] .category {
     color: #a47e65;
 }
-
 .card[data-color="purple"] {
     background: #baa9ba;
 }
@@ -146,29 +139,43 @@ a:hover, a:focus {
 </style>
 </head>
 <body> 
-    
-<!-- Page Content  -->
 <div id="content" class="p-4 p-md-5 pt-5">
 <div class="grey-bg container-fluid">
     <section id="minimal-statistics">
       <div class="container bootstrap snippets bootdeys">
         <div class="row">
-
+<?php 
+$connection=mysqli_connect("localhost",'root','','online_examination_with_security');
+if($connection)
+{
+    $query='select * from departments';
+    $result=mysqli_query($connection,$query);
+    while($row=mysqli_fetch_array($result))
+    {
+?>
             <div class="col-md-4 col-sm-6 content-card">
                 <div class="card-big-shadow">
                     <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
                         <div class="content">
                             <h6 class="category">Best cards</h6>
-                            <h4 class="title"><a href="#">Blue Card</a></h4>
+                            <h4 class="title"><a href="#"><?php echo($row[0]); ?></a></h4>
                             <p class="description">What moment. </p>
                         </div>
                     </div> <!-- end card -->
                 </div>
-            </div>
-
+            </div>     
+<?php
+    }
+}
+else
+{
+    die('something went wrong'.mysqli_connect_error());
+}
+?>
+                    </div>
+                </div>
+            </section>
         </div>
-      </div>
     </div>
-</div>
-  </body>
+</body>
 </html>

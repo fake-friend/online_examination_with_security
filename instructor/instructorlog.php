@@ -8,7 +8,7 @@ if($connection)
             $email=$_POST['email'];
             $password=$_POST['pwd'];
         
-            $query='SELECT instructor_name, passwords, devices from instructor where gmail='.'"'.$email.'"';
+            $query='SELECT instructor_name, password, devices from instructor where gmail='.'"'.$email.'"';
             $result=mysqli_query($connection,$query);
             if(mysqli_num_rows($result)>0)
             {
@@ -22,7 +22,7 @@ if($connection)
                         $device_query="update instructor set devices='0' where gmail='$email'";
                         mysqli_query($connection,$device_query);
                         mysqli_close($connection);
-                        header("location:index.php");
+                        header("location:instructor_sidebar/index.php");
                     }
                     else
                     {
