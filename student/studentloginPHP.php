@@ -16,7 +16,7 @@ if(mysqli_num_rows($result)==1 && is_array($row))
 }
 else
 {
-	echo "<script>alert('oooooooooooooooooooooo ---login unsucessful :( Sign up if you are a new user!!');</script>";
+	echo "<script>alert('ooppssss-----login unsucessful :( Sign up if you are a new user!!');</script>";
     exit();
 }
 }
