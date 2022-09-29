@@ -1,7 +1,7 @@
 <?php
 session_start();
-$instructorname=$_SESSION['instructor_name'];
-$instructormail=$_SESSION['gmail'];
+$name=$_SESSION['instructor_name'];
+$maill=$_SESSION['gmail'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -161,7 +161,7 @@ a:hover, a:focus {
 	        </button>
         </div>
 		<div class="p-4">
-			<h1><a href="index.html" class="logo"> <?php echo $instructorname; ?> <span>Portfolio Agency</span></a></h1>
+			<h1><a href="index.html" class="logo"> <?php echo $_SESSION['name'] ?> <span><?php echo $_SESSION['maill'] ?></span></a></h1>
 		<ul class="list-unstyled components mb-5">
 		  <li class="active">
 			<a href="#"><span class="fa fa-home mr-3"></span> Home</a>
