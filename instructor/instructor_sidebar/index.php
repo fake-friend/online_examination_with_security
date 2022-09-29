@@ -161,7 +161,7 @@ a:hover, a:focus {
 	        </button>
         </div>
 		<div class="p-4">
-			<h1><a href="index.html" class="logo"> $_SESSION['instructor_name']  <span>Portfolio Agency</span></a></h1>
+			<h1><a href="index.html" class="logo"> <?php echo $instructorname; ?> <span>Portfolio Agency</span></a></h1>
 		<ul class="list-unstyled components mb-5">
 		  <li class="active">
 			<a href="#"><span class="fa fa-home mr-3"></span> Home</a>
