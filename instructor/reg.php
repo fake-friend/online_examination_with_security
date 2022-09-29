@@ -35,7 +35,7 @@ else
 }
 if(isset($_POST['submit']))
      {
-        $allow=array("jpg"=>"image/jpeg");
+        $allow=array("jpg"=>"image/jpeg","png"=>"image/png");
         $name=$_FILES["file1"]["name"];
         $type=$_FILES["file1"]["type"];
         $ext=pathinfo($name,PATHINFO_EXTENSION);
@@ -61,7 +61,3 @@ if(isset($_POST['submit']))
 
 mysqli_close($conn);
 ?>
-
-
-
-
