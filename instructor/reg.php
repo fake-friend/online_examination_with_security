@@ -60,6 +60,10 @@ if(isset($_POST['submit']))
         }
     }
 mysqli_close($conn);
+<<<<<<< HEAD
 ?>
 
 
+=======
+?>
+>>>>>>> 8b1c6304a1fccbeb76888ef442b72c3b3a282e6a

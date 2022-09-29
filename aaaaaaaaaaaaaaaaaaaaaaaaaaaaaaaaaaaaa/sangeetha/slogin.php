@@ -286,11 +286,13 @@
                     <div class="sign-up-htm">
                         <div class="group">
                             <label for="user" class="label">Username</label>
-                            <input id="user" type="text" name="uname" class="input">
+                            <input id="user" type="text" name="uname" class="input" required>
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" class="input" name="passw" data-type="password">
+                            <input id="pass" type="password" class="input" name="passw" data-type="password" required>
+                            <i class="far fa-eye" id="togglePassword" onclick="eye()"></i>
+                            <span id="text2"></span>
                         </div>
                         <div class="group">
                             <input type="submit" name="submit" class="button" value="Sign In">

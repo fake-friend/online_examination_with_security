@@ -16,6 +16,10 @@ if($_SESSION['name'] && $_SESSION['email'])
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <!--cdn link for no copy paste for the website-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../no-tab-no-cp.js"></script>
+
     <style>
         nav
         {
@@ -24,7 +28,7 @@ if($_SESSION['name'] && $_SESSION['email'])
         iframe
         {
             position: absolute;
-            margin-top: -580px;
+            margin-top: -620px;
             margin-left: 300px;
         }
         .frame1
@@ -32,19 +36,11 @@ if($_SESSION['name'] && $_SESSION['email'])
             margin-left: 40px;
             width: 1300px;
         }
-        .login-details
-        {
-            position: absolute;
-            top: 0;
-            font-size: 15px;
-            margin-left: 1200px;
-        }
         .logout
         {
             cursor: pointer;
             position: absolute;
-            margin-left: -100px;
-            margin-top: -60px;
+            margin-left: 60px;
         }
     </style>
 </head>
@@ -58,22 +54,31 @@ if($_SESSION['name'] && $_SESSION['email'])
         </div>
 
         <div class="p-4">
-            <h1><a href="index.html" class="logo">Portfolic <span>Portfolio Agency</span></a></h1>
+            <h1><a class="logo"><?php echo $username;?> <span><?php echo $email ?></span></a></h1>
             <ul class="list-unstyled components mb-5">
                 <li class="active">
-                    <a href="css/style.css" target="frame"><span class="fa fa-home mr-3"></span> Home</a>
+                    <a href="css/style.css" target="frame"><span class="fa fa-home mr-3"></span> Departments</a>
                 </li>
                 <li>
-                    <a href="css/bootstrap.min.css" target="frame"><span class="fa fa-user mr-3"></span> About</a>
+                    <a href="" target="frame"><span class="fa fa-user mr-3"></span>Instructor</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-briefcase mr-3"></span> Works</a>
+                    <a href="#"><span class="fa fa-briefcase mr-3"></span>Instructor<br>&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Management</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+                    <a href="#"><span class="fa fa-cogs mr-3"></span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+                    <a href="#"><span class="fa fa-paper-plane mr-3"></span></a>
+                </li>
+                <br><br>
+                <li>
+                    <div class="logout">
+                        <form action="logout.php" method="post">
+                            <button type="submit" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-log-out"></span> Log out</button>
+                        </form>
+                    </div>
                 </li>
             </ul>
 
@@ -84,17 +89,8 @@ if($_SESSION['name'] && $_SESSION['email'])
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
-   
-    <div class="login-details">
-        <p><?php echo $username;?><br><?php echo $email ?></p>
-        <div class="logout">
-            <form action="logout.php" method="post">
-                <button type="submit" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-log-out"></span> Log out</button>
-            </form>
-        </div>
-    </div>
 
-    <iframe src="css/style.css" id="frame" name="frame" frameborder="0" width="1035" height="570">
+    <iframe src="" id="frame" name="frame" frameborder="0" width="1040" height="600">
     </iframe>
 
     <script>
