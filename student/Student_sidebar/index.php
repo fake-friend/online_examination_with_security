@@ -193,12 +193,13 @@ a:hover, a:focus {
     	</nav>
 
         <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5 pt-5">
-        <h2 class="mb-4">Sidebar #05</h2>
+<div id="content" class="p-4 p-md-5 pt-5">
+<h2 class="mb-4">Sidebar #05</h2>
 <div class="grey-bg container-fluid">
     <section id="minimal-statistics">
       <div class="container bootstrap snippets bootdeys">
         <div class="row">
+
             <div class="col-md-4 col-sm-6 content-card">
                 <div class="card-big-shadow">
                     <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">

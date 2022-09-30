@@ -57,13 +57,13 @@ if($_SESSION['name'] && $_SESSION['email'])
             <h1><a class="logo"><?php echo $username;?> <span><?php echo $email ?></span></a></h1>
             <ul class="list-unstyled components mb-5">
                 <li class="active">
-                    <a href="css/style.css" target="frame"><span class="fa fa-home mr-3"></span> Departments</a>
+                    <a href="department-show.php" target="frame"><span class="fa fa-home mr-3"></span> Departments</a>
                 </li>
                 <li>
                     <a href="" target="frame"><span class="fa fa-user mr-3"></span>Instructor</a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa fa-briefcase mr-3"></span>Instructor<br>&nbsp;&nbsp;
+                    <a href="instructor_management.php" target="frame"><span class="fa fa-briefcase mr-3"></span>Instructor<br>&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Management</a>
                 </li>
                 <li>
