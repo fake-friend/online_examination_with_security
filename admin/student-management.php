@@ -14,11 +14,12 @@
     <table class="table align-middle mb-0 bg-white table-hover">
         <thead class="bg-light">
           <tr>
-            <th>Instructor ID</th>
-            <th>Instructor Name</th>
-            <th>Instructor Photo</th>
+            <th>Serial Number</th>
+            <th>Student RollNumber</th>
+            <th>Student Name</th>
+            <th>Student Photo</th>
             <th>Department</th>
-            <th>Post</th>
+            <th>Batch</th>
             <th>Self / Aided</th>
             <th>Username</th>
             <th>Gmail</th>
@@ -33,67 +34,72 @@
             include_once('../dbconfig.php');
             if($connection)
             {
-                $query='select * from instructor';
+                $count=1;
+                $query='select * from student';
                 $result=mysqli_query($connection,$query);
                 while($row=mysqli_fetch_array($result))
                 {
-                    $file='http://localhost/online_examination_with_security/instructor/upload/'.$row[5];
+                    $file='http://localhost/online_examination_with_security/student/upload/'.$row[4];
         ?>
           <tr>
-            
+            <!--serial number-->
+            <td>
+                <?php echo($count); ?>
+            </td>
+            <!--student roll number-->
+            <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo($row[9]); ?></p>
+                </div>
+            </td>
+            <!--student name-->
             <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo($row[1]); ?></p>
                 </div>
             </td>
-            
-            <td>
-                <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo($row[2]); ?></p>
-                </div>
-            </td>
-
+            <!--student photo-->    
             <td>
               <div class="d-flex align-items-center">
                 <img
                     src="<?php echo($file); ?>"
                     alt=""
-                    style="width: 75px; height: 75px; object-fit: cover;"
+                    style="width: 75px; height: 75px; object-fit: fill;"
                     class="rounded-circle"
                     />
               </div>
             </td>
-
+            <!--department-->
             <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo($row[7]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo($row[8]); ?></p>
                 </div>
             </td>
-            
+            <!--batch-->
             <td>
                 <div class="ms-3">
-                  <p class="text-muted mb-0"><?php echo($row[8]); ?></p>
+                  <p class="text-muted mb-0"><?php echo($row[10]); ?></p>
                 </div>
             </td>
-
+            <!--self / aided-->        
             <td>
-              <p class="fw-normal mb-1"><?php echo($row[9]); ?></p>
+              <p class="fw-normal mb-1"><?php echo($row[12]); ?></p>
             </td>
-
-            <td>
-              <p class="text-muted mb-0"><?php echo($row[12]); ?></p>
-            </td>
-
+            <!--username-->        
             <td>
               <p class="text-muted mb-0"><?php echo($row[13]); ?></p>
             </td>
-
+            <!--gmail-->        
             <td>
-              <p class="text-muted mb-0"><?php echo($row[4]); ?></p>
+              <p class="text-muted mb-0"><?php echo($row[14]); ?></p>
+            </td>
+            <!--phone number-->        
+            <td>
+              <p class="text-muted mb-0"><?php echo($row[3]); ?></p>
             </td>
         
         <?php
-        if($row[16]==1)
+        if($row[17]==1)
         {
         ?>
             <td>
@@ -111,16 +117,21 @@
         }
         ?>
 
-            <td>Senior</td>
+            <td>
+              <form action="" method="post">
+                <button type="submit" class="btn btn-sm btn-info">Info</button>
+              </form>
+            </td>
 
             <td>
-              <button type="button" class="btn btn-link btn-sm btn-rounded">
-                Edit
-              </button>
+              <form action="" method="post">
+                <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+              </form>
             </td>
 
           </tr>
         <?php
+            $count=$count+1;
                 }      
             }
             else
