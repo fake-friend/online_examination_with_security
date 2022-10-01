@@ -1,4 +1,13 @@
-<?php  
+<?php 
+echo "<style>  
+img
+{
+width:55%;
+height:120px;
+border-radius:50%;
+margin-left:25px;
+}
+</style>"; 
     if(isset($_SESSION['uname']))
     {
     include('../../dbconfig.php');
@@ -7,7 +16,7 @@
     while($row=mysqli_fetch_array($result))
     {
        $file="http://localhost/online_examination_with_security/student/upload/".$row[4];
-       echo "<img src=".$file.">"."<br>";
+       echo "<img src=".$file.">";
        //echo "<h1>".$row[1]."</h1>"; 
     }
     echo "<br>"."<span id='uname'>".$_SESSION['uname']."</span>";

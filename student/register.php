@@ -6,16 +6,18 @@ $dob=$_POST['dob'];
 $phone=$_POST['phone'];
 $favques=$_POST['favques'];
 $gender=$_POST['gender'];
+$place=$_POST['place'];
 $rno=$_POST['rno'];
 $shift=$_POST['shift'];
 $file=$_FILES['file']['name'];
 $dept=$_POST['dept'];
 $batch=$_POST['batch'];
+$subject=$_POST['subject'];
 $uname=$_POST['uname'];
 $your_email=$_POST['your_email'];
 $confirm_psw=$_POST['confirm-psw'];
-$v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,department,roll_number,batch,shift,upload,username,gmail,pass_word) 
-VALUES('$sname','$dob','$phone','$favques','$gender','$dept','$rno','$batch','$shift','$file','$uname','$your_email','$confirm_psw')";
+$v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,favplace,department,roll_number,batch,favsubject,shift,upload,username,gmail,pass_word) 
+VALUES('$sname','$dob','$phone','$favques','$gender','$place','$dept','$rno','$batch','$subject','$shift','$file','$uname','$your_email','$confirm_psw')";
 if(mysqli_query($connection,$v))
 {
      //echo 'All Your Details Are Saved!.<br>';

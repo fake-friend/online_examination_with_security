@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2022 at 06:42 PM
+-- Generation Time: Oct 01, 2022 at 06:14 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -31,13 +31,15 @@ CREATE TABLE `student` (
   `id` int(100) NOT NULL,
   `student_name` varchar(100) NOT NULL,
   `dob` date NOT NULL,
-  `phonenumber` int(10) NOT NULL,
-  `file_image` int(11) NOT NULL,
+  `phonenumber` varchar(10) NOT NULL,
+  `upload` varchar(50) NOT NULL,
   `favqus` varchar(500) NOT NULL,
   `gender` varchar(10) NOT NULL,
+  `favplace` varchar(50) NOT NULL,
   `department` varchar(100) NOT NULL,
   `roll_number` varchar(10) NOT NULL,
   `batch` varchar(50) NOT NULL,
+  `favsubject` varchar(100) NOT NULL,
   `shift` varchar(50) NOT NULL,
   `username` varchar(100) NOT NULL,
   `gmail` varchar(100) NOT NULL,
@@ -50,10 +52,10 @@ CREATE TABLE `student` (
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`id`, `student_name`, `dob`, `phonenumber`, `file_image`, `favqus`, `gender`, `department`, `roll_number`, `batch`, `shift`, `username`, `gmail`, `pass_word`, `created_at`, `devices`) VALUES
-(1, 'joannah   ', '2000-12-13', 2147483647, 0, 'happiness  ', 'Female', 'tam', '20SUCA35 ', '', 'Self Financed', 'Joannah ', 'joannah12345@gmail.com', 'joannah', '2022-09-13 12:46:11', 0),
-(2, 'joannah  ', '2020-12-10', 2147483647, 0, 'happiness  ', 'Female', 'tam', '20SUCA35 ', '', 'Self Financed', 'Joannah ', 'joannah12345@gmail.com', 'joannah ', '2022-09-13 12:49:42', 0),
-(3, 'joannah  ', '2020-12-10', 2147483647, 0, 'happiness  ', 'Female', 'tam', '20SUCA35 ', '', 'Self Financed', 'Joannah ', 'joannah12345@gmail.com', 'joannah ', '2022-09-13 13:29:36', 0);
+INSERT INTO `student` (`id`, `student_name`, `dob`, `phonenumber`, `upload`, `favqus`, `gender`, `favplace`, `department`, `roll_number`, `batch`, `favsubject`, `shift`, `username`, `gmail`, `pass_word`, `created_at`, `devices`) VALUES
+(1, 'SriHarish kumar M', '2003-02-10', '9342321825', 'harish.png', 'happiness ', 'Male', 'nothing', 'CA/IT', '20SUCA24', '2020-2023', 'programming in java', 'Self Financed', 'Harish', 'harish@gmail.com', 'harish10', '2022-09-30 07:44:19', 0),
+(2, 'Hepsy Joannah A', '2002-10-13', '9944478105', 'flower.jpg', 'prooject', 'Female', 'kerala', 'CA/IT', '20SUCA35', '2020-2023', 'Maths', 'Self Financed', 'Joannah ', 'joannah@gmail.com', 'joannah', '2022-10-01 04:04:36', 0),
+(3, 'Sangeetha S', '2003-03-03', '987654321', 'sangeetha.png', 'zoho', 'Female', 'chennai', 'CA/IT', '20SUCA42', '2020-2023', 'java coding', 'Self Financed', 'sangeetha', 'sangeetha@gmail.com', 'sangeeth', '2022-10-01 04:08:58', 0);
 
 --
 -- Indexes for dumped tables
