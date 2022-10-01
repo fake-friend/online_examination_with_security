@@ -30,10 +30,11 @@ label.radio input {
 }
 
 label.radio span {
-  padding: 10px 10px;
+  padding: 4px 0px;
   border: 1px solid red;
   display: inline-block;
   color: red;
+  width: 100px;
   text-align: center;
   border-radius: 3px;
   margin-top: 7px;
@@ -62,56 +63,35 @@ label.radio input:checked + span {
 </style>
 </head>
 <body>
-
-    <form action="result.php" method="post">
-        <?php
-            $con=mysqli_connect('localhost','root','','quiz_test');
-            $i=1;
-            if($con)
-            {
-                $show='select * from test1';
-                $result=mysqli_query($con,$show);
-                while($row=mysqli_fetch_array($result))
-                {
-        ?>
-        <div class="container mt-5">
+    <div class="container mt-5">
         <div class="d-flex justify-content-center row">
             <div class="col-md-10 col-lg-10">
                 <div class="border">
                     <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                            <h4>MCQ Quiz</h4><span>(5 of 20)</span></div>
+                    </div>
+                    <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row align-items-center question-title">
-                            <h3 class="text-danger"><?php echo($i); ?></h3>
-                            <h5 class="mt-1 ml-2"><?php echo($row[1]); ?></h5>
+                            <h3 class="text-danger">Q.</h3>
+                            <h5 class="mt-1 ml-2">Which of the following country has largest population?</h5>
                         </div><div class="ans ml-2">
-<label class="radio"> <input type="radio" name="<?php echo($row[0]); ?>" value="<?php echo($row[2]); ?>"> <span><?php echo($row[2]); ?></span>
+<label class="radio"> <input type="radio" name="1" value="brazil"> <span>Brazil</span>
 </label>    
 </div><div class="ans ml-2">
-<label class="radio"> <input type="radio" name="<?php echo($row[0]); ?>" value="<?php echo($row[3]); ?>"> <span><?php echo($row[3]); ?></span>
+<label class="radio"> <input type="radio" name="1" value="Germany"> <span>Germany</span>
 </label>    
 </div><div class="ans ml-2">
-<label class="radio"> <input type="radio" name="<?php echo($row[0]); ?>" value="<?php echo($row[4]); ?>"> <span><?php echo($row[4]); ?></span>
+<label class="radio"> <input type="radio" name="1" value="Indonesia"> <span>Indonesia</span>
 </label>    
 </div><div class="ans ml-2">
-<label class="radio"> <input type="radio" name="<?php echo($row[0]); ?>" value="<?php echo($row[5]); ?>"> <span><?php echo($row[5]); ?></span>
+<label class="radio"> <input type="radio" name="1" value="Russia"> <span>Russia</span>
 </label>    
 </div></div>
+                    <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button class="btn btn-primary d-flex align-items-center btn-danger" type="button"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button><button class="btn btn-primary border-success align-items-center btn-success" type="button">Next<i class="fa fa-angle-right ml-2"></i></button></div>
                 </div>
             </div>
         </div>
     </div>
-
-                    
-        <?php    
-                $i=$i+1;   
-                }
-            }
-        else
-        {
-            die('something happened'.mysqli_connect_error());
-        }
-        ?>
-    <br>
-       <center><input type="submit" class="btn btn-success" value="submit"></center> 
-    </form>
 </body>
 </html>

@@ -25,12 +25,11 @@ if($quizques)
         }
     }
     
-    $inser="insert into tamil(name,rollnumber,year,quiz,mark) value('harish','20suca27','3','test1','$sum')";
+    $inser="insert into tamil(name,rollnumber,year,quiz,mark) value('harish','20suca31','3','test1','$sum')";
     $r=mysqli_query($quizresult,$inser);
     echo ($question1);
     echo ($question2);
     echo ($question3);
     mysqli_close($quizresult);
 }
-
 ?>
