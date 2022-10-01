@@ -15,11 +15,12 @@ margin-left:25px;
     $result=mysqli_query($connection,$sql);
     while($row=mysqli_fetch_array($result))
     {
-       $file="http://localhost/online_examination_with_security/student/upload/".$row[4];
-       echo "<img src=".$file.">";
-       //echo "<h1>".$row[1]."</h1>"; 
+       //$file="http://localhost/online_examination_with_security/student/upload/".$row[4];
+       // echo "<img src=".$file.">";
+        echo "<h1>".$row[1]."</h1>"; 
+        echo "<span>".$row[14]."</span>";
     }
-    echo "<br>"."<span id='uname'>".$_SESSION['uname']."</span>";
+    //echo "<span id='uname'>".$_SESSION['uname']."</span>";
     //echo "<br>"."<span id='mail'>".$_SESSION['email']."</span>"."<br>";
     }
     else

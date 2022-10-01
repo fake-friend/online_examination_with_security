@@ -36,7 +36,6 @@ body{
     position: relative;
     z-index: 1;
 }
-
 .card[data-background="image"] .title, .card[data-background="image"] .stats, .card[data-background="image"] .category, .card[data-background="image"] .description, .card[data-background="image"] .content, .card[data-background="image"] .card-footer, .card[data-background="image"] small, .card[data-background="image"] .content a, .card[data-background="color"] .title, .card[data-background="color"] .stats, .card[data-background="color"] .category, .card[data-background="color"] .description, .card[data-background="color"] .content, .card[data-background="color"] .card-footer, .card[data-background="color"] small, .card[data-background="color"] .content a {
     color: #FFFFFF;
 }
@@ -50,7 +49,6 @@ body{
 .card[data-color="blue"] .category {
     color: #7a9e9f;
 }
-
 .card .category, .card .label {
     font-size: 14px;
     margin-bottom: 0px;
@@ -165,17 +163,19 @@ a:hover, a:focus {
 			<a href="#"><span class="fa fa-home mr-3"></span> Home</a>
 		  </li>
 		  <li>
-			  <a href="#"><span class="fa fa-user mr-3"></span> About</a>
-		  </li>
-		  <li>
-		  <a href="#"><span class="fa fa-briefcase mr-3"></span> Works</a>
+		  <a href="#"><span class="fa fa-briefcase mr-3"></span> Exams</a>
 		  </li>
 		  
 		  <li>
-		  <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+		  <a href="#"><span class="fa fa-cogs mr-3"></span> Results</a>
 		  </li>
+
 		  <li>
 		  <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+		  </li>
+
+          <li>
+			  <a href="#"><span class="fa fa-user mr-3"></span> Staffs</a>
 		  </li>
 		</ul>
 
