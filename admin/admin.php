@@ -60,10 +60,10 @@ if($_SESSION['name'] && $_SESSION['email'])
                     <a href="department-show.php" target="frame"><span class="fa fa-home mr-3"></span> Departments</a>
                 </li>
                 <li>
-                    <a href="instructor_management.php" target="frame"><span class="fa fa-user mr-3"></span>Instructor<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Management</a>
+                    <a href="instructor-management.php" target="frame"><span class="fa fa-user mr-3"></span>Instructor Management</a>
                 </li>
                 <li>
-                    <a href="" target="frame"><span class="fa fa-briefcase mr-3"></span></a>
+                    <a href="student-management.php" target="frame"><span class="fa fa-briefcase mr-3"></span>Student Management</a>
                 </li>
                 <li>
                     <a href="#"><span class="fa fa-cogs mr-3"></span></a>

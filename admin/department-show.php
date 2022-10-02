@@ -34,6 +34,7 @@ body{
 }
 .card[data-background="image"] .title, .card[data-background="image"] .stats, .card[data-background="image"] .category, .card[data-background="image"] .description, .card[data-background="image"] .content, .card[data-background="image"] .card-footer, .card[data-background="image"] small, .card[data-background="image"] .content a, .card[data-background="color"] .title, .card[data-background="color"] .stats, .card[data-background="color"] .category, .card[data-background="color"] .description, .card[data-background="color"] .content, .card[data-background="color"] .card-footer, .card[data-background="color"] small, .card[data-background="color"] .content a {
     color: black;
+    font-size: 17px;
 }
 .card.card-just-text .content {
     padding: 50px 65px;
@@ -75,7 +76,7 @@ h6, .h6 {
     text-transform: uppercase;
 }
 .card .description {
-    font-size: 16px;
+    font-size: 10px;
     color: #66615b;
 }
 .content-card{
@@ -90,51 +91,6 @@ a:hover, a:focus {
 }
 .card[data-color="blue"] .description {
     color: #506568;
-}
-.card[data-color="green"] {
-    background: #d5e5a3;
-}
-.card[data-color="green"] .description {
-    color: #60773d;
-}
-.card[data-color="green"] .category {
-    color: #92ac56;
-}
-.card[data-color="yellow"] {
-    background: #ffe28c;
-}
-.card[data-color="yellow"] .description {
-    color: #b25825;
-}
-.card[data-color="yellow"] .category {
-    color: #d88715;
-}
-.card[data-color="brown"] {
-    background: #d6c1ab;
-}
-.card[data-color="brown"] .description {
-    color: #75442e;
-}
-.card[data-color="brown"] .category {
-    color: #a47e65;
-}
-.card[data-color="purple"] {
-    background: #baa9ba;
-}
-.card[data-color="purple"] .description {
-    color: #3a283d;
-}
-.card[data-color="purple"] .category {
-    color: #5a283d;
-}
-.card[data-color="orange"] {
-    background: #ff8f5e;
-}
-.card[data-color="orange"] .description {
-    color: #772510;
-}
-.card[data-color="orange"] .category {
-    color: #e95e37;
 }
 </style>
 </head>
