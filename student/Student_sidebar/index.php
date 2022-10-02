@@ -12,7 +12,6 @@ session_start();
 		
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/style.css">
-		
 <style>
 body{
 	    margin-top:0px;
@@ -87,7 +86,6 @@ h6, .h6 {
 a:hover, a:focus {
     text-decoration: none;
 }
-
 /*======== COLORS ===========*/
 .card[data-color="blue"] {
     background: #b8d8d8;
