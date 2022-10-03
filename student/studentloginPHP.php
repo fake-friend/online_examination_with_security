@@ -5,7 +5,6 @@ if($connection)
 {
     if($_SERVER["REQUEST_METHOD"]=="POST")
     {
-       
         $email=$_POST['email'];
         $pw=$_POST['pw'];  
         $query='SELECT student_name, pass_word, devices FROM student WHERE gmail='.'"'.$email.'"';

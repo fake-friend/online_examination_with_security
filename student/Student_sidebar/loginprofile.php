@@ -12,7 +12,7 @@ if($_SESSION['student_name'] && $_SESSION['gmail'])
         <title>Document</title>
     </head>
     <body>
-        <form action="http://localhost/student/Student_sidebar/slogout.php">
+        <form action="logout.php">
             <input type="submit" value="logout">
         </form>
     </body>
@@ -21,7 +21,7 @@ if($_SESSION['student_name'] && $_SESSION['gmail'])
 }
 else
 {
-    header("location:studentlogin.php");
-    //echo"<script>alert('ooooooooo');</script>";
+    //header("location:studentlogin.php");
+    echo"<script>alert('ooooooooo');</script>";
 }
 ?>
