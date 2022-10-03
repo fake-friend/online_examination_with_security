@@ -1,33 +1,27 @@
 <?php 
-echo "<style>  
-img
+//session_start();
+if($_SESSION['student_name'] && $_SESSION['gmail'])
 {
-width:55%;
-height:120px;
-border-radius:50%;
-margin-left:25px;
+    echo $_SESSION['student_name']."<br>".$_SESSION['gmail'];?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="http://localhost/student/Student_sidebar/slogout.php">
+            <input type="submit" value="logout">
+        </form>
+    </body>
+    </html>
+<?php 
 }
-</style>"; 
-    if(isset($_SESSION['uname']))
-    {
-    include('../../dbconfig.php');
-    $sql="SELECT * FROM student WHERE username='".$_SESSION['uname']."' limit 1";
-    $result=mysqli_query($connection,$sql);
-    while($row=mysqli_fetch_array($result))
-    {
-       //$file="http://localhost/online_examination_with_security/student/upload/".$row[4];
-       // echo "<img src=".$file.">";
-        echo "<h1>".$row[1]."</h1>"; 
-        echo "<span>".$row[14]."</span>";
-    }
-    //echo "<span id='uname'>".$_SESSION['uname']."</span>";
-    //echo "<br>"."<span id='mail'>".$_SESSION['email']."</span>"."<br>";
-    }
-    else
-    {
-     // header("location:index.php");
-     echo "Errorrrrr!!";
-    }
-    //echo "";
-    //.$row[1]."<br>"  echo "</table>";"<br>".$row[2].$row[3].$row[4].$row[5].$row[6].$row[7].$row[8].$row[9].    
+else
+{
+    header("location:studentlogin.php");
+    //echo"<script>alert('ooooooooo');</script>";
+}
 ?>
