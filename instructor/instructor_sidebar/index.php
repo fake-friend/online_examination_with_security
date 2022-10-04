@@ -2,6 +2,7 @@
 session_start();
 $name=$_SESSION['instructor_name'];
 $maill=$_SESSION['gmail'];
+$instd=$_SESSION['instructor_id']
 ?>
 <!doctype html>
 <html lang="en">
@@ -161,16 +162,16 @@ a:hover, a:focus {
 	        </button>
         </div>
 		<div class="p-4">
-			<h1><a href="index.html" class="logo"> <?php echo $_SESSION['name'] ?> <span><?php echo $_SESSION['maill'] ?></span></a></h1>
+			<h1><a href="index.html" class="logo"> <?php echo $name ?> <span><?php echo $maill ?></span></a></h1>
 		<ul class="list-unstyled components mb-5">
 		  <li class="active">
 			<a href="#"><span class="fa fa-home mr-3"></span> Home</a>
 		  </li>
 		  <li>
-			  <a href="#"><span class="fa fa-user mr-3"></span> About</a>
+			  <a href="../subject.html" target="frame"><span class="fa fa-user mr-3"></span> Subjects</a>
 		  </li>
 		  <li>
-		  <a href="#"><span class="fa fa-briefcase mr-3"></span> Works</a>
+		  <a href="#"><span class="fa fa-briefcase mr-3"></span> Exam Management</a>
 		  </li>
 		  
 		  <li>
@@ -183,24 +184,25 @@ a:hover, a:focus {
 
 	        <div class="mb-5">
 						<h3 class="h6 mb-3">Subscribe for newsletter</h3>
-						<form action="#" class="subscribe-form">
+						
 	            <div class="form-group d-flex">
-	            	<div class="icon"><span class="icon-paper-plane"></span></div>
-	              <input type="text" class="form-control" placeholder="Enter Email Address">
-	            </div>
-	          </form>
+	            	<form action="../logout.php" method="post">
+                        <input type="submit" value="logout">
+                   </form>
+	          
 			</div>
 	      </div>
+</div>
     	</nav>
 
         <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5 pt-5">
+     <!-- <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">Sidebar #05</h2>
 <div class="grey-bg container-fluid">
     <section id="minimal-statistics">
       <div class="container bootstrap snippets bootdeys">
         <div class="row">
-            <div class="col-md-4 col-sm-6 content-card">
+           <div class="col-md-4 col-sm-6 content-card">
                 <div class="card-big-shadow">
                     <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
                         <div class="content">
@@ -208,7 +210,7 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Blue Card</a></h4>
                             <p class="description">What moment. </p>
                         </div>
-                    </div> <!-- end card -->
+                    </div> 
                 </div>
             </div>
             
@@ -220,7 +222,7 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Green Card</a></h4>
                             <p class="description">What  moment. </p>
                         </div>
-                    </div> <!-- end card -->
+                    </div> 
                 </div>
             </div>
             
@@ -232,7 +234,7 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Yellow Card</a></h4>
                             <p class="description">What moment. </p>
                         </div>
-                    </div> <!-- end card -->
+                    </div> 
                 </div>
             </div>
             
@@ -244,7 +246,7 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Brown Card</a></h4>
                             <p class="description">What moment. </p>
                         </div>
-                    </div> <!-- end card -->
+                    </div> 
                 </div>
             </div>
             
@@ -256,7 +258,7 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Purple Card</a></h4>
                             <p class="description">What moment. </p>
                         </div>
-                    </div> <!-- end card -->
+                    </div>
                 </div>
             </div>
             
@@ -268,7 +270,7 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Orange Card</a></h4>
                             <p class="description">What moment. </p>
                         </div>
-                    </div> <!-- end card -->
+                    </div> 
                 </div>
             </div>
         </div>
@@ -276,7 +278,25 @@ a:hover, a:focus {
     </div>
 
       </div>
-		</div>
+		</div>-->
+        <iframe src="" id="frame" name="frame" frameborder="0" width="1040" height="600">
+    </iframe>
+
+    <script>
+        var side=document.getElementById('sidebar');
+        var frm=document.getElementById('frame');
+        function show()
+        {
+            if(side.className=="")
+            {
+                frm.classList.add('frame1');
+            }
+            else
+            {
+                frm.classList.remove('frame1');
+            }
+        }
+     </script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>

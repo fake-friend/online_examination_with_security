@@ -9,6 +9,9 @@ if($connection)
             $password=$_POST['pwd'];
         
             $query='SELECT instructor_name, passwords, devices from instructor where gmail='.'"'.$email.'"';
+            $q='SELECT instructor_id from instructor where gmail='.'"'.$email.'"';
+            $r=mysqli_query($connection,$q);
+            $_SESSION['instructor_id']=$instd;
             $result=mysqli_query($connection,$query);
             if(mysqli_num_rows($result)>0)
             {
@@ -19,10 +22,11 @@ if($connection)
                     {
                         $_SESSION['instructor_name']=$row[0];
                         $_SESSION['gmail']=$email;
+                        $_SESSION['instructor_id']=$instd;
                         $device_query="update instructor set devices='1' where gmail='$email'";
                         mysqli_query($connection,$device_query);
                         mysqli_close($connection);
-                        header("location:index.php");
+                        echo "<script> location.href='http://localhost/online_examination_with_security/instructor/instructor_sidebar/index.php'</script>";
                     }
                     else
                     {

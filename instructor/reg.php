@@ -23,8 +23,8 @@ $un=$_POST['un'];
 $youremail=$_POST['your_email'];
 $confirm_psw=$_POST['confirm-psw'];
 $v1="INSERT INTO instructor(instructor_id,instructor_name,dob,phone_number,files,favques,department,post,batch,gender,class,username,gmail,passwords) VALUES ('$instid','$instname','$dob','$phone','$file1','$favques','$dept','$postdes','$batch','$gend','$cla','$un','$youremail','$confirm_psw')";
-mysqli_query($conn,$v1);
-if(mysqli_query($conn,$v1))
+$v2=mysqli_query($conn,$v1);
+if($v2)
 {
     // echo 'All Your Details Are Saved!.<br>';
    // echo "<script> location.href='http://localhost/online_examination_with_security/instructor/instructorlogin.php'</script>";
