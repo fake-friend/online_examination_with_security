@@ -1,8 +1,5 @@
 <?php
 session_start();
-$name=$_SESSION['instructor_name'];
-$maill=$_SESSION['gmail'];
-$instd=$_SESSION['instructor_id']
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,9 +11,7 @@ $instd=$_SESSION['instructor_id']
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-	<link rel="stylesheet" href="css/style.css">
-		
+		<link rel="stylesheet" href="css/style.css">
 <style>
 body{
 	    margin-top:0px;
@@ -40,7 +35,6 @@ body{
     position: relative;
     z-index: 1;
 }
-
 .card[data-background="image"] .title, .card[data-background="image"] .stats, .card[data-background="image"] .category, .card[data-background="image"] .description, .card[data-background="image"] .content, .card[data-background="image"] .card-footer, .card[data-background="image"] small, .card[data-background="image"] .content a, .card[data-background="color"] .title, .card[data-background="color"] .stats, .card[data-background="color"] .category, .card[data-background="color"] .description, .card[data-background="color"] .content, .card[data-background="color"] .card-footer, .card[data-background="color"] small, .card[data-background="color"] .content a {
     color: #FFFFFF;
 }
@@ -54,7 +48,6 @@ body{
 .card[data-color="blue"] .category {
     color: #7a9e9f;
 }
-
 .card .category, .card .label {
     font-size: 14px;
     margin-bottom: 0px;
@@ -93,7 +86,6 @@ h6, .h6 {
 a:hover, a:focus {
     text-decoration: none;
 }
-
 /*======== COLORS ===========*/
 .card[data-color="blue"] {
     background: #b8d8d8;
@@ -162,48 +154,50 @@ a:hover, a:focus {
 	          <span class="sr-only">Toggle Menu</span>
 	        </button>
         </div>
-		<div class="p-4">
-			<h1><a href="index.html" class="logo"> <?php echo $name ?> <span><?php echo $maill ?></span></a></h1>
+		<div class="p-4">		
+			<h1> <a href="index.php" class="logo"> <span><?php //include('loginprofile.php');?></span></a> </h1>
 		<ul class="list-unstyled components mb-5">
 		  <li class="active">
 			<a href="#"><span class="fa fa-home mr-3"></span> Home</a>
 		  </li>
 		  <li>
-			  <a href="../subject.html" target="frame"><span class="fa fa-user mr-3"></span> Subjects</a>
-		  </li>
-		  <li>
-		  <a href="#"><span class="fa fa-briefcase mr-3"></span> Exam Management</a>
+		  <a href="#"><span class="fa fa-briefcase mr-3"></span> Exams</a>
 		  </li>
 		  
 		  <li>
-		  <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+		  <a href="#"><span class="fa fa-cogs mr-3"></span> Results</a>
 		  </li>
+
 		  <li>
 		  <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+		  </li>
+
+          <li>
+			  <a href="#"><span class="fa fa-user mr-3"></span> Staffs</a>
 		  </li>
 		</ul>
 
 	        <div class="mb-5">
 						<h3 class="h6 mb-3">Subscribe for newsletter</h3>
-						
+						<form action="#" class="subscribe-form">
 	            <div class="form-group d-flex">
-	            	<form action="../logout.php" method="post">
-                        <input type="submit" value="logout">
-                   </form>
-	          
+	            	<div class="icon"><span class="icon-paper-plane"></span></div>
+	              <input type="text" class="form-control" placeholder="Enter Email Address">
+	            </div>
+	          </form>
 			</div>
 	      </div>
-</div>
     	</nav>
 
         <!-- Page Content  -->
-     <!-- <div id="content" class="p-4 p-md-5 pt-5">
-        <h2 class="mb-4">Sidebar #05</h2>
+<div id="content" class="p-4 p-md-5 pt-5">
+<h2 class="mb-4">Sidebar #05</h2>
 <div class="grey-bg container-fluid">
     <section id="minimal-statistics">
       <div class="container bootstrap snippets bootdeys">
         <div class="row">
-           <div class="col-md-4 col-sm-6 content-card">
+
+            <div class="col-md-4 col-sm-6 content-card">
                 <div class="card-big-shadow">
                     <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
                         <div class="content">
@@ -211,7 +205,7 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Blue Card</a></h4>
                             <p class="description">What moment. </p>
                         </div>
-                    </div> 
+                    </div> <!-- end card -->
                 </div>
             </div>
             
@@ -223,7 +217,7 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Green Card</a></h4>
                             <p class="description">What  moment. </p>
                         </div>
-                    </div> 
+                    </div> <!-- end card -->
                 </div>
             </div>
             
@@ -235,7 +229,7 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Yellow Card</a></h4>
                             <p class="description">What moment. </p>
                         </div>
-                    </div> 
+                    </div> <!-- end card -->
                 </div>
             </div>
             
@@ -247,7 +241,7 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Brown Card</a></h4>
                             <p class="description">What moment. </p>
                         </div>
-                    </div> 
+                    </div> <!-- end card -->
                 </div>
             </div>
             
@@ -259,7 +253,7 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Purple Card</a></h4>
                             <p class="description">What moment. </p>
                         </div>
-                    </div>
+                    </div> <!-- end card -->
                 </div>
             </div>
             
@@ -271,33 +265,14 @@ a:hover, a:focus {
                             <h4 class="title"><a href="#">Orange Card</a></h4>
                             <p class="description">What moment. </p>
                         </div>
-                    </div> 
+                    </div> <!-- end card -->
                 </div>
             </div>
         </div>
       </div>
     </div>
-
-      </div>
-		</div>-->
-        <iframe src="" id="frame" name="frame" frameborder="0" width="1040" height="600">
-    </iframe>
-
-    <script>
-        var side=document.getElementById('sidebar');
-        var frm=document.getElementById('frame');
-        function show()
-        {
-            if(side.className=="")
-            {
-                frm.classList.add('frame1');
-            }
-            else
-            {
-                frm.classList.remove('frame1');
-            }
-        }
-     </script>
+  </div>
+</div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>

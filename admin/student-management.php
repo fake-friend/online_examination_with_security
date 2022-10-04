@@ -118,7 +118,7 @@
         ?>
 
             <td>
-              <form action="" method="post">
+              <form action="view.php?fellow='student'" method="post">
                 <button type="submit" class="btn btn-sm btn-info">Info</button>
               </form>
             </td>
