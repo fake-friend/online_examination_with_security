@@ -7,7 +7,7 @@ if($connection)
     {
             $email=$_POST['email'];
             $password=$_POST['pwd'];
-        
+    
             $query='SELECT instructor_name, passwords, devices from instructor where gmail='.'"'.$email.'"';
             $q='SELECT instructor_id from instructor where gmail='.'"'.$email.'"';
             $r=mysqli_query($connection,$q);

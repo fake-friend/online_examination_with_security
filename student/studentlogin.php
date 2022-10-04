@@ -5,15 +5,16 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>student login</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    
     <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
 <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
-    <style>
+     <style>
         body {
             margin: 0;
             color:#888dad; 
@@ -25,20 +26,13 @@
         :before {
             box-sizing: border-box
         }
+
         .clearfix:after,
         .clearfix:before {
             content: '';
             display: table
         }
-        i 
-         {
-          position: absolute;
-          min-width: 40px;
-          margin-top: -35px;
-          margin-left: 360px;
-          cursor: pointer;
-         }
-        
+
         .clearfix:after 
         {
             clear: both;
@@ -112,7 +106,8 @@
             border-color: #1161ee;
         }
 
-        .login-form {
+        .login-form 
+        {
             min-height: 345px;
             position: relative;
             perspective: 1000px;
@@ -207,12 +202,29 @@
         input[type="submit"] {
             cursor: pointer;
         }
+        i 
+         {
+          position: absolute;
+          min-width: 40px;
+          margin-top: -35px;
+          margin-left: 360px;
+          cursor: pointer;
+         }
+        
     </style>
 </head>
 <body>
+    <?php 
+    if(isset($_GET['message']))
+    {
+      echo '<div class="alert alert-warning alert-dismissible fade show" role="alert"><center>';
+      echo($_GET["message"]);
+      echo '</center><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+    } 
+?>
     <div class="login-wrap">
         <div class="login-html">
-            <h1 style="margin-left:200px;">LOGIN</h1>
+            <center><h1>LOGIN</h1></center>
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">&nbsp &nbsp  &nbsp  INSTRUCTOR &nbsp &nbsp  &nbsp</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">&nbsp &nbsp &nbsp  &nbspSTUDENT  &nbsp &nbsp &nbsp  &nbsp </label>
             <div class="login-form">
@@ -239,8 +251,8 @@
                 <form id="form" onsubmit="myfunc();return false;" action="http://localhost/online_examination_with_security/student/studentloginPHP.php" method="post">
                     <div class="sign-up-htm">
                         <div class="group">
-                            <label for="user" class="label">Username</label>
-                            <input id="uname" type="text" name="uname" class="input">
+                            <label for="user" class="label">Email</label>
+                            <input id="email" type="text" name="email" class="input">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Password</label>
@@ -278,9 +290,9 @@
 
     function myfunc()
     {
-        var username=document.getElementById("uname").value;
+        var email=document.getElementById("email").value;
         var password=document.getElementById("pw").value;
-        if(username=="" || password=="")
+        if(email=="" || password=="")
          {
             swal("INVALID DETAILS!", "...Please enter your username and password!");
          }
