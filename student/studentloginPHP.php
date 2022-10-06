@@ -22,7 +22,7 @@ if($connection)
                     mysqli_query($connection,$device_query);
                     mysqli_close($connection);
                     //header("location:index.php");
-                    echo "<script> location.href='http://localhost/online_examination_with_security/student/Student_sidebar/index.php'</script>";
+                    echo "<script> location.href='http://localhost/online_examination_with_security/student/index.php'</script>";
                 }
                 else
                 {
@@ -45,7 +45,8 @@ else
     die("could not connect to database".mysqli_connect_error());
 }
 mysqli_close($connection);
-
+?>
+<!-- 
 /*session_start();
 if(isset($_POST['uname']))
 {
@@ -67,5 +68,4 @@ else
 	echo "<script>alert('ooppssss-----login unsucessful :( Sign up if you are a new user!!');</script>";
     exit();
 }
-}*/
-?>
+}*/ -->

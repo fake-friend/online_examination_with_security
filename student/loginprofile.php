@@ -2,6 +2,8 @@
 //session_start();
 if($_SESSION['student_name'] && $_SESSION['gmail'])
 {
+    $name=$_SESSION['student_name'];
+    $gmail=$_SESSION['gmail'];   
     echo $_SESSION['student_name']."<br>".$_SESSION['gmail'];?>
     <!DOCTYPE html>
     <html lang="en">
@@ -21,7 +23,7 @@ if($_SESSION['student_name'] && $_SESSION['gmail'])
 }
 else
 {
-    //header("location:studentlogin.php");
-    echo"<script>alert('ooooooooo');</script>";
+    header("location:studentlogin.php");
+    //echo"<script>alert('ooooooooo');</script>";
 }
 ?>
