@@ -20,8 +20,6 @@ $v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,favplace,depa
 VALUES('$sname','$dob','$phone','$favques','$gender','$place','$dept','$rno','$batch','$subject','$shift','$file','$uname','$your_email','$confirm_psw')";
 if(mysqli_query($connection,$v))
 {
-     //echo 'All Your Details Are Saved!.<br>';
-   // echo "<script> location.href='http://localhost/online_examination_with_security/student/studentlogin.html'</script>";
    header("location:studentlogin.html");
 }
 else

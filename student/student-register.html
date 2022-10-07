@@ -2,24 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>register-form</title>
-	<!-- Mobile Specific Metas -->
+	<title>register-form</title><!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- Font-->
-	<!-- Main Style Css -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="student-register.css"/>
-	<style>
-	span
-        {
-        color:#ff0000;
-        font-size:15px;
-        }
-	</style>
-
-<script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
-<link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
-   
+	<script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
+	<link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
 </head>
 <body>
 	<div class="page-content">
@@ -30,8 +18,7 @@
 		        		<!-- SECTION 1 -->
 			            <h2>
 			            	<p class="step-icon"><span><b>01</b></span></p>
-			            	<span class="step-text">Personal Info</span>
-							
+			            	<span class="step-text">Personal Info</span>	
 			            </h2>
 			            <section>
 			                <div class="inner">
@@ -42,23 +29,22 @@
 								<div class="form-row">
 									<div class="form-holder form-holder-2 ">
 										<fieldset>
-											<legend>Student Name <span  id="s1"> </span></legend>
+											<legend>Student Name</legend>
 											<input type="text" id="sname" name="sname" placeholder="Student Name">
 										</fieldset>
 									</div>
 								</div>
-
+								
 								<div class="form-row">
 									<div class="form-holder">
 										<fieldset>
-											<legend>Date of Birth <span  id="s2">*</span> </legend>
+											<legend>Date of Birth </legend>
 											<input type="date" id="dob" name="dob">
 										</fieldset>
 									</div>
-
 									<div class="form-holder ">
 										<fieldset>
-											<legend>Phone Number <span  id="s3">*</span></legend>
+											<legend>Phone Number</legend>
 											<input type="text" id="phone" name="phone" placeholder="9876543210">
 										</fieldset>
 									</div>
@@ -72,24 +58,25 @@
 										</fieldset>
 									</div>
 								</div>
+
 								<div class="form-row">
-								<div class="form-holder">
-									<fieldset>
-										<legend>Gender</legend>
-										<select name="gender" id="gender">
-											<option value="not selected" selected>select Gender</option>
-											<option value="Female">Woman</option>
-											<option value="Male">Man</option>
-										</select>
-									</fieldset>
+									<div class="form-holder">
+										<fieldset>
+											<legend>Gender</legend>
+											<select name="gender" id="gender">
+												<option value="not selected" selected>select Gender</option>
+												<option value="Female">Woman</option>
+												<option value="Male">Man</option>
+											</select>
+										</fieldset>
+									</div>
+								    <div class="form-holder">
+										<fieldset>
+											<legend>Favourite spot</legend>
+											<input type="text" id="place" name="place" placeholder="Enter place">
+										</fieldset>
+									</div>
 								</div>
-								<div class="form-holder">
-									<fieldset>
-										<legend>Favourite spot</legend>
-										<input type="text" id="place" name="place" placeholder="Enter place">
-									</fieldset>
-								</div>
-							</div>
 							</div>
 			            </section>
 						<!-- SECTION 2 -->
@@ -102,14 +89,14 @@
 			                	<div class="wizard-header">
 									<h3 class="heading">Academic-details</h3>
 								</div>
+								
 								<div class="form-row">
-								<div class="form-holder">
-									<fieldset>
-										<legend>Roll Number</legend>
-										<input type="text" id="rno" name="rno" placeholder="Student ID">
-									</fieldset>
-								</div>
-			                		
+									<div class="form-holder">
+										<fieldset>
+											<legend>Roll Number</legend>
+											<input type="text" id="rno" name="rno" placeholder="Student ID">
+										</fieldset>
+									</div>
 									<div class="form-holder">
 			                			<fieldset>
 											<legend>Shift</legend>
@@ -120,11 +107,10 @@
 											</select>
 										</fieldset>
 			                		</div>
-			                	
-							   </div>
+							    </div>
 
 							   <div class="form-row">			
-								<div class="form-holder form-holder-2">
+									<div class="form-holder form-holder-2">
 										<fieldset>
 											<legend>Upload your profile photo:</legend>
 											<div class="form-group">
@@ -133,12 +119,11 @@
 													  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
 													</div>
 													<div class="custom-file">
-													  <input type="file" class="custom-file-input" name="file" id="inputGroupFile01"
-														aria-describedby="inputGroupFileAddon01"></input>
+													    <input type="file" class="custom-file-input" name="file" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"></input>
 													    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
 													</div>
-												  </div>
-											  </div>
+												</div>
+											</div>
 										</fieldset>
 									</div>
 								</div>
@@ -164,7 +149,7 @@
                                                 <option value="CA/IT">CA/IT</option>  
                                                 <option value="Psycology">Psycology</option>  
                                             </select>
-                                    </fieldset>
+                                        </fieldset>
                                     </div>
                                 </div>
                             					
@@ -201,20 +186,20 @@
 									<h3 class="heading">Create-Profile</h3>
 								</div>
 								<div class="form-row">
-								<div class="form-holder form-holder-2">
-									<fieldset>
-										<legend>Create Username <span id=""></span> </legend>
-										<input type="text" id="uname" name="uname" placeholder="Create Username">
-									</fieldset>
-								</div>
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>Create Username <span id=""></span> </legend>
+											<input type="text" id="uname" name="uname" placeholder="Create Username">
+										</fieldset>
+									</div>
 								</div>
 								<div class="form-row">
-								<div class="form-holder form-holder-2">
-									<fieldset>
-										<legend>Your Email <span id=""></span> </legend>
-										<input type="email" name="your_email" id="your_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="example@email.com">
-									</fieldset>
-								</div>
+									<div class="form-holder form-holder-2">
+										<fieldset>
+											<legend>Your Email <span id=""></span> </legend>
+											<input type="email" name="your_email" id="your_email"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="example@email.com">
+										</fieldset>
+									</div>
 								</div>
 								<div class="form-row">
 									<div class="form-holder form-holder-2">
@@ -222,7 +207,7 @@
 											<legend>create strong password <span id=""></span> </legend>
 											<input type="text" name="password" id="password"  placeholder="create strong password" >
 										</fieldset>
-								</div>
+									</div>
 								</div>
 								<div class="form-row">
 									<div class="form-holder form-holder-2">

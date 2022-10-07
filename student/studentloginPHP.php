@@ -21,7 +21,6 @@ if($connection)
                     $device_query="update student set devices='1' where gmail='$email'";
                     mysqli_query($connection,$device_query);
                     mysqli_close($connection);
-                    //header("location:index.php");
                     echo "<script> location.href='http://localhost/online_examination_with_security/student/index.php'</script>";
                 }
                 else
@@ -31,7 +30,7 @@ if($connection)
             }
             else
             {
-            header("location:studentlogin.php?message=please check your email id or password");
+                header("location:studentlogin.php?message=please check your email id or password");
             }
         }
         else
@@ -46,26 +45,4 @@ else
 }
 mysqli_close($connection);
 ?>
-<!-- 
-/*session_start();
-if(isset($_POST['uname']))
-{
-include('../dbconfig.php');
-$username=$_POST['uname'];
-$pw=$_POST['pw'];
-$sql="SELECT * FROM student WHERE username='".$username."' AND pass_word='".$pw."' limit 1";
-$result=mysqli_query($connection,$sql);
-$row=mysqli_fetch_array($result);
-if(mysqli_num_rows($result)==1 && is_array($row))
-{  
-    $_SESSION["pw"]=$row["pass_word"];
-    $_SESSION["uname"]=$row["username"];
-    //echo "<script>alert('login unsucessful :( Sign up if you are a new user!!');</script>";
-    echo "<script> location.href='http://localhost/online_examination_with_security/student/Student_sidebar/index.php'</script>";
-}
-else
-{
-	echo "<script>alert('ooppssss-----login unsucessful :( Sign up if you are a new user!!');</script>";
-    exit();
-}
-}*/ -->
+

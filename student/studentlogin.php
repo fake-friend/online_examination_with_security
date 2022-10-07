@@ -8,13 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    
     <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
-<link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
-     <style>
+    <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
+    <style>
         body {
             margin: 0;
             color:#888dad; 
@@ -26,27 +24,20 @@
         :before {
             box-sizing: border-box
         }
-
         .clearfix:after,
         .clearfix:before {
             content: '';
             display: table
         }
-
-        .clearfix:after 
-        {
+        .clearfix:after {
             clear: both;
             display: block
         }
-
-        a 
-        {
+        a{
             color: inherit;
             text-decoration: none
         }
-
-        .login-wrap 
-        {
+        .login-wrap {
             width: 100%;
             margin: auto;
             max-width: 600px;
@@ -55,16 +46,13 @@
             /*background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;*/
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
         }
-
-        .login-html
-         {
+        .login-html{
             width: 100%;
             height: 100%;
             position: absolute;
             padding: 90px 70px 50px 70px;
             background:/*#353333; rgba(40, 57, 101, .9);*/#070a3c;
         }
-
         .login-html .sign-in-htm,
         .login-html .sign-up-htm
          {
@@ -77,19 +65,16 @@
             backface-visibility: hidden;
             transition: all .4s linear;
         }
-
         .login-html .sign-in,
         .login-html .sign-up,
         .login-form .group .check {
             display: none;
         }
-
         .login-html .tab,
         .login-form .group .label,
         .login-form .group .button {
             text-transform: uppercase;
         }
-
         .login-html .tab {
             font-size: 22px;
             margin-right: 15px;
@@ -99,13 +84,11 @@
             border-bottom: 2px solid transparent;
             cursor: pointer;
         }
-
         .login-html .sign-in:checked+.tab,
         .login-html .sign-up:checked+.tab {
             color: rgb(243, 246, 244);
             border-color: #1161ee;
         }
-
         .login-form 
         {
             min-height: 345px;
@@ -113,11 +96,9 @@
             perspective: 1000px;
             transform-style: preserve-3d;
         }
-
         .login-form .group {
             margin-bottom: 15px;
         }
-
         .login-form .group .label,
         .login-form .group .input,
         .login-form .group .button {
@@ -151,8 +132,7 @@
             position: relative;
             display: inline-block;
             background: rgba(255, 255, 255, .1);
-        }
-        
+        }   
         .login-form .group label .icon:before,
         .login-form .group label .icon:after {
             content: '';
@@ -202,25 +182,23 @@
         input[type="submit"] {
             cursor: pointer;
         }
-        i 
-         {
+        i{
           position: absolute;
           min-width: 40px;
           margin-top: -35px;
           margin-left: 360px;
           cursor: pointer;
-         }
-        
+         }    
     </style>
 </head>
 <body>
-    <?php 
-    if(isset($_GET['message']))
-    {
-      echo '<div class="alert alert-warning alert-dismissible fade show" role="alert"><center>';
-      echo($_GET["message"]);
-      echo '</center><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
-    } 
+<?php 
+if(isset($_GET['message']))
+{
+    echo '<div class="alert alert-warning alert-dismissible fade show" role="alert"><center>';
+    echo($_GET["message"]);
+    echo '</center><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+} 
 ?>
     <div class="login-wrap">
         <div class="login-html">
@@ -275,10 +253,9 @@
 </body>
 <script>
     function eye()
-     {
+    {
      const togglePassword = document.querySelector('#togglePassword');
-     const password = document.querySelector('#pw');
-      
+     const password = document.querySelector('#pw');  
         togglePassword.addEventListener('click', function (e) {
           // toggle the type attribute
           const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -286,8 +263,7 @@
           // toggle the eye slash icon
           this.classList.toggle('fa-eye-slash');
       });
-      }
-
+    }
     function myfunc()
     {
         var email=document.getElementById("email").value;
