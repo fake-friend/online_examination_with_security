@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+
+<p id="demo"></p>
+<p id="now"></p>
+
+
+<input id="date" type="datetime-local" name="datetime"><br>
+<input type="button" onclick="done()" value="Submit">
+
+<script>
+function done()
+{
+var t=document.getElementById('date').value;
+// Set the date we're counting down to
+var countDownDate = new Date(t).getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Date() return the day month date year time 
+  // getFullYear return the current year --  2022
+  // getDate return the current month date --  5
+  // getHours return the current hour in 24 hours format -- 19 or 7
+  // getMinutes return the current minutes of the day -- 36
+  // getMonth() return the current month minus 1 -- january is 0
+  // getSeconds() return the current minutes seconds
+
+  // Get today's date and time
+  var now = new Date().getTime();
+  
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+}
+</script>
+
+<!--<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5,2024 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Date() return the day month date year time 
+  // getFullYear return the current year --  2022
+  // getDate return the current month date --  5
+  // getHours return the current hour in 24 hours format -- 19 or 7
+  // getMinutes return the current minutes of the day -- 36
+  // getMonth() return the current month minus 1 -- january is 0
+  // getSeconds() return the current minutes seconds
+
+  // Get today's date and time
+  var now = new Date().getTime();
+  
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>-->
+
+</body>
+</html>
