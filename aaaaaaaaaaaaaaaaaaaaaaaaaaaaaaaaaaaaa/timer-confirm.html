@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>timer</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .size
+    {
+        width: 200px;
+    }
+    .progressbar
+    {
+        width: 100%;
+    }
+</style>
+<body>
+    <p>max length</p>
+    <p id="times"></p>
+
+    <p id="seconds"></p>
+
+    <div class="size">
+        <select onchange="myfunction()" id="time" class="btn dropdown-item" name="time" >
+            <option value="select time">select time</option>
+            <option value="15">15 min</option>
+            <option value="30">30 min</option>
+            <option value="45">45 min</option>
+            <option value="60">1 hour</option>
+            <option value="75">1.15 hour</option>
+            <option value="90">1.30 hour</option>
+            <option value="105">1.45 hour</option>
+            <option value="120">2 hour</option>
+            <option value="135">2.15 hour</option>
+            <option value="150">2.30 hour</option>
+            <option value="165">2.45 hour</option>
+            <option value="180">3 hour</option>
+          </select>
+    </div>
+
+    <script>
+        var selecttime;
+        function myfunction()
+        {   
+            selecttime=document.getElementById('time').value;
+            run();
+        } 
+        function run()
+        {
+            var timeleft = selecttime;
+            var downloadTimer = setInterval(function(){
+            if(timeleft <= 0){
+                clearInterval(downloadTimer);
+            }
+            document.getElementById("progressBar").value = selecttime - timeleft;
+            var h=document.getElementById("progressBar").max=selecttime;
+            document.getElementById('seconds').innerHTML=timeleft;
+            timeleft -= 1;
+                }, 1000);
+        
+        }
+            
+         
+    </script>
+    
+    <progress class="progress-bar" style="width: 100%;" value="0" id="progressBar"></progress>
+
+</body>
+</html>
