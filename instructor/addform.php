@@ -8,6 +8,11 @@ $instd=$_SESSION['instructor_id'];
 
 ?>
 <html>
+  <style>
+    .mb-3{
+      width:500px;
+    }
+    </style>
 <body>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
