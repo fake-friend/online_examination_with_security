@@ -30,7 +30,7 @@ if($_SESSION['student_name'] && $_SESSION['gmail'])
 		
                 <ul class="list-unstyled components mb-5">
 		            <li class="active">
-			            <a href="cards.html" target="frame"><span class="fa fa-home mr-3"></span> Home</a>
+			            <a href="cards.php" target="frame"><span class="fa fa-home mr-3"></span> Home</a>
 		            </li>
 
 		            <li>
