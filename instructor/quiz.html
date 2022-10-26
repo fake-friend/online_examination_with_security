@@ -8,11 +8,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<div class="container" >
   <h2>Question and Answer</h2>
+<div class="container" id="old">
+  
   <form action="/action_page.php">
-    <div class="form-group">
+    <div class="form-group" >
       <label for="1stqus">Enter the 1st question:</label>
       <input type="text" class="form-control" id="1stqus" placeholder="Enter the 1st question" name="1stqus">
     </div>
@@ -36,10 +36,54 @@
         <label for="ans1">Correct Answer:</label>
         <input type="text" class="form-control" id="ans1"  name="ans1">
       </div>
+      <hr style="border-top: solid black"/>
+  </div>
+ 
+       <div class="container"id="new">
+      
+      </div>
+      
+      <div class="container" style="width:500px">
+      <button type="submit" class="btn btn-default">Submit</button><br>
+      <input type="button"  onclick="add()" value="add">
+      <input type="button"  onclick="removeLocation()" value="remove">
+      
+    </div>
     
-    <button type="submit" class="btn btn-default">Submit</button>
   </form>
-</div>
+      </body>
+      <script type="text/javascript">
 
-</body>
-</html>
+        function add() {
+          for(let i=0;i>=0;i++){
+            i++;
+          }
+
+    var i = document.getElementById( 'old' );
+
+    var d = document.createElement( 'div' );
+    d.id = "new1";
+    d.innerHTML = i.innerHTML ;
+    var p = document.getElementById('new');
+
+    p.appendChild(d);
+
+}
+
+function removeLocation() {
+
+    var d = document.getElementById( 'new1' );
+
+    var p = document.getElementById('new');
+
+    p.removeChild(d);
+
+}
+</script>
+</html>    
+   
+  
+
+
+
+
