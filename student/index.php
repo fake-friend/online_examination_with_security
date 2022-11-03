@@ -14,6 +14,15 @@ if($_SESSION['student_name'] && $_SESSION['gmail'])
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">	
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   	<link rel="stylesheet" href="css/style.css">
+
+<style>
+     .logout
+        {
+            cursor: pointer;
+            position: absolute;
+            margin-left: 60px;
+        }
+</style>
 </head>
 <body>
 		<div class="wrapper d-flex align-items-stretch">
@@ -30,11 +39,11 @@ if($_SESSION['student_name'] && $_SESSION['gmail'])
 		
                 <ul class="list-unstyled components mb-5">
 		            <li class="active">
-			            <a href="cards.php" target="frame"><span class="fa fa-home mr-3"></span> Home</a>
+			            <a href="subjects.php" target="frame"><span class="fa fa-home mr-3"></span> Subjects</a>
 		            </li>
 
 		            <li>
-		                <a href="studentlogin.php" target="frame"><span class="fa fa-briefcase mr-3"></span> Exams</a>
+		                <a href="slogin.php" target="frame"><span class="fa fa-briefcase mr-3"></span> Exams</a>
 		            </li>
 		  
 		            <li>
@@ -42,32 +51,24 @@ if($_SESSION['student_name'] && $_SESSION['gmail'])
             		</li>
 
 		            <li>
-		                <a href="#" target="frame"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+		                <a href="#" target="frame"><span class="fa fa-paper-plane mr-3"></span> Staffs </a>
 		            </li>
 
                     <li>
-			            <a href="#" target="frame"><span class="fa fa-user mr-3"></span> Staffs</a>
+			            <a href="#" target="frame"><span class="fa fa-user mr-3"></span> Study materials</a>
 		            </li>
-
-                    <li>
-                        <div class="logout">
-                            <form action="slogout.php" method="post">
-                            <button type="submit" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-log-out"></span> Log out</button>
-                            </form>
-                        </div>
-                    </li>
-		        </ul>
-
-	            <div class="mb-5">
-					<h3 class="h6 mb-3">Subscribe for newsletter</h3>
-					<form action="#" class="subscribe-form">
+                </ul>
+               
+                    <div class="mb-5">				
 	                    <div class="form-group d-flex">
-	            	        <div class="icon"><span class="icon-paper-plane"></span></div>
-	                        <input type="text" class="form-control" placeholder="Enter Email Address">
-	                     </div>
-	                </form>
-			    </div>
-	            </div>
+                            <div class="logout">
+                            <form action="slogout.php" method="post">
+                                <button type="submit" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-log-out"></span> Log out</button>
+                            </form>
+                            </div>
+			            </div>
+	                </div>
+                </div>
     	    </nav>
 <!-- Page Content  -->
             <div id="content" class="p-4 p-md-5 pt-5">
@@ -99,7 +100,6 @@ if($_SESSION['student_name'] && $_SESSION['gmail'])
 }
 else
 {
-    header("location:studentlogin.php");
-    //echo"<script>alert('ooooooooo');</script>";
+    header("location:slogin.php");
 }
 ?>

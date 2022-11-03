@@ -25,17 +25,17 @@ if($connection)
                 }
                 else
                 {
-                    header("location:studentlogin.php?message=you cannot login into multiple devices at a time!!!");
+                    header("location:slogin.php?message=you cannot login into multiple devices at a time!!!");
                 }
             }
             else
             {
-                header("location:studentlogin.php?message=please check your email id or password");
+                header("location:slogin.php?message=please check your email id or password");
             }
         }
         else
         {
-            header("location:studentlogin.php?message=please check your email id or password");
+            header("location:slogin.php?message=please check your email id or password");
         }  
     }
 }
@@ -45,4 +45,3 @@ else
 }
 mysqli_close($connection);
 ?>
-

@@ -31,7 +31,8 @@
             z-index: 1;
         }
         .card[data-background="image"] .title, .card[data-background="image"] .stats, .card[data-background="image"] .category, .card[data-background="image"] .description, .card[data-background="image"] .content, .card[data-background="image"] .card-footer, .card[data-background="image"] small, .card[data-background="image"] .content a, .card[data-background="color"] .title, .card[data-background="color"] .stats, .card[data-background="color"] .category, .card[data-background="color"] .description, .card[data-background="color"] .content, .card[data-background="color"] .card-footer, .card[data-background="color"] small, .card[data-background="color"] .content a {
-            color: #FFFFFF;
+            color: black;
+            font-size: 16px;
         }
         .card.card-just-text .content {
             padding: 50px 65px;
@@ -114,9 +115,7 @@ if($connection)
                     <div class="card-big-shadow">
                         <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
                             <div class="content">
-                                <h6 class="category">Blue Card</h6>
                                 <h4 class="title"><a href="#"></a><?php echo $row[0];?></h4>
-                                <p class="description">What moment. </p>
                             </div>
                         </div> <!-- end card -->
                     </div>

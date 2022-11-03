@@ -15,32 +15,41 @@
         {
             font-family: 'Courier New', Courier, monospace;
             position: absolute;
-            left: 430px;
-            top: 350px;
+            left: 550px;
+            top: 130px;
         }
         .links a
         {
             text-decoration: none;
-            padding: 25px;
-            background-color: black;
-            border-radius: 50px;
-            color: aqua;
-            border: 2px solid red;
+            padding: 55px;
+            background-color: rgb(222, 219, 219);
+            border-radius: 10px;
+            color: rgb(0, 0, 0);
+            border: 2px solid rgb(77, 77, 77);
         }
+
+        .images
+        {
+            position: absolute;
+            left: 400px;
+            top: 90px;
+        }
+
     </style>
 </head>
 <body>
-    <div class="image">
-        <img src="head.png" width="1365" alt="">
-    </div>
+        <div class="links">    
+            <a href="admin/admin-login.php"> <b> ADMINISTOR-LOGIN <b> </a> <br> <br><br> <br> <br><br> <br> <br>
+            &nbsp;<a href="instructor/instructorlogin.php"> FACULTY-LOGIN</a> <br> <br> <br> <br> <br> <br> <br> <br> 
+            &nbsp;<a href="student/slogin.php"> STUDENT-LOGIN</a>  
+        </div>  
 
-        <div class="links">
-            <a href="admin/admin-login.php">admin</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="instructor/instructorlogin.php">instructor</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="student/studentlogin.php">student</a>  
-        </div>
-           
+        
+<div class="images">
+    <img id="img" src="img.png" width="100" height="100" alt="head.png"></img><br> <br>  <br> 
+    <img id="img" src="normal.png" width="100" height="100" alt="head.png"></img> <br><br> 
+    <br><img id="img" src="normal.png" width="100" height="100" alt="head.png"></img><br> 
+</div>
+
 </body>
 </html>

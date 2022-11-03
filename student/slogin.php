@@ -203,8 +203,8 @@ if(isset($_GET['message']))
     <div class="login-wrap">
         <div class="login-html">
             <center><h1>LOGIN</h1></center>
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">&nbsp &nbsp  &nbsp  INSTRUCTOR &nbsp &nbsp  &nbsp</label>
-            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">&nbsp &nbsp &nbsp  &nbspSTUDENT  &nbsp &nbsp &nbsp  &nbsp </label>
+            <input id="tab-1" type="radio" name="tab" class="sign-in" disabled><label for="tab-1" class="tab">&nbsp &nbsp  &nbsp  INSTRUCTOR &nbsp &nbsp  &nbsp</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">&nbsp &nbsp &nbsp  &nbspSTUDENT  &nbsp &nbsp &nbsp  &nbsp </label>
             <div class="login-form">
                 <form action="" method="post" action="">
                     <div class="sign-in-htm">
@@ -226,7 +226,7 @@ if(isset($_GET['message']))
                         </div>
                     </div>
                 </form>
-                <form id="form" onsubmit="myfunc();return false;" action="http://localhost/online_examination_with_security/student/studentloginPHP.php" method="post">
+                <form id="form" onsubmit="myfunc(); return false;" action="http://localhost/online_examination_with_security/student/slogin_confirm.php" method="post">
                     <div class="sign-up-htm">
                         <div class="group">
                             <label for="user" class="label">Email</label>
@@ -256,13 +256,14 @@ if(isset($_GET['message']))
     {
      const togglePassword = document.querySelector('#togglePassword');
      const password = document.querySelector('#pw');  
-        togglePassword.addEventListener('click', function (e) {
+        togglePassword.addEventListener('click', function (e) 
+        {
           // toggle the type attribute
           const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
           password.setAttribute('type', type);
           // toggle the eye slash icon
           this.classList.toggle('fa-eye-slash');
-      });
+        });
     }
     function myfunc()
     {
@@ -273,10 +274,10 @@ if(isset($_GET['message']))
             swal("INVALID DETAILS!", "...Please enter your username and password!");
          }
         else
-        {
+         {
          var form=document.getElementById("form");
          form.onsubmit="return true";
-        }
+         }
     }
 </script>
 </html>

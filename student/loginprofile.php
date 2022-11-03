@@ -22,6 +22,6 @@ if($_SESSION['student_name'] && $_SESSION['gmail'])
 }
 else
 {
-    header("location:studentlogin.php");
+    header("location:slogin.php");
 }
 ?>

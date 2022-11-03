@@ -10,5 +10,5 @@ if($connection)
 }
 session_unset();
 session_destroy();
-header("location:studentlogin.php");
+header("location:slogin.php");
 ?>
