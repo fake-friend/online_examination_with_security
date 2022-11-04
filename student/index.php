@@ -39,23 +39,19 @@ if($_SESSION['student_name'] && $_SESSION['gmail'])
 		
                 <ul class="list-unstyled components mb-5">
 		            <li class="active">
-			            <a href="subjects.php" target="frame"><span class="fa fa-home mr-3"></span> Subjects</a>
+			            <a href="subjects.php" target="frame"><span class="fa fa-book mr-3"></span> Subjects</a>
 		            </li>
 
 		            <li>
-		                <a href="slogin.php" target="frame"><span class="fa fa-briefcase mr-3"></span> Exams</a>
+		                <a href="slogin.php" target="frame"><span class="fa fa-pencil-square-o mr-3"></span> Exams</a>
 		            </li>
 		  
 		            <li>
-		                <a href="#" target="frame"><span class="fa fa-cogs mr-3"></span> Results</a>
+		                <a href="#" target="frame"><span class="fa fa-certificate mr-3"></span> Results</a>
             		</li>
 
 		            <li>
-		                <a href="#" target="frame"><span class="fa fa-paper-plane mr-3"></span> Staffs </a>
-		            </li>
-
-                    <li>
-			            <a href="#" target="frame"><span class="fa fa-user mr-3"></span> Study materials</a>
+		                <a href="#" target="frame"><span class="fa fa-user-circle-o mr-3"></span> Staffs </a>
 		            </li>
                 </ul>
                

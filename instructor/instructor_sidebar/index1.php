@@ -54,22 +54,22 @@ $instd=$_SESSION['instructor_id']
 		<div class="p-4">
 			<h1><a href="index.html" class="logo"><?php echo $name ?><span><?php echo $maill ?></span></a></h1>
 
-		    <ul class="list-unstyled components mb-5">
-		        <li class="active">
-			        <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
+		    <ul class="list-unstyled components mb-5">		        
+		        <li>
+			        <a href="../subject.html" target="frame"><span class="fa fa-book mr-3"></span> Subjects</a>
 		        </li>
 		        <li>
-			        <a href="../subject.html" target="frame"><span class="fa fa-user mr-3"></span> Subjects</a>
-		        </li>
-		        <li>
-		            <a href="#"><span class="fa fa-briefcase mr-3"></span> Exam Management</a>
+		            <a href="#"><span class="fa fa-pencil mr-3"></span> Exam Management</a>
 		        </li>
 		  
 		        <li>
-		            <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+		            <a href="#"><span class="fa fa-graduation-cap mr-3"></span> First years</a>
 		        </li>
 		        <li>
-		            <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+		            <a href="#"><span class="fa fa-graduation-cap mr-3"></span> Second years</a>
+		        </li>
+                <li>
+		            <a href="#"><span class="fa fa-graduation-cap mr-3"></span> Third years</a>
 		        </li>
 		    </ul>
 
