@@ -67,9 +67,10 @@ if($_SESSION['student_name'] && $_SESSION['gmail'])
                 </div>
     	    </nav>
 <!-- Page Content  -->
-            <div id="content" class="p-4 p-md-5 pt-5">
-                <iframe src="" id="frame" name="frame" frameborder="0" width="1040" height="600"></iframe> 
-            </div>
+    
+    <iframe src="" id="frame" name="frame" frameborder="0" width="1040" height="600">
+    </iframe>
+
         </div>
     <script src="js/js/jquery.min.js"></script>
     <script src="js/js/popper.js"></script>

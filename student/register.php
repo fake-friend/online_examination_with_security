@@ -12,15 +12,15 @@ $shift=$_POST['shift'];
 $file=$_FILES['file']['name'];
 $dept=$_POST['dept'];
 $batch=$_POST['batch'];
-$subject=$_POST['subject'];
+$lang=$_POST['language'];
 $uname=$_POST['uname'];
 $your_email=$_POST['your_email'];
 $confirm_psw=$_POST['confirm-psw'];
-$v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,favplace,department,roll_number,batch,favsubject,shift,upload,username,gmail,pass_word) 
-VALUES('$sname','$dob','$phone','$favques','$gender','$place','$dept','$rno','$batch','$subject','$shift','$file','$uname','$your_email','$confirm_psw')";
+$v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,favplace,department,roll_number,batch,favlanguage,shift,upload,username,gmail,pass_word) 
+VALUES('$sname','$dob','$phone','$favques','$gender','$place','$dept','$rno','$batch','$lang','$shift','$file','$uname','$your_email','$confirm_psw')";
 if(mysqli_query($connection,$v))
 {
-   header("location:studentlogin.html");
+   header("location:slogin.php");
 }
 else
 {
@@ -28,7 +28,7 @@ else
 }
 if(isset($_POST['submit']))
      {
-        $allow=array("jpg"=>"image/jpeg","png"=>"image/png");
+        $allow=array("jpg"=>"image/jpeg","jpeg"=>"image/jpeg", "png"=>"image/png");
         $name=$_FILES["file"]["name"];
         $type=$_FILES["file"]["type"];
         $ext=pathinfo($name,PATHINFO_EXTENSION);

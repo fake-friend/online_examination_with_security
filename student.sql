@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2022 at 06:14 AM
+-- Generation Time: Nov 04, 2022 at 04:54 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -39,7 +39,7 @@ CREATE TABLE `student` (
   `department` varchar(100) NOT NULL,
   `roll_number` varchar(10) NOT NULL,
   `batch` varchar(50) NOT NULL,
-  `favsubject` varchar(100) NOT NULL,
+  `favlanguage` varchar(100) NOT NULL,
   `shift` varchar(50) NOT NULL,
   `username` varchar(100) NOT NULL,
   `gmail` varchar(100) NOT NULL,
@@ -52,10 +52,14 @@ CREATE TABLE `student` (
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`id`, `student_name`, `dob`, `phonenumber`, `upload`, `favqus`, `gender`, `favplace`, `department`, `roll_number`, `batch`, `favsubject`, `shift`, `username`, `gmail`, `pass_word`, `created_at`, `devices`) VALUES
-(1, 'SriHarish kumar M', '2003-02-10', '9342321825', 'harish.png', 'happiness ', 'Male', 'nothing', 'CA/IT', '20SUCA24', '2020-2023', 'programming in java', 'Self Financed', 'Harish', 'harish@gmail.com', 'harish10', '2022-09-30 07:44:19', 0),
-(2, 'Hepsy Joannah A', '2002-10-13', '9944478105', 'flower.jpg', 'prooject', 'Female', 'kerala', 'CA/IT', '20SUCA35', '2020-2023', 'Maths', 'Self Financed', 'Joannah ', 'joannah@gmail.com', 'joannah', '2022-10-01 04:04:36', 0),
-(3, 'Sangeetha S', '2003-03-03', '987654321', 'sangeetha.png', 'zoho', 'Female', 'chennai', 'CA/IT', '20SUCA42', '2020-2023', 'java coding', 'Self Financed', 'sangeetha', 'sangeetha@gmail.com', 'sangeeth', '2022-10-01 04:08:58', 0);
+INSERT INTO `student` (`id`, `student_name`, `dob`, `phonenumber`, `upload`, `favqus`, `gender`, `favplace`, `department`, `roll_number`, `batch`, `favlanguage`, `shift`, `username`, `gmail`, `pass_word`, `created_at`, `devices`) VALUES
+(1, 'Josh S', '2004-03-31', '9876543210', 'bfirst.jpeg', 'family and friends', 'Male', 'India', 'CA/IT', '22SUCA01  ', '2022-2025', 'English', 'Self Financed', 'Josh ', 'josh@gmail.com', 'josh01', '2022-11-04 15:16:41', 0),
+(2, 'Charles A ', '2004-02-02', '9944478234', 'bfirst.jpeg', 'happiness', 'Male', 'France', 'CA/IT', '22SUCA02', '2022-2025', 'English', 'Self Financed', 'Charles', 'charles@students.tcarts.in', 'charles0', '2022-11-04 15:19:09', 0),
+(3, 'Beryl C ', '2004-05-05', '8765432019', 'gfirst.jpeg', 'peace of mind', 'Female', 'USA', 'CA/IT', '22SUCA03', '2022-2025', 'French', 'Self Financed', 'Beryl ', 'beryl@students.tcarts.in', 'beryl03', '2022-11-04 15:25:02', 0),
+(4, 'Jonathan G', '2003-05-05', '8765432109', 'bsecond.jpeg', 'happiness', 'Male', 'France', 'CA/IT', '21SUCA01', '2021-2024', 'Tamil', 'Aided', 'Jonathan', 'jonathan@students.tcarts.in', 'jonathan', '2022-11-04 15:28:34', 0),
+(5, 'Martina A ', '2003-10-02', '8765432190', 'gsecond.jpeg', 'career and future', 'Female', 'France', 'CA/IT', '21SUCA02', '2021-2024', 'Mandarin', 'Self Financed', 'Martina', 'martina@students.tcarts.in', 'martina0', '2022-11-04 15:33:13', 0),
+(6, 'Rajesh R', '2002-03-03', '9342321825', 'bthird.jpeg', 'career and future', 'Male', 'Korea', 'CA/IT', '20SUCA01', '2020-2023', 'French', 'Self Financed', 'Rajesh', 'rajesh@students.tcarts.in', 'rajesh01', '2022-11-04 15:35:20', 0),
+(7, 'Hamshini V', '2002-12-12', '7654321980', 'gthird.jpeg', 'happiness', 'Female', 'France', 'CA/IT', '20SUCA02', '2020-2023', 'English', 'Self Financed', 'Hamshini', 'hamshini@students.tcarts.in', 'hamshini', '2022-11-04 15:39:18', 0);
 
 --
 -- Indexes for dumped tables
@@ -75,7 +79,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
