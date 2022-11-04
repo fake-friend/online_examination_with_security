@@ -15,7 +15,7 @@
     <style>
         body {
             margin: 0;
-            color:#888dad; 
+            color:rgb(180, 233, 245); 
             background: #c8c8c8;
             font: 600 16px/18px 'Open Sans', sans-serif;
         }
@@ -40,8 +40,8 @@
         .login-wrap {
             width: 100%;
             margin: auto;
-            max-width: 600px;
-            min-height: 560px;
+            max-width: 540px;
+            min-height: 540px;
             position: relative;
             /*background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;*/
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
@@ -118,7 +118,7 @@
             -webkit-text-security: circle;
         }
         .login-form .group .label {
-            color: #aaa;
+            color:rgb(180, 233, 245);
             font-size: 12px;
         }
         .login-form .group .button 
@@ -174,7 +174,7 @@
         .hr {
             height: 2px;
             margin: 40px 0 50px 0;
-            background: rgba(255, 255, 255, .2);
+            background: rgb(180, 233, 245);
         }
         .foot-lnk {
             text-align: center;
@@ -202,34 +202,12 @@ if(isset($_GET['message']))
 ?>
     <div class="login-wrap">
         <div class="login-html">
-            <center><h1>LOGIN</h1></center>
-            <input id="tab-1" type="radio" name="tab" class="sign-in" disabled><label for="tab-1" class="tab">&nbsp &nbsp  &nbsp  INSTRUCTOR &nbsp &nbsp  &nbsp</label>
-            <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">&nbsp &nbsp &nbsp  &nbspSTUDENT  &nbsp &nbsp &nbsp  &nbsp </label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  LOGIN &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
             <div class="login-form">
-                <form action="" method="post" action="">
-                    <div class="sign-in-htm">
-                        <div class="group">
-                            <label for="user" class="label">Email</label>
-                            <input id="user" name="email" type="text" class="input">
-                        </div>
-                        <div class="group">
-                            <label for="pass" class="label">Password</label>
-                            <input id="pass" name="pwd" type="password" class="input" data-type="password">
-                        </div>
-                        <div class="group">
-                            <input type="submit" class="button" value="Sign In" disabled>
-                        </div>
-                        <div class="hr"></div>
-                        <div class="foot-lnk">
-                            <a href="#forgot">Forgot Password?</a>
-                            <a href="#">Don't you have an account?</a>
-                        </div>
-                    </div>
-                </form>
                 <form id="form" onsubmit="myfunc(); return false;" action="http://localhost/online_examination_with_security/student/slogin_confirm.php" method="post">
                     <div class="sign-up-htm">
                         <div class="group">
-                            <label for="user" class="label">Email</label>
+                        <br><label for="user" class="label">Email</label>
                             <input id="email" type="text" name="email" class="input">
                         </div>
                         <div class="group">
@@ -243,7 +221,8 @@ if(isset($_GET['message']))
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
-                            <a href="student-register.html">Don't you have an account?</a>
+                            <a href="student-register.html">Don't you have an account?</a><br>
+                            <a href="">Forgot password?</a>
                         </div>
                     </div>
                 </form>
@@ -265,7 +244,7 @@ if(isset($_GET['message']))
           this.classList.toggle('fa-eye-slash');
         });
     }
-    function myfunc()
+   /* function myfunc()
     {
         var email=document.getElementById("email").value;
         var password=document.getElementById("pw").value;
@@ -278,6 +257,6 @@ if(isset($_GET['message']))
          var form=document.getElementById("form");
          form.onsubmit="return true";
          }
-    }
+    }*/
 </script>
 </html>
