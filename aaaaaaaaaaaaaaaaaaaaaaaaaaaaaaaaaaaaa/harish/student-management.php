@@ -15,16 +15,17 @@
         <thead class="bg-light">
           <tr>
             <th>Serial Number</th>
-            <th>Instructor ID</th>
-            <th>Instructor Name</th>
-            <th>Instructor Photo</th>
+            <th>Student RollNumber</th>
+            <th>Student Name</th>
+            <th>Student Photo</th>
             <th>Department</th>
-            <th>Post</th>
+            <th>Batch</th>
             <th>Self / Aided</th>
             <th>Username</th>
             <th>Gmail</th>
             <th>Phone Number</th>
             <th>Status</th>
+            <th>View</th>
             <th>Remove</th>
           </tr>
         </thead>
@@ -34,30 +35,30 @@
             if($connection)
             {
                 $count=1;
-                $query='select * from instructor';
+                $query='select * from student';
                 $result=mysqli_query($connection,$query);
                 while($row=mysqli_fetch_array($result))
                 {
-                    $file='http://localhost/online_examination_with_security/instructor/upload/'.$row[5];
+                    $file='http://localhost/online_examination_with_security/student/upload/'.$row[4];
         ?>
           <tr>
-             <!--serial number-->
-             <td>
+            <!--serial number-->
+            <td>
                 <?php echo($count); ?>
             </td>
-
+            <!--student roll number-->
+            <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo($row[9]); ?></p>
+                </div>
+            </td>
+            <!--student name-->
             <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo($row[1]); ?></p>
                 </div>
             </td>
-            
-            <td>
-                <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo($row[2]); ?></p>
-                </div>
-            </td>
-
+            <!--student photo-->    
             <td>
               <div class="d-flex align-items-center">
                 <img
@@ -68,37 +69,37 @@
                     />
               </div>
             </td>
-
+            <!--department-->
             <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo($row[7]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo($row[8]); ?></p>
                 </div>
             </td>
-            
+            <!--batch-->
             <td>
                 <div class="ms-3">
-                  <p class="text-muted mb-0"><?php echo($row[8]); ?></p>
+                  <p class="text-muted mb-0"><?php echo($row[10]); ?></p>
                 </div>
             </td>
-
+            <!--self / aided-->        
             <td>
-              <p class="fw-normal mb-1"><?php echo($row[9]); ?></p>
+              <p class="fw-normal mb-1"><?php echo($row[12]); ?></p>
             </td>
-
-            <td>
-              <p class="text-muted mb-0"><?php echo($row[12]); ?></p>
-            </td>
-
+            <!--username-->        
             <td>
               <p class="text-muted mb-0"><?php echo($row[13]); ?></p>
             </td>
-
+            <!--gmail-->        
             <td>
-              <p class="text-muted mb-0"><?php echo($row[4]); ?></p>
+              <p class="text-muted mb-0"><?php echo($row[14]); ?></p>
+            </td>
+            <!--phone number-->        
+            <td>
+              <p class="text-muted mb-0"><?php echo($row[3]); ?></p>
             </td>
         
         <?php
-        if($row[16]==1)
+        if($row[17]==1)
         {
         ?>
             <td>
@@ -117,6 +118,12 @@
         ?>
 
             <td>
+              <form action="view.php?person=student&gmail=<?php echo($row[14]); ?>" method="post">
+                <button type="submit" class="btn btn-sm btn-info">Info</button>
+              </form>
+            </td>
+
+            <td>
               <form action="" method="post">
                 <button type="submit" class="btn btn-sm btn-danger">Remove</button>
               </form>
@@ -124,7 +131,7 @@
 
           </tr>
         <?php
-              $count=$count+1;
+            $count=$count+1;
                 }      
             }
             else

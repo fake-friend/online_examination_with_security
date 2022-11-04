@@ -62,7 +62,6 @@
 
     <div class="container" style="width:500px">
         <button type="button" class="btn btn-secondary" id="add">add</button>
-        <input type="button" class="btn btn-warning" id="remove" value="remove">
     </div>
 
     <hr style="border-top: solid black" />
@@ -82,7 +81,7 @@
          }*/
          var count=2;
          $("#add").click(function () {
-            newRowAdd =' <div id="copy" class="copy"><div class="form-group">'+
+            newRowAdd =' <div id="copy" class="copy"><button class="btn btn-danger" id="remove">remove</button><div class="form-group">'+
                 '<label for="1stqus">Enter the '+ count +'st question:</label>'+
                 '<input type="text" class="form-control" id="1stqus" placeholder="Enter the 1st question" name="1stqus">'+
             '</div>'+

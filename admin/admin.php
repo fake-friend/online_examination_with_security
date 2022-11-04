@@ -10,12 +10,11 @@ if($_SESSION['name'] && $_SESSION['email'])
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>admin</title>
+    <title>Admin</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!--cdn link for no copy paste for the website-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -43,14 +42,6 @@ if($_SESSION['name'] && $_SESSION['email'])
             position: absolute;
             margin-left: 60px;
         }
-        .material-symbols-outlined
-        {
-            font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 48
-        }
     </style>
 </head>
 <body>
@@ -66,19 +57,19 @@ if($_SESSION['name'] && $_SESSION['email'])
             <h1><a class="logo"><?php echo $username; ?> <span><?php echo $email ?></span></a></h1>
             <ul class="list-unstyled components mb-5">
                 <li class="active">
-                    <a href="department-show.php" target="frame"><span class="fa fa-university mr-3"></span> Departments</a>
+                    <a href="department-show.php" target="frame"><span class="fa fa-sitemap mr-3"></span> Departments</a>
                 </li>
-                <li>
+                <li> 
                     <a href="instructor-management.php" target="frame"><span class="fa fa-user mr-3"></span>Instructor Management</a>
                 </li>
                 <li>
-                    <a href="student-management.php" target="frame"><span class="fa fa-user mr-3"></span>Student Management</a>
+                    <a href="student-management.php" target="frame"><span class="fa fa-mortar-board mr-3"></span>Student Management</a>
                 </li>
                 <br><br>
                 <li>
                     <div class="logout">
                         <form action="logout.php" method="post">
-                            <button type="submit" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-log-out"></span> Log out</button>
+                            <button type="submit" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-log-out"></span><i class="fa fa-sign-out"></i> Log out</button>
                         </form>
                     </div>
                 </li>

@@ -27,7 +27,7 @@ if($connection)
                         $_SESSION['instructor_id']=$row[0];
                         $device_query="update instructor set devices='1' where gmail='$email'";
                         mysqli_query($connection,$device_query);
-                        $in="INSERT INTO instructortrackloguser(insname,email,logintime,logouttime) VALUES ('$iname','$imail','$date',NULL )";
+                        $in="INSERT INTO instructortrackloguser(insname,email,logintime) VALUES ('$iname','$imail','$date')";
                         mysqli_query($connection,$in);
                         mysqli_close($connection);
 

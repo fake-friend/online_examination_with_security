@@ -270,3 +270,12 @@ blue-box-separation-line
     position: relative;
     margin-top: -9px;
 }
+li a i
+{
+    border: solid black;
+    border-width: 0px 6px 6px 0;
+    display: inline-block;
+    padding: 5px;   
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}

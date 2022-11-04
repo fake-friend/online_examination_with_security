@@ -25,7 +25,6 @@
             <th>Gmail</th>
             <th>Phone Number</th>
             <th>Status</th>
-            <th>View</th>
             <th>Remove</th>
           </tr>
         </thead>
@@ -116,12 +115,6 @@
         <?php
         }
         ?>
-
-            <td>
-              <form action="view.php?person=student&gmail=<?php echo($row[14]); ?>" method="post">
-                <button type="submit" class="btn btn-sm btn-info">Info</button>
-              </form>
-            </td>
 
             <td>
               <form action="" method="post">
