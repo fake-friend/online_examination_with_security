@@ -15,6 +15,7 @@ if($_SESSION['name'] && $_SESSION['email'])
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!--cdn link for no copy paste for the website-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -42,6 +43,14 @@ if($_SESSION['name'] && $_SESSION['email'])
             position: absolute;
             margin-left: 60px;
         }
+        .material-symbols-outlined
+        {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+        }
     </style>
 </head>
 <body>
@@ -57,19 +66,13 @@ if($_SESSION['name'] && $_SESSION['email'])
             <h1><a class="logo"><?php echo $username; ?> <span><?php echo $email ?></span></a></h1>
             <ul class="list-unstyled components mb-5">
                 <li class="active">
-                    <a href="department-show.php" target="frame"><span class="fa fa-home mr-3"></span> Departments</a>
+                    <a href="department-show.php" target="frame"><span class="fa fa-university mr-3"></span> Departments</a>
                 </li>
                 <li>
                     <a href="instructor-management.php" target="frame"><span class="fa fa-user mr-3"></span>Instructor Management</a>
                 </li>
                 <li>
-                    <a href="student-management.php" target="frame"><span class="fa fa-briefcase mr-3"></span>Student Management</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-cogs mr-3"></span></a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-paper-plane mr-3"></span></a>
+                    <a href="student-management.php" target="frame"><span class="fa fa-user mr-3"></span>Student Management</a>
                 </li>
                 <br><br>
                 <li>
@@ -89,7 +92,7 @@ if($_SESSION['name'] && $_SESSION['email'])
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 
-    <iframe src="" id="frame" name="frame" frameborder="0" width="1040" height="600">
+    <iframe src="department-show.php" id="frame" name="frame" frameborder="0" width="1040" height="600">
     </iframe>
 
     <script>

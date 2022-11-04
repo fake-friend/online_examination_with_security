@@ -6,84 +6,78 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    .question
+    {
+      width: 500px;
+      margin-left: 150px;
+    }
+  </style>
+
 </head>
 <body>
+  
   <h2>Question and Answer</h2>
-<div class="container" id="old">
-  
-  <form action="/action_page.php">
-    <div class="form-group" >
-      <label for="1stqus">Enter the 1st question:</label>
-      <input type="text" class="form-control" id="1stqus" placeholder="Enter the 1st question" name="1stqus">
-    </div>
-    <div class="form-group" style="width:200px">
-      <label for="11">1st option:</label>
-      <input type="text" class="form-control" id="11"  name="11">
-    </div>
-    <div class="form-group" style="width:200px">
-        <label for="12">2nd option:</label>
-        <input type="text" class="form-control" id="12"  name="12">
+  <br>
+
+    <form action="/action_page.php">
+
+      <div class="question" id="question">
+
+        <div class="form-group">
+          <label for="1stqus">Enter the 1st question:</label>
+          <input type="text" class="form-control" id="1stqus" placeholder="Enter the 1st question" name="1stqus">
+        </div>
+        <div class="form-group">
+          <label for="11">1st option:</label>
+          <input type="text" class="form-control" id="11" name="11">
+        </div>
+        <div class="form-group">
+          <label for="12">2nd option:</label>
+          <input type="text" class="form-control" id="12" name="12">
+        </div>
+        <div class="form-group">
+          <label for="13">3rd option:</label>
+          <input type="text" class="form-control" id="13" name="13">
+        </div>
+        <div class="form-group">
+          <label for="14">4th option:</label>
+          <input type="text" class="form-control" id="14" name="14">
+        </div>
+        <div class="form-group">
+          <label for="ans1">Correct Answer:</label>
+          <input type="text" class="form-control" id="ans1" name="ans1">
+        </div>
+
       </div>
-      <div class="form-group" style="width:200px">
-        <label for="13">3rd option:</label>
-        <input type="text" class="form-control" id="13"  name="13">
-      </div>
-      <div class="form-group" style="width:200px">
-        <label for="14">4th option:</label>
-        <input type="text" class="form-control" id="14"  name="14">
-      </div>
-      <div class="form-group" style="width:200px">
-        <label for="ans1">Correct Answer:</label>
-        <input type="text" class="form-control" id="ans1"  name="ans1">
-      </div>
-      <hr style="border-top: solid black"/>
+      
+      <center><button type="submit" class="btn btn-primary">Submit</button></center>
+    </form>
+
+  <div class="container" style="width:500px">
+    <button type="button" class="btn btn-secondary" onclick="add()">add</button>
+    <input type="button" class="btn btn-warning"  onclick="removeLocation()" value="remove">
   </div>
- 
-       <div class="container"id="new">
-      
-      </div>
-      
-      <div class="container" style="width:500px">
-      <button type="submit" class="btn btn-default">Submit</button><br>
-      <input type="button"  onclick="add()" value="add">
-      <input type="button"  onclick="removeLocation()" value="remove">
-      
-    </div>
-    
-  </form>
-      </body>
-      <script type="text/javascript">
 
-        function add() {
-          for(let i=0;i>=0;i++){
-            i++;
-          }
+  <hr style="border-top: solid black" />
 
-    var i = document.getElementById( 'old' );
+</body>
 
-    var d = document.createElement( 'div' );
-    d.id = "new1";
-    d.innerHTML = i.innerHTML ;
-    var p = document.getElementById('new');
+<script type="text/javascript">
+  var count=0;
+  function add()
+  {
+    const node = document.createTextNode("This is new.");
+      var question=document.getElementById('question');
+      var addquestion=document.createElement('div').setAttribute('id','dd');
+      addquestion.appendChild(node);
+      question.appendChild(addquestion);
+  }
 
-    p.appendChild(d);
+  function removeLocation() {
 
-}
-
-function removeLocation() {
-
-    var d = document.getElementById( 'new1' );
-
-    var p = document.getElementById('new');
-
-    p.removeChild(d);
-
-}
+  }
 </script>
-</html>    
-   
-  
-
-
-
-
+</html>

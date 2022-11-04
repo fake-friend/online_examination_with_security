@@ -1,0 +1,11 @@
+login time add for student
+otp timing 30seconds
+forgot password in student login -- personal question add
+favourite question change to drop down model
+student quiz attended green, not attended red color
+marks are in percentage 
+
+advantage and disadvantage of online exam
+show student result to admin 
+
+admin can view every department quiz test
