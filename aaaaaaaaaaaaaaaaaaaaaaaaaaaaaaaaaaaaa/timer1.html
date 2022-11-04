@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>timer problem</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <form action="">
+        <input type="datetime-local" name="" id="date">
+        <input type="submit" value="submit">
+    </form>
+    <p id="hour"></p>
+    <p id="min"></p>
+    <p id="sec"></p>
+    <script>
+        //new Date(year, month, day, hours, minutes, seconds, milliseconds)
+        const hour=new Date().getHours();
+        const minutes=new Date().getMinutes();
+        const seconds=new Date().getSeconds();
+        document.getElementById('hour').innerText=hour;
+        document.getElementById('min').innerText=minutes;
+        document.getElementById('sec').innerText=seconds;
+    </script>
+</body>
+</html>

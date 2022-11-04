@@ -118,7 +118,7 @@
         ?>
 
             <td>
-              <form action="view.php?fellow='instructor'" method="post">
+              <form method="post" action="view.php?person=instructor&gmail=<?php echo($row[13]);?>" >
                 <button type="submit" class="btn btn-sm btn-info">Info</button>
               </form>
             </td>
