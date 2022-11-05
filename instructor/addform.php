@@ -5,7 +5,6 @@ $instd = $_SESSION['instructor_id'];
 ?>
 
 <html>
-
 <head>
   <style>
     .mb-3 {

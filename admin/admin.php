@@ -74,7 +74,6 @@ if($_SESSION['name'] && $_SESSION['email'])
                     </div>
                 </li>
             </ul>
-
         </div>
     </nav>
 
