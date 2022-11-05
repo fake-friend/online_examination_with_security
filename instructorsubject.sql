@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2022 at 09:35 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Generation Time: Nov 05, 2022 at 12:09 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,19 +31,11 @@ CREATE TABLE `instructorsubject` (
   `id` int(45) NOT NULL,
   `instructor_id` varchar(500) NOT NULL,
   `instructor_name` varchar(500) NOT NULL,
+  `department` varchar(50) NOT NULL,
   `subject` varchar(500) NOT NULL,
   `subjectcode` varchar(50) NOT NULL,
   `Year` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `instructorsubject`
---
-
-INSERT INTO `instructorsubject` (`id`, `instructor_id`, `instructor_name`, `subject`, `subjectcode`, `Year`) VALUES
-(1, '2', 'subbu ', 'software engineering', 'uca20c35', '2nd year'),
-(2, ' 3', 'subbu ', 'operating system', 'uca20c34', '1st year'),
-(3, ' 3', 'subbu ', 'tamil', 'uca20c56', '1st year');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +55,7 @@ ALTER TABLE `instructorsubject`
 -- AUTO_INCREMENT for table `instructorsubject`
 --
 ALTER TABLE `instructorsubject`
-  MODIFY `id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
