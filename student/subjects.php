@@ -109,9 +109,12 @@
             <?php
 include('../dbconfig.php');
 //echo "Connected";
+session_start();
+$years=$_SESSION['years'];
 if($connection)
 {
-    $query='SELECT subject,subjectcode FROM instructorsubject WHERE Year="1st year" ';
+    //$years=$_SESSION['years'];
+    $query="SELECT subject FROM instructorsubject WHERE Year='$years' ";
     $result=mysqli_query($connection,$query);
     if (mysqli_num_rows($result) > 0) 
     {
