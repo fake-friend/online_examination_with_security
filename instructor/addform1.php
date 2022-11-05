@@ -10,10 +10,11 @@ if($conn==false){
 } 
 $iid=$_POST['iid'];
 $iname=$_POST['iname'];
+$idep=$_POST['idep'];
 $sub=$_POST['sub'];
 $scode=$_POST['scode'];
 $year=$_POST['year'];
-$s1="INSERT INTO instructorsubject(instructor_id,instructor_name,subject,subjectcode,Year) VALUES ('$iid','$iname','$sub','$scode','$year')";
+$s1="INSERT INTO instructorsubject(instructor_id,instructor_name,department,subject,subjectcode,Year) VALUES ('$iid','$iname','$idep','$sub','$scode','$year')";
 $s2=mysqli_query($conn,$s1);
 if($s2)
 {

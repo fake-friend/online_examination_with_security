@@ -27,21 +27,21 @@ $instd = $_SESSION['instructor_id'];
 
     <div class="mb-3">
       <label for="iid" class="form-label" >Instructor ID</label>
-      <input type="text" class="form-control" id="iid" name="iid" value="<?php echo $instd ?> " disabled>
+      <input type="text" class="form-control" id="iid" name="iid" value="<?php echo $instd ?> " >
       <div class="invalid-feedback">Name can't be blank</div>
       <div class="valid-feedback">Looks good!</div>
     </div>
 
     <div class="mb-3">
       <label for="iname" class="form-label">Instructor Name</label>
-      <input type="text" class="form-control" id="iname" name="iname" value="<?php echo $name ?> " autocomplete="email" disabled>
+      <input type="text" class="form-control" id="iname" name="iname" value="<?php echo $name ?> " >
       <div class="invalid-feedback">Email can't be blank</div>
       <div class="valid-feedback">Looks good!</div>
     </div>
 
     <div class="mb-3">
       <label for="iname" class="form-label">Department</label>
-      <input type="text" class="form-control" id="iname" name="iname" value="<?php echo $name ?> " autocomplete="email"  disabled>
+      <input type="text" class="form-control" id="idep" name="idep" value="<?php echo $name ?> " >
       <div class="invalid-feedback">Email can't be blank</div>
       <div class="valid-feedback">Looks good!</div>
     </div>

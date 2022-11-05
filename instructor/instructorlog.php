@@ -10,7 +10,10 @@ if($connection)
             
     
             $query='SELECT instructor_id, instructor_name, passwords, devices from instructor where gmail='.'"'.$email.'"';
+
             $result=mysqli_query($connection,$query);
+            $query1='SELECT department from instructor where gmail='.'"'.$email.'"';
+            $res=mysqli_query($connection,$query1);
             if(mysqli_num_rows($result)>0)
             {
                 $row=mysqli_fetch_row($result);
@@ -24,11 +27,11 @@ if($connection)
                         $iname=$_SESSION['instructor_name'];
                         $_SESSION['gmail']=$email;
                         $imail=$_SESSION['gmail'];
+                        $idepartment=$_SESSION['department'];
                         $_SESSION['instructor_id']=$row[0];
                         $device_query="update instructor set devices='1' where gmail='$email'";
                         mysqli_query($connection,$device_query);
                         $date=date('m/d/Y h:i:s a',time()); 
-                      
                         $track_query="INSERT INTO instructortrackloguser(insname,email,logintime,logouttime) VALUES ('$iname','$imail','$date',null)";
                         mysqli_query($connection,$track_query);
                         mysqli_close($connection);

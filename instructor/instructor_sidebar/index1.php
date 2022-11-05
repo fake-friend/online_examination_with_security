@@ -2,7 +2,7 @@
 session_start();
 $name=$_SESSION['instructor_name'];
 $maill=$_SESSION['gmail'];
-$instd=$_SESSION['instructor_id']
+$instd=$_SESSION['instructor_id'];
 ?>
 <!doctype html>
 <html lang="en">
