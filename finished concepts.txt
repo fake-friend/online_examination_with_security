@@ -1,0 +1,7 @@
+home
+admin login 
+instructor login
+student login
+
+student register- confirm password only
+instructor register
