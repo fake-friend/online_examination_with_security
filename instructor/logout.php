@@ -9,10 +9,10 @@ session_start();
 if($connection)
 {
     $gmail=$_SESSION['gmail'];
-    $date=date('d-m-y h:i:s',time());
     $device_query="update instructor set devices='0' where gmail='$gmail'";
     mysqli_query($connection,$device_query);
-    mysqli_query($connection, "UPDATE instructortrackloguser SET logouttime = $date WHERE email = '$gmail'");                                                                                                                                                                                                                                                              
+    $date1=date('m/d/Y h:i:s a',time()); 
+    mysqli_query($connection, "UPDATE instructortrackloguser SET logouttime = $date1 WHERE email = '$gmail'");                                                                                                                                                                                                                                                              
     mysqli_close($connection);
 }
 session_unset();
