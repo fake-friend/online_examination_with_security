@@ -23,7 +23,7 @@ $instd = $_SESSION['instructor_id'];
 </head>
 
 <body>
-  <form class="needs-validation" action="addform1.php" method="post" novalidate>
+  <form class="needs-validation" action="addform-php.php" method="post" novalidate>
     <div class="alert alert-danger d-none">Please review the problems below:</div>
 
     <div class="mb-3">
