@@ -17,11 +17,10 @@ $dept=$_POST['dept'];
 $postdes=$_POST['postdes'];
 $batch=$_POST['batch'];
 $gend=$_POST['gend'];
-$cla=$_POST['cla'];
 $un=$_POST['un'];
 $youremail=$_POST['your_email'];
 $confirm_psw=$_POST['confirm-psw'];
-$v1="INSERT INTO instructor(instructor_id,instructor_name,dob,phone_number,files,department,post,batch,gender,class,username,gmail,passwords) VALUES ('$instid','$instname','$dob','$phone','$file1','$dept','$postdes','$batch','$gend','$cla','$un','$youremail','$confirm_psw')";
+$v1="INSERT INTO instructor(instructor_id,instructor_name,dob,phone_number,files,department,post,batch,gender,username,gmail,passwords) VALUES ('$instid','$instname','$dob','$phone','$file1','$dept','$postdes','$batch','$gend','$un','$youremail','$confirm_psw')";
 $v2=mysqli_query($conn,$v1);
 if($v2)
 {

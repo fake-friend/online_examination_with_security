@@ -86,12 +86,12 @@ blue-box-separation-line
 .form-register .steps li.done a .step-icon,
 .form-register .steps li.done a:active .step-icon 
 {
-    background:#FFEECA;
-    color: #ffffff;
+    background:#6ddaeb;
+    color: black;
     box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
 }
 .form-register .steps li a .step-text {
-    color: #FFEECA;
+    color: #6ddaeb;
     font-weight: 600;
     font-size: 15px;
     padding: 25px 0 8px;
@@ -99,7 +99,7 @@ blue-box-separation-line
 .form-register .steps .current .step-text,
 .form-register .steps .done .step-text 
 {
-	color: #fff;
+	color: #ffffff;
 }
 .form-register .content 
 {
@@ -253,12 +253,12 @@ blue-box-separation-line
     width: 50px;
     justify-content: center;
     align-items: center;
-    background: #104808;
+    background: #6ddaeb;
     cursor: pointer;
     font-size: 18px;
 }
 .actions ul li:hover {
-	background:  #36782c;
+	background:  #6b7c8f;
 }
 .actions ul li a {
 	color:#FFEECA;
