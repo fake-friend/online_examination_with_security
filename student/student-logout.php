@@ -1,6 +1,6 @@
 <?php
+include_once('../dbconfig.php');
 session_start();
-$connection=mysqli_connect("localhost","root","","online_examination_with_security");
 if($connection)
 {
     $gmail=$_SESSION['gmail'];
@@ -10,5 +10,5 @@ if($connection)
 }
 session_unset();
 session_destroy();
-header("location:slogin.php");
+header("location:student-login.php");
 ?>

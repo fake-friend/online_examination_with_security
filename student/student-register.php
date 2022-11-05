@@ -1,6 +1,9 @@
 <?php
 include('../dbconfig.php');
-echo "Connected";
+if(!$connection)
+{
+    die('something went wrong with database'.mysqli_connect_error());
+}
 $sname=$_POST['sname'];
 $dob=$_POST['dob'];
 $phone=$_POST['phone'];
@@ -20,7 +23,7 @@ $v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,favplace,depa
 VALUES('$sname','$dob','$phone','$favques','$gender','$place','$dept','$rno','$year','$lang','$shift','$file','$uname','$your_email','$confirm_psw')";
 if(mysqli_query($connection,$v))
 {
-   header("location:slogin.php");
+   header("location:student-login.php");
 }
 else
 {
