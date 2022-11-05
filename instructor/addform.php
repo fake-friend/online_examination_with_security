@@ -1,7 +1,7 @@
 <?php
 session_start();
 $name = $_SESSION['instructor_name'];
-$dept = $_SESSION['dept'];
+
 $instd = $_SESSION['instructor_id'];
 ?>
 
@@ -42,8 +42,24 @@ $instd = $_SESSION['instructor_id'];
     </div>
 
     <div class="mb-3">
-      <label for="iname" class="form-label">Department</label>
-      <input type="text" class="form-control" id="idep" name="idep" value="<?php echo $dept ?> " >
+      <label for="idep" class="form-label">Department</label>
+      <select name="idep" id="idep" class="form-control" >
+												
+												<option value="Tamil">Tamil</option>
+                        <option value="English">English</option>
+                        <option value="Economics">Economics</option>
+                        <option value="Business Administration">Business Administration</option>  
+                        <option value="Commerce">Commerce</option>   
+                       <option value="Mathematics">Mathematics</option>   
+                        <option value="Physics">Physics</option>   
+                        <option value="Chemistry">Chemistry</option>  
+                        <option value="Botany">Botany</option>   
+                         <option value="Zoology">Zoology</option>   
+                        <option value="Computer Science">Computer Science</option>   
+                        <option value="Biotech">Biotech</option>   
+                       <option value="CA/IT">CA/IT</option>  
+                        <option value="Psycology">Psycology</option>  
+											</select>
       <div class="invalid-feedback">Dept can't be blank</div>
       <div class="valid-feedback">Looks good!</div>
     </div>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2022 at 06:03 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Nov 05, 2022 at 03:04 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,12 +34,10 @@ CREATE TABLE `instructor` (
   `dob` date NOT NULL,
   `phone_number` int(10) NOT NULL,
   `files` varchar(50) NOT NULL,
-  `favques` varchar(1000) NOT NULL,
   `department` varchar(500) NOT NULL,
   `post` varchar(500) NOT NULL,
   `batch` varchar(50) NOT NULL,
   `gender` varchar(6) NOT NULL,
-  `class` varchar(10) NOT NULL,
   `username` varchar(100) NOT NULL,
   `gmail` varchar(100) NOT NULL,
   `passwords` varchar(8) NOT NULL,
@@ -51,10 +49,13 @@ CREATE TABLE `instructor` (
 -- Dumping data for table `instructor`
 --
 
-INSERT INTO `instructor` (`id`, `instructor_id`, `instructor_name`, `dob`, `phone_number`, `files`, `favques`, `department`, `post`, `batch`, `gender`, `class`, `username`, `gmail`, `passwords`, `created_at`, `devices`) VALUES
-(1, '1', 'Harish', '2022-10-01', 1234567890, 'Screenshot (26).png', 'Programmer', 'bca', 'Head of Department', 'Self Financed', 'Male', '3rd year', 'harishkumar', 'harish@gmail.com', '24022002', '2022-10-01 03:48:23', 0),
-(4, '2', 'hepsy', '2022-10-02', 987654321, 'Screenshot (24).png', 'developer', 'bsc-it', 'Assistant Professor', 'Self Financed', 'Female', '2nd year', 'hepsyjoannah', 'hepsy@gmail.com', '13102002', '2022-10-01 03:59:54', 0),
-(5, '3', 'sangeetha', '2022-10-03', 637416043, 'Screenshot (27).png', 'utopia', 'eng', 'Assistant Professor', 'Self Financed', 'Female', '2nd year', 'sangeetha', 'sangee@gmail.com', '03032003', '2022-10-01 04:02:42', 0);
+INSERT INTO `instructor` (`id`, `instructor_id`, `instructor_name`, `dob`, `phone_number`, `files`, `department`, `post`, `batch`, `gender`, `username`, `gmail`, `passwords`, `created_at`, `devices`) VALUES
+(1, '101', 'Albert', '2022-11-02', 2147483647, 'bfirst.jpeg', 'CA/IT', 'Head of Department', 'Self Financed', 'Male', 'alberteinstein', 'albert@gmail.com', 'Al@12345', '2022-11-05 13:15:31', 0),
+(2, '102', 'Mary ', '2022-11-04', 2147483647, 'gthird.jpeg', 'CA/IT', 'Assistant Professor', 'Self Financed', 'Female', 'Mary', 'mary@gmail.com', 'Ma@12345', '2022-11-05 13:45:42', 0),
+(3, '103', 'Jessica', '2022-11-04', 2147483647, 'gfirst.jpeg', 'Computer Science', 'Head of Department', 'Aided', 'Female', 'Jessica', 'jessy@gmail.com', 'Jessy@12', '2022-11-05 13:49:46', 0),
+(4, '104', 'David Michael', '2022-11-10', 2147483647, 'bfirst.jpeg', 'Mathematics', 'Assistant Professor', 'Aided', 'Male', 'David ', 'david@gmail.com', 'D@vid123', '2022-11-05 13:52:31', 0),
+(5, '105', 'Joseph David', '2022-11-17', 2147483647, 'bfirst.jpeg', 'Computer Science', 'Assistant Professor', 'Aided', 'Male', 'Joseph ', 'joseph@gmail.com', 'Jose@123', '2022-11-05 13:55:43', 0),
+(6, '106', 'Jennifer', '2022-11-19', 2147483647, 'gfirst.jpeg', 'Mathematics', 'Head of Department', 'Aided', 'Female', 'Jennifer', 'jenny@gmail.com', 'Jenny@20', '2022-11-05 13:59:29', 1);
 
 --
 -- Indexes for dumped tables
@@ -74,7 +75,7 @@ ALTER TABLE `instructor`
 -- AUTO_INCREMENT for table `instructor`
 --
 ALTER TABLE `instructor`
-  MODIFY `id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

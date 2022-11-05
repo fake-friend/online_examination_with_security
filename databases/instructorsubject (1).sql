@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2022 at 12:09 PM
+-- Generation Time: Nov 05, 2022 at 03:04 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.0.23
 
@@ -36,6 +36,18 @@ CREATE TABLE `instructorsubject` (
   `subjectcode` varchar(50) NOT NULL,
   `Year` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `instructorsubject`
+--
+
+INSERT INTO `instructorsubject` (`id`, `instructor_id`, `instructor_name`, `department`, `subject`, `subjectcode`, `Year`) VALUES
+(1, '101 ', 'Albert ', 'CA/IT', 'Java', 'uca22c51', 'I'),
+(2, '102 ', 'Mary  ', 'Computer Science', 'Cloud Computing', 'ucs22c52', 'I'),
+(3, '103 ', 'Jessica ', 'Mathematics', 'Algebra', 'uma21c53', 'II'),
+(4, '104 ', 'David Michael ', 'Physics', 'Discrete Mathematics', 'uph21c55', 'II'),
+(5, '105 ', 'Joseph David ', 'CA/IT', 'Internet Security', 'uca20c56', 'III'),
+(6, '106 ', 'Jennifer ', 'Computer Science', 'Trigonometry', 'ucs20c57', 'III');
 
 --
 -- Indexes for dumped tables
