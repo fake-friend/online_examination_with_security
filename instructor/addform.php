@@ -1,13 +1,15 @@
 <?php
 session_start();
 $name = $_SESSION['instructor_name'];
+$dept = $_SESSION['dept'];
 $instd = $_SESSION['instructor_id'];
 ?>
 
 <html>
 <head>
   <style>
-    .mb-3 {
+    .mb-3 
+    {
       width: 450px;
       padding-left: 25px;
     }
@@ -19,7 +21,7 @@ $instd = $_SESSION['instructor_id'];
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+  </head>
 
 <body>
   <form class="needs-validation" action="addform1.php" method="post" novalidate>
@@ -41,8 +43,8 @@ $instd = $_SESSION['instructor_id'];
 
     <div class="mb-3">
       <label for="iname" class="form-label">Department</label>
-      <input type="text" class="form-control" id="idep" name="idep" value="<?php echo $name ?> " >
-      <div class="invalid-feedback">Email can't be blank</div>
+      <input type="text" class="form-control" id="idep" name="idep" value="<?php echo $dept ?> " >
+      <div class="invalid-feedback">Dept can't be blank</div>
       <div class="valid-feedback">Looks good!</div>
     </div>
 
@@ -51,8 +53,8 @@ $instd = $_SESSION['instructor_id'];
       <input type="text" class="form-control" id="sub" name="sub" placeholder="Enter your subjects" required>
       <div class="invalid-feedback">Please provide a valid value.</div>
       <div class="valid-feedback">Looks good!</div>
-
     </div>
+
     <div class="mb-3">
       <label for="scode" class="form-label">Subject Code</label>
       <input type="text" class="form-control" id="scode" name="scode" placeholder="Enter your subject code" value="" required>
@@ -64,24 +66,26 @@ $instd = $_SESSION['instructor_id'];
     <fieldset class="mb-3">
       <legend class="col-form-label pt-0">Choose a Year</legend>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="year" id="1st year" value="1st year">
+        <input class="form-check-input" type="radio" name="year" id="1st year" value="I">
         <label class="form-check-label" for="1st year">I YEAR</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="year" id="2nd year" value="2nd year">
+        <input class="form-check-input" type="radio" name="year" id="2nd year" value="II">
         <label class="form-check-label" for="2nd year">II YEAR</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="year" id="3rd year" value="3rd year">
+        <input class="form-check-input" type="radio" name="year" id="3rd year" value="III">
         <label class="form-check-label" for="3rd year">III YEAR</label>
       </div>
     </fieldset>
-    <button type="submit" class="btn btn-primary">Submit</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="subject.html"> <button type="button" class="btn btn-primary">Back</button></a>
+       <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </body>
 <script>
   // Disable form submissions if there are invalid fields
-  (function() {
+  (function() 
+  {
     "use strict";
     window.addEventListener("load", function() {
       // Get the forms we want to add validation styles to

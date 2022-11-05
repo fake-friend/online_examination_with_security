@@ -7,9 +7,8 @@ if($connection)
     {
             $email=$_POST['email'];
             $password=$_POST['pwd'];
-            
-    
-            $query='SELECT instructor_id, instructor_name, passwords, devices from instructor where gmail='.'"'.$email.'"';
+                
+            $query='SELECT instructor_id, instructor_name, passwords, devices,department from instructor where gmail='.'"'.$email.'"';
 
             $result=mysqli_query($connection,$query);
             $query1='SELECT department from instructor where gmail='.'"'.$email.'"';
@@ -20,10 +19,9 @@ if($connection)
                 if(strcmp($password,$row[2])==0)
                 {
                     if($row[3]==0)
-                    {
-                         
-                        
+                    {   
                         $_SESSION['instructor_name']=$row[1];
+                        $_SESSION['dept']=$row[4];
                         $iname=$_SESSION['instructor_name'];
                         $_SESSION['gmail']=$email;
                         $imail=$_SESSION['gmail'];
@@ -52,10 +50,8 @@ if($connection)
             {
                 header("location:instructorlogin.php?message=please check your email id or password");
             }  
-        }
-        
+        }   
     }
-
 else
 {
     die("could not connect to database".mysqli_connect_error());
