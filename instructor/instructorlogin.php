@@ -235,73 +235,49 @@
               echo '</center><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
             } 
         ?>
-
     <div class="login-wrap">
         <div class="login-html">
-            <center><h1>LOGIN</h1></center>
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">&nbsp &nbsp  &nbsp  INSTRUCTOR &nbsp &nbsp  &nbsp</label>
-            <input id="tab-2" type="radio" name="tab" class="sign-up" disabled><label for="tab-2" class="tab">&nbsp &nbsp &nbsp  &nbspSTUDENT  &nbsp &nbsp &nbsp  &nbsp </label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INSTRUCTOR LOGIN &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
             <div class="login-form">
-                <form method="post" action="instructorlog.php">
-                    <div class="sign-in-htm">
-                        <div class="group">
-                            <label for="user" class="label">Email</label>
-                            <input id="user" name="email" type="text" class="input" required>
-                        </div>
-
-                        <div class="group">
-                            <label for="pass" class="label">Password</label>
-                            <input id="pass" name="pwd" type="password" class="input" autocomplete="current-password" required>
-                            <i class="far fa-eye" id="togglePassword" onclick="eye()"></i>
-                            <span id="text2"></span>
-                        </div>
-
-                        <div class="group">
-                            <input type="submit" class="button" value="Sign In">
-                        </div>
-                        <div class="hr"></div>
-                        <div class="foot-lnk">
-                            <a href="#forgot">Forgot Password?</a>
-                            <a href="instructor-reg.html">Don't you have an account?</a>
-                        </div>
-                    </div>
-                </form>
-                <script>
-                function eye()
-                {
-                   const togglePassword = document.querySelector('#togglePassword');
-                   const password = document.querySelector('#pass');
-      
-                   togglePassword.addEventListener('click', function (e) {
-                   // toggle the type attribute
-                   const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-                   password.setAttribute('type', type);
-                  // toggle the eye slash icon
-                  this.classList.toggle('fa-eye-slash');
-                  });
-                }
-                </script>
-                <form action="" method="post">
+                <form id="form" onsubmit="myfunc(); return false;" action="http://localhost/online_examination_with_security/instructor/instructorlog.php" method="post">
                     <div class="sign-up-htm">
                         <div class="group">
-                            <label for="user" class="label">Username</label>
-                            <input id="user" type="text" name="uname" class="input">
+                        <br><label for="user" class="label" >Email</label>
+                            <input id="user" type="text" name="email" class="input">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" class="input" name="passw" data-type="password">
+                            <input  type="password" id="pass" class="input" name="pwd" autocomplete="current-password" >
+                            <i class="far fa-eye" id="togglePassword" onclick="eye()"></i>
+                            <span id="text2"></span> 
                         </div>
                         <div class="group">
                             <input type="submit" name="submit" class="button" value="Sign In">
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
-                            <a href="#">Don't you have an account?</a>
+                            <a href="instructor-reg.html">Don't you have an account?</a><br>
+                            <a href="">Forgot password?</a>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+    function eye()
+    {
+     const togglePassword = document.querySelector('#togglePassword');
+     const password = document.querySelector('#pass');  
+        togglePassword.addEventListener('click', function (e) 
+        {
+          // toggle the type attribute
+          const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+          password.setAttribute('type', type);
+          // toggle the eye slash icon
+          this.classList.toggle('fa-eye-slash');
+        });
+    }
+    </script>
 </body>
 </html>

@@ -341,13 +341,13 @@
 								  }
 								}
 								function matchPassword() {  
-                                  var pw1 = document.getElementById("passwprd");  
-                                  var pw2 = document.getElementById("confirm-psw");  
-                                  if(pw1 != pw2)  
+                                  var pw1 = document.getElementById("password").value;  
+                                  var pw2 = document.getElementById("confirm-psw").value;  
+                                  if(pw1 == pw2)  
                                  {   
-                                    alert("Passwords did not match");  
+                                    alert("Password created successfully");  
                                  } else {  
-                                         alert("Password created successfully");  
+                                         alert("Passwords did not match");  
                                     }  
                                 }  
 								</script>
