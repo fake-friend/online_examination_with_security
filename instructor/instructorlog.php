@@ -19,7 +19,7 @@ if($connection)
                     if($row[3]==0)
                     {
                          
-                        $date=date('m/d/y h:i:s',time());
+                        
                         $_SESSION['instructor_name']=$row[1];
                         $iname=$_SESSION['instructor_name'];
                         $_SESSION['gmail']=$email;
@@ -27,8 +27,10 @@ if($connection)
                         $_SESSION['instructor_id']=$row[0];
                         $device_query="update instructor set devices='1' where gmail='$email'";
                         mysqli_query($connection,$device_query);
-                        $in="INSERT INTO instructortrackloguser(insname,email,logintime) VALUES ('$iname','$imail','$date')";
-                        mysqli_query($connection,$in);
+                        $date=date('m/d/Y h:i:s a',time()); 
+                      
+                        $track_query="INSERT INTO instructortrackloguser(insname,email,logintime,logouttime) VALUES ('$iname','$imail','$date',null)";
+                        mysqli_query($connection,$track_query);
                         mysqli_close($connection);
 
                         echo "<script> location.href='http://localhost/online_examination_with_security/instructor/instructor_sidebar/index1.php'</script>";
