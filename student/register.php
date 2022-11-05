@@ -16,8 +16,8 @@ $lang=$_POST['language'];
 $uname=$_POST['uname'];
 $your_email=$_POST['your_email'];
 $confirm_psw=$_POST['confirm-psw'];
-$v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,favplace,department,roll_number,batch,favlanguage,shift,upload,username,gmail,pass_word) 
-VALUES('$sname','$dob','$phone','$favques','$gender','$place','$dept','$rno','$batch','$lang','$shift','$file','$uname','$your_email','$confirm_psw')";
+$v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,favplace,department,roll_number,year,favlanguage,shift,upload,username,gmail,pass_word) 
+VALUES('$sname','$dob','$phone','$favques','$gender','$place','$dept','$rno','$year','$lang','$shift','$file','$uname','$your_email','$confirm_psw')";
 if(mysqli_query($connection,$v))
 {
    header("location:slogin.php");

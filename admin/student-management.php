@@ -19,7 +19,7 @@
             <th>Student Name</th>
             <th>Student Photo</th>
             <th>Department</th>
-            <th>Batch</th>
+            <th>Year</th>
             <th>Self / Aided</th>
             <th>Username</th>
             <th>Gmail</th>
