@@ -1,15 +1,14 @@
 <?php
 session_start();
 $name = $_SESSION['instructor_name'];
-
 $instd = $_SESSION['instructor_id'];
 ?>
 
 <html>
+
 <head>
   <style>
-    .mb-3 
-    {
+    .mb-3 {
       width: 450px;
       padding-left: 25px;
     }
@@ -21,45 +20,45 @@ $instd = $_SESSION['instructor_id'];
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
+</head>
 
 <body>
   <form class="needs-validation" action="addform1.php" method="post" novalidate>
     <div class="alert alert-danger d-none">Please review the problems below:</div>
 
     <div class="mb-3">
-      <label for="iid" class="form-label" >Instructor ID</label>
-      <input type="text" class="form-control" id="iid" name="iid" value="<?php echo $instd ?> " >
+      <label for="iid" class="form-label">Instructor ID</label>
+      <input type="text" class="form-control" id="iid" name="iid" value="<?php echo $instd ?> ">
       <div class="invalid-feedback">Name can't be blank</div>
       <div class="valid-feedback">Looks good!</div>
     </div>
 
     <div class="mb-3">
       <label for="iname" class="form-label">Instructor Name</label>
-      <input type="text" class="form-control" id="iname" name="iname" value="<?php echo $name ?> " >
+      <input type="text" class="form-control" id="iname" name="iname" value="<?php echo $name ?> ">
       <div class="invalid-feedback">Email can't be blank</div>
       <div class="valid-feedback">Looks good!</div>
     </div>
 
     <div class="mb-3">
       <label for="idep" class="form-label">Department</label>
-      <select name="idep" id="idep" class="form-control" >
-												
-												<option value="Tamil">Tamil</option>
-                        <option value="English">English</option>
-                        <option value="Economics">Economics</option>
-                        <option value="Business Administration">Business Administration</option>  
-                        <option value="Commerce">Commerce</option>   
-                       <option value="Mathematics">Mathematics</option>   
-                        <option value="Physics">Physics</option>   
-                        <option value="Chemistry">Chemistry</option>  
-                        <option value="Botany">Botany</option>   
-                         <option value="Zoology">Zoology</option>   
-                        <option value="Computer Science">Computer Science</option>   
-                        <option value="Biotech">Biotech</option>   
-                       <option value="CA/IT">CA/IT</option>  
-                        <option value="Psycology">Psycology</option>  
-											</select>
+      <select name="idep" id="idep" class="form-control">
+
+        <option value="Tamil">Tamil</option>
+        <option value="English">English</option>
+        <option value="Economics">Economics</option>
+        <option value="Business Administration">Business Administration</option>
+        <option value="Commerce">Commerce</option>
+        <option value="Mathematics">Mathematics</option>
+        <option value="Physics">Physics</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Botany">Botany</option>
+        <option value="Zoology">Zoology</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Biotech">Biotech</option>
+        <option value="CA/IT">CA/IT</option>
+        <option value="Psycology">Psycology</option>
+      </select>
       <div class="invalid-feedback">Dept can't be blank</div>
       <div class="valid-feedback">Looks good!</div>
     </div>
@@ -94,14 +93,13 @@ $instd = $_SESSION['instructor_id'];
         <label class="form-check-label" for="3rd year">III YEAR</label>
       </div>
     </fieldset>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="subject.html"> <button type="button" class="btn btn-primary">Back</button></a>
-       <button type="submit" class="btn btn-primary">Submit</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="subject.html"> <button type="button" class="btn btn-primary">Back</button></a>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </body>
 <script>
   // Disable form submissions if there are invalid fields
-  (function() 
-  {
+  (function() {
     "use strict";
     window.addEventListener("load", function() {
       // Get the forms we want to add validation styles to
@@ -119,4 +117,5 @@ $instd = $_SESSION['instructor_id'];
     }, false);
   })();
 </script>
+
 </html>

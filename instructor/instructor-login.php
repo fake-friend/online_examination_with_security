@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -17,10 +18,11 @@
     <style>
         body {
             margin: 0;
-            color:#888dad;
+            color: #888dad;
             background: #c8c8c8;
             font: 600 16px/18px 'Open Sans', sans-serif;
         }
+
         *,
         :after,
         :before {
@@ -59,12 +61,13 @@
             height: 100%;
             position: absolute;
             padding: 90px 70px 50px 70px;
-            background:/*#353333; rgba(40, 57, 101, .9);*/#070a3c;
+            background:
+                /*#353333; rgba(40, 57, 101, .9);*/
+                #070a3c;
         }
 
         .login-html .sign-in-htm,
-        .login-html .sign-up-htm
-         {
+        .login-html .sign-up-htm {
             top: 0;
             left: 0;
             right: 0;
@@ -131,7 +134,7 @@
         }
 
         .login-form .group input[data-type="password"] {
-           /*text-security: circle;*/
+            /*text-security: circle;*/
             -webkit-text-security: circle;
         }
 
@@ -213,50 +216,49 @@
         input[type="submit"] {
             cursor: pointer;
         }
-        i 
-        {
-          position: absolute;
-          min-width: 40px;
-          margin-top: -28px;
-          margin-left: 415px;
-          cursor: pointer;
+
+        i {
+            position: absolute;
+            min-width: 40px;
+            margin-top: -28px;
+            margin-left: 415px;
+            cursor: pointer;
         }
     </style>
-    
+
 </head>
 
 <body>
 
-        <?php 
-            if(isset($_GET['message']))
-            {
-              echo '<div class="alert alert-warning alert-dismissible fade show" role="alert"><center>';
-              echo($_GET["message"]);
-              echo '</center><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
-            } 
-        ?>
+    <?php
+    if (isset($_GET['message'])) {
+        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert"><center>';
+        echo ($_GET["message"]);
+        echo '</center><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+    }
+    ?>
     <div class="login-wrap">
         <div class="login-html">
             <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INSTRUCTOR LOGIN &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
             <div class="login-form">
-                <form id="form" onsubmit="myfunc(); return false;" action="http://localhost/online_examination_with_security/instructor/instructorlog.php" method="post">
+                <form id="form" onsubmit="myfunc(); return false;" action="instructor-login-confirm.php" method="post">
                     <div class="sign-up-htm">
                         <div class="group">
-                        <br><label for="user" class="label" >Email</label>
+                            <br><label for="user" class="label">Email</label>
                             <input id="user" type="text" name="email" class="input">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Password</label>
-                            <input  type="password" id="pass" class="input" name="pwd" autocomplete="current-password" >
+                            <input type="password" id="pass" class="input" name="pwd" autocomplete="current-password">
                             <i class="far fa-eye" id="togglePassword" onclick="eye()"></i>
-                            <span id="text2"></span> 
+                            <span id="text2"></span>
                         </div>
                         <div class="group">
                             <input type="submit" name="submit" class="button" value="Sign In">
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
-                            <a href="instructor-reg.html">Don't you have an account?</a><br>
+                            <a href="instructor-register.html">Don't you have an account?</a><br>
                             <a href="">Forgot password?</a>
                         </div>
                     </div>
@@ -265,19 +267,18 @@
         </div>
     </div>
     <script>
-    function eye()
-    {
-     const togglePassword = document.querySelector('#togglePassword');
-     const password = document.querySelector('#pass');  
-        togglePassword.addEventListener('click', function (e) 
-        {
-          // toggle the type attribute
-          const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-          password.setAttribute('type', type);
-          // toggle the eye slash icon
-          this.classList.toggle('fa-eye-slash');
-        });
-    }
+        function eye() {
+            const togglePassword = document.querySelector('#togglePassword');
+            const password = document.querySelector('#pass');
+            togglePassword.addEventListener('click', function(e) {
+                // toggle the type attribute
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                // toggle the eye slash icon
+                this.classList.toggle('fa-eye-slash');
+            });
+        }
     </script>
 </body>
+
 </html>

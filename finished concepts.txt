@@ -3,5 +3,5 @@ admin login
 instructor login
 student login
 
-student register- confirm password only
+student register
 instructor register
