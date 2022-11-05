@@ -45,19 +45,19 @@
              <td>
                 <?php echo($count); ?>
             </td>
-
+            <!--instructor id-->
             <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo($row[1]); ?></p>
                 </div>
             </td>
-            
+            <!--instructor name-->
             <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo($row[2]); ?></p>
                 </div>
             </td>
-
+            <!--instructor photo-->
             <td>
               <div class="d-flex align-items-center">
                 <img
@@ -68,39 +68,40 @@
                     />
               </div>
             </td>
-
+            <!--department-->
             <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo($row[7]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo($row[6]); ?></p>
                 </div>
             </td>
-            
+            <!--instructor post-->
             <td>
                 <div class="ms-3">
-                  <p class="text-muted mb-0"><?php echo($row[8]); ?></p>
+                  <p class="text-muted mb-0"><?php echo($row[7]); ?></p>
                 </div>
             </td>
-
+            <!--self / aided-->
             <td>
-              <p class="fw-normal mb-1"><?php echo($row[9]); ?></p>
+              <p class="fw-normal mb-1"><?php echo($row[8]); ?></p>
             </td>
-
+            <!--instructor username-->
             <td>
-              <p class="text-muted mb-0"><?php echo($row[12]); ?></p>
+              <p class="text-muted mb-0"><?php echo($row[10]); ?></p>
             </td>
-
+            <!--instructor gmail-->
             <td>
-              <p class="text-muted mb-0"><?php echo($row[13]); ?></p>
+              <p class="text-muted mb-0"><?php echo($row[11]); ?></p>
             </td>
-
+            <!--instructor phone number-->
             <td>
               <p class="text-muted mb-0"><?php echo($row[4]); ?></p>
             </td>
         
         <?php
-        if($row[16]==1)
+        if($row[14]==1)
         {
         ?>
+          <!--instructor status-->
             <td>
               <span class="badge badge-success rounded-pill d-inline">Logged In</span>
             </td>
