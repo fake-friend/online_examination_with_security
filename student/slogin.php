@@ -18,6 +18,7 @@
             color:rgb(180, 233, 245); 
             background: #c8c8c8;
             font: 600 16px/18px 'Open Sans', sans-serif;
+            margin-top:20px;
         }
         *,
         :after,
@@ -202,7 +203,7 @@ if(isset($_GET['message']))
 ?>
     <div class="login-wrap">
         <div class="login-html">
-            <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  LOGIN &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; STUDENT  LOGIN  &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
             <div class="login-form">
                 <form id="form" onsubmit="myfunc(); return false;" action="http://localhost/online_examination_with_security/student/slogin_confirm.php" method="post">
                     <div class="sign-up-htm">

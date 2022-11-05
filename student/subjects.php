@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
   	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         body{
                 margin-top:0px;
@@ -75,9 +76,11 @@
         .card .description {
             font-size: 16px;
             color: #66615b;
+           
         }
         .content-card{
-            margin-top:30px;    
+            margin-top:20px; 
+             
         }
         a:hover, a:focus {
             text-decoration: none;
@@ -88,8 +91,12 @@
         }
         .card[data-color="blue"] .description {
             color: #506568;
+            padding-left: 10px;
         }
-
+        i{
+            width:50px;
+            height:50px;
+        }
         </style>    
 </head>
 <body>
@@ -104,7 +111,7 @@ include('../dbconfig.php');
 //echo "Connected";
 if($connection)
 {
-    $query='SELECT subject FROM instructorsubject WHERE Year="1st year" ';
+    $query='SELECT subject,subjectcode FROM instructorsubject WHERE Year="1st year" ';
     $result=mysqli_query($connection,$query);
     if (mysqli_num_rows($result) > 0) 
     {
@@ -115,7 +122,7 @@ if($connection)
                     <div class="card-big-shadow">
                         <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
                             <div class="content">
-                                <h4 class="title"><a href="#"></a><?php echo $row[0];?></h4>
+                                <p class="description">  <i class="fa fa-book " style="font-size: 3rem;" aria-hidden="true"></i><br><b>subject:</b> <br> <?php echo $row[0];?> </p>
                             </div>
                         </div> <!-- end card -->
                     </div>

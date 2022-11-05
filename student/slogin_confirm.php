@@ -16,7 +16,7 @@ if($connection)
             {
                 if($row[2]==0)
                 {
-                    $_SESSION['student_name']=$row[1];
+                    $_SESSION['student_name']=$row[0];
                     $_SESSION['gmail']=$email;
                     $device_query="update student set devices='1' where gmail='$email'";
                     mysqli_query($connection,$device_query);
