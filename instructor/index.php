@@ -57,11 +57,11 @@ $instd = $_SESSION['instructor_id'];
                 <h1><a href="index.html" class="logo"><?php echo $name ?><span><?php echo $maill ?></span></a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li>
-                        <a href="subject.html" target="frame"><span class="fa fa-book mr-3"></span> Subjects</a>
+                        <a href="subject.php" target="frame"><span class="fa fa-book mr-3"></span> Subjects</a>
                     </li>
 
                     <li>
-                        <a href="#"><span class="fa fa-pencil mr-3"></span> Exam Management</a>
+                        <a href="subjectshowup.php" target="frame"><span class="fa fa-pencil mr-3"></span> Exam Management</a>
                     </li>
 
                     <li>
