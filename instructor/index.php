@@ -7,7 +7,7 @@ if(!($_SESSION['gmail'] && $_SESSION['instructor_name']))
 $name = $_SESSION['instructor_name'];
 $maill = $_SESSION['gmail'];
 $instd = $_SESSION['instructor_id'];
-
+$dept=$_SESSION['department'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -54,7 +54,7 @@ $instd = $_SESSION['instructor_id'];
             </div>
 
             <div class="p-4">
-                <h1><a href="index.html" class="logo"><?php echo $name ?><span><?php echo $maill ?></span></a></h1>
+                <h1><a href="index.html" class="logo"><?php echo $name ?><span><?php echo $maill ?></span><span><?php echo $dept ?></span></a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li>
                         <a href="subject.php" target="frame"><span class="fa fa-book mr-3"></span> Subjects</a>
@@ -91,7 +91,7 @@ $instd = $_SESSION['instructor_id'];
         </nav>
     </div>
 
-    <iframe src="" id="frame" name="frame" frameborder="0" width="1040" height="600">
+    <iframe src="subject.php" id="frame" name="frame" frameborder="0" width="1040" height="600">
     </iframe>
 
     <script>

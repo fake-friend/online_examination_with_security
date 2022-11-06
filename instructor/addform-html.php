@@ -93,7 +93,7 @@ $instd = $_SESSION['instructor_id'];
         <label class="form-check-label" for="3rd year">III YEAR</label>
       </div>
     </fieldset>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="subject.html"> <button type="button" class="btn btn-primary">Back</button></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="subject.php"> <button type="button" class="btn btn-primary">Back</button></a>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </body>
