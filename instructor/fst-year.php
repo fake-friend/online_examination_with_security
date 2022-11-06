@@ -19,92 +19,59 @@
 </head>
 
 <body>
-<br><br>
+  <br><br>
   <table class="table align-middle mb-0 bg-white table-hover">
     <thead class="bg-light">
       <tr>
         <th>Serial Number</th>
-        <th>Instructor ID</th>
-        <th>Instructor Name</th>
-        <th>Department</th>
-        <th>Subjects</th>
-        <th>Subject Code</th>
-        <th>Year</th>
-        <th>Exam</th>
-        <th>Exam Status</th>
+        <th>Student RollNumber</th>
+        <th>Student Name</th>
+        <th>Student Photo</th>
+        <th>Phone Number</th>
       </tr>
     </thead>
     <tbody>
       <?php
-      session_start();
-
+      $year = $_GET['year'];
       include_once('../dbconfig.php');
+      session_start();
+      $dept = $_SESSION['department'];
       if ($connection) {
         $count = 1;
-        $inst_id = $_SESSION['instructor_id'];
-        $query = 'select * from instructorsubject where instructor_id=' . '"' . $inst_id . '"';
+        $query = "SELECT roll_number,student_name,upload,phonenumber FROM student WHERE department='$dept' AND years='$year'";
         $result = mysqli_query($connection, $query);
         while ($row = mysqli_fetch_array($result)) {
+          $file = 'http://localhost/online_examination_with_security/student/upload/' . $row[2];
       ?>
           <tr>
             <!--serial number-->
             <td>
               <?php echo ($count); ?>
             </td>
-            <!--instructor id-->
+            <!--student roll number-->
+            <td>
+              <div class="ms-3">
+                <p class="fw-bold mb-1"><?php echo ($row[0]); ?></p>
+              </div>
+            </td>
+            <!--student name-->
             <td>
               <div class="ms-3">
                 <p class="fw-bold mb-1"><?php echo ($row[1]); ?></p>
               </div>
             </td>
-            <!--instructor name-->
+            <!--student photo-->
             <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><?php echo ($row[2]); ?></p>
+              <div class="d-flex align-items-center">
+                <img src="<?php echo ($file); ?>" alt="" style="width: 75px; height: 75px; object-fit: fill;" class="rounded-circle" />
               </div>
             </td>
-            <!-- Department-->
+            <!--phone number-->
             <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
-              </div>
+              <p class="text-muted mb-0"><?php echo ($row[3]); ?></p>
             </td>
-            <!--subject-->
-            <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
-              </div>
-            </td>
-            <!--subjectCode-->
-            <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
-              </div>
-            </td>
-            <!--year-->
-            <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
-              </div>
-            </td>
-            <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1">
-                  <html>
 
-                  <body>
-                    <form method="post" action="#">
-                      <input type="submit" value="Add Exam Question ">
-                    </form>
-                  </body>
-
-                  </html>
-
-                </p>
-              </div>
-            </td>
           </tr>
-
       <?php
           $count = $count + 1;
         }
@@ -114,7 +81,6 @@
       ?>
     </tbody>
   </table>
-  </div>
 </body>
 
 </html>

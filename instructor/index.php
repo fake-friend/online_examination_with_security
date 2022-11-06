@@ -65,15 +65,15 @@ $instd = $_SESSION['instructor_id'];
                     </li>
 
                     <li>
-                        <a href="firstyears.php"><span class="fa fa-graduation-cap mr-3"></span> First years</a>
+                        <a href="fst-year.php?year=I" target="frame"><span class="fa fa-graduation-cap mr-3"></span> First years</a>
                     </li>
 
                     <li>
-                        <a href="#"><span class="fa fa-graduation-cap mr-3"></span> Second years</a>
+                        <a href="fst-year.php?year=II" target="frame"><span class="fa fa-graduation-cap mr-3"></span> Second years</a>
                     </li>
 
                     <li>
-                        <a href="#"><span class="fa fa-graduation-cap mr-3"></span> Third years</a>
+                        <a href="fst-year.php?year=III" target="frame"><span class="fa fa-graduation-cap mr-3"></span> Third years</a>
                     </li>
                 </ul>
 
