@@ -7,7 +7,7 @@ if($connection)
     {
         $email=$_POST['email'];
         $password=$_POST['pwd'];          
-        $query='SELECT instructor_id, instructor_name, passwords, devices from instructor where gmail='.'"'.$email.'"';
+        $query='SELECT instructor_id, instructor_name, passwords, devices,department from instructor where gmail='.'"'.$email.'"';
         $result=mysqli_query($connection,$query);
             if(mysqli_num_rows($result)>0)
             {
@@ -19,6 +19,7 @@ if($connection)
                         $_SESSION['instructor_name']=$row[1];
                         $_SESSION['gmail']=$email;
                         $_SESSION['instructor_id']=$row[0];
+                        $_SESSION['department']=$row[4];
                         $device_query="update instructor set devices='1' where gmail='$email'";
                         mysqli_query($connection,$device_query);
                         mysqli_close($connection);

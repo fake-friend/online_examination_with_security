@@ -18,28 +18,23 @@
             <th>Student RollNumber</th>
             <th>Student Name</th>
             <th>Student Photo</th>
-            <th>Department</th>
-            <th>Batch</th>
-            <th>Self / Aided</th>
-            <th>Username</th>
-            <th>Gmail</th>
             <th>Phone Number</th>
-            <th>Status</th>
-            <th>View</th>
-            <th>Remove</th>
           </tr>
         </thead>
         <tbody>
         <?php
+           
             include_once('../dbconfig.php');
+            session_start();
+            $dept=$_SESSION['department'];
             if($connection)
             {
                 $count=1;
-                $query='select * from student';
+                $query="SELECT roll_number,student_name,upload,phonenumber FROM student WHERE department='$dept'";
                 $result=mysqli_query($connection,$query);
                 while($row=mysqli_fetch_array($result))
                 {
-                    $file='http://localhost/online_examination_with_security/student/upload/'.$row[4];
+                    $file='http://localhost/online_examination_with_security/student/upload/'.$row[2];
         ?>
           <tr>
             <!--serial number-->
@@ -49,7 +44,7 @@
             <!--student roll number-->
             <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo($row[9]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo($row[0]); ?></p>
                 </div>
             </td>
             <!--student name-->
@@ -69,67 +64,12 @@
                     />
               </div>
             </td>
-            <!--department-->
-            <td>
-                <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo($row[8]); ?></p>
-                </div>
-            </td>
-            <!--batch-->
-            <td>
-                <div class="ms-3">
-                  <p class="text-muted mb-0"><?php echo($row[10]); ?></p>
-                </div>
-            </td>
-            <!--self / aided-->        
-            <td>
-              <p class="fw-normal mb-1"><?php echo($row[12]); ?></p>
-            </td>
-            <!--username-->        
-            <td>
-              <p class="text-muted mb-0"><?php echo($row[13]); ?></p>
-            </td>
-            <!--gmail-->        
-            <td>
-              <p class="text-muted mb-0"><?php echo($row[14]); ?></p>
-            </td>
             <!--phone number-->        
             <td>
               <p class="text-muted mb-0"><?php echo($row[3]); ?></p>
             </td>
         
-        <?php
-        if($row[17]==1)
-        {
-        ?>
-            <td>
-              <span class="badge badge-success rounded-pill d-inline">Logged In</span>
-            </td>
-        <?php
-        }
-        else
-        {
-        ?>
-            <td>
-              <span class="badge badge-danger rounded-pill d-inline">Logged Out</span>
-            </td>
-        <?php
-        }
-        ?>
-
-            <td>
-              <form action="view.php?person=student&gmail=<?php echo($row[14]); ?>" method="post">
-                <button type="submit" class="btn btn-sm btn-info">Info</button>
-              </form>
-            </td>
-
-            <td>
-              <form action="" method="post">
-                <button type="submit" class="btn btn-sm btn-danger">Remove</button>
-              </form>
-            </td>
-
-          </tr>
+                    </tr>
         <?php
             $count=$count+1;
                 }      

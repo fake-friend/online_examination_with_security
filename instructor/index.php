@@ -7,6 +7,7 @@ if(!($_SESSION['gmail'] && $_SESSION['instructor_name']))
 $name = $_SESSION['instructor_name'];
 $maill = $_SESSION['gmail'];
 $instd = $_SESSION['instructor_id'];
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -64,7 +65,7 @@ $instd = $_SESSION['instructor_id'];
                     </li>
 
                     <li>
-                        <a href="#"><span class="fa fa-graduation-cap mr-3"></span> First years</a>
+                        <a href="firstyears.php"><span class="fa fa-graduation-cap mr-3"></span> First years</a>
                     </li>
 
                     <li>
