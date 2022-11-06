@@ -72,8 +72,8 @@
       if(timeLeft<=0)
       {
         clearTimeout(tm);
-        //document.getElementById("form1").submit();
-        window.location.href="result.php";
+        document.getElementById("form1").submit();
+        //window.location.href="result.php";
       }
       else
       {
@@ -100,7 +100,7 @@
       var timeLeft=2*5;
 </script>
 
-<form id="form1" action="" method="post">
+<form id="form1" action="result.php" method="post">
   <h1>Quiz-1 <div id="time" style="float:right">timeout</div></h1>
     <?php
     $con = mysqli_connect('localhost', 'root', '', 'quiz_test');
