@@ -9,10 +9,6 @@
             padding-left: 450px;
             padding-top: 25px;
         }
-        table, th, td,tr {
-             border: 2px solid black;
-             border-collapse: collapse;
-         }
     </style>
 </head>
 

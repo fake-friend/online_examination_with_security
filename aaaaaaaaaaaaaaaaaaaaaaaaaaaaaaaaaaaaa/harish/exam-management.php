@@ -145,17 +145,21 @@
                 <section id="minimal-statistics">
                     <div class="container bootstrap snippets bootdeys">
                         <div class="row">
+
                             <?php
-                            include('../dbconfig.php');
+                            include_once('../dbconfig.php');
                             session_start();
-                            $years = $_SESSION['years'];
-                            $department=$_SESSION['department'];
+                            if (!($_SESSION['instructor_name'] && $_SESSION['gmail'])) {
+                                header('location:instructor-login.php');
+                            }
+                            $instructor_id = $_SESSION['instructor_id'];
                             if ($connection) {
-                                $query = "SELECT subject FROM instructorsubject WHERE Year='$years' AND department='$department'";
+                                $query = "select subject, Year from instructorsubject where instructor_id='$instructor_id'";
                                 $result = mysqli_query($connection, $query);
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_array($result)) {
                             ?>
+
                                         <div class="col-md-4 col-sm-6 content-card">
                                             <div class="card-big-shadow">
                                                 <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
@@ -165,18 +169,17 @@
                                                 </div> <!-- end card -->
                                             </div>
                                         </div>
+
                             <?php
                                     }
+                                } else {
+                                    echo "no records found";
                                 }
-                                else{
-                                    echo 'no records';
-                                }
-
-                            } 
-                            else {
-                                die('something went wrong' . mysqli_connect_error());
+                            } else {
+                                die("something went wrong with database" . mysqli_connect_error());
                             }
                             ?>
+
                         </div>
                     </div>
                 </section>
@@ -184,4 +187,5 @@
         </div>
     </div>
 </body>
+
 </html>

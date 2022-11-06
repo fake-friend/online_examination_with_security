@@ -14,7 +14,7 @@ $s1="INSERT INTO instructorsubject(instructor_id,instructor_name,department,subj
 $s2=mysqli_query($connection,$s1);
 if($s2)
 {
-     header("location:subject.html.");
+     header("location:subject.php");
 }
 else
 {
