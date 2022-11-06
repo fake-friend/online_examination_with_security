@@ -16,7 +16,8 @@ if ($_SESSION['student_name'] && $_SESSION['gmail']) {
         <link rel="stylesheet" href="css/style.css">
 
         <style>
-            nav {
+            nav 
+            {
                 height: 643px;
             }
 
@@ -56,15 +57,15 @@ if ($_SESSION['student_name'] && $_SESSION['gmail']) {
                     </li>
 
                     <li>
-                        <a href="slogin.php" target="frame"><span class="fa fa-pencil-square-o mr-3"></span> Exams</a>
+                        <a href="" target="frame"><span class="fa fa-pencil-square-o mr-3"></span> Exams</a>
                     </li>
 
                     <li>
-                        <a href="#" target="frame"><span class="fa fa-certificate mr-3"></span> Results</a>
+                        <a href="" target="frame"><span class="fa fa-certificate mr-3"></span> Results</a>
                     </li>
 
                     <li>
-                        <a href="#" target="frame"><span class="fa fa-user-circle-o mr-3"></span> Staffs </a>
+                        <a href="" target="frame"><span class="fa fa-user-circle-o mr-3"></span> Staffs </a>
                     </li>
                     <br><br>
 
