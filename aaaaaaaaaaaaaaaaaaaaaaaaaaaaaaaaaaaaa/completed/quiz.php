@@ -50,7 +50,8 @@
       margin-left: 36px !important;
     }
 
-    .btn:focus {
+    .btn:focus 
+    {
       outline: 0 !important;
       box-shadow: none !important;
     }
