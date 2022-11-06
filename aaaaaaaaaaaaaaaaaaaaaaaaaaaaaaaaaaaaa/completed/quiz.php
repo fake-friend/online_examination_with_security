@@ -61,11 +61,47 @@
       box-shadow: none !important;
     }
   </style>
+
+  <script type="text/javascript">
+    function timeout()
+    {
+      //var hours=Math.floor(timeLeft/60);
+      var minute=Math.floor(timeLeft/60);
+      var second=timeLeft%60;
+      var sec=checktime(second);
+      if(timeLeft<=0)
+      {
+        clearTimeout(tm);
+        //document.getElementById("form1").submit();
+        window.location.href="result.php";
+      }
+      else
+      {
+        document.getElementById("time").innerHTML=minute+":"+sec;
+      }
+      timeLeft--;
+      var tm=setTimeout(function() {timeout()},1000 )
+    }
+    function checktime(msg)
+    {
+        if(msg<10)
+        {
+          msg="0"+msg;
+        }
+        return msg;
+    }
+  </script>
 </head>
 
-<body>
+<body onload="timeout()">
 
-  <form action="result.php" method="post">
+
+<script type="text/javascript">
+      var timeLeft=2*5;
+</script>
+
+<form id="form1" action="" method="post">
+  <h1>Quiz-1 <div id="time" style="float:right">timeout</div></h1>
     <?php
     $con = mysqli_connect('localhost', 'root', '', 'quiz_test');
     $i = 1;
@@ -74,12 +110,14 @@
       $result = mysqli_query($con, $show);
       while ($row = mysqli_fetch_array($result)) {
     ?>
+     
         <div class="container mt-5">
           <div class="d-flex justify-content-center row">
             <div class="col-md-10 col-lg-10">
               <div class="border">
                 <div class="question bg-white p-3 border-bottom">
                   <div class="d-flex flex-row align-items-center question-title">
+                   
                     <h5 class="text-danger"><?php echo ($i); ?></h5>
                     <h5 class="mt-1 ml-2"><?php echo ($row[1]); ?></h5>
                   </div>

@@ -25,7 +25,7 @@ if($quizques)
         }
     }
     
-    $inser="insert into tamil(name,rollnumber,year,quiz,mark) value('harish','20suca31','3','test1','$sum')";
+    $inser="INSERT INTO tamil(name,rollnumber,year,quiz,mark) VALUE('harish','20suca31','3','test1','$sum')";
     $r=mysqli_query($quizresult,$inser);
     echo ($question1);
     echo ($question2);
