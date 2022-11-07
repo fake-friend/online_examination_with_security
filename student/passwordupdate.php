@@ -58,21 +58,36 @@ $email=$_SESSION['gmail'];
 		left: -35px;
 		content: "✖";
 	}
+	.container-md{
+            margin-top:100px;
+        }
+        .form-front{
+            border:2px solid black;
+			border-radius:5%;
+            margin-right:   20%;
+            margin-left: 20%;
+        }
+        .form-control{
+            text-align: center;
+            width: 300px;
+            margin-left: 27%;
+        }
 </style>
     <body>
+	<div class="container-md text-center">
+		<div class="form-front">
         <form action="pupdate.php" method="post">
-			<br><br>
-        <div class="form-row">
-									<div class="form-holder form-holder-2">
+			<br><br><br><br>
+			
+									
 										<fieldset>
 											<legend>create strong password <span id=""></span> </legend>
-											<input type="text" name="password" id="password"
+											<input type="text" name="password" id="password" class="form-control"
 												placeholder="create strong password"
 												pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 												title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
 										</fieldset>
-									</div>
-								</div>
+									
                                 <div id="message">
 									<h3>Password must contain the following:</h3>
 									<p id="letter" class="invalid">A <b>lowercase</b> letter</p>
@@ -81,15 +96,14 @@ $email=$_SESSION['gmail'];
 									<p id="length" class="invalid">Only <b>8 characters</b></p>
 									<p id="symbol" class="invalid">A <b>Special Symbols</b></p>
 								</div>
-                                <div class="form-row">
-									<div class="form-holder form-holder-2">
+                                
+									
 										<fieldset>
 											<legend>Re-enter the confirm password  </legend>
-											<input type="text" name="cpw" onblur="matchPassword()" id="cpsw"
+											<input type="text" name="cpw" onblur="matchPassword()" class="form-control" id="cpsw"
 												placeholder="re-enter your password">
 										</fieldset>
-									</div>
-								</div>
+									
                                 <script>
 								var myInput = document.getElementById("password");
 								var letter = document.getElementById("letter");
@@ -175,5 +189,8 @@ $email=$_SESSION['gmail'];
 								<input type="submit" class="btn btn-primary" id="submit" name="submit" value="SUBMIT">
 								</input>
                             </form>
+							<div class="container-md text-center">
+		<div class="form-front">
+							
                             </body>
                             </html>

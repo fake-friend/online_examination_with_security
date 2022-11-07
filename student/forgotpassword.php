@@ -11,6 +11,23 @@
     <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
     <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
 </head>
+<style>
+	.container-md{
+            margin-top:100px;
+        }
+        .form-front{
+            border:2px solid black;
+			border-radius:5%;
+            margin-right:   20%;
+            margin-left: 20%;
+        }
+        .form-control{
+            text-align: center;
+            width: 300px;
+            margin-left: 27%;
+        }
+	
+	</style>
     <body>
 	<?php
     if (isset($_GET['message'])) {
@@ -19,25 +36,24 @@
         echo '</center><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
     }
     ?>
+	<div class="container-md text-center">
+		<div class="form-front">
         <form action="confirmation.php" method="post">
 
 			<br><br><br>
-			<div class="form-row">
-				<div class="form-holder form-holder-2">
 					<fieldset>
 						<legend>Your Email <span id=""></span> </legend>
-						<input type="email" name="email" id="email"
+						
+						<input type="email" class="form-control" name="email" id="email"
 							pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="example@email.com">
 					</fieldset>
-				</div>
-			</div>
+				
 			<br><br>
-<div class="form-row">
 
-									<div class="form-holder form-holder-2">
+									
 										<fieldset>
 											<legend>One thing do you think of the most each day?</legend>
-											<select name="favques" id="favques">
+											<select  class="form-control" name="favques" id="favques">
 												<option value="not selected" selected>select your option</option>
 												<option value="family and friends">family and friends</option>
 												<option value="happiness">Happiness</option>
@@ -45,13 +61,12 @@
 												<option value="career and future">career and future</option>
 											</select>
 										</fieldset>
-									</div>
-								</div>
+						
 								<br><br>
-                                <div class="form-holder">
+                               
 										<fieldset>
 											<legend>Favourite place</legend>
-											<select name="place" id="place">
+											<select name="place" id="place"  class="form-control">
 												<option value="not selected" selected>select your option</option>
 												<option value="India">India</option>
 												<option value="USA">USA</option>
@@ -59,12 +74,12 @@
 												<option value="Korea">Korea</option>
 											</select>
 										</fieldset>
-									</div>
+									
 									<br><br>
-                                    <div class="form-holder">
+                                   
 										<fieldset>
 											<legend>Favourite language</legend>
-											<select name="language" id="language">
+											<select name="language" id="language"  class="form-control">
 												<option value="not selected" selected>select your option</option>
 												<option value="Tamil">Tamil</option>
 												<option value="English">English</option>
@@ -72,9 +87,12 @@
 												<option value="Mandarin">Mandarin</option>
 											</select>
 										</fieldset>
-									</div>
+									
 									<br><br>
-									<input type="submit" value="submit">
+									<input type="submit" value="submit" class="btn btn-primary" >
+									
 </form>
+</div>
+</div>
 </body>
 </html>
