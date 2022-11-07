@@ -31,7 +31,6 @@
         <th>Subject Code</th>
         <th>Year</th>
         <th>Exam</th>
-        <th>Exam Status</th>
       </tr>
     </thead>
     <tbody>
@@ -93,8 +92,8 @@
                   <html>
 
                   <body>
-                    <form method="post" action="#">
-                      <input type="submit" value="Add Exam Question ">
+                    <form method="post" action="create-exam-html.php?instid=<?php echo(trim($row[1]));?>&instnm=<?php echo(trim($row[2]));?>&department=<?php echo($row[3]);?>&subject=<?php echo($row[4]); ?>& subjectcode=<?php echo($row[5]); ?>&year=<?php echo($row[6]); ?>">
+                      <input type="submit" class="btn btn-success" value="Add Exam Question ">
                     </form>
                   </body>
 

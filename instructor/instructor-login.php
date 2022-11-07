@@ -259,7 +259,7 @@
                         <div class="hr"></div>
                         <div class="foot-lnk">
                             <a href="instructor-register.html">Don't you have an account?</a><br>
-                            <a href="">Forgot password?</a>
+                            <a href="forgotpassword.php">Forgot password?</a>
                         </div>
                     </div>
                 </form>
