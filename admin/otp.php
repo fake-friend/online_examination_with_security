@@ -36,12 +36,51 @@
         }
 
     </style>
+
+<script type="text/javascript">
+    function timeout()
+    {
+      //var hours=Math.floor(timeLeft/60);
+      var minute=Math.floor(timeLeft/60);
+      var second=timeLeft%60;
+      var sec=checktime(second);
+      if(timeLeft<=0)
+      {
+        clearTimeout(tm);
+        //document.getElementById("form1").submit();
+        window.location.href="admin-login.php";
+      }
+      else
+      {
+        document.getElementById("time").innerHTML=minute+":"+sec;
+      }
+      timeLeft--;
+      var tm=setTimeout(function() {timeout()},1000 )
+    }
+    function checktime(msg)
+    {
+        if(msg<10)
+        {
+          msg="0"+msg;
+        }
+        return msg;
+    }
+  </script>
+
+
 </head>
-<body>
+<body onload="timeout()">
+
+
+
+<script type="text/javascript">
+      var timeLeft=2*10;
+</script>
+
     <div class="container border">
         <form method="post" action="<?php $_SERVER["PHP_SELF"]; ?>" class="needs-validation" novalidate>
             <div class="form-group">
-              <label for="email">OTP:</label>
+              <label for="email">OTP: <div id="time" style="float:right">timeout</div></label>
               <input type="number" class="form-control" id="otp" placeholder="Enter otp" name="otp" required>
               <div class="valid-feedback">Valid.</div>
               <div class="invalid-feedback">Please fill out this OTP field.</div>
@@ -50,6 +89,7 @@
             <center><button type="submit" class="btn btn-success">Submit</button></center>
           </form>
     </div>
+
     <script>
         // Disable form submissions if there are invalid fields
         (function() {
@@ -74,8 +114,8 @@
 </html>
 
 <?php
-include_once("../dbconfig.php");
 session_start();
+include_once("../dbconfig.php");
 if($connection)
 {
   if($_SERVER["REQUEST_METHOD"]=="POST")

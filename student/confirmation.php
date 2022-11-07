@@ -1,6 +1,8 @@
+
 <?php 
 include_once('../dbconfig.php');
 session_start();
+
 if($connection)
 {
     if($_SERVER["REQUEST_METHOD"]=="POST")

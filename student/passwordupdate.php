@@ -1,7 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
+    <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
+</head>
+
+</html>
 <?php
 include_once('../dbconfig.php');
 session_start();
-$_SESSION['gmail']=$email;
+$email=$_SESSION['gmail'];
 ?>
 <html>
 <style>
@@ -43,6 +61,7 @@ $_SESSION['gmail']=$email;
 </style>
     <body>
         <form action="pupdate.php" method="post">
+			<br><br>
         <div class="form-row">
 									<div class="form-holder form-holder-2">
 										<fieldset>
@@ -65,8 +84,8 @@ $_SESSION['gmail']=$email;
                                 <div class="form-row">
 									<div class="form-holder form-holder-2">
 										<fieldset>
-											<legend>confirm password <span id="j1"></span> </legend>
-											<input type="text" name="confirm-psw" onblur="matchPassword()" id="cpsw"
+											<legend>Re-enter the confirm password  </legend>
+											<input type="text" name="cpw" onblur="matchPassword()" id="cpsw"
 												placeholder="re-enter your password">
 										</fieldset>
 									</div>
@@ -150,7 +169,8 @@ $_SESSION['gmail']=$email;
 								}  
 							</script>
                                 
-                             
+                             <br>
+							 <br>
                                
 								<input type="submit" class="btn btn-primary" id="submit" name="submit" value="SUBMIT">
 								</input>
