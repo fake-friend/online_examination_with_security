@@ -3,6 +3,8 @@ session_start();
 if ($_SESSION['student_name'] && $_SESSION['gmail']) {
     $name = $_SESSION['student_name'];
     $gmail = $_SESSION['gmail'];
+    $department=$_SESSION['department'];
+    $year=$_SESSION['years'];
 ?>
     <!doctype html>
     <html lang="en">
@@ -49,7 +51,7 @@ if ($_SESSION['student_name'] && $_SESSION['gmail']) {
             </div>
 
             <div class="p-4">
-                <h1> <a class="logo"> <?php echo $name ?> <span> <?php echo  $gmail ?></span></a> </h1>
+                <h1> <a class="logo"> <?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department ?></span><span><?php echo $year; ?> YEAR </span></a> </h1>
 
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
@@ -57,7 +59,7 @@ if ($_SESSION['student_name'] && $_SESSION['gmail']) {
                     </li>
 
                     <li>
-                        <a href="#" target="frame"><span class="fa fa-pencil-square-o mr-3"></span> Exams</a>
+                        <a href="show-exam.php" target="frame"><span class="fa fa-pencil-square-o mr-3"></span> Exams</a>
                     </li>
 
                     <li>
@@ -86,7 +88,7 @@ if ($_SESSION['student_name'] && $_SESSION['gmail']) {
         <script src="js/js/bootstrap.min.js"></script>
         <script src="js/js/main.js"></script>
 
-        <iframe src="" id="frame" name="frame" frameborder="0" width="1040" height="600">
+        <iframe src="subjects.php" id="frame" name="frame" frameborder="0" width="1040" height="600">
         </iframe>
 
         <script>
