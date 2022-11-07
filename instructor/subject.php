@@ -2,7 +2,6 @@
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -26,27 +25,6 @@
                 <span input type="submit" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 <span><strong>Add</strong></span>
             </a>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;
-
-            <a href="#" class="btn btn-primary a-btn-slide-text">
-                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                <span><strong>Edit</strong></span>
-            </a>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;
-
-            <a href="#" class="btn btn-primary a-btn-slide-text">
-                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                <span><strong>View</strong></span>
-            </a>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;
-
-            <a href="#" class="btn btn-primary a-btn-slide-text">
-                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                <span><strong>Delete</strong></span>
-            </a>
         </div>
     </div>
     <?php
@@ -64,6 +42,7 @@
                 <th>Subjects</th>
                 <th>Subject Code</th>
                 <th>Year</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -118,6 +97,12 @@
                             <div class="ms-3">
                                 <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                             </div>
+                        </td>
+                        <!--delete-->
+                        <td>
+                            <form action="delete-subject.php?department=<?php echo($row[3]);?>&subjectcode=<?php echo($row[5]);?>" method="POST">
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                            </form>
                         </td>
                     </tr>
 
