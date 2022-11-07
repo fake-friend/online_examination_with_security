@@ -65,6 +65,10 @@ $dept=$_SESSION['department'];
                     </li>
 
                     <li>
+                        <a href="view-exam.php" target="frame"><span class="fa fa-table mr-3"></span> View Exam</a>
+                    </li>
+
+                    <li>
                         <a href="fst-year.php?year=I" target="frame"><span class="fa fa-graduation-cap mr-3"></span> First years</a>
                     </li>
 
