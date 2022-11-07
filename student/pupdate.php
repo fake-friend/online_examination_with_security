@@ -12,9 +12,5 @@ if($connection)
         mysqli_close($connection);
         header("location:student-login.php");
     }
-    else{
-
-        
-    }
 }
 ?>
