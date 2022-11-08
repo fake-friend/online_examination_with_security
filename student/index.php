@@ -67,7 +67,7 @@ if ($_SESSION['student_name'] && $_SESSION['gmail']) {
                     </li>
 
                     <li>
-                        <a href="show-staff.php" target="frame"><span class="fa fa-user-circle-o mr-3"></span> Staffs </a>
+                        <a href="show-colleague.php" target="frame"><span class="fa fa-handshake-o mr-3"></span> colleague</a>
                     </li>
                     <br><br>
 
