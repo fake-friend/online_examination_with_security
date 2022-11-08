@@ -14,22 +14,20 @@ if($connection)
         if(mysqli_num_rows($result)>0)
         {
             $row=mysqli_fetch_row($result);
-            //if(strcmp($email,$row[0])==0)
-            //{
-                if((strcmp($favques,$row[1])==0) and (strcmp($place,$row[2])==0) and (strcmp($language,$row[3])==0) ){
+            if(strcmp($email,$row[0])==0)
+            {
+                if((strcmp($favques,$row[1])==0) and (strcmp($place,$row[2])==0) and (strcmp($language,$row[3])==0) )
+                {
                     $_SESSION['gmail']=$email;
                     header("location:passwordupdate.php");
-
                 }
                 else{
-                    
                         header("location:forgotpassword.php?message=Check your answers!!!");
-                    
                 }
-            //}
-            //else{
-                //header("location:confirmation.php?message=Check your email id");
-            //}
+            }
+            else{
+                header("location:forgotpassword.php?message=Check your email id");
+            }
         }
         else{
             header("location:forgotpassword.php?message=Check your email id");

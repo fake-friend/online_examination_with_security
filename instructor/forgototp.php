@@ -1,5 +1,24 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  include_once("../dbconfig.php");
+  session_start();
+  if ($connection) {
+    $otp = $_POST['otp'];
+    if (strcmp($otp, $_SESSION['otp']) == 0) {
+      header('location:passwordupdate.php');
+    } else {
+      header("location:forgotpassword.php?message=please enter the registered email id!!!");
+    }
+  }
+  else
+  {
+    die('somethig went wrong with database'.mysqli_connect_error());
+  }
+}
+?>
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -63,7 +82,9 @@
     }
   </script>
 
+
 </head>
+
 <body onload="timeout()">
 
   <script type="text/javascript">
@@ -71,7 +92,7 @@
   </script>
 
   <div class="container border">
-    <form method="post" action="<?php $_SERVER["PHP_SELF"]; ?>" class="needs-validation" novalidate>
+    <form action="<?php $_SERVER["PHP_SELF"]; ?>" class="needs-validation" method="post" novalidate>
       <div class="form-group">
         <label for="email">OTP: <div id="time" style="float:right">timeout</div></label>
         <input type="number" class="form-control" id="otp" placeholder="Enter otp" name="otp" required>
@@ -104,23 +125,5 @@
     })();
   </script>
 </body>
-</html>
 
-<?php
-session_start();
-include_once("../dbconfig.php");
-if ($connection) {
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $otp = $_POST['otp'];
-    if (strcmp($otp, $_SESSION['otp']) == 0) {
-      $email = $_SESSION['email'];
-      $device_query = "update admin set devices='1' where email='$email'";
-      mysqli_query($connection, $device_query);
-      mysqli_close($connection);
-      header("location:admin.php");
-    } else {
-      header("location:admin-login.php?message=otp time out or wrong otp!!!");
-    }
-  }
-}
-?>
+</html>

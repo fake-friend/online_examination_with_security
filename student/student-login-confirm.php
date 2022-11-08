@@ -9,7 +9,7 @@ if($connection)
         $pw=$_POST['pw'];  
         $query='SELECT student_name,department, pass_word, devices,years from student WHERE gmail='.'"'.$email.'"';
         $result=mysqli_query($connection,$query);
-        if(mysqli_num_rows($result)>0)
+        if(mysqli_num_rows($result))
         {
             $row=mysqli_fetch_row($result);
             if(strcmp($pw,$row[2])==0)

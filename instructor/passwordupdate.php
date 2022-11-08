@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,71 +15,74 @@
 	<script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
 	<link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
 
-<style>
-	#message {
-		display: none;
-		background: white;
-		color: #000;
-		position: relative;
-		padding: 20px;
-		margin-top: 10px;
-	}
+	<style>
+		#message {
+			display: none;
+			background: white;
+			color: #000;
+			position: relative;
+			padding: 20px;
+			margin-top: 10px;
+		}
 
-	#message p {
-		padding: 10px 35px;
-		font-size: 18px;
-	}
+		#message p {
+			padding: 10px 35px;
+			font-size: 18px;
+		}
 
-	/* Add a green text color and a checkmark when the requirements are right */
-	.valid {
-		color: rgb(74, 233, 74);
-	}
+		/* Add a green text color and a checkmark when the requirements are right */
+		.valid {
+			color: rgb(74, 233, 74);
+		}
 
-	.valid:before {
-		position: relative;
-		left: -35px;
-		content: "✔";
-	}
+		.valid:before {
+			position: relative;
+			left: -35px;
+			content: "✔";
+		}
 
-	/* Add a red text color and an "x" when the requirements are wrong */
-	.invalid {
-		color: rgb(230, 17, 17);
-	}
+		/* Add a red text color and an "x" when the requirements are wrong */
+		.invalid {
+			color: rgb(230, 17, 17);
+		}
 
-	.invalid:before {
-		position: relative;
-		left: -35px;
-		content: "✖";
-	}
+		.invalid:before {
+			position: relative;
+			left: -35px;
+			content: "✖";
+		}
 
-	.container-md {
-		margin-top: 100px;
-	}
+		.container-md {
+			margin-top: 100px;
+		}
 
-	.form-front {
-		border: 2px solid black;
-		border-radius: 50px;
-		margin-right: 20%;
-		margin-left: 20%;
-	}
+		.form-front {
+			border: 2px solid black;
+			border-radius: 5%;
+			margin-right: 20%;
+			margin-left: 20%;
+		}
 
-	.form-control {
-		text-align: center;
-		width: 300px;
-		margin-left: 27%;
-	}
-</style>
+		.form-control {
+			text-align: center;
+			width: 300px;
+			margin-left: 27%;
+		}
+	</style>
 </head>
+
 <body>
 	<div class="container-md text-center">
 		<div class="form-front">
 			<form action="pupdate.php" method="post">
-				<br>
+				<br><br><br><br>
+
+
 				<fieldset>
 					<legend>create strong password <span id=""></span> </legend>
 					<input type="text" name="password" id="password" class="form-control" placeholder="create strong password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
 				</fieldset>
-				<br>
+
 				<div id="message">
 					<h3>Password must contain the following:</h3>
 					<p id="letter" class="invalid">A <b>lowercase</b> letter</p>
@@ -87,6 +91,7 @@
 					<p id="length" class="invalid">Only <b>8 characters</b></p>
 					<p id="symbol" class="invalid">A <b>Special Symbols</b></p>
 				</div>
+
 
 				<fieldset>
 					<legend>Re-enter the confirm password </legend>
@@ -174,12 +179,13 @@
 				</script>
 
 				<br>
+				<br>
 
 				<input type="submit" class="btn btn-primary" id="submit" name="submit" value="SUBMIT">
-
+				</input>
 			</form>
-			<br>
 		</div>
 	</div>
 </body>
+
 </html>
