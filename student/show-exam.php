@@ -31,12 +31,15 @@
         <th>Exam Title</th>
         <th>Start time</th>
         <th>Duration in MIN</th>
+        <th>Unique Exam Name</th>
         <th>Attend Exam</th>
       </tr>
     </thead>
     <tbody>
 <?php
 session_start();
+date_default_timezone_set("Asia/Kolkata");
+$today=date("Y_m_d")."_".date("h_i");
 $department=$_SESSION['department'];
 $year=$_SESSION['years'];
 include_once('../dbconfig.php');
@@ -103,6 +106,12 @@ if($connection1 && $connection)
             <td>
               <div class="ms-3">
                 <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
+              </div>
+            </td>
+            <!--attend exam-->
+            <td>
+              <div class="ms-3">
+
               </div>
             </td>
         </tr>
