@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $connection=mysqli_connect('localhost','root','','exam_management');
         if ($connection) {
             $query = "delete from exams where instructor_id='$instructor_id' and instructor_name='$instructor_name' and department='$department' and subjects='$subject' and subject_code='$subjectcode' and years='$year' and exam_title='$examtitle' and unique_exam_name='$uniqueexamname'";
-            $query2='drop table'.$uniqueexamname;
+            $query2='drop table '.$uniqueexamname;
             mysqli_query($connection,$query2);
             mysqli_query($connection, $query);
             mysqli_close($connection);

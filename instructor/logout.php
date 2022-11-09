@@ -1,7 +1,7 @@
 <?php
 include_once("../dbconfig.php");
 session_start();
-if ($connection) 
+if($connection) 
 {
     $gmail = $_SESSION['gmail'];
     $device_query = "UPDATE instructor SET devices=0 WHERE gmail='$gmail'";

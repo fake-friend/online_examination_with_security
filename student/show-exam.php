@@ -107,7 +107,7 @@
               </td>
               <!--attend exam-->
               <?php
-              if ($today > $row[5]) {
+              if ($today >= $row[5]) {
               ?>
                 <td>
                   <div class="ms-3">
