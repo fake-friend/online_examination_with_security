@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<br><br>
+    <br><br>
     <table class="table align-middle mb-0 bg-white table-hover">
         <thead class="bg-light">
             <tr>
@@ -27,6 +27,7 @@
                 <th>Start Time</th>
                 <th>Duration</th>
                 <th>Unique Exam Name</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -84,31 +85,37 @@
                                     <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
                                 </div>
                             </td>
-                                <!--duration-->
+                            <!--duration-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                                 </div>
                             </td>
-                                <!--unique exam name-->
+                            <!--unique exam name-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
                                 </div>
                             </td>
-                    </tr>
+                            <!--delete-->
+                            <td>
+                                <form action="delete-exam.php?department=<?php echo ($row[0]); ?>&subject=<?php echo($row[1]); ?>&subjectcode=<?php echo ($row[2]); ?>&year=<?php echo($row[3]) ?>&examtitle=<?php echo($row[4]); ?>&uniqueexamname=<?php echo($row[7]); ?>" method="POST">
+                                    <input type="submit" value="Delete" class="btn btn-danger">
+                                </form>
+                            </td>
+                        </tr>
                     <?php
                         $count = $count + 1;
                     }
                 } else {
                     ?>
                     <tr>
-                        <td colspan="8">no records found</td>
+                        <td colspan="10">no records found</td>
                     </tr>
-                    <?php 
-                    
+            <?php
+
                 }
             } else {
                 die('something went wrong' . mysqli_connect_error());
             }
-?>
+            ?>

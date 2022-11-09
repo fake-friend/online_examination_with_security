@@ -55,6 +55,8 @@
                 $name = $_SESSION['instructor_name'];
                 $query = 'select * from instructorsubject where instructor_name=' . '"' . $name . '"';
                 $result = mysqli_query($connection, $query);
+                if(mysqli_num_rows($result)>0)
+                {
                 while ($row = mysqli_fetch_array($result)) {
             ?>
                     <tr>
@@ -109,7 +111,18 @@
             <?php
                     $count = $count + 1;
                 }
-            } else {
+            }
+            else
+            {
+             ?>
+                <tr>
+                        <td colspan="8">no records found</td>
+                </tr>
+            <?php
+            }
+            } 
+            else 
+            {
                 die('could not connect with database' . mysqli_connect_error());
             }
             ?>

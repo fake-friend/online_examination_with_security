@@ -21,8 +21,8 @@ if (!$connection) {
 
     if ($result) {
         //multipurpose internet mail extensions
-        $create="create table ".$unique."(question_number int(3),questions varchar(200),a varchar(100),b varchar(100),c varchar(100),d varchar(100),answer varchar(100))";
-        mysqli_query($connection,$create);
+        $create="create table ".$unique." (question_number int(3),questions varchar(200),a varchar(100),b varchar(100),c varchar(100),d varchar(100),answer varchar(100))";
+        mysqli_query($connection, $create);
         if (!empty($_FILES['file1']['name'])) {
             if (is_uploaded_file($_FILES['file1']['tmp_name'])) {
                 $csvfile = fopen($_FILES['file1']['tmp_name'], 'r');
