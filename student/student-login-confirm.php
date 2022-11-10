@@ -7,19 +7,20 @@ if($connection)
     {
         $email=$_POST['email'];
         $pw=$_POST['pw'];  
-        $query='SELECT student_name,department, pass_word, devices,year from student WHERE gmail='.'"'.$email.'"';
+        $query='SELECT student_name,department,roll_number, pass_word, devices,years from student WHERE gmail='.'"'.$email.'"';
         $result=mysqli_query($connection,$query);
         if(mysqli_num_rows($result))
         {
             $row=mysqli_fetch_row($result);
-            if(strcmp($pw,$row[2])==0)
+            if(strcmp($pw,$row[3])==0)
             {
-                if($row[3]==0)
+                if($row[4]==0)
                 {
                     $_SESSION['student_name']=$row[0];
                     $_SESSION['department']=$row[1];
+                    $_SESSION['roll_number']=$row[2];
                     $_SESSION['gmail']=$email;
-                    $_SESSION['years']=$row[4];
+                    $_SESSION['years']=$row[5];
                     $device_query="update student set devices='1' where gmail='$email'";
                     mysqli_query($connection,$device_query);
                     mysqli_close($connection);

@@ -1,13 +1,13 @@
 <?php
 session_start();
-if(!($_SESSION['gmail'] && $_SESSION['instructor_name']))
+if(!($_SESSION['instructor_gmail'] && $_SESSION['instructor_name']))
 {
     header('location:instructor-login.php');
 }
 $name = $_SESSION['instructor_name'];
-$maill = $_SESSION['gmail'];
+$maill = $_SESSION['instructor_gmail'];
 $instd = $_SESSION['instructor_id'];
-$dept=$_SESSION['department'];
+$dept=$_SESSION['instructor_department'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,7 +21,7 @@ $dept=$_SESSION['department'];
     <link rel="stylesheet" href="instructor_sidebar/css/style.css">
     <style>
         nav {
-            height: 643px;
+            height: 657px;
         }
 
         iframe {

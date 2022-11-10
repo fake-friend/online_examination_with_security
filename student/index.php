@@ -4,6 +4,7 @@ if ($_SESSION['student_name'] && $_SESSION['gmail']) {
     $name = $_SESSION['student_name'];
     $gmail = $_SESSION['gmail'];
     $department=$_SESSION['department'];
+    $roll_number=$_SESSION['roll_number'];
     $year=$_SESSION['years'];
 ?>
     <!doctype html>
@@ -51,7 +52,7 @@ if ($_SESSION['student_name'] && $_SESSION['gmail']) {
             </div>
 
             <div class="p-4">
-                <h1> <a class="logo"> <?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department ?></span><span><?php echo $year; ?> YEAR </span></a> </h1>
+                <h1> <a class="logo"> <?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department ?></span><span><?php echo $year; ?> YEAR </span><span><?php echo $roll_number; ?></span></a> </h1>
 
                 <ul class="list-unstyled components mb-5">
                     <li class="active">

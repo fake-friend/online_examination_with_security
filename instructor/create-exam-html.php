@@ -2,7 +2,7 @@
 session_start();
 $instructor_id = $_GET['instid'];
 $instructor_name = $_GET['instnm'];
-$gmail = $_SESSION['gmail'];
+$gmail = $_SESSION['instructor_gmail'];
 $department = $_GET['department'];
 $subject = $_GET['subject'];
 $subject_code = $_GET['subjectcode'];

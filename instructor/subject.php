@@ -53,7 +53,8 @@
             if ($connection) {
                 $count = 1;
                 $name = $_SESSION['instructor_name'];
-                $query = 'select * from instructorsubject where instructor_name=' . '"' . $name . '"';
+                $id=$_SESSION['instructor_id'];
+                $query="select * from instructorsubject where instructor_name='$name' and instructor_id='$id'";
                 $result = mysqli_query($connection, $query);
                 if(mysqli_num_rows($result)>0)
                 {

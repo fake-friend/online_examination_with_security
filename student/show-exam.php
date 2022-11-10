@@ -31,7 +31,6 @@
         <th>Exam Title</th>
         <th>Start time</th>
         <th>Duration in MIN</th>
-        <th>Unique Exam Name</th>
         <th>Attend Exam</th>
       </tr>
     </thead>
@@ -45,11 +44,13 @@
       include_once('../dbconfig.php');
       $connection1 = mysqli_connect('localhost', 'root', '', 'exam_management');
       if ($connection1 && $connection) {
-        $select = "select instructor_name, department,subjects, subject_code, exam_title, start_time, duration, unique_exam_name from exams where department='$department' and years='$year'";
+        $select = "select instructor_id,instructor_name, department,subjects, subject_code, exam_title, start_time, duration, unique_exam_name from exams where department='$department' and years='$year'";
         $result = mysqli_query($connection1, $select);
         if (mysqli_num_rows($result) > 0) {
           $count = 1;
           while ($row = mysqli_fetch_array($result)) {
+            $_SESSION['instructor_id']=$row[0];
+            $_SESSION['instructor_name']=$row[1];
       ?>
 
             <tr>
@@ -60,46 +61,40 @@
               <!--instructor name-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[0]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[1]); ?></p>
                 </div>
               </td>
               <!--department-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[1]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[2]); ?></p>
                 </div>
               </td>
               <!--subject-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[2]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
                 </div>
               </td>
               <!--subjectCode-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
                 </div>
               </td>
               <!--Exam title-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
                 </div>
               </td>
               <!--Start time-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
-                </div>
-              </td>
-              <!--Duration-->
-              <td>
-                <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                 </div>
               </td>
-              <!--Unique exam name-->
+              <!--Duration-->
               <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
@@ -107,11 +102,11 @@
               </td>
               <!--attend exam-->
               <?php
-              if ($today >= $row[5]) {
+              if ($today >= $row[6]) {
               ?>
                 <td>
                   <div class="ms-3">
-                    <a href="quiz.php?table=<?php echo ($row[7]); ?>&time=<?php echo ($row[6]); ?>&title=<?php echo ($row[4]); ?>" target="_blank">
+                    <a href="quiz.php?examtable=<?php echo ($row[7]); ?>&time=<?php echo ($row[6]); ?>&title=<?php echo ($row[4]); ?>" target="_blank">
                       <button type="submit" class="btn btn-success">Attend</button>
                     </a>
                   </div>

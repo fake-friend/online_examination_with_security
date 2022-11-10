@@ -36,7 +36,7 @@
       $year = $_GET['year'];
       include_once('../dbconfig.php');
       session_start();
-      $dept = $_SESSION['department'];
+      $dept = $_SESSION['instructor_department'];
       if ($connection) {
         $count = 1;
         $query = "SELECT roll_number,student_name,upload,phonenumber,devices FROM student WHERE department='$dept' AND years='$year'";

@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<br><br>
+  <br><br>
   <table class="table align-middle mb-0 bg-white table-hover">
     <thead class="bg-light">
       <tr>
@@ -41,71 +41,81 @@
       if ($connection) {
         $count = 1;
         $inst_id = $_SESSION['instructor_id'];
-        $query = 'select * from instructorsubject where instructor_id=' . '"' . $inst_id . '"';
+        $instructor_name = $_SESSION['instructor_name'];
+        //$query = 'select * from instructorsubject where instructor_id=' . '"' . $inst_id . '"';
+        $query = "select * from instructorsubject where instructor_id='$inst_id' and instructor_name='$instructor_name'";
         $result = mysqli_query($connection, $query);
-        while ($row = mysqli_fetch_array($result)) {
+        if (mysqli_num_rows($result) > 0) {
+          while ($row = mysqli_fetch_array($result)) {
       ?>
+            <tr>
+              <!--serial number-->
+              <td>
+                <?php echo ($count); ?>
+              </td>
+              <!--instructor id-->
+              <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo ($row[1]); ?></p>
+                </div>
+              </td>
+              <!--instructor name-->
+              <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo ($row[2]); ?></p>
+                </div>
+              </td>
+              <!-- Department-->
+              <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
+                </div>
+              </td>
+              <!--subject-->
+              <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
+                </div>
+              </td>
+              <!--subjectCode-->
+              <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
+                </div>
+              </td>
+              <!--year-->
+              <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
+                </div>
+              </td>
+              <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1">
+                    <html>
+
+                    <body>
+                      <form method="post" action="create-exam-html.php?instid=<?php echo (trim($row[1])); ?>&instnm=<?php echo (trim($row[2])); ?>&department=<?php echo ($row[3]); ?>&subject=<?php echo ($row[4]); ?>& subjectcode=<?php echo ($row[5]); ?>&year=<?php echo ($row[6]); ?>">
+                        <input type="submit" class="btn btn-success" value="Add Exam Question ">
+                      </form>
+                    </body>
+
+                    </html>
+
+                  </p>
+                </div>
+              </td>
+            </tr>
+
+          <?php
+            $count = $count + 1;
+          }
+        } else {
+          ?>
           <tr>
-            <!--serial number-->
-            <td>
-              <?php echo ($count); ?>
-            </td>
-            <!--instructor id-->
-            <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><?php echo ($row[1]); ?></p>
-              </div>
-            </td>
-            <!--instructor name-->
-            <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><?php echo ($row[2]); ?></p>
-              </div>
-            </td>
-            <!-- Department-->
-            <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
-              </div>
-            </td>
-            <!--subject-->
-            <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
-              </div>
-            </td>
-            <!--subjectCode-->
-            <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
-              </div>
-            </td>
-            <!--year-->
-            <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
-              </div>
-            </td>
-            <td>
-              <div class="ms-3">
-                <p class="fw-bold mb-1">
-                  <html>
-
-                  <body>
-                    <form method="post" action="create-exam-html.php?instid=<?php echo(trim($row[1]));?>&instnm=<?php echo(trim($row[2]));?>&department=<?php echo($row[3]);?>&subject=<?php echo($row[4]); ?>& subjectcode=<?php echo($row[5]); ?>&year=<?php echo($row[6]); ?>">
-                      <input type="submit" class="btn btn-success" value="Add Exam Question ">
-                    </form>
-                  </body>
-
-                  </html>
-
-                </p>
-              </div>
-            </td>
+            <td colspan="8">no records found</td>
           </tr>
-
       <?php
-          $count = $count + 1;
         }
       } else {
         die('could not connect with database' . mysqli_connect_error());

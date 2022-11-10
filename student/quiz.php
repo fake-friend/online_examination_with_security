@@ -1,5 +1,5 @@
 <?php
-  $table=$_GET['table'];
+  $examtable=$_GET['examtable'];
   $time= (int)$_GET['time'];
   $title=$_GET['title'];
 ?>
@@ -104,14 +104,15 @@
       var timeLeft=<?php echo($time*60); ?>;
 </script>
 
-<form id="form1" action="result.php" method="post">
+<?php
+    $connection = mysqli_connect('localhost','root', '','exam_management');
+    if ($connection) {
+      $show = 'select * from '.$examtable;
+      $result = mysqli_query($connection, $show);
+?>
+<form id="form1" action="result.php?examtable=<?php echo($examtable);?>" method="post">
   <h1><?php echo($title); ?><div id="time" style="float:right">timeout</div></h1>
     <?php
-    $con = mysqli_connect('localhost', 'root', '', 'exam_management');
-    $i = 1;
-    if ($con) {
-      $show = 'select * from '.$table;
-      $result = mysqli_query($con, $show);
       while ($row = mysqli_fetch_array($result)) {
     ?>
      
@@ -122,7 +123,7 @@
                 <div class="question bg-white p-3 border-bottom">
                   <div class="d-flex flex-row align-items-center question-title">
                    
-                    <h5 class="text-danger"><?php echo ($i); ?></h5>
+                    <h5 class="text-danger"><?php echo ($row[0]); ?></h5>
                     <h5 class="mt-1 ml-2"><?php echo ($row[1]); ?></h5>
                   </div>
                   <div class="ans ml-2">
@@ -146,10 +147,7 @@
             </div>
           </div>
         </div>
-
-
     <?php
-        $i = $i + 1;
       }
     } else {
       die('something happened' . mysqli_connect_error());
