@@ -145,20 +145,6 @@
 
             &nbsp;&nbsp;&nbsp;&nbsp;
 
-            <a href="#" class="btn btn-primary a-btn-slide-text">
-                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                <span><strong>Edit</strong></span>
-            </a>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;
-
-            <a href="#" class="btn btn-primary a-btn-slide-text">
-                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                <span><strong>View</strong></span>
-            </a>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;
-
             <a href="deletedep-html.php" class="btn btn-primary a-btn-slide-text">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 <span><strong>Delete</strong></span>
