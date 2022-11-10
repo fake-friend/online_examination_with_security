@@ -159,7 +159,7 @@
 
             &nbsp;&nbsp;&nbsp;&nbsp;
 
-            <a href="#" class="btn btn-primary a-btn-slide-text">
+            <a href="deletedep-html.php" class="btn btn-primary a-btn-slide-text">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 <span><strong>Delete</strong></span>
             </a>
