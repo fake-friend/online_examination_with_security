@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -27,6 +28,7 @@
         <th>Student Name</th>
         <th>Student Photo</th>
         <th>Phone Number</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
@@ -37,7 +39,7 @@
       $dept = $_SESSION['department'];
       if ($connection) {
         $count = 1;
-        $query = "SELECT roll_number,student_name,upload,phonenumber FROM student WHERE department='$dept' AND years='$year'";
+        $query = "SELECT roll_number,student_name,upload,phonenumber,devices FROM student WHERE department='$dept' AND years='$year'";
         $result = mysqli_query($connection, $query);
         while ($row = mysqli_fetch_array($result)) {
           $file = 'http://localhost/online_examination_with_security/student/upload/' . $row[2];
@@ -69,6 +71,23 @@
             <td>
               <p class="text-muted mb-0"><?php echo ($row[3]); ?></p>
             </td>
+
+            <!--devices logged in or logged out-->
+            <?php
+            if ($row[4] == 1) {
+            ?>
+              <td>
+                <span class="badge badge-success rounded-pill d-inline">Logged In</span>
+              </td>
+            <?php
+            } else {
+            ?>
+              <td>
+                <span class="badge badge-danger rounded-pill d-inline">Logged Out</span>
+              </td>
+            <?php
+            }
+            ?>
 
           </tr>
       <?php

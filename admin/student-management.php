@@ -96,7 +96,7 @@
             <td>
               <p class="text-muted mb-0"><?php echo($row[3]); ?></p>
             </td>
-        
+        <!--devices logged in or logged out-->
         <?php
         if($row[17]==1)
         {
