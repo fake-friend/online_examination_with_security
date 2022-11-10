@@ -1,11 +1,4 @@
-<?php
-session_start();
-$name = $_SESSION['instructor_name'];
-$instd = $_SESSION['instructor_id'];
-?>
-
 <html>
-
 <head>
   <style>
     .mb-3 {
@@ -58,5 +51,4 @@ $instd = $_SESSION['instructor_id'];
     }, false);
   })();
 </script>
-
 </html>
