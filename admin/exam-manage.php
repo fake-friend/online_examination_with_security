@@ -35,13 +35,15 @@
         <th>Start time</th>
         <th>Duration</th>
         <th>Unique_exam_name</th>
+        <th>Exam Status</th>
       </tr>
     </thead>
     <tbody>
       <?php
       $connection=mysqli_connect("localhost","root","","exam_management");
       session_start();
-
+      date_default_timezone_set("Asia/Kolkata");
+      $today = date("Y-m-d") . 'T' . date("H:i");
       
       if ($connection) {
         $count = 1;
@@ -115,6 +117,28 @@
                 <p class="fw-bold mb-1"><?php echo ($row[11]); ?></p>
               </div>
             </td>
+            <?php
+              if ($today >= $row[10]) {
+              ?>
+                <td>
+                  <div class="ms-3">
+                   
+                      <button type="button" class="btn btn-success">Completed</button>
+                    
+                  </div>
+                </td>
+                <?php
+              } 
+              else {
+              ?>
+                <td>
+                  <div class="ms-3">
+                    <button type="button"  class="btn btn-danger">Pending</button>
+                  </div>
+                </td>
+              <?php
+              }
+              ?>
             <td>
               <div class="ms-3">
                 <p class="fw-bold mb-1">
