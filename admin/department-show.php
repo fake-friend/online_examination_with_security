@@ -138,7 +138,7 @@
     <br><br>
     <div class="container" style=" padding-left: 450px; padding-top: 25px;">
         <div class="row">
-            <a href="addform-html.php" class="btn btn-primary a-btn-slide-text">
+            <a href="adddep-html.php" class="btn btn-primary a-btn-slide-text">
                 <span input type="submit" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 <span><strong>Add</strong></span>
             </a>
