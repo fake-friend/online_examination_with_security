@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2022 at 07:10 AM
+-- Generation Time: Nov 11, 2022 at 03:16 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -32,6 +32,7 @@ CREATE TABLE `instructorsubject` (
   `instructor_id` varchar(500) NOT NULL,
   `instructor_name` varchar(500) NOT NULL,
   `instructor_gmail` varchar(50) NOT NULL,
+  `instructor_department` varchar(50) NOT NULL,
   `department` varchar(50) NOT NULL,
   `subject` varchar(500) NOT NULL,
   `subjectcode` varchar(50) NOT NULL,
@@ -42,9 +43,9 @@ CREATE TABLE `instructorsubject` (
 -- Dumping data for table `instructorsubject`
 --
 
-INSERT INTO `instructorsubject` (`id`, `instructor_id`, `instructor_name`, `instructor_gmail`, `department`, `subject`, `subjectcode`, `Year`) VALUES
-(2, '102', 'Mary ', 'mary@gmail.com', 'CA/IT', 'python', 'uca20p45', 'III'),
-(3, '102', 'Mary ', 'mary@gmail.com', 'Tamil', 'ilakanam', 'uta22f74', 'I');
+INSERT INTO `instructorsubject` (`id`, `instructor_id`, `instructor_name`, `instructor_gmail`, `instructor_department`, `department`, `subject`, `subjectcode`, `Year`) VALUES
+(7, '102', 'Mary ', 'mary@gmail.com', 'CA/IT', 'Tamil', 'java', 'uja20c45', 'III'),
+(8, '102', 'Mary ', 'mary@gmail.com', 'CA/IT', 'CA/IT', 'python', 'uca20a12', 'III');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +65,7 @@ ALTER TABLE `instructorsubject`
 -- AUTO_INCREMENT for table `instructorsubject`
 --
 ALTER TABLE `instructorsubject`
-  MODIFY `id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

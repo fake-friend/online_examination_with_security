@@ -54,7 +54,8 @@
                 $count = 1;
                 $name = $_SESSION['instructor_name'];
                 $id=$_SESSION['instructor_id'];
-                $query="select * from instructorsubject where instructor_name='$name' and instructor_id='$id'";
+                $gmail=$_SESSION['instructor_gmail'];
+                $query="select * from instructorsubject where instructor_name='$name' and instructor_id='$id' and instructor_gmail='$gmail'";
                 $result = mysqli_query($connection, $query);
                 if(mysqli_num_rows($result)>0)
                 {
@@ -80,30 +81,30 @@
                         <!-- Department-->
                         <td>
                             <div class="ms-3">
-                                <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
+                                <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
                             </div>
                         </td>
                         <!--subject-->
                         <td>
                             <div class="ms-3">
-                                <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
+                                <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                             </div>
                         </td>
                         <!--subjectCode-->
                         <td>
                             <div class="ms-3">
-                                <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
+                                <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
                             </div>
                         </td>
                         <!--year-->
                         <td>
                             <div class="ms-3">
-                                <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
+                                <p class="fw-bold mb-1"><?php echo ($row[8]); ?></p>
                             </div>
                         </td>
                         <!--delete-->
                         <td>
-                            <form action="delete-subject.php?department=<?php echo($row[4]);?>&subjectcode=<?php echo($row[6]);?>" method="POST">
+                            <form action="delete-subject.php?department=<?php echo($row[5]);?>&subjectcode=<?php echo($row[7]);?>" method="POST">
                                 <input type="submit" value="Delete" class="btn btn-danger">
                             </form>
                         </td>

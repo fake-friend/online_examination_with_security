@@ -116,7 +116,7 @@ $unique=date("Y_m_d")."_".date("h_i_s");
 
         <div class="mb-3">
             <label for="sub" class="form-label">Unique Exam Name</label>
-            <input type="text" class="form-control" id="uniqueen" name="uniqueen" value="<?php echo(trim($instructor_name).$instructor_id.$subject.$year.$unique); ?>">
+            <input type="text" class="form-control" id="uniqueen" name="uniqueen" value="<?php echo(trim($instructor_name).$instructor_id.$department.$subject.$year.$unique); ?>">
             <div class="invalid-feedback">Please provide a valid value.</div>
             <div class="valid-feedback">Looks good!</div>
         </div>

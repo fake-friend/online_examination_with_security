@@ -8,6 +8,7 @@ if (!$connection) {
     $instructor_id = $_SESSION['instructor_id'];
     $instructor_name = $_SESSION['instructor_name'];
     $gmail = $_SESSION['instructor_gmail'];
+    $instructor_department=$_SESSION['instructor_department'];
     $department = $_POST['idept'];
     $subject = $_POST['sub'];
     $subject_code = $_POST['scode'];
@@ -17,7 +18,7 @@ if (!$connection) {
     $duration = $_POST['duration'];
     $unique = $_POST['uniqueen'];
 
-    $insert = "INSERT INTO exams(instructor_id,instructor_name,gmail,department,subjects,subject_code,years,exam_title,start_time,duration,unique_exam_name) VALUES ('$instructor_id','$instructor_name','$gmail','$department','$subject','$subject_code','$year','$examtitle','$date','$duration','$unique')";
+    $insert = "INSERT INTO exams(instructor_id,instructor_name,gmail,instructor_department,department,subjects,subject_code,years,exam_title,start_time,duration,unique_exam_name) VALUES ('$instructor_id','$instructor_name','$gmail','$instructor_department','$department','$subject','$subject_code','$year','$examtitle','$date','$duration','$unique')";
     $result = mysqli_query($connection, $insert);
 
     if ($result) {
@@ -38,5 +39,6 @@ if (!$connection) {
             echo 'invalid file';
         }
     }
+    mysqli_close($connection);
     header('location:subjectshowup.php');
 ?>
