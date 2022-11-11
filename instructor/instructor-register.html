@@ -188,7 +188,7 @@
 			                		<div class="form-holder">
 			                			<fieldset>
 											<legend>Gender</legend>
-											<select name="gend" id="batch">
+											<select name="gend" id="gend">
 												<option value="Duration" selected>select Gender</option>
 												<option value="Female">Woman</option>
 												<option value="Male">Man</option>
@@ -213,7 +213,7 @@
 								<div class="form-holder form-holder-2">
 									<fieldset>
 										<legend>Create Username</legend>
-										<input type="text" id="first-name" name="un" placeholder="Create Username" >
+										<input type="text" id="user-name" name="un" placeholder="Create Username" >
 									</fieldset>
 								</div>
 								</div>
@@ -255,7 +255,7 @@
 										</field>
 									</div>
 								</div>
-								<button type="submit" id="submit" name="submit" class="btn btn-success">Submit</button>
+								<button type="submit" id="submit" onclick="return validform()" value="submit" class="btn btn-success">Submit</button>
 							</div>
 							<script>
 								var myInput = document.getElementById("password");
@@ -334,7 +334,19 @@
                                  } else {  
                                         
                                     }  
-                                }  
+                                }
+								function validform(){
+									if(document. getElementById("first-name"). value. length == 0 || document. getElementById("fathers-name"). value. length == 0 || document. getElementById("dob"). value. length == 0 ||
+									document. getElementById("phone"). value. length == 0 || document. getElementById("dept"). value. length == 0 || document. getElementById("rno"). value. length == 0 ||
+									document. getElementById("batch"). value. length == 0 || document. getElementById("gend"). value. length == 0 || document. getElementById("user-name"). value. length == 0 ||
+									document. getElementById("youremail"). value. length == 0 || document. getElementById("password"). value. length == 0 || document. getElementById("confirm-psw"). value. length == 0 ||
+									document. getElementById("file"). value. length == 0)
+                                    {
+                                       alert("Please fill out all the fields");
+									   return false;
+                                    }
+									
+								}  
 								</script>
 			            </section>
 		        	</div>
