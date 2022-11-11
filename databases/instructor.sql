@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2022 at 03:04 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.0.23
+-- Generation Time: Nov 11, 2022 at 06:49 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,7 +55,9 @@ INSERT INTO `instructor` (`id`, `instructor_id`, `instructor_name`, `dob`, `phon
 (3, '103', 'Jessica', '2022-11-04', 2147483647, 'gfirst.jpeg', 'Computer Science', 'Head of Department', 'Aided', 'Female', 'Jessica', 'jessy@gmail.com', 'Jessy@12', '2022-11-05 13:49:46', 0),
 (4, '104', 'David Michael', '2022-11-10', 2147483647, 'bfirst.jpeg', 'Mathematics', 'Assistant Professor', 'Aided', 'Male', 'David ', 'david@gmail.com', 'D@vid123', '2022-11-05 13:52:31', 0),
 (5, '105', 'Joseph David', '2022-11-17', 2147483647, 'bfirst.jpeg', 'Computer Science', 'Assistant Professor', 'Aided', 'Male', 'Joseph ', 'joseph@gmail.com', 'Jose@123', '2022-11-05 13:55:43', 0),
-(6, '106', 'Jennifer', '2022-11-19', 2147483647, 'gfirst.jpeg', 'Mathematics', 'Head of Department', 'Aided', 'Female', 'Jennifer', 'jenny@gmail.com', 'Jenny@20', '2022-11-05 13:59:29', 1);
+(6, '106', 'Jennifer', '2022-11-19', 2147483647, 'gfirst.jpeg', 'Mathematics', 'Head of Department', 'Aided', 'Female', 'Jennifer', 'jenny@gmail.com', 'Jenny@20', '2022-11-05 13:59:29', 0),
+(9, '107', 'sooraj', '2022-11-01', 96694964, 'pexels-daria-shevtsova-1580625.jpg', 'Zoology', 'Head of Department', 'Self Financed', 'Male', 'sooraj', 'sooraj@gmail.com', 'So@12345', '2022-11-05 17:58:09', 0),
+(10, '108', 'harish', '2022-11-10', 968484, 'clear.png', 'Psycology', 'Assistant Professor', 'Self Financed', 'Male', 'sriharish', 'sriharishkumar17@gmail.com', 'Sri@1234', '2022-11-07 07:28:24', 0);
 
 --
 -- Indexes for dumped tables
@@ -75,7 +77,7 @@ ALTER TABLE `instructor`
 -- AUTO_INCREMENT for table `instructor`
 --
 ALTER TABLE `instructor`
-  MODIFY `id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

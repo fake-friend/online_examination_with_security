@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2022 at 08:52 AM
+-- Generation Time: Nov 11, 2022 at 06:51 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,11 +39,20 @@ CREATE TABLE `result` (
   `instructor_department` varchar(25) NOT NULL,
   `instructor_gmail` varchar(50) NOT NULL,
   `subject` varchar(25) NOT NULL,
+  `subject_code` varchar(15) NOT NULL,
   `exam_title` varchar(40) NOT NULL,
   `unique_exam_name` varchar(100) NOT NULL,
   `total_marks` int(5) NOT NULL,
   `secured_marks` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `result`
+--
+
+INSERT INTO `result` (`id`, `student_name`, `roll_number`, `student_department`, `student_gmail`, `year`, `instructor_id`, `instructor_name`, `instructor_department`, `instructor_gmail`, `subject`, `subject_code`, `exam_title`, `unique_exam_name`, `total_marks`, `secured_marks`) VALUES
+(1, 'Rajesh R', '20SUCA01', 'CA/IT', 'rajesh@students.tcarts.in', 'III', 102, 'Mary', 'CA/IT', 'mary@gmail.com', 'python ', 'uca20a12 ', 'files', 'Mary102pythonIII2022_11_11_07_58_09', 3, 3),
+(2, 'Rajesh R', '20SUCA01', 'CA/IT', 'rajesh@students.tcarts.in', 'III', 102, 'Mary', 'CA/IT', 'mary@gmail.com', 'python ', 'uca20a12 ', 'files', 'Mary102pythonIII2022_11_11_07_58_09', 3, 0);
 
 --
 -- Indexes for dumped tables
@@ -63,7 +72,7 @@ ALTER TABLE `result`
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

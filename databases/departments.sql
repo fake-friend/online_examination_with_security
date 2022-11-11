@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2022 at 08:31 AM
+-- Generation Time: Nov 11, 2022 at 06:48 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -41,7 +41,6 @@ INSERT INTO `departments` (`department_names`) VALUES
 ('MatheMatics'),
 ('Economics'),
 ('Business Administration'),
-('Commerce'),
 ('Physics'),
 ('Chemistry'),
 ('Botany'),
@@ -49,7 +48,8 @@ INSERT INTO `departments` (`department_names`) VALUES
 ('Computer Science'),
 ('M.sc Biotech'),
 ('CA & IT'),
-('Psychology');
+('Psychology'),
+(' Commerce');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
