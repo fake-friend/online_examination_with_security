@@ -1,16 +1,18 @@
 <?php
+session_start();
 include_once('../dbconfig.php');
 if(!$connection)
 {
     die('could not connect:'.mysqli_connect_error());
 } 
-$iid=$_POST['iid'];
-$iname=$_POST['iname'];
+$iid=$_SESSION['instructor_id'];
+$iname=$_SESSION['instructor_name'];
+$igmail=$_SESSION['instructor_gmail'];
 $idep=$_POST['idep'];
 $sub=$_POST['sub'];
 $scode=$_POST['scode'];
 $year=$_POST['year'];
-$s1="INSERT INTO instructorsubject(instructor_id,instructor_name,department,subject,subjectcode,Year) VALUES ('$iid','$iname','$idep','$sub','$scode','$year')";
+$s1="INSERT INTO instructorsubject(instructor_id,instructor_name,instructor_gmail,department,subject,subjectcode,Year) VALUES ('$iid','$iname','$igmail','$idep','$sub','$scode','$year')";
 $s2=mysqli_query($connection,$s1);
 if($s2)
 {

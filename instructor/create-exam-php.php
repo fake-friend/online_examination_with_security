@@ -1,12 +1,13 @@
 <?php
+session_start();
 $connection = mysqli_connect('localhost', 'root', '', 'exam_management');
 if (!$connection) {
     die('something went wrong' . mysqli_connect_error());
 }
 
-    $instructor_id = $_POST['iid'];
-    $instructor_name = $_POST['iname'];
-    $gmail = $_POST['igmail'];
+    $instructor_id = $_SESSION['instructor_id'];
+    $instructor_name = $_SESSION['instructor_name'];
+    $gmail = $_SESSION['instructor_gmail'];
     $department = $_POST['idept'];
     $subject = $_POST['sub'];
     $subject_code = $_POST['scode'];

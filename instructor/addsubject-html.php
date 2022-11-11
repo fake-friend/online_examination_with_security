@@ -2,6 +2,7 @@
 session_start();
 $name = $_SESSION['instructor_name'];
 $instd = $_SESSION['instructor_id'];
+$instructor_gmail=$_SESSION['instructor_gmail'];
 ?>
 
 <html>
@@ -23,19 +24,26 @@ $instd = $_SESSION['instructor_id'];
 </head>
 
 <body>
-  <form class="needs-validation" action="addform-php.php" method="post" novalidate>
+  <form class="needs-validation" action="addsubject-php.php" method="post" novalidate>
     <div class="alert alert-danger d-none">Please review the problems below:</div>
 
     <div class="mb-3">
       <label for="iid" class="form-label">Instructor ID</label>
-      <input type="text" class="form-control" id="iid" name="iid" value="<?php echo $instd ?> ">
-      <div class="invalid-feedback">Name can't be blank</div>
+      <input type="text" class="form-control" id="iid" name="iid" disabled value="<?php echo $instd ?> ">
+      <div class="invalid-feedback">Id can't be blank</div>
       <div class="valid-feedback">Looks good!</div>
     </div>
 
     <div class="mb-3">
       <label for="iname" class="form-label">Instructor Name</label>
-      <input type="text" class="form-control" id="iname" name="iname" value="<?php echo $name ?> ">
+      <input type="text" class="form-control" id="iname" name="iname" disabled value="<?php echo $name ?> ">
+      <div class="invalid-feedback">Name can't be blank</div>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="iname" class="form-label">Instructor Gmail</label>
+      <input type="text" class="form-control" id="igmail" name="igmail" disabled value="<?php echo $instructor_gmail ?> ">
       <div class="invalid-feedback">Email can't be blank</div>
       <div class="valid-feedback">Looks good!</div>
     </div>

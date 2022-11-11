@@ -42,8 +42,8 @@
         $count = 1;
         $inst_id = $_SESSION['instructor_id'];
         $instructor_name = $_SESSION['instructor_name'];
-        //$query = 'select * from instructorsubject where instructor_id=' . '"' . $inst_id . '"';
-        $query = "select * from instructorsubject where instructor_id='$inst_id' and instructor_name='$instructor_name'";
+        $instructor_gmail=$_SESSION['instructor_gmail'];
+        $query = "select * from instructorsubject where instructor_id='$inst_id' and instructor_name='$instructor_name' and instructor_gmail='$instructor_gmail'";
         $result = mysqli_query($connection, $query);
         if (mysqli_num_rows($result) > 0) {
           while ($row = mysqli_fetch_array($result)) {
@@ -68,25 +68,25 @@
               <!-- Department-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
                 </div>
               </td>
               <!--subject-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
                 </div>
               </td>
               <!--subjectCode-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                 </div>
               </td>
               <!--year-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
                 </div>
               </td>
               <td>
@@ -95,8 +95,8 @@
                     <html>
 
                     <body>
-                      <form method="post" action="create-exam-html.php?instid=<?php echo (trim($row[1])); ?>&instnm=<?php echo (trim($row[2])); ?>&department=<?php echo ($row[3]); ?>&subject=<?php echo ($row[4]); ?>& subjectcode=<?php echo ($row[5]); ?>&year=<?php echo ($row[6]); ?>">
-                        <input type="submit" class="btn btn-success" value="Add Exam Question ">
+                      <form method="post" action="create-exam-html.php?department=<?php echo ($row[4]); ?>&subject=<?php echo ($row[5]); ?>& subjectcode=<?php echo ($row[6]); ?>&year=<?php echo ($row[7]); ?>">
+                        <input type="submit" class="btn btn-success" value="Add / CREATE Exam Question ">
                       </form>
                     </body>
 

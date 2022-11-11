@@ -35,9 +35,10 @@
             session_start();
             $instructor_id = $_SESSION['instructor_id'];
             $instructor_name = $_SESSION['instructor_name'];
+            $instructor_gmail=$_SESSION['instructor_gmail'];
             $connection = mysqli_connect('localhost', 'root', '', 'exam_management');
             if ($connection) {
-                $select = "select department, subjects, subject_code, years, exam_title, Start_time, duration, unique_exam_name from exams where instructor_id='$instructor_id' AND instructor_name='$instructor_name'";
+                $select = "select department, subjects, subject_code, years, exam_title, Start_time, duration, unique_exam_name from exams where instructor_id='$instructor_id' AND instructor_name='$instructor_name' and gmail='$instructor_gmail'";
                 $result = mysqli_query($connection, $select);
                 if (mysqli_num_rows($result) > 0) {
                     $count = 1;

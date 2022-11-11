@@ -21,7 +21,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <a href="addform-html.php" class="btn btn-primary a-btn-slide-text">
+            <a href="addsubject-html.php" class="btn btn-primary a-btn-slide-text">
                 <span input type="submit" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 <span><strong>Add</strong></span>
             </a>
@@ -80,30 +80,30 @@
                         <!-- Department-->
                         <td>
                             <div class="ms-3">
-                                <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
+                                <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
                             </div>
                         </td>
                         <!--subject-->
                         <td>
                             <div class="ms-3">
-                                <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
+                                <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
                             </div>
                         </td>
                         <!--subjectCode-->
                         <td>
                             <div class="ms-3">
-                                <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
+                                <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                             </div>
                         </td>
                         <!--year-->
                         <td>
                             <div class="ms-3">
-                                <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
+                                <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
                             </div>
                         </td>
                         <!--delete-->
                         <td>
-                            <form action="delete-subject.php?department=<?php echo($row[3]);?>&subjectcode=<?php echo($row[5]);?>" method="POST">
+                            <form action="delete-subject.php?department=<?php echo($row[4]);?>&subjectcode=<?php echo($row[6]);?>" method="POST">
                                 <input type="submit" value="Delete" class="btn btn-danger">
                             </form>
                         </td>

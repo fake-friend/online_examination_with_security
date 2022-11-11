@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2022 at 03:04 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.0.23
+-- Generation Time: Nov 11, 2022 at 07:10 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,6 +31,7 @@ CREATE TABLE `instructorsubject` (
   `id` int(45) NOT NULL,
   `instructor_id` varchar(500) NOT NULL,
   `instructor_name` varchar(500) NOT NULL,
+  `instructor_gmail` varchar(50) NOT NULL,
   `department` varchar(50) NOT NULL,
   `subject` varchar(500) NOT NULL,
   `subjectcode` varchar(50) NOT NULL,
@@ -41,13 +42,9 @@ CREATE TABLE `instructorsubject` (
 -- Dumping data for table `instructorsubject`
 --
 
-INSERT INTO `instructorsubject` (`id`, `instructor_id`, `instructor_name`, `department`, `subject`, `subjectcode`, `Year`) VALUES
-(1, '101 ', 'Albert ', 'CA/IT', 'Java', 'uca22c51', 'I'),
-(2, '102 ', 'Mary  ', 'Computer Science', 'Cloud Computing', 'ucs22c52', 'I'),
-(3, '103 ', 'Jessica ', 'Mathematics', 'Algebra', 'uma21c53', 'II'),
-(4, '104 ', 'David Michael ', 'Physics', 'Discrete Mathematics', 'uph21c55', 'II'),
-(5, '105 ', 'Joseph David ', 'CA/IT', 'Internet Security', 'uca20c56', 'III'),
-(6, '106 ', 'Jennifer ', 'Computer Science', 'Trigonometry', 'ucs20c57', 'III');
+INSERT INTO `instructorsubject` (`id`, `instructor_id`, `instructor_name`, `instructor_gmail`, `department`, `subject`, `subjectcode`, `Year`) VALUES
+(2, '102', 'Mary ', 'mary@gmail.com', 'CA/IT', 'python', 'uca20p45', 'III'),
+(3, '102', 'Mary ', 'mary@gmail.com', 'Tamil', 'ilakanam', 'uta22f74', 'I');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +64,7 @@ ALTER TABLE `instructorsubject`
 -- AUTO_INCREMENT for table `instructorsubject`
 --
 ALTER TABLE `instructorsubject`
-  MODIFY `id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,7 +1,7 @@
 <?php
 session_start();
-$instructor_id = $_GET['instid'];
-$instructor_name = $_GET['instnm'];
+$instructor_id = $_SESSION['instructor_id'];
+$instructor_name = $_SESSION['instructor_name'];
 $gmail = $_SESSION['instructor_gmail'];
 $department = $_GET['department'];
 $subject = $_GET['subject'];
@@ -34,21 +34,21 @@ $unique=date("Y_m_d")."_".date("h_i_s");
 
         <div class="mb-3">
             <label for="iid" class="form-label">Instructor ID</label>
-            <input type="text" class="form-control" id="iid" name="iid" value="<?php echo $instructor_id ?> ">
+            <input type="text" class="form-control" id="iid" name="iid" disabled value="<?php echo $instructor_id ?> ">
             <div class="invalid-feedback">Name can't be blank</div>
             <div class="valid-feedback">Looks good!</div>
         </div>
 
         <div class="mb-3">
             <label for="iname" class="form-label">Instructor Name</label>
-            <input type="text" class="form-control" id="iname" name="iname" value="<?php echo $instructor_name ?> ">
+            <input type="text" class="form-control" id="iname" name="iname" disabled value="<?php echo $instructor_name ?> ">
             <div class="invalid-feedback">Email can't be blank</div>
             <div class="valid-feedback">Looks good!</div>
         </div>
 
         <div class="mb-3">
             <label for="iname" class="form-label">Gmail</label>
-            <input type="text" class="form-control" id="igmail" name="igmail" value="<?php echo $gmail ?> ">
+            <input type="text" class="form-control" id="igmail" name="igmail" disabled value="<?php echo $gmail ?> ">
             <div class="invalid-feedback">Email can't be blank</div>
             <div class="valid-feedback">Looks good!</div>
         </div>
@@ -56,28 +56,28 @@ $unique=date("Y_m_d")."_".date("h_i_s");
         <div class="mb-3">
             <label for="iname" class="form-label">Department</label>
             <input type="text" class="form-control" id="idept" name="idept" value="<?php echo $department ?> ">
-            <div class="invalid-feedback">Email can't be blank</div>
+            <div class="invalid-feedback">Department can't be blank</div>
             <div class="valid-feedback">Looks good!</div>
         </div>
 
         <div class="mb-3">
             <label for="sub" class="form-label">Subject</label>
             <input type="text" class="form-control" id="sub" name="sub" value="<?php echo $subject ?> ">
-            <div class="invalid-feedback">Please provide a valid value.</div>
+            <div class="invalid-feedback">provide a valid value.</div>
             <div class="valid-feedback">Looks good!</div>
         </div>
 
         <div class="mb-3">
             <label for="scode" class="form-label">Subject Code</label>
             <input type="text" class="form-control" id="scode" name="scode" value="<?php echo $subject_code ?> ">
-            <div class="invalid-feedback">Name can't be blank</div>
+            <div class="invalid-feedback">Subject code can't be blank</div>
             <div class="valid-feedback">Looks good!</div>
         </div>
 
         <div class="mb-3">
             <label for="scode" class="form-label">Year</label>
             <input type="text" class="form-control" id="year" name="year" value="<?php echo $year ?> ">
-            <div class="invalid-feedback">Name can't be blank</div>
+            <div class="invalid-feedback">Year can't be blank</div>
             <div class="valid-feedback">Looks good!</div>
         </div>
 
@@ -116,7 +116,7 @@ $unique=date("Y_m_d")."_".date("h_i_s");
 
         <div class="mb-3">
             <label for="sub" class="form-label">Unique Exam Name</label>
-            <input type="text" class="form-control" id="uniqueen" name="uniqueen" value="<?php echo($instructor_name.$instructor_id.$subject.$year.$unique); ?>">
+            <input type="text" class="form-control" id="uniqueen" name="uniqueen" value="<?php echo(trim($instructor_name).$instructor_id.$subject.$year.$unique); ?>">
             <div class="invalid-feedback">Please provide a valid value.</div>
             <div class="valid-feedback">Looks good!</div>
         </div>
