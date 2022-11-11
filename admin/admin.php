@@ -1,9 +1,9 @@
 <?php 
 session_start();
-if($_SESSION['name'] && $_SESSION['email'])
+if($_SESSION['admin_name'] && $_SESSION['admin_email'])
 {
-    $username=$_SESSION['name'];
-    $email=$_SESSION['email'];
+    $username=$_SESSION['admin_name'];
+    $email=$_SESSION['admin_email'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,7 @@ if($_SESSION['name'] && $_SESSION['email'])
     <style>
         nav
         {
-            height: 643px;
+            height: 657px;
         }
         iframe
         {

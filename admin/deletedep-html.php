@@ -23,34 +23,36 @@ session_start();
 <body>
   <form class="needs-validation" action="deletedep.php" method="post" novalidate>
     <div class="alert alert-danger d-none">Please review the problems below:</div>
-    <br><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="department-show.php"> <button type="button" class="btn btn-primary">Back</button></a>
-    <button type="submit" class="btn btn-primary">Submit</button>
-         <br><br>
-    
-        <div class="mb-3">
+
+    <div class="mb-3">
       <label for="dept" class="form-label">Choose the Department to Delete</label>
-      <select name="dept" id="dept">
-		<option value="Dept" selected>Department</option>
-      <?php
-     include_once('../dbconfig.php');
-     if ($connection) {
+      <select name="dept" class="form-control" id="dept">
+        <option value="Dept" class="form-control" selected>Department</option>
+        <?php
+        include_once('../dbconfig.php');
+        if ($connection) {
           $query = 'select * from departments';
-         $result = mysqli_query($connection, $query);
-         while ($row = mysqli_fetch_array($result)) {
-                        ?>
-        <option value="<?php echo ($row[0]); ?>"><?php echo ($row[0]); ?></option>
-         
-      <div class="invalid-feedback"> Department can't be blank</div>
-      <div class="valid-feedback">Looks good!</div>
+          $result = mysqli_query($connection, $query);
+          while ($row = mysqli_fetch_array($result)) {
+        ?>
+            <option value="<?php echo ($row[0]); ?>"><?php echo ($row[0]); ?></option>
+
+            <div class="invalid-feedback"> Department can't be blank</div>
+            <div class="valid-feedback">Looks good!</div>
+        <?php
+          }
+        } else {
+          die('something went wrong' . mysqli_connect_error());
+        }
+        ?>
+      </select>
     </div>
-    <?php
-}
-                        } else {
-                            die('something went wrong' . mysqli_connect_error());
-                        }
-                        ?>   
-                        </select>
+
+    <div class="mb-3">
+      <a href="department-show.php"><button type="button" class="btn btn-primary">Back</button></a>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
   </form>
 </body>
 <script>

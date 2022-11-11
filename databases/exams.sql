@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2022 at 07:06 PM
+-- Generation Time: Nov 11, 2022 at 08:13 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -43,6 +43,13 @@ CREATE TABLE `exams` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `exams`
+--
+
+INSERT INTO `exams` (`id`, `instructor_id`, `instructor_name`, `gmail`, `department`, `subjects`, `subject_code`, `years`, `exam_title`, `start_time`, `duration`, `unique_exam_name`) VALUES
+(2, 102, 'Mary ', 'mary@gmail.com', 'CA/IT ', 'python ', 'uca20p45 ', 'III', 'files', '2022-11-11T11:35', '15', 'Mary102pythonIII2022_11_11_11_35_22');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -61,7 +68,7 @@ ALTER TABLE `exams`
 -- AUTO_INCREMENT for table `exams`
 --
 ALTER TABLE `exams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

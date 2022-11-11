@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2022 at 07:43 PM
+-- Generation Time: Nov 11, 2022 at 07:24 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `online-examination-with-security`
+-- Database: `online_examination_with_security`
 --
 
 -- --------------------------------------------------------
@@ -32,8 +32,6 @@ CREATE TABLE `admin` (
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(150) NOT NULL,
-  `phone-number` int(10) NOT NULL,
-  `photo` varchar(150) NOT NULL,
   `devices` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -41,8 +39,8 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `name`, `email`, `password`, `phone-number`, `photo`, `devices`) VALUES
-(1, 'admin', 'admin@gmail.com', 'adminadmin', 985462413, '', 1);
+INSERT INTO `admin` (`id`, `name`, `email`, `password`, `devices`) VALUES
+(1, 'admin', 'admin@gmail.com', 'adminadmin', 0);
 
 --
 -- Indexes for dumped tables

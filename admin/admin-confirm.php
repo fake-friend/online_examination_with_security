@@ -19,8 +19,8 @@ if($connection)
                 {
                     if($row[2]==0)
                     {
-                        $_SESSION['name']=$row[0];
-                        $_SESSION['email']=$email;
+                        $_SESSION['admin_name']=$row[0];
+                        $_SESSION['admin_email']=$email;
                         include_once("mail.php");
                         header("location:otp.php");
                     }

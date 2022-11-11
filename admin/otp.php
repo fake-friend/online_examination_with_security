@@ -3,7 +3,7 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Page Title</title>
+  <title>OTP</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -67,7 +67,7 @@
 <body onload="timeout()">
 
   <script type="text/javascript">
-    var timeLeft = 3 * 10;
+    var timeLeft = 3 * 20;
   </script>
 
   <div class="container border">
@@ -113,8 +113,8 @@ if ($connection) {
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $otp = $_POST['otp'];
     if (strcmp($otp, $_SESSION['otp']) == 0) {
-      $email = $_SESSION['email'];
-      $device_query = "update admin set devices='1' where email='$email'";
+      $email = $_SESSION['admin_email'];
+      $device_query = "update admin set devices=1 where email='$email'";
       mysqli_query($connection, $device_query);
       mysqli_close($connection);
       header("location:admin.php");
