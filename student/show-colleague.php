@@ -35,7 +35,7 @@
       include_once('../dbconfig.php');
       session_start();
       $year=$_SESSION['years'];
-      $department = $_SESSION['department'];
+      $department = $_SESSION['student_department'];
       if ($connection) {
         $count = 1;
         $query = "SELECT roll_number,student_name,upload,gmail FROM student WHERE department='$department' AND years='$year'";

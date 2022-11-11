@@ -3,7 +3,7 @@ include_once('../dbconfig.php');
 session_start();
 if($connection)
 {
-    $gmail=$_SESSION['gmail'];
+    $gmail=$_SESSION['student_gmail'];
     $device_query="UPDATE student SET devices=0 WHERE gmail='$gmail'";
     mysqli_query($connection,$device_query);
     mysqli_close($connection);

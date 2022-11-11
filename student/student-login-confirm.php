@@ -17,9 +17,9 @@ if($connection)
                 if($row[4]==0)
                 {
                     $_SESSION['student_name']=$row[0];
-                    $_SESSION['department']=$row[1];
+                    $_SESSION['student_department']=$row[1];
                     $_SESSION['roll_number']=$row[2];
-                    $_SESSION['gmail']=$email;
+                    $_SESSION['student_gmail']=$email;
                     $_SESSION['years']=$row[5];
                     $device_query="update student set devices='1' where gmail='$email'";
                     mysqli_query($connection,$device_query);

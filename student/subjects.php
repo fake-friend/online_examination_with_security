@@ -149,7 +149,7 @@
                             include('../dbconfig.php');
                             session_start();
                             $years = $_SESSION['years'];
-                            $department=$_SESSION['department'];
+                            $department=$_SESSION['student_department'];
                             if ($connection) {
                                 $query = "SELECT instructor_name, subject FROM instructorsubject WHERE Year='$years' AND department='$department'";
                                 $result = mysqli_query($connection, $query);

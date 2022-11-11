@@ -1,9 +1,9 @@
 <?php
 session_start();
-if ($_SESSION['student_name'] && $_SESSION['gmail']) {
+if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
     $name = $_SESSION['student_name'];
-    $gmail = $_SESSION['gmail'];
-    $department=$_SESSION['department'];
+    $gmail = $_SESSION['student_gmail'];
+    $department=$_SESSION['student_department'];
     $roll_number=$_SESSION['roll_number'];
     $year=$_SESSION['years'];
 ?>
@@ -21,7 +21,7 @@ if ($_SESSION['student_name'] && $_SESSION['gmail']) {
         <style>
             nav 
             {
-                height: 643px;
+                height: 657px;
             }
 
             iframe {
@@ -109,6 +109,6 @@ if ($_SESSION['student_name'] && $_SESSION['gmail']) {
     </html>
 <?php
 } else {
-    header("location:student-login.php");
+    header("location:student-login.php?message=need to login");
 }
 ?>

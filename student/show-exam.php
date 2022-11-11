@@ -39,20 +39,17 @@
       session_start();
       date_default_timezone_set("Asia/Kolkata");
       $today = date("Y-m-d") . 'T' . date("H:i");
-      $department = $_SESSION['department'];
+      $department = $_SESSION['student_department'];
       $year = $_SESSION['years'];
       include_once('../dbconfig.php');
       $connection1 = mysqli_connect('localhost', 'root', '', 'exam_management');
       if ($connection1 && $connection) {
-        $select = "select instructor_id,instructor_name, department,subjects, subject_code, exam_title, start_time, duration, unique_exam_name from exams where department='$department' and years='$year'";
+        $select = "select instructor_id,instructor_name,gmail,instructor_department,department,subjects, subject_code, exam_title, start_time, duration, unique_exam_name from exams where department='$department' and years='$year'";
         $result = mysqli_query($connection1, $select);
         if (mysqli_num_rows($result) > 0) {
           $count = 1;
           while ($row = mysqli_fetch_array($result)) {
-            $_SESSION['instructor_id']=$row[0];
-            $_SESSION['instructor_name']=$row[1];
       ?>
-
             <tr>
               <!--serial number-->
               <td>
@@ -67,46 +64,46 @@
               <!--department-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[2]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
                 </div>
               </td>
               <!--subject-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
                 </div>
               </td>
               <!--subjectCode-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                 </div>
               </td>
               <!--Exam title-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
                 </div>
               </td>
               <!--Start time-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[8]); ?></p>
                 </div>
               </td>
               <!--Duration-->
               <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo ($row[9]); ?></p>
                 </div>
               </td>
               <!--attend exam-->
               <?php
-              if ($today >= $row[6]) {
+              if ($today >= $row[8]) {
               ?>
                 <td>
                   <div class="ms-3">
-                    <a href="quiz.php?examtable=<?php echo ($row[7]); ?>&time=<?php echo ($row[6]); ?>&title=<?php echo ($row[4]); ?>" target="_blank">
+                    <a href="quiz.php?insid=<?php echo($row[0]); ?>&insnm=<?php echo(trim($row[1])); ?>&insgmail=<?php echo($row[2]); ?>&insdept=<?php echo($row[3]); ?>&subject=<?php echo($row[5]); ?>&subjectcode=<?php echo($row[6]); ?>&title=<?php echo ($row[7]); ?>&duration=<?php echo ($row[9]); ?>&examtable=<?php echo ($row[10]); ?>" target="_blank">
                       <button type="submit" class="btn btn-success">Attend</button>
                     </a>
                   </div>

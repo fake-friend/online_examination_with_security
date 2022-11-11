@@ -1,7 +1,13 @@
 <?php
-  $examtable=$_GET['examtable'];
-  $time= (int)$_GET['time'];
-  $title=$_GET['title'];
+$instructor_id=$_GET['insid'];
+$instructor_name=$_GET['insnm'];
+$instructor_gmail=$_GET['insgmail'];
+$instructor_department=$_GET['insdept'];
+$subject=$_GET['subject'];
+$subjectcode=$_GET['subjectcode'];
+$title=$_GET['title'];
+$time= (int)$_GET['duration'];
+$examtable=$_GET['examtable'];  
 ?>
 <!DOCTYPE html>
 <html>
@@ -110,7 +116,7 @@
       $show = 'select * from '.$examtable;
       $result = mysqli_query($connection, $show);
 ?>
-<form id="form1" action="result.php?examtable=<?php echo($examtable);?>" method="post">
+<form id="form1" action="result.php?insid=<?php echo($instructor_id); ?>&insnm=<?php echo($instructor_name); ?>&insgmail=<?php echo($instructor_gmail); ?>&insdept=<?php echo($instructor_department); ?>&subject=<?php echo($subject); ?>&subjectcode=<?php echo($subjectcode); ?>&title=<?php echo ($title); ?>&examtable=<?php echo($examtable);?>" method="post">
   <h1><?php echo($title); ?><div id="time" style="float:right">timeout</div></h1>
     <?php
       while ($row = mysqli_fetch_array($result)) {
