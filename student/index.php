@@ -64,7 +64,7 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
                     </li>
 
                     <li>
-                        <a href="#" target="frame"><span class="fa fa-certificate mr-3"></span> Results</a>
+                        <a href="result-view.php" target="frame"><span class="fa fa-certificate mr-3"></span> Results</a>
                     </li>
 
                     <li>

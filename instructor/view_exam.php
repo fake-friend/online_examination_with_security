@@ -1,3 +1,8 @@
+<?php
+$exam_table = $_GET['examtable'];
+$student_department = $_GET['department'];
+$student_year= $_GET['year'];
+?>
 <html>
 
 <head>
@@ -19,16 +24,16 @@
         <thead class="bg-light">
             <tr>
                 <th>Serial Number</th>
-                <th>Department</th>
-                <th>Subject</th>
-                <th>Subject Code</th>
+                <th>Student Name</th>
+                <th>Student Roll No</th>
+                <th>Student Department</th>
                 <th>Year</th>
+                <th>Subjects</th>
+                <th>Subject Code</th>
                 <th>Exam Title</th>
-                <th>Start Time</th>
-                <th>Duration</th>
-                <th>Unique Exam Name</th>
-                <th>Delete</th>
-                <th>Result<th>
+                <th>Total Marks</th>
+                <th>Secured Marks</th>
+               
             </tr>
         </thead>
         <tbody>
@@ -39,7 +44,9 @@
             $instructor_gmail=$_SESSION['instructor_gmail'];
             $connection = mysqli_connect('localhost', 'root', '', 'exam_management');
             if ($connection) {
-                $select = "select department, subjects, subject_code, years, exam_title, Start_time, duration, unique_exam_name from exams where instructor_id='$instructor_id' AND instructor_name='$instructor_name' and gmail='$instructor_gmail'";
+                $select = "SELECT student_name,roll_number,student_department,year,subject, subject_code,exam_title,total_marks,secured_marks from result 
+                where instructor_id='$instructor_id' and instructor_name='$instructor_name' and instructor_gmail='$instructor_gmail' and
+                unique_exam_name='$exam_table' and year='$student_year' and student_department='$student_department'";
                 $result = mysqli_query($connection, $select);
                 if (mysqli_num_rows($result) > 0) {
                     $count = 1;
@@ -51,19 +58,19 @@
                             <td>
                                 <?php echo ($count); ?>
                             </td>
-                            <!--Department-->
+                            <!--student name-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[0]); ?></p>
                                 </div>
                             </td>
-                            <!--Subject-->
+                            <!--Student roll no-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[1]); ?></p>
                                 </div>
                             </td>
-                            <!-- Subject code-->
+                            <!-- Student department-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[2]); ?></p>
@@ -75,40 +82,34 @@
                                     <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
                                 </div>
                             </td>
-                            <!--exam title-->
+                            <!--subjects-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
                                 </div>
                             </td>
-                            <!--start time-->
+                            <!--subject code-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
                                 </div>
                             </td>
-                            <!--duration-->
+                            <!--exam title-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                                 </div>
                             </td>
-                            <!--unique exam name-->
+                            <!--total marks-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
                                 </div>
                             </td>
-                            <!--delete-->
-                            <td>
-                                <form action="delete-exam.php?department=<?php echo ($row[0]); ?>&subject=<?php echo($row[1]); ?>&subjectcode=<?php echo ($row[2]); ?>&year=<?php echo($row[3]); ?>&examtitle=<?php echo($row[4]); ?>&uniqueexamname=<?php echo($row[7]); ?>" method="POST">
-                                    <input type="submit" value="Delete" class="btn btn-danger">
-                                </form>
-                            </td>
+                            <!--secured marks-->
                             <td>
                                 <div class="ms-3">
-                                <form action="view_exam.php?examtable=<?php echo ($row[7]);?>&department=<?php echo ($row[0]); ?>&year=<?php echo($row[3]); ?>" method="POST">
-                                    <input type="submit" value="View Status" class="btn btn-success">
+                                    <p class="fw-bold mb-1"><?php echo ($row[8]); ?></p>
                                 </div>
                             </td>
                         </tr>
@@ -118,7 +119,7 @@
                 } else {
                     ?>
                     <tr>
-                        <td colspan="10">no records found</td>
+                        <td colspan="10">no results found</td>
                     </tr>
             <?php
 
