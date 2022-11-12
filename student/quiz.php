@@ -135,8 +135,15 @@ $examtable = $_GET['examtable'];
         <div class="error">
           <p> You cannot attend this exam more than one time</p>
           <p><?php echo($title); ?></p>
-          <form action="index.php">
+          <form action="index.php" onsubmit="closeWindow();">
              <button type="submit" class="btn btn-primary">Back</button>
+              <script type="text/javascript">
+                  function closeWindow() {
+                      let new_window =open(location, '_self');
+                      new_window.close();
+                      return false;
+                    }
+              </script>
           </form>
         </div>
         

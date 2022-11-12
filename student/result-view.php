@@ -127,11 +127,11 @@
             
 
               <?php
+              $count = $count + 1;
               } 
               ?>
             </tr>
           <?php
-            $count = $count + 1;
           }
          else {
           ?>
