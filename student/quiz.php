@@ -1,13 +1,13 @@
 <?php
-$instructor_id=$_GET['insid'];
-$instructor_name=$_GET['insnm'];
-$instructor_gmail=$_GET['insgmail'];
-$instructor_department=$_GET['insdept'];
-$subject=$_GET['subject'];
-$subjectcode=$_GET['subjectcode'];
-$title=$_GET['title'];
-$time= (int)$_GET['duration'];
-$examtable=$_GET['examtable'];  
+$instructor_id = $_GET['insid'];
+$instructor_name = $_GET['insnm'];
+$instructor_gmail = $_GET['insgmail'];
+$instructor_department = $_GET['insdept'];
+$subject = $_GET['subject'];
+$subjectcode = $_GET['subjectcode'];
+$title = $_GET['title'];
+$time = (int)$_GET['duration'];
+$examtable = $_GET['examtable'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@ $examtable=$_GET['examtable'];
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Page Title</title>
+  <title>Exam Title</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -61,8 +61,7 @@ $examtable=$_GET['examtable'];
       margin-left: 36px !important;
     }
 
-    .btn:focus 
-    {
+    .btn:focus {
       outline: 0 !important;
       box-shadow: none !important;
     }
@@ -71,89 +70,118 @@ $examtable=$_GET['examtable'];
       outline: 0 !important;
       box-shadow: none !important;
     }
+
+    .error
+    {
+      font-style: oblique;
+      margin-left: 3%;
+      margin-top: 10%;
+      text-align: center;
+    }
   </style>
 
   <script type="text/javascript">
-    function timeout()
-    {
+    function timeout() {
       //var hours=Math.floor(timeLeft/60);
-      var minute=Math.floor(timeLeft/60);
-      var second=timeLeft%60;
-      var sec=checktime(second);
-      if(timeLeft<=0)
-      {
+      var minute = Math.floor(timeLeft / 60);
+      var second = timeLeft % 60;
+      var sec = checktime(second);
+      if (timeLeft <= 0) {
         clearTimeout(tm);
         document.getElementById("form1").submit();
         //window.location.href="result.php";
-      }
-      else
-      {
-        document.getElementById("time").innerHTML=minute+":"+sec;
+      } else {
+        document.getElementById("time").innerHTML = minute + ":" + sec;
       }
       timeLeft--;
-      var tm=setTimeout(function() {timeout()},1000 )
+      var tm = setTimeout(function() {
+        timeout()
+      }, 1000)
     }
-    function checktime(msg)
-    {
-        if(msg<10)
-        {
-          msg="0"+msg;
-        }
-        return msg;
+
+    function checktime(msg) {
+      if (msg < 10) {
+        msg = "0" + msg;
+      }
+      return msg;
     }
   </script>
 </head>
 
 <body onload="timeout()">
 
-<script type="text/javascript">
-      var timeLeft=<?php echo($time*60); ?>;
-</script>
+  <script type="text/javascript">
+    var timeLeft = <?php echo ($time * 60); ?>;
+  </script>
+
+  <?php
+  session_start();
+  $student_name = $_SESSION['student_name'];
+  $roll_number = $_SESSION['roll_number'];
+  $department = $_SESSION['student_department'];
+  $gmail = $_SESSION['student_gmail'];
+  $year = $_SESSION['years'];
+  $dev = '1';
+  $connection = mysqli_connect('localhost', 'root', '', 'exam_management');
+  if ($connection) {
+    $check = "SELECT devices from result where student_name='$student_name' and roll_number='$roll_number' and student_gmail='$gmail' and student_department='$department' and year='$year' and instructor_name='$instructor_name' and instructor_department='$instructor_department' and subject='$subject' and subject_code='$subjectcode' and exam_title='$title' and unique_exam_name='$examtable'";
+    $results = mysqli_query($connection, $check);
+    if (mysqli_num_rows($results)) 
+    {
+      $row = mysqli_fetch_row($results);
+      if ((strcmp($dev, $row[0]) == 0)) 
+      {
+  ?>
+        <div class="error">
+          <p> You cannot attend this exam more than one time</p>
+          <p><?php echo($title); ?></p>
+          <form action="index.php">
+             <button type="submit" class="btn btn-primary">Back</button>
+          </form>
+        </div>
+        
+    <?php 
+      } 
+    else 
+    {
+        run($connection,$instructor_id,$instructor_name,$instructor_gmail,$instructor_department,$subject,$subjectcode,$title,$examtable);
+    }
+    }
+    else
+    {
+          run($connection,$instructor_id,$instructor_name,$instructor_gmail,$instructor_department,$subject,$subjectcode,$title,$examtable);
+    }
+  } 
+  else
+  {
+    die('something happened' . mysqli_connect_error());
+  }
+?>
+</body>
+</html>
 
 <?php
-    session_start();
-    $student_name=$_SESSION['student_name'];
-    $roll_number=$_SESSION['roll_number'];
-    $department=$_SESSION['department'];
-    $gmail=$_SESSION['gmail'];
-    $year=$_SESSION['years']; 
-    $dev=1;
-    $connection = mysqli_connect('localhost','root', '','exam_management');
-    if ($connection) {
-      $check="SELECT devices from result where student_name='$student_name' and roll_number='$roll_number' and student_gmail='$gmail' and student_department='$department' and year='$year' and
-      instructor_name='$instructor_name' and instructor_department='$instructor_department' and subject='$subject' and subject_code='$subjectcode' and 
-      exam_title='$title' and unique_exam_name='$examtable'";
-      $results=mysqli_query($connection,$check);
-        if(mysqli_num_rows($results))
-        {
-          $row=mysqli_fetch_row($results);
-            if((strcmp($dev,$row[0])==0)  ){
-                echo($title);?>
-                <p> You cannot attend this exam more than one time</p>
-                <form action="index.php"> <button type="submit" class="btn btn-primary">Back</button></form>
+function run($connection,$instructor_id,$instructor_name,$instructor_gmail,$instructor_department,$subject,$subjectcode,$title,$examtable)
+{ 
+?>
+  <form id="form1" action="result.php?insid=<?php echo ($instructor_id); ?>&insnm=<?php echo ($instructor_name); ?>&insgmail=<?php echo ($instructor_gmail); ?>&insdept=<?php echo ($instructor_department); ?>&subject=<?php echo ($subject); ?>&subjectcode=<?php echo ($subjectcode); ?>&title=<?php echo ($title); ?>&examtable=<?php echo ($examtable); ?>" method="post">
+    <h1><?php echo ($title); ?><div id="time" style="float:right">timeout</div>
+    </h1>
 
-
- <?php } 
- 
- else{ ?>
-<form id="form1" action="result.php?insid=<?php echo($instructor_id); ?>&insnm=<?php echo($instructor_name); ?>&insgmail=<?php echo($instructor_gmail); ?>&insdept=<?php echo($instructor_department); ?>&subject=<?php echo($subject); ?>&subjectcode=<?php echo($subjectcode); ?>&title=<?php echo ($title); ?>&examtable=<?php echo($examtable);?>" method="post">
-  <h1><?php echo($title); ?><div id="time" style="float:right">timeout</div></h1>
     <?php
-    $connection = mysqli_connect('localhost','root', '','exam_management');
-    if ($connection) {
-      $show = 'select * from '.$examtable;
+      $show = 'select * from ' . $examtable;
       $result = mysqli_query($connection, $show);
-      while ( $row = mysqli_fetch_array($result)) {
-       
+      while ($row = mysqli_fetch_array($result))
+      {
     ?>
-     
+
         <div class="container mt-5">
           <div class="d-flex justify-content-center row">
             <div class="col-md-10 col-lg-10">
               <div class="border">
                 <div class="question bg-white p-3 border-bottom">
                   <div class="d-flex flex-row align-items-center question-title">
-                   
+
                     <h5 class="text-danger"><?php echo ($row[0]); ?></h5>
                     <h5 class="mt-1 ml-2"><?php echo ($row[1]); ?></h5>
                   </div>
@@ -180,24 +208,11 @@ $examtable=$_GET['examtable'];
         </div>
     <?php
       }
-    }
-    else{
-      die('something happened' . mysqli_connect_error());
-    }
-    
-
     ?>
     <br>
     <center><input type="submit" class="btn btn-success" value="submit"></center>
+    <br>
   </form>
-  <?php
-  }
+<?php
 }
-    }
-     
-else {
-  die('something happened' . mysqli_connect_error());
-}
-  ?>
-</body>
-</html>
+?>
