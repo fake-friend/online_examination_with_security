@@ -33,8 +33,14 @@ if($_SERVER['REQUEST_METHOD']=='POST')
             }
             $number=$number-1;
         }
+       
         $query1="INSERT INTO result(student_name,roll_number,student_department,student_gmail,year,instructor_id,instructor_name,instructor_department,instructor_gmail,subject,subject_code,exam_title,unique_exam_name,total_marks,secured_marks) VALUES('$student_name','$roll_number','$department','$gmail','$year','$instructor_id','$instructor_name','$instructor_department','$instructor_gmail','$subject','$subjectcode','$title','$examtable','$totalmarks','$securedmarks')";
          $check=mysqli_query($connection,$query1);
+         $device_query="update result set devices='1' where student_gmail='$gmail' and 
+         student_name='$student_name' and roll_number='$roll_number' and student_department='$department' and year='$year' and
+         instructor_name='$instructor_name' and instructor_department='$instructor_department' and subject='$subject' and subject_code='$subjectcode' and 
+         exam_title='$title' and unique_exam_name='$examtable' ";
+         $a=mysqli_query($connection,$device_query);
          if($check)
          {
             header('location:index.php');

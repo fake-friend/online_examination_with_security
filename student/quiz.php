@@ -111,15 +111,40 @@ $examtable=$_GET['examtable'];
 </script>
 
 <?php
+    session_start();
+    $student_name=$_SESSION['student_name'];
+    $roll_number=$_SESSION['roll_number'];
+    $department=$_SESSION['department'];
+    $gmail=$_SESSION['gmail'];
+    $year=$_SESSION['years']; 
+    $dev=1;
+    $connection = mysqli_connect('localhost','root', '','exam_management');
+    if ($connection) {
+      $check="SELECT devices from result where student_name='$student_name' and roll_number='$roll_number' and student_gmail='$gmail' and student_department='$department' and year='$year' and
+      instructor_name='$instructor_name' and instructor_department='$instructor_department' and subject='$subject' and subject_code='$subjectcode' and 
+      exam_title='$title' and unique_exam_name='$examtable'";
+      $results=mysqli_query($connection,$check);
+        if(mysqli_num_rows($results))
+        {
+          $row=mysqli_fetch_row($results);
+            if((strcmp($dev,$row[0])==0)  ){
+                echo($title);?>
+                <p> You cannot attend this exam more than one time</p>
+                <form action="index.php"> <button type="submit" class="btn btn-primary">Back</button></form>
+
+
+ <?php } 
+ 
+ else{ ?>
+<form id="form1" action="result.php?insid=<?php echo($instructor_id); ?>&insnm=<?php echo($instructor_name); ?>&insgmail=<?php echo($instructor_gmail); ?>&insdept=<?php echo($instructor_department); ?>&subject=<?php echo($subject); ?>&subjectcode=<?php echo($subjectcode); ?>&title=<?php echo ($title); ?>&examtable=<?php echo($examtable);?>" method="post">
+  <h1><?php echo($title); ?><div id="time" style="float:right">timeout</div></h1>
+    <?php
     $connection = mysqli_connect('localhost','root', '','exam_management');
     if ($connection) {
       $show = 'select * from '.$examtable;
       $result = mysqli_query($connection, $show);
-?>
-<form id="form1" action="result.php?insid=<?php echo($instructor_id); ?>&insnm=<?php echo($instructor_name); ?>&insgmail=<?php echo($instructor_gmail); ?>&insdept=<?php echo($instructor_department); ?>&subject=<?php echo($subject); ?>&subjectcode=<?php echo($subjectcode); ?>&title=<?php echo ($title); ?>&examtable=<?php echo($examtable);?>" method="post">
-  <h1><?php echo($title); ?><div id="time" style="float:right">timeout</div></h1>
-    <?php
-      while ($row = mysqli_fetch_array($result)) {
+      while ( $row = mysqli_fetch_array($result)) {
+       
     ?>
      
         <div class="container mt-5">
@@ -155,12 +180,24 @@ $examtable=$_GET['examtable'];
         </div>
     <?php
       }
-    } else {
+    }
+    else{
       die('something happened' . mysqli_connect_error());
     }
+    
+
     ?>
     <br>
     <center><input type="submit" class="btn btn-success" value="submit"></center>
   </form>
+  <?php
+  }
+}
+    }
+     
+else {
+  die('something happened' . mysqli_connect_error());
+}
+  ?>
 </body>
 </html>
