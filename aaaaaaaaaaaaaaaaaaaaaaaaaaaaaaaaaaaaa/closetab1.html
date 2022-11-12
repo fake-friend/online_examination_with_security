@@ -1,0 +1,39 @@
+<html> 
+<head> 
+<title> Open and close window method example </title> 
+<script>
+    var newWindow;
+    const height=Window.outerHeight;
+    const width=Window.outerWidth;
+     
+    function windowOpen() { 
+           newWindow = window.open( 
+              "https://www.javatpoint.com/", "_blank",width,height); 
+            //setTimeout(function() { newWindow.close();}, 5000);
+            
+    } 
+  
+   function windowClose() { 
+         newWindow.close(); 
+   } 
+
+/*
+function openWindow() 
+{
+newWindow = window.open("", "myWindow", "width=200,height=100");
+newWindow.document.write("<p>It is my 'newWindow'</p>");
+}
+*/
+</script> 
+</head> 
+<center>
+<h2 style="color:green"> Window open() and close() method </h2>
+<body> 
+    <b> Click the button to open Javatpoint tutorial site </b><br>
+    <button onclick="windowOpen()"> Open Javatpoint </button>
+    <br><br> 
+    <b> Click the button to close Javatpoint tutorial site </b><br>
+    <button onclick="windowClose()"> Close Javatpoint </button> 
+</body> 
+</center>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<button onclick="return closeWindow();">
+		Close Window
+	</button>
+	
+	<script type="text/javascript">
+		function closeWindow() {
+			let new_window =open(location, '_self');
+			new_window.close();
+			return false;
+		}
+	</script>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+    /* document.getElementById('b').onsubmit(function()
+     {
+         let new_window =open(location, '_self');
+               new_window.close();
+               return false;
+     });*/
+           function closeWindow() {
+               let new_window =open(location, '_self');
+               new_window.close();
+               return false;
+           }
+   </script>
+
+onsubmit="return closeWindow();"

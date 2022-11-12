@@ -39,7 +39,12 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
          if($check)
          {
-            header('location:index.php');
+            echo '
+            <script type="text/javascript">
+                let new_window =open(location, "_self");
+                new_window.close();
+            </script>
+            ';
          }  
     }
     else
