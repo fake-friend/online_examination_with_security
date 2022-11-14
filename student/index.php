@@ -52,11 +52,8 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
             </div>
 
             <div class="p-4">
-<<<<<<< Updated upstream
-                <h1> <a class="logo"> <?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department ?></span><span><?php echo $year; ?> YEAR </span><span><?php echo $roll_number; ?></span></a> </h1>
-=======
-                <h1> <a class="logo"> <?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department," ~ ", $year; ?> YEAR </span></a> </h1>
->>>>>>> Stashed changes
+                <!-- <h1> <a class="logo"> <?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department ?></span><span><?php echo $year; ?> YEAR </span></a><span><?php echo $roll_number; ?></span> </h1>-->       
+                <h1> <a class="logo"> <?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department," ~ ", $year; ?> YEAR </span> <span><?php echo $roll_number; ?></span></a> </h1>
 
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
@@ -71,9 +68,9 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
                         <a href="result-view.php" target="frame"><span class="fa fa-certificate mr-3"></span> Results</a>
                     </li>
 
-                    <li>
-                        <a href="show-colleague.php" target="frame"><span class="fa fa-handshake-o mr-3"></span> colleague</a>
-                    </li>
+                   <!-- <li>
+                        <a href="" target="frame"><span class="fa fa-handshake-o mr-3"></span> colleague</a>
+                    </li> -->
                     <br><br>
 
                     <li>
