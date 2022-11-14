@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2022 at 10:36 AM
+-- Generation Time: Nov 14, 2022 at 02:32 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.0.23
 
@@ -34,6 +34,8 @@ CREATE TABLE `result` (
   `student_department` varchar(25) NOT NULL,
   `student_gmail` varchar(50) NOT NULL,
   `year` varchar(5) NOT NULL,
+  `Batch` varchar(50) NOT NULL,
+  `Semester` varchar(50) NOT NULL,
   `instructor_id` int(5) NOT NULL,
   `instructor_name` varchar(50) NOT NULL,
   `instructor_department` varchar(25) NOT NULL,
@@ -51,9 +53,10 @@ CREATE TABLE `result` (
 -- Dumping data for table `result`
 --
 
-INSERT INTO `result` (`id`, `student_name`, `roll_number`, `student_department`, `student_gmail`, `year`, `instructor_id`, `instructor_name`, `instructor_department`, `instructor_gmail`, `subject`, `subject_code`, `exam_title`, `unique_exam_name`, `total_marks`, `secured_marks`, `devices`) VALUES
-(1, 'Rajesh R', '20SUCA01', 'CA/IT', 'rajesh@students.tcarts.in', 'III', 102, 'Mary', 'CA/IT', 'mary@gmail.com', 'python ', 'uca20a12 ', 'files', 'Mary102pythonIII2022_11_11_07_58_09', 3, 3, 0),
-(5, 'Rajesh R', '20SUCA01', 'CA/IT', 'rajesh@students.tcarts.in', 'III', 102, 'Mary', 'CA/IT', 'mary@gmail.com', 'python ', 'uca20a12 ', 'software', 'Mary102pythonIII2022_11_12_01_57_52', 3, 3, 1);
+INSERT INTO `result` (`id`, `student_name`, `roll_number`, `student_department`, `student_gmail`, `year`, `Batch`, `Semester`, `instructor_id`, `instructor_name`, `instructor_department`, `instructor_gmail`, `subject`, `subject_code`, `exam_title`, `unique_exam_name`, `total_marks`, `secured_marks`, `devices`) VALUES
+(6, 'Rajesh R', '20SUCA01', 'CA/IT', 'rajesh@students.tcarts.in', 'III', '2020-2023', 'V', 102, 'Mary', 'CA/IT', 'mary@gmail.com', 'python ', 'uca20a12 ', 'lists', 'Mary102pythonIII2022_11_12_07_22_03', 3, 2, 1),
+(7, 'Hamshini V', '20SUCA02', 'CA/IT', 'hamshini@students.tcarts.in', 'III', '2020-2023', 'V', 102, 'Mary', 'CA/IT', 'mary@gmail.com', 'python ', 'uca20a12 ', 'lists', 'Mary102pythonIII2022_11_12_07_22_03', 3, 2, 1),
+(8, 'Hamshini V', '20SUCA02', 'CA/IT', 'hamshini@students.tcarts.in', 'III', '2020-2023', 'V', 102, 'Mary', 'CA/IT', 'mary@gmail.com', 'python ', 'uca20a12 ', 'files', 'Mary102pythonIII2022_11_11_07_58_09', 3, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -73,7 +76,7 @@ ALTER TABLE `result`
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
