@@ -28,6 +28,7 @@
         <th>Department</th>
         <th>Subjects</th>
         <th>Subject Code</th>
+        <th>Semester</th>
         <th>Exam Title</th>
         <th>Start time</th>
         <th>Duration in MIN</th>
@@ -44,7 +45,7 @@
       include_once('../dbconfig.php');
       $connection1 = mysqli_connect('localhost', 'root', '', 'exam_management');
       if ($connection1 && $connection) {
-        $select = "select instructor_id,instructor_name,gmail,instructor_department,department,subjects, subject_code, exam_title, start_time, duration, unique_exam_name from exams where department='$department' and years='$year'";
+        $select = "select instructor_id,instructor_name,gmail,instructor_department,department,subjects, subject_code, Semester, exam_title, start_time, duration, unique_exam_name from exams where department='$department' and years='$year'";
         $result = mysqli_query($connection1, $select);
         if (mysqli_num_rows($result) > 0) {
           $count = 1;
@@ -79,27 +80,32 @@
                   <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                 </div>
               </td>
-              <!--Exam title-->
               <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
                 </div>
               </td>
-              <!--Start time-->
+              <!--Exam title-->
               <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo ($row[8]); ?></p>
                 </div>
               </td>
-              <!--Duration-->
+              <!--Start time-->
               <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo ($row[9]); ?></p>
                 </div>
               </td>
+              <!--Duration-->
+              <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo ($row[10]); ?></p>
+                </div>
+              </td>
               <!--attend exam-->
               <?php
-              if ($today >= $row[8]) {
+              if ($today >= $row[9]) {
               ?>
                 <td>
                   <div class="ms-3">

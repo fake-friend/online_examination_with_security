@@ -151,7 +151,7 @@
                             $years = $_SESSION['years'];
                             $department=$_SESSION['student_department'];
                             if ($connection) {
-                                $query = "SELECT instructor_name, subject FROM instructorsubject WHERE Year='$years' AND department='$department'";
+                                $query = "SELECT instructor_name, subject,Semester FROM instructorsubject WHERE Year='$years' AND department='$department'";
                                 $result = mysqli_query($connection, $query);
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_array($result)) {
@@ -160,7 +160,7 @@
                                             <div class="card-big-shadow">
                                                 <div class="card card-just-text" data-background="color" data-color="blue" data-radius="none">
                                                     <div class="content">
-                                                        <p class="description"> <i class="fa fa-book " style="font-size: 3rem;" aria-hidden="true"></i><br><b>subject:</b> <br> <?php echo $row[1]; ?><br><b>Instructor:</b><br><?php echo($row[0]); ?> </p>
+                                                        <p class="description"> <i class="fa fa-book " style="font-size: 3rem;" aria-hidden="true"></i><br><b>subject:</b> <br> <?php echo $row[1]; ?><br><b>Instructor:</b><br><?php echo($row[0]); ?><br><b>semester:</b> <br> <?php echo $row[2]; ?> </p>
                                                     </div>
                                                 </div> <!-- end card -->
                                             </div>
