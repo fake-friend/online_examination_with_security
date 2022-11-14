@@ -40,6 +40,12 @@ $dept=$_SESSION['instructor_department'];
             position: absolute;
             margin-left: 60px;
         }
+
+        .update
+        {
+            cursor: pointer;
+            margin-left: 30px;
+        }
     </style>
 </head>
 
@@ -81,6 +87,12 @@ $dept=$_SESSION['instructor_department'];
                     </li>
                 </ul>
 
+                <div class="update">
+                    <form action="update-profile-html.php" method="POST">
+                        <button class="btn btn-dark btn-sm"><i class="fa fa-pencil-square-o"></i>Update Personal Info</button>
+                    </form>
+                </div>
+                <br>
                 <div class="mb-5">
                     <div class="form-group d-flex">
                         <div class="logout">
