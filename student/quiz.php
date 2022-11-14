@@ -8,6 +8,7 @@ $subjectcode = $_GET['subjectcode'];
 $title = $_GET['title'];
 $time = (int)$_GET['duration'];
 $examtable = $_GET['examtable'];
+$entry_time=date("Y-m-d")." ".date("H-i-s");
 ?>
 <!DOCTYPE html>
 <html>
@@ -121,10 +122,12 @@ $examtable = $_GET['examtable'];
   $department = $_SESSION['student_department'];
   $gmail = $_SESSION['student_gmail'];
   $year = $_SESSION['years'];
+  $batch=$_SESSION['batch'];
+  $semester=$_SESSION['semester'];
   $dev = '1';
   $connection = mysqli_connect('localhost', 'root', '', 'exam_management');
   if ($connection) {
-    $check = "SELECT devices from result where student_name='$student_name' and roll_number='$roll_number' and student_gmail='$gmail' and student_department='$department' and year='$year' and instructor_name='$instructor_name' and instructor_department='$instructor_department' and subject='$subject' and subject_code='$subjectcode' and exam_title='$title' and unique_exam_name='$examtable'";
+    $check = "SELECT devices from result where student_name='$student_name' and roll_number='$roll_number' and student_gmail='$gmail' and student_department='$department' and year='$year' and Batch='$batch' and Semester='$semester' and instructor_name='$instructor_name' and instructor_department='$instructor_department' and subject='$subject' and subject_code='$subjectcode' and exam_title='$title' and unique_exam_name='$examtable'";
     $results = mysqli_query($connection, $check);
     if (mysqli_num_rows($results)) 
     {
@@ -151,12 +154,12 @@ $examtable = $_GET['examtable'];
       } 
     else 
     {
-        run($connection,$instructor_id,$instructor_name,$instructor_gmail,$instructor_department,$subject,$subjectcode,$title,$examtable);
+        run($connection,$instructor_id,$instructor_name,$instructor_gmail,$instructor_department,$subject,$subjectcode,$title,$examtable,$entry_time);
     }
     }
     else
     {
-          run($connection,$instructor_id,$instructor_name,$instructor_gmail,$instructor_department,$subject,$subjectcode,$title,$examtable);
+          run($connection,$instructor_id,$instructor_name,$instructor_gmail,$instructor_department,$subject,$subjectcode,$title,$examtable,$entry_time);
     }
   } 
   else
@@ -168,10 +171,10 @@ $examtable = $_GET['examtable'];
 </html>
 
 <?php
-function run($connection,$instructor_id,$instructor_name,$instructor_gmail,$instructor_department,$subject,$subjectcode,$title,$examtable)
+function run($connection,$instructor_id,$instructor_name,$instructor_gmail,$instructor_department,$subject,$subjectcode,$title,$examtable,$entry_time)
 { 
 ?>
-  <form id="form1" action="result.php?insid=<?php echo ($instructor_id); ?>&insnm=<?php echo ($instructor_name); ?>&insgmail=<?php echo ($instructor_gmail); ?>&insdept=<?php echo ($instructor_department); ?>&subject=<?php echo ($subject); ?>&subjectcode=<?php echo ($subjectcode); ?>&title=<?php echo ($title); ?>&examtable=<?php echo ($examtable); ?>" method="post">
+  <form id="form1" action="result.php?insid=<?php echo ($instructor_id); ?>&insnm=<?php echo ($instructor_name); ?>&insgmail=<?php echo ($instructor_gmail); ?>&insdept=<?php echo ($instructor_department); ?>&subject=<?php echo ($subject); ?>&subjectcode=<?php echo ($subjectcode); ?>&title=<?php echo ($title); ?>&examtable=<?php echo ($examtable); ?>&entrytime=<?php echo($entry_time); ?>" method="post">
     <h1><?php echo ($title); ?><div id="time" style="float:right">timeout</div>
     </h1>
 

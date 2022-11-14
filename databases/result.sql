@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2022 at 02:32 PM
+-- Generation Time: Nov 14, 2022 at 05:00 PM
 -- Server version: 10.4.25-MariaDB
--- PHP Version: 8.0.23
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,17 +46,10 @@ CREATE TABLE `result` (
   `unique_exam_name` varchar(100) NOT NULL,
   `total_marks` int(5) NOT NULL,
   `secured_marks` int(5) NOT NULL,
+  `entry_time` varchar(25) NOT NULL,
+  `exit_time` varchar(25) NOT NULL,
   `devices` tinyint(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `result`
---
-
-INSERT INTO `result` (`id`, `student_name`, `roll_number`, `student_department`, `student_gmail`, `year`, `Batch`, `Semester`, `instructor_id`, `instructor_name`, `instructor_department`, `instructor_gmail`, `subject`, `subject_code`, `exam_title`, `unique_exam_name`, `total_marks`, `secured_marks`, `devices`) VALUES
-(6, 'Rajesh R', '20SUCA01', 'CA/IT', 'rajesh@students.tcarts.in', 'III', '2020-2023', 'V', 102, 'Mary', 'CA/IT', 'mary@gmail.com', 'python ', 'uca20a12 ', 'lists', 'Mary102pythonIII2022_11_12_07_22_03', 3, 2, 1),
-(7, 'Hamshini V', '20SUCA02', 'CA/IT', 'hamshini@students.tcarts.in', 'III', '2020-2023', 'V', 102, 'Mary', 'CA/IT', 'mary@gmail.com', 'python ', 'uca20a12 ', 'lists', 'Mary102pythonIII2022_11_12_07_22_03', 3, 2, 1),
-(8, 'Hamshini V', '20SUCA02', 'CA/IT', 'hamshini@students.tcarts.in', 'III', '2020-2023', 'V', 102, 'Mary', 'CA/IT', 'mary@gmail.com', 'python ', 'uca20a12 ', 'files', 'Mary102pythonIII2022_11_11_07_58_09', 3, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -76,7 +69,7 @@ ALTER TABLE `result`
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

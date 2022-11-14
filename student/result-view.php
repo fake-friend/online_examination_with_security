@@ -26,6 +26,8 @@
         <th>Serial Number</th>
         <th>Instructor Name</th>
         <th>Instructor department</th>
+        <th>Year</th>
+        <th>Semester</th>
         <th>Subjects</th>
         <th>Subject Code</th>
         <th>Exam Title</th>
@@ -45,10 +47,12 @@
       $gmail = $_SESSION['student_gmail'];
       $roll_number=$_SESSION['roll_number'];
       $year = $_SESSION['years'];
+      $batch=$_SESSION['batch'];
+      $semester=$_SESSION['semester'];
       include_once('../dbconfig.php');
       $connection1 = mysqli_connect('localhost', 'root', '', 'exam_management');
       if ($connection1 && $connection) {
-        $select = "SELECT instructor_name,instructor_department,subject,subject_code,exam_title,total_marks,secured_marks from result where  student_name='$name' and roll_number='$roll_number' and student_gmail='$gmail' and student_department='$department' and year='$year'";
+        $select = "SELECT instructor_name,instructor_department,year,Semester,subject,subject_code,exam_title,total_marks,secured_marks from result where  student_name='$name' and roll_number='$roll_number' and student_gmail='$gmail' and student_department='$department' and year='$year' and Batch='$batch' and Semester='$semester'";
         $result = mysqli_query($connection1, $select);
         if (mysqli_num_rows($result) > 0) {
           $count = 1;
@@ -71,44 +75,54 @@
                   <p class="fw-bold mb-1"><?php echo ($row[1]); ?></p>
                 </div>
               </td>
-              <!--subject-->
+              <!--year-->
               <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo ($row[2]); ?></p>
                 </div>
               </td>
-              <!--subjectCode-->
+              <!--semester-->
               <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
                 </div>
               </td>
-              <!--Exam title-->
+              <!--subject-->
               <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
                 </div>
               </td>
-              <!--total marks-->
+              <!--subjectCode-->
               <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
                 </div>
               </td>
-              <!--secured marks-->
+              <!--Exam title-->
               <td>
                 <div class="ms-3">
                   <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                 </div>
               </td>
+              <!--total marks-->
+              <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
+                </div>
+              </td>
+              <!--secured marks-->
+              <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo ($row[8]); ?></p>
+                </div>
+              </td>
               <?php
-              if ($row[6] >= ($row[5]/2)) {
+              if ($row[8] >= ($row[7]/2)) {
               ?>
                 <td>
-                  <div class="ms-3">
-                   
+                  <div class="ms-3">           
                       <button type="submit" class="btn btn-success">Pass</button>
-                    </a>
                   </div>
                 </td>
 
@@ -118,14 +132,12 @@
               ?>
                 <td>
                   <div class="ms-3">
-                    <button type="submit"  class="btn btn-danger">Fail</button>
+                    <button type="submit"  class="btn btn-danger">R</button>
                   </div>
                 </td>
               <?php
               }
               ?>
-            
-
               <?php
               $count = $count + 1;
               } 
@@ -136,7 +148,7 @@
          else {
           ?>
           <tr>
-            <td colspan="10">currently you don't get any result update</td>
+            <td colspan="11">currently you don't get any result update</td>
           </tr>
       <?php
         }

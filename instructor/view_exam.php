@@ -1,7 +1,9 @@
 <?php
-$exam_table = $_GET['examtable'];
 $student_department = $_GET['department'];
 $student_year= $_GET['year'];
+$batch=$_GET['batch'];
+$sem=$_GET['sem'];
+$exam_table = $_GET['examtable'];
 ?>
 <html>
 
@@ -20,6 +22,8 @@ $student_year= $_GET['year'];
 
 <body>
     <br><br>
+    <center><a href="view-exam.php"> <button type="button" class="btn btn-primary">Back</button></a></center>
+    <br><br>
     <table class="table align-middle mb-0 bg-white table-hover">
         <thead class="bg-light">
             <tr>
@@ -35,7 +39,8 @@ $student_year= $_GET['year'];
                 <th>Exam Title</th>
                 <th>Total Marks</th>
                 <th>Secured Marks</th>
-               
+                <th>Logged In</th>
+                <th>Logged Out</th>
             </tr>
         </thead>
         <tbody>
@@ -46,9 +51,7 @@ $student_year= $_GET['year'];
             $instructor_gmail=$_SESSION['instructor_gmail'];
             $connection = mysqli_connect('localhost', 'root', '', 'exam_management');
             if ($connection) {
-                $select = "SELECT student_name,roll_number,student_department,year,Batch,Semester,subject, subject_code,exam_title,total_marks,secured_marks from result 
-                where instructor_id='$instructor_id' and instructor_name='$instructor_name' and instructor_gmail='$instructor_gmail' and
-                unique_exam_name='$exam_table' and year='$student_year' and student_department='$student_department'";
+                $select = "SELECT student_name,roll_number,student_department,year,Batch,Semester,subject, subject_code,exam_title,total_marks,secured_marks,entry_time,exit_time from result where instructor_id='$instructor_id' and instructor_name='$instructor_name' and instructor_gmail='$instructor_gmail' and unique_exam_name='$exam_table' and year='$student_year' and student_department='$student_department' and Batch='$batch' and Semester='$sem'";
                 $result = mysqli_query($connection, $select);
                 if (mysqli_num_rows($result) > 0) {
                     $count = 1;
@@ -84,11 +87,14 @@ $student_year= $_GET['year'];
                                     <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
                                 </div>
                             </td>
+                            <!--batch-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
                                 </div>
-                            </td><td>
+                            </td>
+                            <!--semester-->
+                            <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
                                 </div>
@@ -123,6 +129,18 @@ $student_year= $_GET['year'];
                                     <p class="fw-bold mb-1"><?php echo ($row[10]); ?></p>
                                 </div>
                             </td>
+                            <!--entry time-->
+                            <td>
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1"><?php echo ($row[11]); ?></p>
+                                </div>
+                            </td>
+                            <!--exit time-->
+                            <td>
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1"><?php echo ($row[12]); ?></p>
+                                </div>
+                            </td>
                         </tr>
                     <?php
                         $count = $count + 1;
@@ -130,7 +148,7 @@ $student_year= $_GET['year'];
                 } else {
                     ?>
                     <tr>
-                        <td colspan="10">no results found</td>
+                        <td colspan="14">no results found</td>
                     </tr>
             <?php
 

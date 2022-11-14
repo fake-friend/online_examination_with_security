@@ -104,11 +104,14 @@
                                 <p class="fw-bold mb-1"><?php echo ($row[8]); ?></p>
                             </div>
                         </td>
+                        <!--batch-->
                         <td>
                             <div class="ms-3">
                                 <p class="fw-bold mb-1"><?php echo ($row[9]); ?></p>
                             </div>
-                        </td><td>
+                        </td>
+                        <!--semester-->
+                        <td>
                             <div class="ms-3">
                                 <p class="fw-bold mb-1"><?php echo ($row[10]); ?></p>
                             </div>
@@ -129,7 +132,7 @@
             {
              ?>
                 <tr>
-                        <td colspan="8">no records found</td>
+                        <td colspan="10">no records found</td>
                 </tr>
             <?php
             }

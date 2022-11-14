@@ -149,9 +149,11 @@
                             include('../dbconfig.php');
                             session_start();
                             $years = $_SESSION['years'];
+                            $batch=$_SESSION['batch'];
+                            $semester=$_SESSION['semester'];
                             $department=$_SESSION['student_department'];
                             if ($connection) {
-                                $query = "SELECT instructor_name, subject,Semester FROM instructorsubject WHERE Year='$years' AND department='$department'";
+                                $query = "SELECT instructor_name, subject,Semester FROM instructorsubject WHERE Year='$years' AND Batch='$batch' AND department='$department' AND Semester='$semester'";
                                 $result = mysqli_query($connection, $query);
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_array($result)) {

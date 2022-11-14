@@ -77,11 +77,13 @@
                                     <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
                                 </div>
                             </td>
+                            <!--batch-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
                                 </div>
                             </td>
+                            <!--semester-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
@@ -113,13 +115,14 @@
                             </td>
                             <!--delete-->
                             <td>
-                                <form action="delete-exam.php?department=<?php echo ($row[0]); ?>&subject=<?php echo($row[1]); ?>&subjectcode=<?php echo ($row[2]); ?>&year=<?php echo($row[3]); ?>&examtitle=<?php echo($row[4]); ?>&uniqueexamname=<?php echo($row[7]); ?>" method="POST">
+                                <form action="delete-exam.php?department=<?php echo ($row[0]); ?>&subject=<?php echo($row[1]); ?>&subjectcode=<?php echo ($row[2]); ?>&year=<?php echo($row[3]); ?>&batch=<?php echo($row[4]); ?>&sem=<?php echo($row[5]); ?>&examtitle=<?php echo($row[6]); ?>&uniqueexamname=<?php echo($row[9]); ?>" method="POST">
                                     <input type="submit" value="Delete" class="btn btn-danger">
                                 </form>
                             </td>
+                            <!--view status-->
                             <td>
                                 <div class="ms-3">
-                                <form action="view_exam.php?examtable=<?php echo ($row[7]);?>&department=<?php echo ($row[0]); ?>&year=<?php echo($row[3]); ?>" method="POST">
+                                <form action="view_exam.php?department=<?php echo ($row[0]); ?>&year=<?php echo($row[3]); ?>&batch=<?php echo($row[4]); ?>&sem=<?php echo($row[5]); ?>&examtable=<?php echo ($row[7]);?>" method="POST">
                                     <input type="submit" value="View Status" class="btn btn-success">
                                 </div>
                             </td>
@@ -130,7 +133,7 @@
                 } else {
                     ?>
                     <tr>
-                        <td colspan="10">no records found</td>
+                        <td colspan="14">no records found</td>
                     </tr>
             <?php
 
