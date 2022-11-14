@@ -13,12 +13,14 @@ if (!$connection) {
     $subject = $_POST['sub'];
     $subject_code = $_POST['scode'];
     $year = $_POST['year'];
+    $batch = $_POST['batch'];
+    $sem = $_POST['sem'];
     $examtitle = $_POST['examtitle'];
     $date = $_POST['date'];
     $duration = $_POST['duration'];
     $unique = $_POST['uniqueen'];
 
-    $insert = "INSERT INTO exams(instructor_id,instructor_name,gmail,instructor_department,department,subjects,subject_code,years,exam_title,start_time,duration,unique_exam_name) VALUES ('$instructor_id','$instructor_name','$gmail','$instructor_department','$department','$subject','$subject_code','$year','$examtitle','$date','$duration','$unique')";
+    $insert = "INSERT INTO exams(instructor_id,instructor_name,gmail,instructor_department,department,subjects,subject_code,years,Batch,Semester,exam_title,start_time,duration,unique_exam_name) VALUES ('$instructor_id','$instructor_name','$gmail','$instructor_department','$department','$subject','$subject_code','$year','$batch','$sem','$examtitle','$date','$duration','$unique')";
     $result = mysqli_query($connection, $insert);
 
     if ($result) {

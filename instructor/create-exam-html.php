@@ -7,6 +7,8 @@ $department = $_GET['department'];
 $subject = $_GET['subject'];
 $subject_code = $_GET['subjectcode'];
 $year = $_GET['year'];
+$batch = $_GET['batch'];
+$sem = $_GET['sem'];
 date_default_timezone_set("Asia/Kolkata");
 $unique=date("Y_m_d")."_".date("h_i_s");
 ?>
@@ -78,6 +80,20 @@ $unique=date("Y_m_d")."_".date("h_i_s");
             <label for="scode" class="form-label">Year</label>
             <input type="text" class="form-control" id="year" name="year" value="<?php echo $year ?> ">
             <div class="invalid-feedback">Year can't be blank</div>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="batch" class="form-label">Batch</label>
+            <input type="text" class="form-control" id="batch" name="batch" value="<?php echo $batch ?> ">
+            <div class="invalid-feedback">batch can't be blank</div>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="sem" class="form-label">Semester</label>
+            <input type="text" class="form-control" id="sem" name="sem" value="<?php echo $sem ?> ">
+            <div class="invalid-feedback">Semester can't be blank</div>
             <div class="valid-feedback">Looks good!</div>
         </div>
 

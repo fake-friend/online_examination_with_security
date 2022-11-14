@@ -28,6 +28,8 @@ $student_year= $_GET['year'];
                 <th>Student Roll No</th>
                 <th>Student Department</th>
                 <th>Year</th>
+                <th>Batch</th>
+                <th>Semester</th>
                 <th>Subjects</th>
                 <th>Subject Code</th>
                 <th>Exam Title</th>
@@ -44,7 +46,7 @@ $student_year= $_GET['year'];
             $instructor_gmail=$_SESSION['instructor_gmail'];
             $connection = mysqli_connect('localhost', 'root', '', 'exam_management');
             if ($connection) {
-                $select = "SELECT student_name,roll_number,student_department,year,subject, subject_code,exam_title,total_marks,secured_marks from result 
+                $select = "SELECT student_name,roll_number,student_department,year,Batch,Semester,subject, subject_code,exam_title,total_marks,secured_marks from result 
                 where instructor_id='$instructor_id' and instructor_name='$instructor_name' and instructor_gmail='$instructor_gmail' and
                 unique_exam_name='$exam_table' and year='$student_year' and student_department='$student_department'";
                 $result = mysqli_query($connection, $select);
@@ -82,34 +84,43 @@ $student_year= $_GET['year'];
                                     <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
                                 </div>
                             </td>
-                            <!--subjects-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
                                 </div>
-                            </td>
-                            <!--subject code-->
-                            <td>
+                            </td><td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
                                 </div>
                             </td>
-                            <!--exam title-->
+                            <!--subjects-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                                 </div>
                             </td>
-                            <!--total marks-->
+                            <!--subject code-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
                                 </div>
                             </td>
-                            <!--secured marks-->
+                            <!--exam title-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[8]); ?></p>
+                                </div>
+                            </td>
+                            <!--total marks-->
+                            <td>
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1"><?php echo ($row[9]); ?></p>
+                                </div>
+                            </td>
+                            <!--secured marks-->
+                            <td>
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1"><?php echo ($row[10]); ?></p>
                                 </div>
                             </td>
                         </tr>

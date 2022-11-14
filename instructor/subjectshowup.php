@@ -30,6 +30,8 @@
         <th>Subjects</th>
         <th>Subject Code</th>
         <th>Year</th>
+        <th>Batch</th>
+        <th>Semester</th>
         <th>Exam</th>
       </tr>
     </thead>
@@ -91,11 +93,21 @@
               </td>
               <td>
                 <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo ($row[9]); ?></p>
+                </div>
+              </td>
+              <td>
+                <div class="ms-3">
+                  <p class="fw-bold mb-1"><?php echo ($row[10]); ?></p>
+                </div>
+              </td>
+              <td>
+                <div class="ms-3">
                   <p class="fw-bold mb-1">
                     <html>
 
                     <body>
-                      <form method="post" action="create-exam-html.php?department=<?php echo ($row[5]); ?>&subject=<?php echo ($row[6]); ?>& subjectcode=<?php echo ($row[7]); ?>&year=<?php echo ($row[8]); ?>">
+                      <form method="post" action="create-exam-html.php?department=<?php echo ($row[5]); ?>&subject=<?php echo ($row[6]); ?>& subjectcode=<?php echo ($row[7]); ?>&year=<?php echo ($row[8]); ?>&batch=<?php echo ($row[9]); ?>&sem=<?php echo ($row[10]); ?>">
                         <input type="submit" class="btn btn-success" value="Add / CREATE Exam Question ">
                       </form>
                     </body>

@@ -101,6 +101,33 @@ $instructor_gmail=$_SESSION['instructor_gmail'];
         <label class="form-check-label" for="3rd year">III YEAR</label>
       </div>
     </fieldset>
+
+    <div class="mb-3">
+      <label for="ibatch" class="form-label">Batch</label>
+      <select name="ibatch" id="ibatch" class="form-control">
+
+        <option value="2020-2023">2020-2023</option>
+        <option value="2021-2024">2021-2024</option>
+        <option value="2022-2025">2022-2025</option>
+      </select>
+      <div class="invalid-feedback">Batch can't be blank</div>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="isem" class="form-label">Semester</label>
+      <select name="isem" id="isem" class="form-control">
+
+        <option value="I">I</option>
+        <option value="II">II</option>
+        <option value="III">III</option>
+        <option value="IV">IV</option>
+        <option value="V">V</option>
+        <option value="VI">VI</option>
+      </select>
+      <div class="invalid-feedback">Batch can't be blank</div>
+      <div class="valid-feedback">Looks good!</div>
+    </div>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="subject.php"> <button type="button" class="btn btn-primary">Back</button></a>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

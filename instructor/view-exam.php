@@ -23,6 +23,8 @@
                 <th>Subject</th>
                 <th>Subject Code</th>
                 <th>Year</th>
+                <th>Batch</th>
+                <th>Semester</th>
                 <th>Exam Title</th>
                 <th>Start Time</th>
                 <th>Duration</th>
@@ -39,7 +41,7 @@
             $instructor_gmail=$_SESSION['instructor_gmail'];
             $connection = mysqli_connect('localhost', 'root', '', 'exam_management');
             if ($connection) {
-                $select = "select department, subjects, subject_code, years, exam_title, Start_time, duration, unique_exam_name from exams where instructor_id='$instructor_id' AND instructor_name='$instructor_name' and gmail='$instructor_gmail'";
+                $select = "select department, subjects, subject_code, years, Batch, Semester, exam_title, Start_time, duration, unique_exam_name from exams where instructor_id='$instructor_id' AND instructor_name='$instructor_name' and gmail='$instructor_gmail'";
                 $result = mysqli_query($connection, $select);
                 if (mysqli_num_rows($result) > 0) {
                     $count = 1;
@@ -75,28 +77,38 @@
                                     <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
                                 </div>
                             </td>
-                            <!--exam title-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
                                 </div>
                             </td>
-                            <!--start time-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
                                 </div>
                             </td>
-                            <!--duration-->
+                            <!--exam title-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
                                 </div>
                             </td>
-                            <!--unique exam name-->
+                            <!--start time-->
                             <td>
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
+                                </div>
+                            </td>
+                            <!--duration-->
+                            <td>
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1"><?php echo ($row[8]); ?></p>
+                                </div>
+                            </td>
+                            <!--unique exam name-->
+                            <td>
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1"><?php echo ($row[9]); ?></p>
                                 </div>
                             </td>
                             <!--delete-->
