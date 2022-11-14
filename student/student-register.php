@@ -19,11 +19,11 @@ $year=$_POST['year'];
 $semester=$_POST['semester'];
 $lang=$_POST['language'];
 $batch=$_POST['batch'];
-$sem=$_POST['sem'];
+$sem=$_POST['semester'];
 $uname=$_POST['uname'];
 $your_email=$_POST['your_email'];
 $confirm_psw=$_POST['confirm-psw'];
-$v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,favplace,department,roll_number,years,favlanguage,Batch,Semester,shift,upload,username,gmail,pass_word) 
+$v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,favplace,department,roll_number,years,favlanguage,Batch,semester,shift,upload,username,gmail,pass_word) 
 VALUES('$sname','$dob','$phone','$favques','$gender','$place','$dept','$rno','$year','$lang','$batch','$sem','$shift','$file','$uname','$your_email','$confirm_psw')";
 if(mysqli_query($connection,$v))
 {
