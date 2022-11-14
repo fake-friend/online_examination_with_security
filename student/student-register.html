@@ -68,19 +68,30 @@
 										accounts. </p>
 								</div>
 								<div class="form-row">
-									<div class="form-holder form-holder-2 ">
+									<div class="form-holder">
 										<fieldset>
 											<legend>Student Name</legend>
 											<input type="text" id="sname" name="sname" placeholder="Student Name">
 										</fieldset>
 									</div>
+									<div class="form-holder">
+										<fieldset>
+											<legend>Date of Birth </legend>
+											<input type="date" id="dob" name="dob">
+										</fieldset>
+									</div>
+									
 								</div>
 
 								<div class="form-row">
 									<div class="form-holder">
 										<fieldset>
-											<legend>Date of Birth </legend>
-											<input type="date" id="dob" name="dob">
+											<legend>Gender</legend>
+											<select name="gender" id="gender">
+												<option value="not selected" selected>select Gender</option>
+												<option value="Female">Woman</option>
+												<option value="Male">Man</option>
+											</select>
 										</fieldset>
 									</div>
 									<div class="form-holder ">
@@ -109,14 +120,17 @@
 								<div class="form-row">
 									<div class="form-holder">
 										<fieldset>
-											<legend>Gender</legend>
-											<select name="gender" id="gender">
-												<option value="not selected" selected>select Gender</option>
-												<option value="Female">Woman</option>
-												<option value="Male">Man</option>
+											<legend>Favourite language</legend>
+											<select name="language" id="language">
+												<option value="not selected" selected>select your option</option>
+												<option value="Tamil">Tamil</option>
+												<option value="English">English</option>
+												<option value="French">French</option>
+												<option value="Mandarin">Mandarin</option>
 											</select>
 										</fieldset>
 									</div>
+								
 									<div class="form-holder">
 										<fieldset>
 											<legend>Favourite place</legend>
@@ -186,9 +200,9 @@
 								</div>
 
 								<div class="form-row ">
-									<div class="form-holder form-holder-2">
+									<div class="form-holder">
 										<fieldset>
-											<legend>Select your department:</legend>
+											<legend>Select department:</legend>
 											<select name="dept" id="dept">
 												<option value="Dept" selected>Department</option>
 												<option value="Tamil">Tamil</option>
@@ -208,6 +222,17 @@
 											</select>
 										</fieldset>
 									</div>
+									<div class="form-holder">
+										<fieldset>
+											<legend>Batch</legend>
+											<select name="batch" id="batch">
+												<option value="not selected" selected>select your batch</option>
+												<option value="2020-2023">2020-2023</option>
+												<option value="2021-2024">2021-2024</option>
+												<option value="2022-2025">2022-2025</option>
+											</select>
+										</fieldset>
+									</div>
 								</div>
 
 								<div class="form-row">
@@ -216,21 +241,23 @@
 											<legend>Year</legend>
 											<select name="year" id="year">
 												<option value="not selected" selected>Select Year </option>
-												<option value="I">I</option>
-												<option value="II">II</option>
-												<option value="III">III</option>
+												<option value="I">I Year</option>
+												<option value="II">II Year</option>
+												<option value="III">III Year</option>
 											</select>
 										</fieldset>
 									</div>
 									<div class="form-holder">
 										<fieldset>
-											<legend>Favourite language</legend>
-											<select name="language" id="language">
-												<option value="not selected" selected>select your option</option>
-												<option value="Tamil">Tamil</option>
-												<option value="English">English</option>
-												<option value="French">French</option>
-												<option value="Mandarin">Mandarin</option>
+											<legend>semester</legend>
+											<select name="semester" id="semester">
+												<option value="not selected" selected>select your semester</option>
+												<option value="I">I semester</option>
+												<option value="II">II semester</option>
+												<option value="III">III semester</option>
+												<option value="IV">IV semester</option>
+												<option value="V">V semester</option>
+												<option value="VI">VI semester</option>
 											</select>
 										</fieldset>
 									</div>

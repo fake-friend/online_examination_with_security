@@ -6,21 +6,23 @@ if(!$connection)
 }
 $sname=$_POST['sname'];
 $dob=$_POST['dob'];
+$gender=$_POST['gender'];
 $phone=$_POST['phone'];
 $favques=$_POST['favques'];
-$gender=$_POST['gender'];
 $place=$_POST['place'];
 $rno=$_POST['rno'];
 $shift=$_POST['shift'];
 $file=$_FILES['file']['name'];
 $dept=$_POST['dept'];
+$batch=$_POST['batch'];
 $year=$_POST['year'];
+$semester=$_POST['semester'];
 $lang=$_POST['language'];
 $uname=$_POST['uname'];
 $your_email=$_POST['your_email'];
 $confirm_psw=$_POST['confirm-psw'];
-$v="INSERT INTO student(student_name,dob,phonenumber,favqus,gender,favplace,department,roll_number,year,favlanguage,shift,upload,username,gmail,pass_word) 
-VALUES('$sname','$dob','$phone','$favques','$gender','$place','$dept','$rno','$year','$lang','$shift','$file','$uname','$your_email','$confirm_psw')";
+$v="INSERT INTO student(student_name,dob,phonenumber,upload,favqus,gender,favplace,department,batch,roll_number,years,semester,favlanguage,shift,username,gmail,pass_word) 
+VALUES('$sname','$dob','$phone','$file','$favques','$gender','$place','$dept','$batch','$rno','$year','$semester','$lang','$shift','$uname','$your_email','$confirm_psw')";
 if(mysqli_query($connection,$v))
 {
    header("location:student-login.php");
