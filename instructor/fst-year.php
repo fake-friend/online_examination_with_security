@@ -27,6 +27,8 @@
         <th>Student RollNumber</th>
         <th>Student Name</th>
         <th>Student Photo</th>
+        <th>Batch</th>
+        <th>Semester</th>
         <th>Phone Number</th>
         <th>Status</th>
       </tr>
@@ -39,7 +41,7 @@
       $dept = $_SESSION['instructor_department'];
       if ($connection) {
         $count = 1;
-        $query = "SELECT roll_number,student_name,upload,phonenumber,devices FROM student WHERE department='$dept' AND years='$year'";
+        $query = "SELECT roll_number,student_name,upload,batch,semester,phonenumber,devices FROM student WHERE department='$dept' AND years='$year'";
         $result = mysqli_query($connection, $query);
         while ($row = mysqli_fetch_array($result)) {
           $file = 'http://localhost/online_examination_with_security/student/upload/' . $row[2];
@@ -67,14 +69,26 @@
                 <img src="<?php echo ($file); ?>" alt="" style="width: 75px; height: 75px; object-fit: fill;" class="rounded-circle" />
               </div>
             </td>
+            <!--batch-->
+            <td>
+              <div class="ms-3">
+                <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
+              </div>
+            </td>
+            <!-- semester-->
+            <td>
+              <div class="ms-3">
+                <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
+              </div>
+            </td>
             <!--phone number-->
             <td>
-              <p class="text-muted mb-0"><?php echo ($row[3]); ?></p>
+              <p class="text-muted mb-0"><?php echo ($row[5]); ?></p>
             </td>
-
+         
             <!--devices logged in or logged out-->
             <?php
-            if ($row[4] == 1) {
+            if ($row[6] == 1) {
             ?>
               <td>
                 <span class="badge badge-success rounded-pill d-inline">Logged In</span>

@@ -6,6 +6,8 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
     $department=$_SESSION['student_department'];
     $roll_number=$_SESSION['roll_number'];
     $year=$_SESSION['years'];
+    $batch=$_SESSION['batch'];
+    $semester=$_SESSION['semester'];
 ?>
     <!doctype html>
     <html lang="en">
