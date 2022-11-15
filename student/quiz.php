@@ -178,9 +178,9 @@ function run($connection,$instructor_id,$instructor_name,$instructor_gmail,$inst
   <form id="form1" action="result.php?insid=<?php echo ($instructor_id); ?>&insnm=<?php echo ($instructor_name); ?>&insgmail=<?php echo ($instructor_gmail); ?>&insdept=<?php echo ($instructor_department); ?>&subject=<?php echo ($subject); ?>&subjectcode=<?php echo ($subjectcode); ?>&title=<?php echo ($title); ?>&examtable=<?php echo ($examtable); ?>&entrytime=<?php echo($entry_time); ?>" method="post">
     <h1><?php echo ($title); ?><div id="time" style="float:right">timeout</div>
     </h1>
-
     <?php
-      $show = 'select * from ' . $examtable;
+      $count=1;
+      $show = 'SELECT * FROM ' . $examtable.' ORDER BY RAND()';
       $result = mysqli_query($connection, $show);
       while ($row = mysqli_fetch_array($result))
       {
@@ -193,7 +193,7 @@ function run($connection,$instructor_id,$instructor_name,$instructor_gmail,$inst
                 <div class="question bg-white p-3 border-bottom">
                   <div class="d-flex flex-row align-items-center question-title">
 
-                    <h5 class="text-danger"><?php echo ($row[0]); ?></h5>
+                    <h5 class="text-danger"><?php echo ($count); ?></h5>
                     <h5 class="mt-1 ml-2"><?php echo ($row[1]); ?></h5>
                   </div>
                   <div class="ans ml-2">
@@ -218,6 +218,7 @@ function run($connection,$instructor_id,$instructor_name,$instructor_gmail,$inst
           </div>
         </div>
     <?php
+    $count=$count+1;
       }
     ?>
     <br>
