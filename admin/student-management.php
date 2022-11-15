@@ -19,7 +19,9 @@
             <th>Student Name</th>
             <th>Student Photo</th>
             <th>Department</th>
+            <th>Batch</th>
             <th>Year</th>
+            <th>Semester</th>
             <th>Self / Aided</th>
             <th>Username</th>
             <th>Gmail</th>
@@ -48,7 +50,7 @@
             <!--student roll number-->
             <td>
                 <div class="ms-3">
-                  <p class="fw-bold mb-1"><?php echo($row[9]); ?></p>
+                  <p class="fw-bold mb-1"><?php echo($row[10]); ?></p>
                 </div>
             </td>
             <!--student name-->
@@ -77,20 +79,32 @@
             <!--batch-->
             <td>
                 <div class="ms-3">
-                  <p class="text-muted mb-0"><?php echo($row[10]); ?></p>
+                  <p class="text-muted mb-0"><?php echo($row[9]); ?></p>
+                </div>
+            </td>
+             <!--year-->
+             <td>
+                <div class="ms-3">
+                  <p class="text-muted mb-0"><?php echo($row[11]); ?></p>
+                </div>
+            </td>
+             <!--semester-->
+             <td>
+                <div class="ms-3">
+                  <p class="text-muted mb-0"><?php echo($row[12]); ?></p>
                 </div>
             </td>
             <!--self / aided-->        
             <td>
-              <p class="fw-normal mb-1"><?php echo($row[12]); ?></p>
+              <p class="fw-normal mb-1"><?php echo($row[14]); ?></p>
             </td>
             <!--username-->        
             <td>
-              <p class="text-muted mb-0"><?php echo($row[13]); ?></p>
+              <p class="text-muted mb-0"><?php echo($row[15]); ?></p>
             </td>
             <!--gmail-->        
             <td>
-              <p class="text-muted mb-0"><?php echo($row[14]); ?></p>
+              <p class="text-muted mb-0"><?php echo($row[16]); ?></p>
             </td>
             <!--phone number-->        
             <td>

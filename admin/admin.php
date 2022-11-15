@@ -68,6 +68,9 @@ if($_SESSION['admin_name'] && $_SESSION['admin_email'])
                 <li>
                     <a href="exam-manage.php" target="frame"><span class="fa fa-mortar-board mr-3"></span>Exam Management</a>
                 </li>
+                <li>
+                    <a href="result-management.php" target="frame"><span class="fa fa-mortar-board mr-3"></span>Result Management</a>
+                </li>
                 <br><br>
                 <li>
                     <div class="logout">

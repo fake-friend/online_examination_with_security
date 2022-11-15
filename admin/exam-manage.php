@@ -27,10 +27,13 @@
         <th>Instructor ID</th>
         <th>Instructor Name</th>
         <th>gmail</th>
+        <th>Instructor Department</th>
         <th>Department</th>
         <th>Subjects</th>
         <th>Subject Code</th>
         <th>Year</th>
+        <th>Batch</th>
+        <th>Semester</th>
         <th>Exam Title</th>
         <th>Start time</th>
         <th>Duration</th>
@@ -74,63 +77,79 @@
                 <p class="fw-bold mb-1"><?php echo ($row[3]); ?></p>
               </div>
             </td>
-            <!--department-->
+            <!--instructor department-->
             <td>
               <div class="ms-3">
                 <p class="fw-bold mb-1"><?php echo ($row[4]); ?></p>
               </div>
             </td>
-            <!--subject-->
+            <!--department-->
             <td>
               <div class="ms-3">
                 <p class="fw-bold mb-1"><?php echo ($row[5]); ?></p>
               </div>
             </td>
-            <!--subject code-->
+            <!--subject-->
             <td>
               <div class="ms-3">
                 <p class="fw-bold mb-1"><?php echo ($row[6]); ?></p>
               </div>
             </td>
-            <!--year-->
+            <!--subject code-->
             <td>
               <div class="ms-3">
                 <p class="fw-bold mb-1"><?php echo ($row[7]); ?></p>
               </div>
             </td>
-            <!--exam title-->
+            <!--year-->
             <td>
               <div class="ms-3">
                 <p class="fw-bold mb-1"><?php echo ($row[8]); ?></p>
               </div>
             </td>
-            <!--start time-->
+            <!--batch-->
             <td>
               <div class="ms-3">
                 <p class="fw-bold mb-1"><?php echo ($row[9]); ?></p>
               </div>
             </td>
-            <!--duration-->
+            <!--semester-->
             <td>
               <div class="ms-3">
                 <p class="fw-bold mb-1"><?php echo ($row[10]); ?></p>
               </div>
             </td>
-            <!--unique exam name-->
+            <!--exam title-->
             <td>
               <div class="ms-3">
                 <p class="fw-bold mb-1"><?php echo ($row[11]); ?></p>
               </div>
             </td>
+             <!--start time-->
+             <td>
+              <div class="ms-3">
+                <p class="fw-bold mb-1"><?php echo ($row[12]); ?></p>
+              </div>
+            </td>
+             <!--duration-->
+             <td>
+              <div class="ms-3">
+                <p class="fw-bold mb-1"><?php echo ($row[13]); ?></p>
+              </div>
+            </td>
+             <!--unique exam name-->
+             <td>
+              <div class="ms-3">
+                <p class="fw-bold mb-1"><?php echo ($row[14]); ?></p>
+              </div>
+            </td>
             <!--Exam status-->
             <?php
-              if ($today >= $row[10]) {
+              if ($today >= $row[12]) {
               ?>
                 <td>
-                  <div class="ms-3">
-                   
+                  <div class="ms-3">             
                       <button type="button" class="btn btn-success">Completed</button>
-                    
                   </div>
                 </td>
                 <?php
