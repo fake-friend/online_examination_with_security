@@ -8,6 +8,7 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
     $year=$_SESSION['years'];
     $batch=$_SESSION['batch'];
     $semester=$_SESSION['semester'];
+    
 ?>
     <!doctype html>
     <html lang="en">
@@ -55,7 +56,7 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
 
             <div class="p-4">
                 <!-- <h1> <a class="logo"> <?php // echo $name ?> <span> <?php //echo  $gmail ?></span><span><?php //echo $department ?></span><span><?php //echo $year; ?> YEAR </span></a><span><?php //echo $roll_number; ?></span> </h1>-->       
-                <h1> <a class="logo"> <?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department," ~ ", $year; ?> YEAR <span><?php echo $semester ?> SEMESTER </span></span> <span><?php echo $roll_number; ?></span></a> </h1>
+                <h1> <a class="logo"> <?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department," ~ ", $year; ?> YEAR <span><?php echo $semester ?> SEMESTER </span></span><?php echo $roll_number; ?></span></a> </h1>
 
                 <ul class="list-unstyled components mb-5">
                     <li class="active">

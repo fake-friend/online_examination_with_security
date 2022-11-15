@@ -122,7 +122,7 @@
                             <!--view status-->
                             <td>
                                 <div class="ms-3">
-                                <form action="view_exam.php?department=<?php echo ($row[0]); ?>&year=<?php echo($row[3]); ?>&batch=<?php echo($row[4]); ?>&sem=<?php echo($row[5]); ?>&examtable=<?php echo ($row[7]);?>" method="POST">
+                                <form action="view_exam.php?department=<?php echo ($row[0]); ?>&year=<?php echo($row[3]); ?>&batch=<?php echo($row[4]); ?>&sem=<?php echo($row[5]); ?>&examtable=<?php echo ($row[9]);?>" method="POST">
                                     <input type="submit" value="View Status" class="btn btn-success">
                                 </div>
                             </td>

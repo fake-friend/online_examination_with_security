@@ -51,7 +51,8 @@ $exam_table = $_GET['examtable'];
             $instructor_gmail=$_SESSION['instructor_gmail'];
             $connection = mysqli_connect('localhost', 'root', '', 'exam_management');
             if ($connection) {
-                $select = "SELECT student_name,roll_number,student_department,year,Batch,Semester,subject, subject_code,exam_title,total_marks,secured_marks,entry_time,exit_time from result where instructor_id='$instructor_id' and instructor_name='$instructor_name' and instructor_gmail='$instructor_gmail' and unique_exam_name='$exam_table' and year='$student_year' and student_department='$student_department' and Batch='$batch' and Semester='$sem'";
+                $select = "SELECT student_name,roll_number,student_department,year,Batch,Semester,subject, subject_code,exam_title,total_marks,secured_marks,entry_time,exit_time from result where instructor_id='$instructor_id' and instructor_name='$instructor_name' and instructor_gmail='$instructor_gmail' and 
+                unique_exam_name='$exam_table' and year='$student_year' and student_department='$student_department' and Batch='$batch' and Semester='$sem'";
                 $result = mysqli_query($connection, $select);
                 if (mysqli_num_rows($result) > 0) {
                     $count = 1;
