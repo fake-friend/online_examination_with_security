@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set("Asia/Kolkata");
 $connection=mysqli_connect('localhost','root','','exam_management');
 if($_SERVER['REQUEST_METHOD']=='POST')
 {

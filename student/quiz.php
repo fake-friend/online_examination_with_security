@@ -8,6 +8,7 @@ $subjectcode = $_GET['subjectcode'];
 $title = $_GET['title'];
 $time = (int)$_GET['duration'];
 $examtable = $_GET['examtable'];
+date_default_timezone_set("Asia/Kolkata");
 $entry_time=date("Y-m-d")." ".date("H-i-s");
 ?>
 <!DOCTYPE html>
