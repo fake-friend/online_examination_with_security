@@ -60,16 +60,16 @@ if($_SESSION['admin_name'] && $_SESSION['admin_email'])
                     <a href="department-show.php" target="frame"><span class="fa fa-sitemap mr-3"></span> Departments</a>
                 </li>
                 <li> 
-                    <a href="instructor-management.php" target="frame"><span class="fa fa-user mr-3"></span>Instructor Management</a>
+                    <a href="instructor-management.php" target="frame"><span class="fa fa-user mr-3"></span>Staff Management</a>
                 </li>
                 <li>
                     <a href="student-management.php" target="frame"><span class="fa fa-mortar-board mr-3"></span>Student Management</a>
                 </li>
                 <li>
-                    <a href="exam-manage.php" target="frame"><span class="fa fa-mortar-board mr-3"></span>Exam Management</a>
+                    <a href="exam-manage.php" target="frame"><span class="fa fa-pencil-square-o mr-3"></span>Exam Management</a>
                 </li>
                 <li>
-                    <a href="result-management.php" target="frame"><span class="fa fa-mortar-board mr-3"></span>Result Management</a>
+                    <a href="result-management.php" target="frame"><span class="fa fa-pie-chart mr-3"></span>Result Management</a>
                 </li>
                 <br><br>
                 <li>

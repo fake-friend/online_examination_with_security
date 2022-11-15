@@ -10,6 +10,9 @@
         .container {
             margin-left: 20%;
             margin-top: 5%;
+            border: 2px solid black;
+            border-radius: 20px;
+            padding: 20px;
         }
     </style>
 
