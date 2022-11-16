@@ -16,10 +16,9 @@
     <style>
         body {
             margin: 0;
-            color: rgb(180, 233, 245);
+            color: #888dad;
             background: #c8c8c8;
             font: 600 16px/18px 'Open Sans', sans-serif;
-            margin-top: 20px;
         }
 
         *,
@@ -47,11 +46,12 @@
         .login-wrap {
             width: 100%;
             margin: auto;
-            max-width: 540px;
-            min-height: 540px;
+            max-width: 600px;
+            min-height: 560px;
             position: relative;
             /*background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;*/
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+            margin-top: 30px;
         }
 
         .login-html {
@@ -137,7 +137,7 @@
         }
 
         .login-form .group .label {
-            color: rgb(180, 233, 245);
+            color: #aaa;
             font-size: 12px;
         }
 
@@ -204,7 +204,7 @@
         .hr {
             height: 2px;
             margin: 40px 0 50px 0;
-            background: rgb(180, 233, 245);
+            background: rgba(255, 255, 255, .2);
         }
 
         .foot-lnk {
@@ -218,17 +218,18 @@
         i {
             position: absolute;
             min-width: 40px;
-            margin-top: -35px;
-            margin-left: 360px;
+            margin-top: -28px;
+            margin-left: 415px;
             cursor: pointer;
         }
     </style>
+
 </head>
 
 <body>
     <?php
     if (isset($_GET['message'])) {
-        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert"><center>';
+        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert"><center>';
         echo ($_GET["message"]);
         echo '</center><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
     }
@@ -290,5 +291,4 @@
           }
      }*/
 </script>
-
 </html>
