@@ -46,6 +46,12 @@ $dept=$_SESSION['instructor_department'];
             cursor: pointer;
             margin-left: 30px;
         }
+        .logo img
+           {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+          }
     </style>
 </head>
 
@@ -60,7 +66,7 @@ $dept=$_SESSION['instructor_department'];
             </div>
 
             <div class="p-4">
-                <h1><a href="index.php" class="logo"><?php echo $name ?><span><?php echo $maill ?></span><span><?php echo $dept ?></span></a></h1>
+                <h1><a href="index.php" class="logo"><img src="../images/logo.png" alt=""><?php echo $name ?><span><?php echo $maill ?></span><span><?php echo $dept ?></span></a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li>
                         <a href="subject.php" target="frame"><span class="fa fa-book mr-3"></span> Subjects</a>
