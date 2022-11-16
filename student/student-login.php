@@ -16,9 +16,11 @@
     <style>
         body {
             margin: 0;
-            color: #888dad;
-            background: #c8c8c8;
+            color: rgb(180, 233, 245);
+            background: aliceblue;
             font: 600 16px/18px 'Open Sans', sans-serif;
+            margin-top: 0px;
+            margin-left:30px;
         }
 
         *,
@@ -26,6 +28,7 @@
         :before {
             box-sizing: border-box
         }
+        
 
         .clearfix:after,
         .clearfix:before {
@@ -45,13 +48,12 @@
 
         .login-wrap {
             width: 100%;
-            margin: auto;
-            max-width: 600px;
-            min-height: 560px;
+            max-width: 540px;
+            min-height: 540px;
             position: relative;
             /*background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;*/
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
-            margin-top: 30px;
+            
         }
 
         .login-html {
@@ -62,6 +64,7 @@
             background:
                 /*#353333; rgba(40, 57, 101, .9);*/
                 #070a3c;
+                
         }
 
         .login-html .sign-in-htm,
@@ -222,11 +225,27 @@
             margin-left: 415px;
             cursor: pointer;
         }
+        .logo img
+        {
+            width: 100%;
+            height: 140px;
+        }
+        img
+        {
+          border-radius: 20px;
+        }
     </style>
 
 </head>
 
 <body>
+
+
+    <div class="logo">
+        <img src="../images/head.png" alt="">
+    </div>
+
+
     <?php
     if (isset($_GET['message'])) {
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert"><center>';

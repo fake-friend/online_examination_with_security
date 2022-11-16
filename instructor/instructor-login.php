@@ -224,11 +224,25 @@
             margin-left: 415px;
             cursor: pointer;
         }
+        .logo img
+        {
+            width: 100%;
+            height: 140px;
+        }
+        img
+        {
+          border-radius: 20px;
+        }
     </style>
 
 </head>
 
+
 <body>
+
+    <div class="logo">
+        <img src="../images/head.png" alt="">
+    </div>
 
     <?php
     if (isset($_GET['message'])) {

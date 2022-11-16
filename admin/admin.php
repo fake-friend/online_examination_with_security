@@ -49,6 +49,7 @@ if($_SESSION['admin_name'] && $_SESSION['admin_email'])
             border-radius: 20px;
         }
     </style>
+    
 </head>
 <body>
 

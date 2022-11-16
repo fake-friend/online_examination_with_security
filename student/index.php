@@ -43,6 +43,12 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
                 position: absolute;
                 margin-left: 60px;
             }
+            .logo img
+           {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+          }
         </style>
     </head>
 
@@ -56,7 +62,7 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
 
             <div class="p-4">
                 <!-- <h1> <a class="logo"> <?php // echo $name ?> <span> <?php //echo  $gmail ?></span><span><?php //echo $department ?></span><span><?php //echo $year; ?> YEAR </span></a><span><?php //echo $roll_number; ?></span> </h1>-->       
-                <h1> <a class="logo"> <?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department," ~ ", $year; ?> YEAR <span><?php echo $semester ?> SEMESTER </span></span><?php echo $roll_number; ?></span></a> </h1>
+                <h1> <a class="logo"><img src="../images/logo.png" alt=""><?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department," ~ ", $year; ?> YEAR <span><?php echo $semester ?> SEMESTER </span></span><?php echo $roll_number; ?></span></a> </h1>
 
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
@@ -69,6 +75,9 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
 
                     <li>
                         <a href="result-view.php" target="frame"><span class="fa fa-certificate mr-3"></span> Results</a>
+                    </li>
+                    <li>
+                        <a href="student-register.html" target="frame"><span class="fa fa-certificate mr-3"></span> Update Profile</a>
                     </li>
 
                    <!-- <li>
