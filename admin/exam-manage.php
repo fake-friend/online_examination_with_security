@@ -37,7 +37,7 @@
         <th>Exam Title</th>
         <th>Start time</th>
         <th>Duration</th>
-        <th>Unique_exam_name</th>
+        <th>Unique exam Id</th>
         <th>Exam Status</th>
       </tr>
     </thead>
