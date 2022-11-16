@@ -3,12 +3,12 @@ session_start();
 if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
     $name = $_SESSION['student_name'];
     $gmail = $_SESSION['student_gmail'];
-    $department=$_SESSION['student_department'];
-    $roll_number=$_SESSION['roll_number'];
-    $year=$_SESSION['years'];
-    $batch=$_SESSION['batch'];
-    $semester=$_SESSION['semester'];
-    
+    $department = $_SESSION['student_department'];
+    $roll_number = $_SESSION['roll_number'];
+    $year = $_SESSION['years'];
+    $batch = $_SESSION['batch'];
+    $semester = $_SESSION['semester'];
+
 ?>
     <!doctype html>
     <html lang="en">
@@ -22,8 +22,7 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
         <link rel="stylesheet" href="css/style.css">
 
         <style>
-            nav 
-            {
+            nav {
                 height: 657px;
             }
 
@@ -43,12 +42,18 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
                 position: absolute;
                 margin-left: 60px;
             }
-            .logo img
-           {
-            width: 100%;
-            height: 100%;
-            border-radius: 20px;
-          }
+
+            .logo img {
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+            }
+
+            .update {
+                cursor: pointer;
+                margin-left: 30px;
+                margin-top: -30px;
+            }
         </style>
     </head>
 
@@ -61,8 +66,7 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
             </div>
 
             <div class="p-4">
-                <!-- <h1> <a class="logo"> <?php // echo $name ?> <span> <?php //echo  $gmail ?></span><span><?php //echo $department ?></span><span><?php //echo $year; ?> YEAR </span></a><span><?php //echo $roll_number; ?></span> </h1>-->       
-                <h1> <a class="logo"><img src="../images/logo.png" alt=""><?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department," ~ ", $year; ?> YEAR <span><?php echo $semester ?> SEMESTER </span></span><?php echo $roll_number; ?></span></a> </h1>
+                <h1> <a class="logo"><img src="../images/logo.png" alt=""><?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department, " ~ ", $year; ?> YEAR <span><?php echo $semester ?> SEMESTER </span></span><?php echo $roll_number; ?></span></a> </h1>
 
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
@@ -76,15 +80,22 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
                     <li>
                         <a href="result-view.php" target="frame"><span class="fa fa-certificate mr-3"></span> Results</a>
                     </li>
-                   <!-- <li>
+                    <!-- <li>
                         <a href="student-register.html" target="frame"><span class="fa fa-certificate mr-3"></span> Update Profile</a>
                     </li>-->
 
-                   <!-- <li>
+                    <!-- <li>
                         <a href="" target="frame"><span class="fa fa-handshake-o mr-3"></span> colleague</a>
                     </li> -->
                     <br><br>
-
+                    <li>
+                        <div class="update">
+                            <form action="update-profile-html.php" method="POST">
+                                <button class="btn btn-dark btn-sm"><i class="fa fa-pencil-square-o"></i>Update Personal Info</button>
+                            </form>
+                        </div>
+                    </li>
+                    <br>    
                     <li>
                         <div class="logout">
                             <form action="student-logout.php" method="post">
