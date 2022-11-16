@@ -91,7 +91,6 @@ $entry_time=date("Y-m-d")." ".date("H-i-s");
       if (timeLeft <= 0) {
         clearTimeout(tm);
         document.getElementById("form1").submit();
-        //window.location.href="result.php";
       } else {
         document.getElementById("time").innerHTML = minute + ":" + sec;
       }
@@ -108,9 +107,24 @@ $entry_time=date("Y-m-d")." ".date("H-i-s");
       return msg;
     }
   </script>
+    <script type="text/javascript">
+    function toggleFullScreen() {
+      if(!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      }
+  }
+  </script>
+    <script>
+        document.addEventListener("visibilitychange", (event) => {
+            if (document.visibilityState == "hidden") {
+              let form = document.getElementById("form1");
+                form.submit();
+            }
+        });
+    </script>
 </head>
 
-<body onload="timeout()">
+<body onload="timeout()" onclick="toggleFullScreen()">
 
   <script type="text/javascript">
     var timeLeft = <?php echo ($time * 60); ?>;

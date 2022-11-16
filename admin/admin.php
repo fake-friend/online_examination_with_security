@@ -28,7 +28,7 @@ if($_SESSION['admin_name'] && $_SESSION['admin_email'])
         iframe
         {
             position: absolute;
-            margin-top: -620px;
+            margin-top: -655px;
             margin-left: 300px;
         }
         .frame1
@@ -52,7 +52,6 @@ if($_SESSION['admin_name'] && $_SESSION['admin_email'])
     
 </head>
 <body>
-
     <nav id="sidebar">
 
         <div class="custom-menu">
@@ -96,7 +95,7 @@ if($_SESSION['admin_name'] && $_SESSION['admin_email'])
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 
-    <iframe src="department-show.php" id="frame" name="frame" frameborder="0" width="1040" height="600">
+    <iframe src="department-show.php" id="frame" name="frame" frameborder="0" width="1045" height="650">
     </iframe>
 
     <script>

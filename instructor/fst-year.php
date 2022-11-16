@@ -14,6 +14,7 @@
     td,
     th {
       text-align: center;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -44,7 +45,7 @@
         $query = "SELECT roll_number,student_name,upload,batch,semester,phonenumber,devices FROM student WHERE department='$dept' AND years='$year'";
         $result = mysqli_query($connection, $query);
         while ($row = mysqli_fetch_array($result)) {
-          $file = 'http://localhost/online_examination_with_security/student/upload/' . $row[2];
+          $file = 'http://localhost/online_examination_with_security/admin/student/upload/' . $row[2];
       ?>
           <tr>
             <!--serial number-->

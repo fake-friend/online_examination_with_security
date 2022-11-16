@@ -15,6 +15,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <!--cdn link for no copy paste for the website-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../no-tab-no-cp.js"></script>
+
     <style>
         body {
             margin: 0;
@@ -224,14 +228,14 @@
             margin-left: 415px;
             cursor: pointer;
         }
-        .logo img
-        {
+
+        .logo img {
             width: 100%;
             height: 140px;
         }
-        img
-        {
-          border-radius: 20px;
+
+        img {
+            border-radius: 20px;
         }
     </style>
 
@@ -272,7 +276,6 @@
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
-                            <a href="instructor-register.html">Don't you have an account?</a><br>
                             <a href="forgotpassword.php">Forgot password?</a>
                         </div>
                     </div>

@@ -53,7 +53,7 @@
             position: relative;
             /*background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;*/
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
-            
+            margin-left: 410px;
         }
 
         .login-html {
@@ -222,13 +222,14 @@
             position: absolute;
             min-width: 40px;
             margin-top: -28px;
-            margin-left: 415px;
+            margin-left: 350px;
             cursor: pointer;
         }
-        .logo img
+        .logos img
         {
             width: 100%;
             height: 140px;
+            margin-left: -15px;
         }
         img
         {
@@ -241,10 +242,11 @@
 <body>
 
 
-    <div class="logo">
+    <div class="logos">
         <img src="../images/head.png" alt="">
     </div>
 
+    <br><br>
 
     <?php
     if (isset($_GET['message'])) {
@@ -274,7 +276,6 @@
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
-                            <a href="student-register.html">Don't you have an account?</a><br>
                             <a href="forgotpassword.php">Forgot password?</a>
                         </div>
                     </div>

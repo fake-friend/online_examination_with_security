@@ -29,7 +29,7 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
 
             iframe {
                 position: absolute;
-                margin-top: -620px;
+                margin-top: -655px;
                 margin-left: 300px;
             }
 
@@ -76,9 +76,9 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
                     <li>
                         <a href="result-view.php" target="frame"><span class="fa fa-certificate mr-3"></span> Results</a>
                     </li>
-                    <li>
+                   <!-- <li>
                         <a href="student-register.html" target="frame"><span class="fa fa-certificate mr-3"></span> Update Profile</a>
-                    </li>
+                    </li>-->
 
                    <!-- <li>
                         <a href="" target="frame"><span class="fa fa-handshake-o mr-3"></span> colleague</a>
@@ -102,7 +102,7 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
         <script src="js/js/bootstrap.min.js"></script>
         <script src="js/js/main.js"></script>
 
-        <iframe src="subjects.php" id="frame" name="frame" frameborder="0" width="1040" height="600">
+        <iframe src="subjects.php" id="frame" name="frame" frameborder="0" width="1040" height="640">
         </iframe>
 
         <script>

@@ -26,7 +26,7 @@ $dept=$_SESSION['instructor_department'];
 
         iframe {
             position: absolute;
-            margin-top: -620px;
+            margin-top: -650px;
             margin-left: 300px;
         }
 
@@ -41,11 +41,12 @@ $dept=$_SESSION['instructor_department'];
             margin-left: 60px;
         }
 
-        .update
+       /* .update
         {
             cursor: pointer;
             margin-left: 30px;
-        }
+            margin-top: -30px;
+        }*/
         .logo img
            {
             width: 100%;
@@ -93,12 +94,12 @@ $dept=$_SESSION['instructor_department'];
                     </li>
                 </ul>
 
-                <div class="update">
+               <!-- <div class="update">
                     <form action="update-profile-html.php" method="POST">
                         <button class="btn btn-dark btn-sm"><i class="fa fa-pencil-square-o"></i>Update Personal Info</button>
                     </form>
-                </div>
-                <br>
+                </div>-->
+
                 <div class="mb-5">
                     <div class="form-group d-flex">
                         <div class="logout">
@@ -113,7 +114,7 @@ $dept=$_SESSION['instructor_department'];
         </nav>
     </div>
 
-    <iframe src="subject.php" id="frame" name="frame" frameborder="0" width="1040" height="600">
+    <iframe src="subject.php" id="frame" name="frame" frameborder="0" width="1040" height="630">
     </iframe>
 
     <script>

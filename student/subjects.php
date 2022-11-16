@@ -112,7 +112,7 @@
         }
 
         .content-card {
-            margin-top: 20px;
+            margin-top: 5px;
 
         }
 

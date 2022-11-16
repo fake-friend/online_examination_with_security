@@ -14,6 +14,7 @@
     td,
     th {
       text-align: center;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -111,7 +112,7 @@
 
                     <body>
                       <form method="post" action="create-exam-html.php?department=<?php echo ($row[5]); ?>&subject=<?php echo ($row[6]); ?>& subjectcode=<?php echo ($row[7]); ?>&year=<?php echo ($row[8]); ?>&batch=<?php echo ($row[9]); ?>&sem=<?php echo ($row[10]); ?>">
-                        <input type="submit" class="btn btn-success" value="Add / CREATE Exam Question ">
+                        <input type="submit" class="btn btn-success" value="Add Question ">
                       </form>
                     </body>
 

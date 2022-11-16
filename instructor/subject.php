@@ -14,6 +14,7 @@
         td,
         th {
             text-align: center;
+            font-size: 16px;
         }
     </style>
 </head>

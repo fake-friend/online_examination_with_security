@@ -15,31 +15,45 @@
 		 event.preventDefault();
 		 });
 		 });
-
-         var el_up = document.getElementsByTagName("body");
-
-            document.addEventListener('contextmenu',
-                    event => event.preventDefault());
-            el_down.innerHTML = " ";
 	 </script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
-    <input type="text" name="" id="">
-    <script>
-        var el_up = document.getElementsByTagName("body");
-        var el_down = document.getElementById("GFG_DOWN");
-        el_up.innerHTML = " ";
+   <!-- <script>
 
             document.addEventListener('contextmenu',
                     event => event.preventDefault());
-            el_down.innerHTML = " ";
         
             document.addEventListener("visibilitychange", () => {
             let form = document.getElementById("form__submit");
            form.submit();
       });
+    </script>-->
+   <!-- <script>
+        document.addEventListener("visibilitychange", (event) => {
+            if (document.visibilityState == "visible") {
+                alert("tab is active")
+            } else {
+                let form = document.getElementById("form__submit");
+                form.submit();
+            }
+        });
+    </script>-->
+
+    <script>
+        document.addEventListener("visibilitychange", (event) => {
+            if (document.visibilityState == "hidden") {
+                let form = document.getElementById("form__submit");
+                form.submit();
+            } /*else {
+                let form = document.getElementById("form__submit");
+                form.submit();
+            }*/
+        });
     </script>
-   <form id="form__submit" action="http://localhost/ph.php">
+
+    <form id="form__submit" action="http://localhost/ph.php">
         <input type="text" name="" id="">
     </form>
 
