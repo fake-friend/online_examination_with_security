@@ -56,9 +56,19 @@
           margin-left: 285px;
           cursor: pointer;
         }
+        .logo img
+        {
+            width: 100%;
+            height: 140px;
+        }
     </style>
 </head>
 <body>
+
+    <div class="logo">
+        <img src="../images/head.png" alt="">
+    </div>
+
 
         <?php 
             if(isset($_GET['message']))
