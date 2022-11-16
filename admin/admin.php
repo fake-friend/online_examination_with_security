@@ -42,9 +42,16 @@ if($_SESSION['admin_name'] && $_SESSION['admin_email'])
             position: absolute;
             margin-left: 60px;
         }
+        .logo img
+        {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
+
     <nav id="sidebar">
 
         <div class="custom-menu">
@@ -54,7 +61,7 @@ if($_SESSION['admin_name'] && $_SESSION['admin_email'])
         </div>
 
         <div class="p-4">
-            <h1><a class="logo"><?php echo $username; ?> <span><?php echo $email ?></span></a></h1>
+            <h1><a class="logo"><img src="../images/logo.png" alt=""><br><?php echo $username; ?> <span><?php echo $email ?></span></a></h1>
             <ul class="list-unstyled components mb-5">
                 <li class="active">
                     <a href="department-show.php" target="frame"><span class="fa fa-sitemap mr-3"></span> Departments</a>
