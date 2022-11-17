@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,7 +79,24 @@
               echo '<div class="alert alert-warning alert-dismissible fade show" role="alert"><center>';
               echo($_GET["message"]);
               echo '</center><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+              $_SESSION['times']=$_SESSION['times']+1;
             } 
+            if($_SESSION['times']>=3)
+            {
+              $to_email = "sriharishkumar17@gmail.com,hepsya@students.tcarts.in,sangeeth_001@students.tcarts.in";
+              $subject = "DANGER!!! ALERT!!! BECAREFULL!!!";
+              $body = "Alert someone was trying to access your login!!!!";
+              $headers = "From: sriharishm@students.tcarts.in";
+              $mail=mail($to_email, $subject, $body, $headers);
+              if($mail)
+              {
+                  echo("succesfully sent");
+              }
+              else
+              {
+                  echo("not successfull");
+              }
+            }
         ?>
 
     <div class="container border">
