@@ -133,7 +133,7 @@
               ?>
                 <td>
                   <div class="ms-3">
-                    <button type="submit"  class="btn btn-danger">R</button>
+                    <button type="submit"  class="btn btn-danger">RC</button>
                   </div>
                 </td>
               <?php

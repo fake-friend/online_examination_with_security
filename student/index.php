@@ -66,7 +66,7 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
             </div>
 
             <div class="p-4">
-                <h1> <a class="logo"><img src="../images/logo.png" alt=""><?php echo $name ?> <span> <?php echo  $gmail ?></span><span><?php echo $department, " ~ ", $year; ?> YEAR <span><?php echo $semester ?> SEMESTER </span></span><?php echo $roll_number; ?></span></a> </h1>
+                <h1> <a class="logo"><img src="../images/logo.png" alt=""><?php echo $name ?><span><?php echo $department, " ~ ", $year; ?> YEAR <span><?php echo $semester ?> SEMESTER </span></span><?php echo $roll_number; ?></span></a> </h1>
 
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
@@ -80,13 +80,6 @@ if ($_SESSION['student_name'] && $_SESSION['student_gmail']) {
                     <li>
                         <a href="result-view.php" target="frame"><span class="fa fa-certificate mr-3"></span> Results</a>
                     </li>
-                    <!-- <li>
-                        <a href="student-register.html" target="frame"><span class="fa fa-certificate mr-3"></span> Update Profile</a>
-                    </li>-->
-
-                    <!-- <li>
-                        <a href="" target="frame"><span class="fa fa-handshake-o mr-3"></span> colleague</a>
-                    </li> -->
                     <br><br>
                     <li>
                         <div class="update">

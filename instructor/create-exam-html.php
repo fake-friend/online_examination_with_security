@@ -10,10 +10,11 @@ $year = $_GET['year'];
 $batch = $_GET['batch'];
 $sem = $_GET['sem'];
 date_default_timezone_set("Asia/Kolkata");
-$unique=date("Y_m_d")."_".date("h_i_s");
+$unique = date("Y_m_d") . "_" . date("h_i_s");
 ?>
 
 <html>
+
 <head>
     <style>
         .mb-3 {
@@ -30,116 +31,135 @@ $unique=date("Y_m_d")."_".date("h_i_s");
 </head>
 
 <body>
-    <br><br>
+    <br>
+    <div class="container">
     <form class="needs-validation" action="create-exam-php.php" method="post" enctype="multipart/form-data" novalidate>
         <div class="alert alert-danger d-none">Please review the problems below:</div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-2">
+                        <label for="iid" class="form-label">Instructor ID</label>
+                        <input type="text" class="form-control" id="iid" name="iid" disabled value="<?php echo $instructor_id ?> ">
+                        <div class="invalid-feedback">Name can't be blank</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
 
-        <div class="mb-3">
-            <label for="iid" class="form-label">Instructor ID</label>
-            <input type="text" class="form-control" id="iid" name="iid" disabled value="<?php echo $instructor_id ?> ">
-            <div class="invalid-feedback">Name can't be blank</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="iname" class="form-label">Instructor Name</label>
-            <input type="text" class="form-control" id="iname" name="iname" disabled value="<?php echo $instructor_name ?> ">
-            <div class="invalid-feedback">Email can't be blank</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="iname" class="form-label">Gmail</label>
-            <input type="text" class="form-control" id="igmail" name="igmail" disabled value="<?php echo $gmail ?> ">
-            <div class="invalid-feedback">Email can't be blank</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="iname" class="form-label">Department</label>
-            <input type="text" class="form-control" id="idept" name="idept" value="<?php echo $department ?> ">
-            <div class="invalid-feedback">Department can't be blank</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="sub" class="form-label">Subject</label>
-            <input type="text" class="form-control" id="sub" name="sub" value="<?php echo $subject ?> ">
-            <div class="invalid-feedback">provide a valid value.</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="scode" class="form-label">Subject Code</label>
-            <input type="text" class="form-control" id="scode" name="scode" value="<?php echo $subject_code ?> ">
-            <div class="invalid-feedback">Subject code can't be blank</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="scode" class="form-label">Year</label>
-            <input type="text" class="form-control" id="year" name="year" value="<?php echo $year ?> ">
-            <div class="invalid-feedback">Year can't be blank</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="batch" class="form-label">Batch</label>
-            <input type="text" class="form-control" id="batch" name="batch" value="<?php echo $batch ?> ">
-            <div class="invalid-feedback">batch can't be blank</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="sem" class="form-label">Semester</label>
-            <input type="text" class="form-control" id="sem" name="sem" value="<?php echo $sem ?> ">
-            <div class="invalid-feedback">Semester can't be blank</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="sub" class="form-label">Exam Title </label>
-            <input type="text" class="form-control" id="examtitle" name="examtitle" placeholder="Enter your Exam title" required>
-            <div class="invalid-feedback">Please provide a valid value.</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="sub" class="form-label">Select Date </label>
-            <input type="datetime-local" class="form-control" id="date" name="date" required>
-            <div class="invalid-feedback">Please provide a valid value.</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <label for="sub" class="form-label">Duration in Minutes </label>
-            <input type="number" class="form-control" id="duration" name="duration" required>
-            <div class="invalid-feedback">Please provide a valid value.</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        <div class="mb-3">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                    <div class="mb-2">
+                        <label for="iname" class="form-label">Instructor Name</label>
+                        <input type="text" class="form-control" id="iname" name="iname" disabled value="<?php echo $instructor_name ?> ">
+                        <div class="invalid-feedback">Email can't be blank</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
                 </div>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" accept=".csv" name="file1" id="file" aria-describedby="inputGroupFileAddon01">
-                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                <div class="col-6">
+                    <div class="mb-2">
+                        <label for="iname" class="form-label">Gmail</label>
+                        <input type="text" class="form-control" id="igmail" name="igmail" disabled value="<?php echo $gmail ?> ">
+                        <div class="invalid-feedback">Email can't be blank</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="iname" class="form-label">Department</label>
+                        <input type="text" class="form-control" id="idept" name="idept" value="<?php echo $department ?> ">
+                        <div class="invalid-feedback">Department can't be blank</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-2">
+                        <label for="sub" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="sub" name="sub" value="<?php echo $subject ?> ">
+                        <div class="invalid-feedback">provide a valid value.</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="scode" class="form-label">Subject Code</label>
+                        <input type="text" class="form-control" id="scode" name="scode" value="<?php echo $subject_code ?> ">
+                        <div class="invalid-feedback">Subject code can't be blank</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-2">
+                        <label for="scode" class="form-label">Year</label>
+                        <input type="text" class="form-control" id="year" name="year" value="<?php echo $year ?> ">
+                        <div class="invalid-feedback">Year can't be blank</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="batch" class="form-label">Batch</label>
+                        <input type="text" class="form-control" id="batch" name="batch" value="<?php echo $batch ?> ">
+                        <div class="invalid-feedback">batch can't be blank</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-2">
+                        <label for="sem" class="form-label">Semester</label>
+                        <input type="text" class="form-control" id="sem" name="sem" value="<?php echo $sem ?> ">
+                        <div class="invalid-feedback">Semester can't be blank</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="sub" class="form-label">Exam Title </label>
+                        <input type="text" class="form-control" id="examtitle" name="examtitle" placeholder="Enter your Exam title" required>
+                        <div class="invalid-feedback">Please provide a valid value.</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-2">
+                        <label for="sub" class="form-label">Select Date </label>
+                        <input type="datetime-local" class="form-control" id="date" name="date" required>
+                        <div class="invalid-feedback">Please provide a valid value.</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="sub" class="form-label">Duration in Minutes </label>
+                        <input type="number" class="form-control" id="duration" name="duration" required>
+                        <div class="invalid-feedback">Please provide a valid value.</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-2">
+                    <label for="sub" class="form-label">Upload File</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" accept=".csv" name="file1" id="file" aria-describedby="inputGroupFileAddon01" required>
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-2">
+                        <label for="sub" class="form-label">Unique Exam Name</label>
+                        <input type="text" class="form-control" id="uniqueen" name="uniqueen" value="<?php echo (trim($instructor_name) . $instructor_id . $subject . $year . $sem . $unique); ?>">
+                        <div class="invalid-feedback">Please provide a valid value.</div>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="mb-3">
-            <label for="sub" class="form-label">Unique Exam Name</label>
-            <input type="text" class="form-control" id="uniqueen" name="uniqueen" value="<?php echo(trim($instructor_name).$instructor_id.$subject.$year.$sem.$unique); ?>">
-            <div class="invalid-feedback">Please provide a valid value.</div>
-            <div class="valid-feedback">Looks good!</div>
-        </div>
-
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="subjectshowup.php"> <button type="button" class="btn btn-primary">Back</button></a>
-        <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <a href="subjectshowup.php"> <button type="button" class="btn btn-primary btn-sm">Back</button></a>
+                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                </div>
+                <div class="col"></div>
+            </div>
     </form>
+    </div>
 </body>
 <script>
     // Disable form submissions if there are invalid fields

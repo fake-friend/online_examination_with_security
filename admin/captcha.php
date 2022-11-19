@@ -18,5 +18,4 @@
     }
     imagestring($im,200,70,15,$captcha,$text_color);
     imagepng($im);
-    
 ?>
