@@ -74,6 +74,10 @@ $dept=$_SESSION['instructor_department'];
                     </li>
 
                     <li>
+                        <a href="department-show.php" target="frame"><span class="fa fa-sitemap mr-3"></span>Departments</a>
+                    </li>
+
+                    <li>
                         <a href="subjectshowup.php" target="frame"><span class="fa fa-pencil mr-3"></span> Exam Management</a>
                     </li>
 
