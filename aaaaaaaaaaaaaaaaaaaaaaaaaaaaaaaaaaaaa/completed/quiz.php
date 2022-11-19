@@ -65,9 +65,11 @@
   <script type="text/javascript">
     function timeout()
     {
-      //var hours=Math.floor(timeLeft/60);
-      var minute=Math.floor(timeLeft/60);
+      var hours=Math.floor(timeLeft/3600);
+      var minute=Math.floor((timeLeft-(hours*60*60)-30)/60);
       var second=timeLeft%60;
+      var hrs=checktime(hours);
+      var mint=checktime(minute);
       var sec=checktime(second);
       if(timeLeft<=0)
       {
@@ -77,7 +79,7 @@
       }
       else
       {
-        document.getElementById("time").innerHTML=minute+":"+sec;
+        document.getElementById("time").innerHTML=hrs+":"+mint+":"+sec;
       }
       timeLeft--;
       var tm=setTimeout(function() {timeout()},1000 )
@@ -97,11 +99,11 @@
 
 
 <script type="text/javascript">
-      var timeLeft=2*5;
+      var timeLeft=2*60*60;
 </script>
 
 <form id="form1" action="result.php" method="post">
-  <h1>Quiz-1 <div id="time" style="float:right">timeout</div></h1>
+  <h1>Quiz-1 <div id="time" style="float:right"> timeout</div></h1>
     <?php
     $con = mysqli_connect('localhost', 'root', '', 'quiz_test');
     $i = 1;

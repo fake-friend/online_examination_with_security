@@ -25,6 +25,10 @@ $entry_time=date("Y-m-d")." ".date("H-i-s");
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+
+  <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
+  <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
+   
   <style>
     body {
       background-color: #eee;
@@ -106,6 +110,11 @@ $entry_time=date("Y-m-d")." ".date("H-i-s");
       }
       return msg;
     }
+
+    function glines()
+      {
+       swal("READ CAREFULLY!", "1. Once exam starts, do not switch to any other tab/window!! 2. Make sure you have stable internet connectivity!!");
+      }
   </script>
     <script type="text/javascript">
     function toggleFullScreen() {
@@ -124,7 +133,7 @@ $entry_time=date("Y-m-d")." ".date("H-i-s");
     </script>
 </head>
 
-<body onload="timeout()" onclick="toggleFullScreen()">
+<body onload="timeout(); glines()" onclick="toggleFullScreen()">
 
   <script type="text/javascript">
     var timeLeft = <?php echo ($time * 60); ?>;
@@ -242,3 +251,4 @@ function run($connection,$instructor_id,$instructor_name,$instructor_gmail,$inst
 <?php
 }
 ?>
+
