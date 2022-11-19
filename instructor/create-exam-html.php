@@ -149,12 +149,12 @@ $unique = date("Y_m_d") . "_" . date("h_i_s");
                     </div>
                 </div>
             </div>
-
+<br>
             <div class="row">
                 <div class="col"></div>
                 <div class="col">
-                    <a href="subjectshowup.php"> <button type="button" class="btn btn-primary btn-sm">Back</button></a>
-                    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                    <a href="subjectshowup.php"> <button type="button" class="btn btn-primary">Back</button></a>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col"></div>
             </div>
