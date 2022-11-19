@@ -2,96 +2,13 @@
 <html>
 	
 <head>
-	<title>
-		How to detect Safari, Chrome, IE, Firefox
-		and Opera browser using JavaScript?
-	</title>
+	  <script>
+		alert('1. Arrange for stable Internet connectivity.\n'+'2. Giving examination on Laptop or Desktop is highly recommended.\n'+'3. Close all browsers/tabs before starting the online examination.\n'+'4. Once the exam starts, do not switch to any other window/tab. On doing so, your attempt may be considered as malpractice and your exam may get terminated.\n'+'5. Do Not Pickup/Receive the Call during the exam if you are giving the exam on mobile. This also will be treated as changing the window.\n'+'NOTES:\n'+'1. It is recommended to use web browser such as Mozilla and Chrome browsers etc. on a desktop/laptop/tab/smart phone.\n'+'2. Do not use the back button of keyboard or close button/icon to go back to previous page or to close the screen.\n');
+	  </script>
 </head>
 
 <body>
-	<h1 style="color: green">GeeksforGeeks</h1>
-	
-	<b>
-		How to detect Safari, Chrome, IE, Firefox
-		and Opera browser using JavaScript?
-	</b>
-	
-	<p>
-		Click on the button to detect
-		the current browser
-	</p>
-	
-	<p>
-		Is Safari?
-		<span class="output-safari"></span>
-	</p>
-	
-	<p>
-		Is Chrome?
-		<span class="output-chrome"></span>
-	</p>
-	
-	<p>
-		Is Internet Explorer?
-		<span class="output-ie"></span>
-	</p>
-	
-	<p>
-		Is Firefox?
-		<span class="output-firefox"></span>
-	</p>
-	
-	<p>
-		Is Opera browser?
-		<span class="output-opera"></span>
-	</p>
-	
-	<button onclick="checkBrowser()">
-		Detect browser
-	</button>
-	
-	<script>
-		function checkBrowser() {
-		
-			// Get the user-agent string
-			let userAgentString =navigator.userAgent;
-		
-			// Detect Chrome
-			let chromeAgent =userAgentString.indexOf("Chrome") > -1;
-		
-			// Detect Internet Explorer
-			let IExplorerAgent =userAgentString.indexOf("MSIE") > -1 || userAgentString.indexOf("rv:") > -1;
-		
-			// Detect Firefox
-			let firefoxAgent =userAgentString.indexOf("Firefox") > -1;
-		
-			// Detect Safari
-			let safariAgent =userAgentString.indexOf("Safari") > -1;
-				
-			// Discard Safari since it also matches Chrome
-			if ((chromeAgent) && (safariAgent))
-				safariAgent = false;
-		
-			// Detect Opera
-			let operaAgent =
-				userAgentString.indexOf("OP") > -1;
-				
-			// Discard Chrome since it also matches Opera	
-			if ((chromeAgent) && (operaAgent))
-				chromeAgent = false;
-		
-			document.querySelector(".output-safari").textContent
-						= safariAgent;
-			document.querySelector(".output-chrome").textContent
-						= chromeAgent;
-			document.querySelector(".output-ie").textContent
-						= IExplorerAgent;
-			document.querySelector(".output-opera").textContent
-						= operaAgent;
-			document.querySelector(".output-firefox").textContent
-						= firefoxAgent;
-		}
-	</script>
+
 </body>
 
 </html>

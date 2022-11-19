@@ -1,3 +1,7 @@
+<?php session_start(); ?>
+<script>
+    alert('1. Arrange for stable Internet connectivity.'/n+'2. Giving examination on Laptop or Desktop is highly recommended.'+'3. Close all browsers/tabs before starting the online examination.'+'4. Once the exam starts, do not switch to any other window/tab. On doing so, your attempt may be considered as malpractice and your exam may get terminated.'+'5. Do Not Pickup/Receive the Call during the exam if you are giving the exam on mobile. This also will be treated as changing the window.'+'NOTES:'+'1. It is recommended to use web browser such as Mozilla and Chrome browsers etc. on a desktop/laptop/tab/smart phone.'+'2. Do not use the back button of keyboard or close button/icon to go back to previous page or to close the screen.');
+  </script>
 <?php
 $instructor_id = $_GET['insid'];
 $instructor_name = $_GET['insnm'];
@@ -131,7 +135,6 @@ $entry_time=date("Y-m-d")." ".date("H-i-s");
   </script>
 
   <?php
-  session_start();
   $student_name = $_SESSION['student_name'];
   $roll_number = $_SESSION['roll_number'];
   $department = $_SESSION['student_department'];
