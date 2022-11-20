@@ -10,7 +10,7 @@
         .container {
             margin-left: 20%;
             margin-top: 5%;
-            border: 2px solid black;
+            border: 2px solid #978794;
             border-radius: 20px;
             padding: 20px;
         }
@@ -28,72 +28,74 @@
     <div class="container">
         <form class="needs-validation" action="<?php $_SERVER["PHP_SELF"]; ?>" method="post" novalidate>
             <div class="alert alert-danger d-none">Please review the problems below:</div>
-
-            <div class="mb-3">
-                <label for="idep" class="form-label">Department</label>
-                <select name="dep" id="idep" class="form-control" required>
-                    <option value="Tamil">Tamil</option>
-                    <option value="English">English</option>
-                    <option value="Economics">Economics</option>
-                    <option value="Business Administration">Business Administration</option>
-                    <option value="Commerce">Commerce</option>
-                    <option value="Mathematics">Mathematics</option>
-                    <option value="Physics">Physics</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Botany">Botany</option>
-                    <option value="Zoology">Zoology</option>
-                    <option value="Computer Science">Computer Science</option>
-                    <option value="Biotech">Biotech</option>
-                    <option value="CA/IT">CA/IT</option>
-                    <option value="Psycology">Psycology</option>
-                </select>
-                <div class="invalid-feedback">Dept can't be blank</div>
-                <div class="valid-feedback">Looks good!</div>
-            </div>
-
-            <div class="mb-3">
-                <label for="ibatch" class="form-label">Batch</label>
-                <select name="batch" id="ibatch" class="form-control" required>
-                    <option value="2020-2023">2020-2023</option>
-                    <option value="2021-2024">2021-2024</option>
-                    <option value="2022-2025">2022-2025</option>
-                </select>
-                <div class="invalid-feedback">Batch can't be blank</div>
-                <div class="valid-feedback">Looks good!</div>
-            </div>
-
-            <fieldset class="mb-3">
-                <legend class="col-form-label pt-0">Choose a Year</legend>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="year" id="1st year" value="I" required>
-                    <label class="form-check-label" for="1st year">I YEAR</label>
+            <div class="row">
+                <div class="mb-3">
+                    <label for="idep" class="form-label">Department</label>
+                    <select name="dep" id="idep" class="form-control" required>
+                        <option value="Tamil">Tamil</option>
+                        <option value="English">English</option>
+                        <option value="Economics">Economics</option>
+                        <option value="Business Administration">Business Administration</option>
+                        <option value="Commerce">Commerce</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Botany">Botany</option>
+                        <option value="Zoology">Zoology</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Biotech">Biotech</option>
+                        <option value="CA/IT">CA/IT</option>
+                        <option value="Psycology">Psycology</option>
+                    </select>
+                    <div class="invalid-feedback">Dept can't be blank</div>
+                    <div class="valid-feedback">Looks good!</div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="year" id="2nd year" value="II" required>
-                    <label class="form-check-label" for="2nd year">II YEAR</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="year" id="3rd year" value="III" required>
-                    <label class="form-check-label" for="3rd year">III YEAR</label>
-                </div>
-            </fieldset>
 
-            <div class="mb-3">
-                <label for="isem" class="form-label">Semester</label>
-                <select name="sem" id="isem" class="form-control" required>
-                    <option value="I">I semester</option>
-                    <option value="II">II semester</option>
-                    <option value="III">III semester</option>
-                    <option value="IV">IV semester</option>
-                    <option value="V">V semester</option>
-                    <option value="VI">VI semester</option>
-                </select>
-                <div class="invalid-feedback">Batch can't be blank</div>
-                <div class="valid-feedback">Looks good!</div>
+                <div class="mb-3">
+                    <label for="ibatch" class="form-label">Batch</label>
+                    <select name="batch" id="ibatch" class="form-control" required>
+                        <option value="2020-2023">2020-2023</option>
+                        <option value="2021-2024">2021-2024</option>
+                        <option value="2022-2025">2022-2025</option>
+                    </select>
+                    <div class="invalid-feedback">Batch can't be blank</div>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+
+                <fieldset class="mb-3">
+                    <legend class="col-form-label pt-0">Choose a Year</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="year" id="1st year" value="I" required>
+                        <label class="form-check-label" for="1st year">I YEAR</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="year" id="2nd year" value="II" required>
+                        <label class="form-check-label" for="2nd year">II YEAR</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="year" id="3rd year" value="III" required>
+                        <label class="form-check-label" for="3rd year">III YEAR</label>
+                    </div>
+                </fieldset>
+
+                <div class="mb-3">
+                    <label for="isem" class="form-label">Semester</label>
+                    <select name="sem" id="isem" class="form-control" required>
+                        <option value="I">I semester</option>
+                        <option value="II">II semester</option>
+                        <option value="III">III semester</option>
+                        <option value="IV">IV semester</option>
+                        <option value="V">V semester</option>
+                        <option value="VI">VI semester</option>
+                    </select>
+                    <div class="invalid-feedback">Batch can't be blank</div>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
             </div>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="result-management.php"> <button type="button" class="btn btn-primary">Back</button></a>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="row">
+                <div class="col-5"></div>
+                <div class="col"><button type="submit" class="btn btn-primary">Submit</button></div>
+            </div>
         </form>
     </div>
 </body>
@@ -129,6 +131,7 @@ if ($connection) {
         $semester = $_POST['sem'];
 ?>
         <html>
+
         <head>
             <style>
                 .mb-3 {
@@ -143,9 +146,10 @@ if ($connection) {
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
         </head>
+
         <body>
             <div class="container">
-                <form class="needs-validation" action="show-result.php?dept=<?php echo($department) ?>&batch=<?php echo($batch) ?>&year=<?php echo($year) ?>&semester=<?php echo($semester) ?>" method="post" novalidate>
+                <form class="needs-validation" action="show-result.php?dept=<?php echo ($department) ?>&batch=<?php echo ($batch) ?>&year=<?php echo ($year) ?>&semester=<?php echo ($semester) ?>" method="post" novalidate>
                     <div class="alert alert-danger d-none">Please review the problems below:</div>
 
                     <div class="mb-3">

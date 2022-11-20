@@ -6,7 +6,6 @@ $sem=$_GET['sem'];
 $exam_table = $_GET['examtable'];
 ?>
 <html>
-
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -17,13 +16,23 @@ $exam_table = $_GET['examtable'];
         th {
             text-align: center;
         }
+        .col
+        {
+            margin-left: 150px;
+        }
     </style>
 </head>
-
 <body>
-    <br><br>
-    <center><a href="view-exam.php"> <button type="button" class="btn btn-primary">Back</button></a></center>
-    <br><br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="view-exam.php"><button type="button" class="btn btn-primary">Back</button></a>
+                <a href="export.php?department=<?php echo($student_department); ?>&year=<?php echo $student_year ?>&batch=<?php echo($batch) ?>&sem=<?php echo($sem) ?>&examtable=<?php echo($exam_table) ?>"><button type="button" class="btn btn-success">Export</button></a>
+            </div>
+        </div>
+    </div>
+    <br>
     <table class="table align-middle mb-0 bg-white table-hover">
         <thead class="bg-light">
             <tr>

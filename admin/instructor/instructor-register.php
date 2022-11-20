@@ -20,7 +20,7 @@ $v1="INSERT INTO instructor(instructor_id,instructor_name,dob,phone_number,files
 $v2=mysqli_query($connection,$v1);
 if($v2)
 {
-    header("location:../instructor-management.php");
+    //header("location:../instructor-management.php");
 }
 else
 {
@@ -51,5 +51,5 @@ if(isset($_POST['submit']))
             echo "file not uploaded";
         }
     }
-mysqli_close($conn);
+mysqli_close($connection);
 ?>
