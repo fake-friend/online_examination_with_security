@@ -151,7 +151,7 @@
         ?>
 
             <td>
-              <form action="" method="post">
+              <form action="delete-student.php?roll_no=<?php echo($row[10]); ?>&student_name=<?php echo ($row[1]); ?>&department=<?php echo($row[8]); ?>&batch=<?php echo($row[9]); ?>&year=<?php echo($row[11]); ?>&sem=<?php echo($row[12]); ?>&gmail=<?php echo($row[16]); ?>&sa=<?php echo($row[14]); ?>&username=<?php echo($row[15]); ?>" method="post">
                 <button type="submit" class="btn btn-sm btn-danger">Remove</button>
               </form>
             </td>

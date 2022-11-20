@@ -138,7 +138,7 @@
         ?>
 
             <td>
-              <form action="" method="post">
+              <form action="delete-instructor.php?instructor_id=<?php echo($row[1]); ?>&instructor_name=<?php echo ($row[2]); ?>&department=<?php echo($row[6]); ?>&post=<?php echo($row[7]); ?>&sa=<?php echo($row[8]); ?>&username=<?php echo($row[10]); ?>&gmail=<?php echo($row[11]); ?>" method="post">
                 <button type="submit" class="btn btn-sm btn-danger">Remove</button>
               </form>
             </td>
